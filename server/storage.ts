@@ -1,4 +1,6 @@
 import { users, gameStates, type User, type InsertUser, type GameState, type InsertGameState } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -9,63 +11,46 @@ export interface IStorage {
   deleteGameState(id: number, userId: number): Promise<boolean>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  private gameStates: Map<number, GameState>;
-  private currentUserId: number;
-  private currentGameStateId: number;
-
-  constructor() {
-    this.users = new Map();
-    this.gameStates = new Map();
-    this.currentUserId = 1;
-    this.currentGameStateId = 1;
-  }
-
+export class DatabaseStorage implements IStorage {
   async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentUserId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
     return user;
   }
 
   async getGameStates(userId: number): Promise<GameState[]> {
-    return Array.from(this.gameStates.values()).filter(
-      (gameState) => gameState.userId === userId
-    );
+    return await db.select().from(gameStates).where(eq(gameStates.userId, userId));
   }
 
   async saveGameState(insertGameState: InsertGameState): Promise<GameState> {
-    const id = this.currentGameStateId++;
-    const now = new Date();
-    const gameState: GameState = {
-      ...insertGameState,
-      id,
-      createdAt: now,
-      updatedAt: now,
-    };
-    this.gameStates.set(id, gameState);
+    const [gameState] = await db
+      .insert(gameStates)
+      .values({
+        ...insertGameState,
+        userId: insertGameState.userId || 1 // Default to user 1 for now
+      })
+      .returning();
     return gameState;
   }
 
   async deleteGameState(id: number, userId: number): Promise<boolean> {
-    const gameState = this.gameStates.get(id);
-    if (gameState && gameState.userId === userId) {
-      this.gameStates.delete(id);
-      return true;
-    }
-    return false;
+    const result = await db
+      .delete(gameStates)
+      .where(eq(gameStates.id, id));
+    return (result.rowCount || 0) > 0;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
