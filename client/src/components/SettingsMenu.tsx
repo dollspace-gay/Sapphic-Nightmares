@@ -105,6 +105,17 @@ export function SettingsMenu({ onShowSaveModal, onShowLoadModal, onToggleSidebar
                   <RotateCcw className="mr-2 h-4 w-4" />
                   New Game
                 </Button>
+                
+                <Button 
+                  onClick={() => {
+                    localStorage.clear();
+                    window.location.reload();
+                  }}
+                  className="w-full bg-red-800/70 hover:bg-red-600/50 border border-red-500/30 text-xs text-white"
+                  variant="outline"
+                >
+                  Clear All Data & Restart
+                </Button>
               </div>
             </div>
             

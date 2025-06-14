@@ -119,9 +119,13 @@ export function GameProvider({ children }: { children: ReactNode }) {
         // Only load if the save has actual progress (not just character creation)
         if (savedState.isCharacterCreated && savedState.completedScenes.length > 0) {
           dispatch({ type: 'LOAD_GAME', payload: savedState });
+        } else {
+          // If there's a saved state but no progress, clear it to start fresh
+          localStorage.removeItem('crimsonEmbrace_autoSave');
         }
       } catch (error) {
         console.error('Failed to load auto-save:', error);
+        localStorage.removeItem('crimsonEmbrace_autoSave');
       }
     }
   }, []);
@@ -152,6 +156,8 @@ export function GameProvider({ children }: { children: ReactNode }) {
   };
   
   const resetGame = () => {
+    // Clear auto-save data to ensure fresh start
+    localStorage.removeItem('crimsonEmbrace_autoSave');
     dispatch({ type: 'RESET_GAME' });
   };
   
