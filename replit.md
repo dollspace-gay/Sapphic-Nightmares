@@ -17,6 +17,7 @@ This is a vampire-themed visual novel game called "Crimson Embrace" built as a f
 ### Backend Architecture
 - **Framework**: Express.js with TypeScript
 - **Database**: PostgreSQL with Drizzle ORM for type-safe database operations
+- **Database Driver**: Neon serverless PostgreSQL with connection pooling
 - **Session Management**: Connect-pg-simple for PostgreSQL-backed sessions
 - **Development**: tsx for TypeScript execution in development
 
@@ -83,7 +84,9 @@ The deployment uses autoscale target with npm scripts for build and start comman
 
 ```
 Changelog:
-- June 14, 2025. Initial setup
+- June 14, 2025. Initial setup with vampire RPG dating simulator
+- June 14, 2025. Added character creation system with traits, flaws, and boons
+- June 14, 2025. Integrated PostgreSQL database with Drizzle ORM
 ```
 
 ## User Preferences
