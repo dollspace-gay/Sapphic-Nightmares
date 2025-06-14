@@ -28,10 +28,10 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         ...state,
         playerCharacter: action.payload,
         isCharacterCreated: true,
-        currentScene: 'library',
+        currentScene: 'arrival',
         playerStats: {
           ...state.playerStats,
-          location: 'Ravencroft Manor'
+          location: 'Ravencroft Manor Gates'
         }
       };
       
@@ -112,16 +112,21 @@ export function GameProvider({ children }: { children: ReactNode }) {
   
   // Load auto-save on mount only if it exists and is valid
   useEffect(() => {
+    // Temporary: Clear localStorage to test the fix (remove this line after testing)
+    localStorage.removeItem('crimsonEmbrace_autoSave');
+    console.log('Cleared localStorage for testing');
+    
     const autoSaveData = localStorage.getItem('crimsonEmbrace_autoSave');
     if (autoSaveData) {
       try {
         const savedState = JSON.parse(autoSaveData);
-        // Only load if the save has actual progress (not just character creation)
+        // Only load if the save has actual story progress (completed scenes)
         if (savedState.isCharacterCreated && savedState.completedScenes.length > 0) {
           dispatch({ type: 'LOAD_GAME', payload: savedState });
         } else {
-          // If there's a saved state but no progress, clear it to start fresh
+          // Clear invalid save data to ensure fresh start
           localStorage.removeItem('crimsonEmbrace_autoSave');
+          console.log('Cleared invalid auto-save data');
         }
       } catch (error) {
         console.error('Failed to load auto-save:', error);
@@ -132,7 +137,19 @@ export function GameProvider({ children }: { children: ReactNode }) {
   
   const getCurrentScene = () => {
     const chapter = gameData[gameState.currentChapter];
-    return chapter?.scenes.find(scene => scene.id === gameState.currentScene);
+    const scene = chapter?.scenes.find(scene => scene.id === gameState.currentScene);
+    
+    // Debug logging (can be removed in production)
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Current game state:', {
+        chapter: gameState.currentChapter,
+        scene: gameState.currentScene,
+        isCharacterCreated: gameState.isCharacterCreated,
+        sceneTitle: scene?.title
+      });
+    }
+    
+    return scene;
   };
   
   const makeChoice = (choice: Choice) => {
