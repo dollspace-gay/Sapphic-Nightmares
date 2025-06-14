@@ -8,6 +8,7 @@ import { SettingsMenu } from './SettingsMenu';
 export function GameInterface() {
   const [showSaveModal, setShowSaveModal] = useState(false);
   const [showLoadModal, setShowLoadModal] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
   
   return (
     <div className="min-h-screen relative overflow-hidden bg-midnight">
@@ -18,12 +19,22 @@ export function GameInterface() {
       <SettingsMenu 
         onShowSaveModal={() => setShowSaveModal(true)}
         onShowLoadModal={() => setShowLoadModal(true)}
+        onToggleSidebar={() => setShowSidebar(!showSidebar)}
       />
       
       {/* Main Game Interface */}
-      <div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
-        <Sidebar />
+      <div className="relative z-10 flex min-h-screen">
+        {/* Collapsible Sidebar */}
+        {showSidebar && (
+          <div className="fixed inset-0 z-40 lg:relative lg:inset-auto lg:w-80">
+            <div className="absolute inset-0 bg-black/50 lg:hidden" onClick={() => setShowSidebar(false)} />
+            <div className="relative z-50 h-full">
+              <Sidebar onClose={() => setShowSidebar(false)} />
+            </div>
+          </div>
+        )}
         
+        {/* Main Content */}
         <div className="flex-1 flex flex-col">
           <StoryPanel />
           <ChoicePanel />
