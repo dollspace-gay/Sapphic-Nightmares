@@ -98,6 +98,9 @@ Changelog:
 - June 14, 2025. Restructured storylines with inheritance backstory and endgame transformation
 - June 14, 2025. Expanded branching narrative with character-specific romance paths
 - June 14, 2025. Implemented adaptive storytelling hints with choice pattern analysis
+- June 14, 2025. Fixed character creation scene transition bug (now starts with "The Inheritance")
+- June 14, 2025. Completed all missing story branches - eliminated "loading story" issues
+- June 14, 2025. Added comprehensive character development scenes and sanctuary covenant system
 ```
 
 ## User Preferences
