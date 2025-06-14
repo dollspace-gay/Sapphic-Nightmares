@@ -147,12 +147,14 @@ export const initialGameState = {
   currentChapter: 0,
   currentScene: 'library',
   characters: characters,
+  playerCharacter: undefined,
   playerStats: {
     health: 'Healthy',
     sanity: 'Questioning Reality',
-    location: 'Ravencroft Manor'
+    location: 'Character Creation'
   },
   inventory: [],
   flags: {},
-  completedScenes: []
+  completedScenes: [],
+  isCharacterCreated: false
 };

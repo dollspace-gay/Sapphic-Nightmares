@@ -39,6 +39,35 @@ export interface Chapter {
   scenes: Scene[];
 }
 
+export interface PlayerTrait {
+  id: string;
+  name: string;
+  description: string;
+  category: 'physical' | 'social' | 'mental';
+}
+
+export interface PlayerFlaw {
+  id: string;
+  name: string;
+  description: string;
+  points: number;
+}
+
+export interface PlayerBoon {
+  id: string;
+  name: string;
+  description: string;
+  cost: number;
+}
+
+export interface PlayerCharacter {
+  name: string;
+  traits: PlayerTrait[];
+  flaws: PlayerFlaw[];
+  boons: PlayerBoon[];
+  availablePoints: number;
+}
+
 export interface PlayerStats {
   health: string;
   sanity: string;
@@ -49,10 +78,12 @@ export interface GameState {
   currentChapter: number;
   currentScene: string;
   characters: Record<string, Character>;
+  playerCharacter?: PlayerCharacter;
   playerStats: PlayerStats;
   inventory: string[];
   flags: Record<string, boolean>;
   completedScenes: string[];
+  isCharacterCreated: boolean;
 }
 
 export interface SaveSlot {

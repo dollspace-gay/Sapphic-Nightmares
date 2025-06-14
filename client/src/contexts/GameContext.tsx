@@ -1,11 +1,12 @@
 import { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
-import { GameState, Choice } from '../types/game';
+import { GameState, Choice, PlayerCharacter } from '../types/game';
 import { initialGameState, gameData } from '../data/gameData';
 
 interface GameContextType {
   gameState: GameState;
   currentScene: any;
   makeChoice: (choice: Choice) => void;
+  createCharacter: (character: PlayerCharacter) => void;
   saveGame: (slotName: string) => void;
   loadGame: (gameState: GameState) => void;
   resetGame: () => void;
@@ -15,12 +16,25 @@ const GameContext = createContext<GameContextType | undefined>(undefined);
 
 type GameAction = 
   | { type: 'MAKE_CHOICE'; payload: Choice }
+  | { type: 'CREATE_CHARACTER'; payload: PlayerCharacter }
   | { type: 'LOAD_GAME'; payload: GameState }
   | { type: 'RESET_GAME' }
   | { type: 'UPDATE_AFFECTION'; payload: { characterId: string; change: number } };
 
 function gameReducer(state: GameState, action: GameAction): GameState {
   switch (action.type) {
+    case 'CREATE_CHARACTER':
+      return {
+        ...state,
+        playerCharacter: action.payload,
+        isCharacterCreated: true,
+        currentScene: 'library',
+        playerStats: {
+          ...state.playerStats,
+          location: 'Ravencroft Manor'
+        }
+      };
+      
     case 'MAKE_CHOICE':
       const choice = action.payload;
       const newState = { ...state };
@@ -116,6 +130,10 @@ export function GameProvider({ children }: { children: ReactNode }) {
   
   const makeChoice = (choice: Choice) => {
     dispatch({ type: 'MAKE_CHOICE', payload: choice });
+  };
+  
+  const createCharacter = (character: PlayerCharacter) => {
+    dispatch({ type: 'CREATE_CHARACTER', payload: character });
   };
   
   const saveGame = (slotName: string) => {

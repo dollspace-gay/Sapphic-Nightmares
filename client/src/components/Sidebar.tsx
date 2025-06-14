@@ -87,16 +87,16 @@ export function Sidebar({ onShowSaveModal, onShowLoadModal }: SidebarProps) {
         <div className="bg-gray-800/50 rounded-lg p-4">
           <h4 className="font-ui font-semibold text-sm text-white mb-3">Your Status</h4>
           <div className="space-y-2 text-xs">
-            <div className="flex justify-between">
-              <span className="text-gray-300">Health:</span>
+            <div className="flex">
+              <span className="text-gray-300">Health: </span>
               <span className="text-white">{gameState.playerStats.health}</span>
             </div>
-            <div className="flex justify-between">
-              <span className="text-gray-300">Sanity:</span>
+            <div className="flex">
+              <span className="text-gray-300">Sanity: </span>
               <span className="text-white">{gameState.playerStats.sanity}</span>
             </div>
-            <div className="flex justify-between">
-              <span className="text-gray-300">Location:</span>
+            <div className="flex">
+              <span className="text-gray-300">Location: </span>
               <span className="text-white">{gameState.playerStats.location}</span>
             </div>
           </div>
