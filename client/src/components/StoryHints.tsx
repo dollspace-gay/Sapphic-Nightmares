@@ -122,16 +122,116 @@ export function StoryHints() {
       });
     }
 
-    // Player choice pattern analysis
-    const completedScenes = gameState.completedScenes;
-    if (completedScenes.length >= 5) {
-      const recentChoices = completedScenes.slice(-3);
-      // This could be expanded to analyze choice patterns and provide personalized advice
-      hints.push({
-        type: 'story',
-        title: 'Your Journey',
-        description: 'Your choices are shaping a unique path through this story. Trust your instincts.',
-        priority: 'low'
+    // Advanced player choice pattern analysis
+    const choiceHistory = gameState.choiceHistory || [];
+    if (choiceHistory.length >= 3) {
+      const recentChoices = choiceHistory.slice(-5);
+      
+      // Analyze choice consequences for patterns
+      const romanticChoices = recentChoices.filter(choice => 
+        choice.consequence.toLowerCase().includes('romantic') ||
+        choice.consequence.toLowerCase().includes('attraction') ||
+        choice.consequence.toLowerCase().includes('love')
+      );
+      
+      const cautiousChoices = recentChoices.filter(choice =>
+        choice.consequence.toLowerCase().includes('cautious') ||
+        choice.consequence.toLowerCase().includes('wisdom') ||
+        choice.consequence.toLowerCase().includes('practical')
+      );
+      
+      const boldChoices = recentChoices.filter(choice =>
+        choice.consequence.toLowerCase().includes('bold') ||
+        choice.consequence.toLowerCase().includes('confident') ||
+        choice.consequence.toLowerCase().includes('commit')
+      );
+
+      // Identify player's dominant choice pattern
+      if (romanticChoices.length >= 3) {
+        hints.push({
+          type: 'opportunity',
+          title: 'Romantic Heart',
+          description: 'You consistently choose love and connection. This path may lead to deep, transformative relationships.',
+          priority: 'medium'
+        });
+      }
+      
+      if (cautiousChoices.length >= 3) {
+        hints.push({
+          type: 'story',
+          title: 'Thoughtful Approach',
+          description: 'Your careful consideration is building trust slowly but surely. Patience often yields the deepest bonds.',
+          priority: 'medium'
+        });
+      }
+      
+      if (boldChoices.length >= 3) {
+        hints.push({
+          type: 'warning',
+          title: 'Bold Path',
+          description: 'Your confident choices create strong impressions. Some characters may find this attractive, others overwhelming.',
+          priority: 'medium'
+        });
+      }
+
+      // Character focus analysis
+      const characterChoiceCount: Record<string, number> = {};
+      recentChoices.forEach(choice => {
+        choice.characterEffects.forEach(effect => {
+          if (effect.affectionChange > 0) {
+            characterChoiceCount[effect.characterId] = (characterChoiceCount[effect.characterId] || 0) + 1;
+          }
+        });
+      });
+
+      const focusedCharacter = Object.entries(characterChoiceCount)
+        .reduce((max, [char, count]) => count > (max[1] || 0) ? [char, count] : max, ['', 0]);
+
+      if (focusedCharacter[1] >= 3 && gameState.characters[focusedCharacter[0]]) {
+        const character = gameState.characters[focusedCharacter[0]];
+        hints.push({
+          type: 'relationship',
+          title: 'Focused Affection',
+          description: `You're clearly drawn to ${character.name}. Continue this path to unlock their unique storyline.`,
+          character: focusedCharacter[0],
+          priority: 'medium'
+        });
+      }
+    }
+
+    // Relationship momentum analysis
+    if (choiceHistory.length >= 2) {
+      const recentAffectionChanges: Record<string, number[]> = {};
+      choiceHistory.slice(-3).forEach(choice => {
+        choice.characterEffects.forEach(effect => {
+          if (!recentAffectionChanges[effect.characterId]) {
+            recentAffectionChanges[effect.characterId] = [];
+          }
+          recentAffectionChanges[effect.characterId].push(effect.affectionChange);
+        });
+      });
+
+      Object.entries(recentAffectionChanges).forEach(([characterId, changes]) => {
+        const totalChange = changes.reduce((sum, change) => sum + change, 0);
+        const character = gameState.characters[characterId];
+        
+        if (totalChange >= 15 && character) {
+          hints.push({
+            type: 'opportunity',
+            title: 'Building Momentum',
+            description: `Your relationship with ${character.name} is gaining momentum. Major story developments may be ahead.`,
+            character: characterId,
+            priority: 'high'
+          });
+        } else if (totalChange <= -10 && character) {
+          hints.push({
+            type: 'warning',
+            title: 'Relationship Strain',
+            description: `Recent choices have created tension with ${character.name}. Consider their values in future decisions.`,
+            character: characterId,
+            priority: 'high'
+          });
+        }
       });
     }
 

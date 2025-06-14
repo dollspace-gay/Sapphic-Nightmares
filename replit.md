@@ -32,18 +32,26 @@ The application uses two main tables:
 - **GameContext**: Central state management for character relationships, current scene, and game progression
 - **Story System**: Structured chapters, scenes, and choices with character affection tracking
 - **Choice System**: Dynamic choice consequences that affect character relationships
+- **Choice History**: Tracks player decisions for adaptive storytelling analysis
 
 ### User Interface
 - **GameInterface**: Main game layout with sidebar and story panels
 - **StoryPanel**: Displays current scene text and character information
 - **ChoicePanel**: Interactive choice selection with visual feedback
-- **Sidebar**: Character relationship tracking and game management controls
+- **Sidebar**: Character relationship tracking, player stats, and adaptive story hints
 - **GameStateModal**: Save/load functionality with slot management
+- **StoryHints**: Adaptive storytelling hints based on player choice patterns
 
 ### Character System
 - **Character Profiles**: Three main characters (Lilith, Morgana, Seraphina) with affection tracking
 - **Relationship Status**: Dynamic status updates based on affection levels
 - **Visual Representation**: Color-coded character indicators and progress bars
+
+### Adaptive Storytelling System
+- **Choice Pattern Analysis**: Tracks romantic, cautious, and bold decision patterns
+- **Character Focus Detection**: Identifies which character the player is most interested in
+- **Relationship Momentum**: Analyzes recent affection changes to predict story developments
+- **Contextual Hints**: Provides personalized guidance based on current scene and history
 
 ## Data Flow
 
@@ -89,6 +97,7 @@ Changelog:
 - June 14, 2025. Integrated PostgreSQL database with Drizzle ORM
 - June 14, 2025. Restructured storylines with inheritance backstory and endgame transformation
 - June 14, 2025. Expanded branching narrative with character-specific romance paths
+- June 14, 2025. Implemented adaptive storytelling hints with choice pattern analysis
 ```
 
 ## User Preferences

@@ -732,5 +732,6 @@ export const initialGameState = {
   inventory: [],
   flags: {},
   completedScenes: [],
+  choiceHistory: [],
   isCharacterCreated: false
 };
