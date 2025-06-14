@@ -112,10 +112,6 @@ export function GameProvider({ children }: { children: ReactNode }) {
   
   // Load auto-save on mount only if it exists and is valid
   useEffect(() => {
-    // Temporary: Clear localStorage to test the fix (remove this line after testing)
-    localStorage.removeItem('crimsonEmbrace_autoSave');
-    console.log('Cleared localStorage for testing');
-    
     const autoSaveData = localStorage.getItem('crimsonEmbrace_autoSave');
     if (autoSaveData) {
       try {
@@ -126,7 +122,6 @@ export function GameProvider({ children }: { children: ReactNode }) {
         } else {
           // Clear invalid save data to ensure fresh start
           localStorage.removeItem('crimsonEmbrace_autoSave');
-          console.log('Cleared invalid auto-save data');
         }
       } catch (error) {
         console.error('Failed to load auto-save:', error);
@@ -137,19 +132,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
   
   const getCurrentScene = () => {
     const chapter = gameData[gameState.currentChapter];
-    const scene = chapter?.scenes.find(scene => scene.id === gameState.currentScene);
-    
-    // Debug logging (can be removed in production)
-    if (process.env.NODE_ENV === 'development') {
-      console.log('Current game state:', {
-        chapter: gameState.currentChapter,
-        scene: gameState.currentScene,
-        isCharacterCreated: gameState.isCharacterCreated,
-        sceneTitle: scene?.title
-      });
-    }
-    
-    return scene;
+    return chapter?.scenes.find(scene => scene.id === gameState.currentScene);
   };
   
   const makeChoice = (choice: Choice) => {

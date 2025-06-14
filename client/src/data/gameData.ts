@@ -714,6 +714,684 @@ export const gameData: Chapter[] = [
             nextScene: 'individual_connections'
           }
         ]
+      },
+      // Missing scenes that are referenced in choices
+      {
+        id: 'morgana_interest',
+        title: 'The Artist\'s Recognition',
+        text: [
+          'Morgana\'s silver eyes widen slightly, and she stands from the piano bench with fluid grace. "You understand," she says simply, but there\'s wonder in her voice. "Most hear only notes and melody. You hear the soul speaking."',
+          'She approaches you slowly, her dark hair cascading like liquid shadow. "That piece was born from a night when I realized that immortality meant watching every beautiful thing I\'d ever known fade away. Yet you heard not just the sorrow, but the beauty within it."',
+          'Lilith watches this exchange with interest, while the air between you and Morgana seems charged with artistic understanding. "Few have ever truly comprehended my music on first hearing," Morgana continues. "Perhaps you are more than you appear."'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'share_artistic_soul',
+            text: '"I\'ve always felt that art is the language of experiences too deep for words. Your music speaks to something in me I didn\'t know existed."',
+            consequence: 'Deep artistic connection • Profound bond',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }],
+            nextScene: 'artistic_souls_unite'
+          },
+          {
+            id: 'ask_about_inspiration',
+            text: '"What inspires you to create? How do you find beauty in eternal existence?"',
+            consequence: 'Philosophical question • Shows depth',
+            effects: [{ characterId: 'morgana', affectionChange: 18 }],
+            nextScene: 'morgana_philosophy'
+          },
+          {
+            id: 'request_collaboration',
+            text: '"I\'d love to understand your creative process. Could we... create something together?"',
+            consequence: 'Collaboration offer • Builds creative partnership',
+            effects: [{ characterId: 'morgana', affectionChange: 22 }],
+            nextScene: 'creative_partnership'
+          }
+        ]
+      },
+      {
+        id: 'morgana_composition',
+        title: 'Original Composition',
+        text: [
+          'Morgana\'s expression becomes contemplative. "It\'s an original piece - \'Echoes of What Was.\' I composed it fifty years ago when I was struggling with the weight of memory."',
+          'She runs her fingers along the piano\'s edge. "When you live for centuries, you accumulate so many memories of people you\'ve loved and lost, places that no longer exist, moments of beauty that only live in your mind."',
+          '"This piece attempts to capture that feeling - not quite nostalgia, not quite grief, but something uniquely vampiric. The longing for temporal connection when you yourself exist outside of time."',
+          'Her words carry the weight of genuine vulnerability, and you sense she rarely shares such personal insights about her work.'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'understand_loneliness',
+            text: '"That sounds profoundly lonely. How do you bear the weight of so much memory?"',
+            consequence: 'Empathetic response • Shows emotional intelligence',
+            effects: [{ characterId: 'morgana', affectionChange: 20 }],
+            nextScene: 'morgana_loneliness'
+          },
+          {
+            id: 'appreciate_beauty',
+            text: '"But those memories are also treasures. Your music makes them live again, shares them with others."',
+            consequence: 'Positive perspective • Helps her see beauty in pain',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }],
+            nextScene: 'morgana_hope'
+          },
+          {
+            id: 'ask_for_more_music',
+            text: '"Would you play it again? I\'d like to listen more carefully, to really understand what you\'re expressing."',
+            consequence: 'Shows deep interest • Validates her art',
+            effects: [{ characterId: 'morgana', affectionChange: 18 }],
+            nextScene: 'morgana_second_performance'
+          }
+        ]
+      },
+      {
+        id: 'morgana_observation',
+        title: 'The Silent Understanding',
+        text: [
+          'You remain quiet, sensing that Morgana is someone who values thoughtful silence over hasty words. She observes you for a long moment, her silver eyes seeming to read something in your demeanor.',
+          '"Wisdom," she says finally, with what might be approval. "Too many people feel compelled to fill silence with meaningless chatter. You understand that some moments require contemplation."',
+          'She returns to the piano, playing a few soft, experimental notes. "Lilith, your guest has an interesting quality. She listens not just with her ears, but with her entire being."',
+          'Lilith smiles knowingly. "I thought you might appreciate that about her. She sees beyond the surface of things."'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'acknowledge_compliment',
+            text: '"Thank you. I\'ve learned that the most profound communications often happen in the spaces between words."',
+            consequence: 'Philosophical response • Shows depth',
+            effects: [{ characterId: 'morgana', affectionChange: 22 }],
+            nextScene: 'philosophical_connection'
+          },
+          {
+            id: 'ask_about_silence',
+            text: '"Do you find that immortality makes silence more precious? With eternity stretching ahead, perhaps quiet moments become more valuable."',
+            consequence: 'Thoughtful question • Shows understanding of immortal perspective',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }],
+            nextScene: 'silence_discussion'
+          },
+          {
+            id: 'express_gratitude',
+            text: '"I\'m honored that you would share your music with a stranger. Art is such a personal gift."',
+            consequence: 'Grateful response • Shows appreciation for art',
+            effects: [{ characterId: 'morgana', affectionChange: 18 }],
+            nextScene: 'artistic_gratitude'
+          }
+        ]
+      },
+      {
+        id: 'seraphina_truth',
+        title: 'Angelic Revelation',
+        text: [
+          'Seraphina\'s smile is both sad and beautiful. "I was, once upon a time. A guardian angel, assigned to protect humanity from supernatural threats that would otherwise overwhelm them."',
+          'As she speaks, the shimmer behind her becomes more visible - magnificent wings that seem to be made of condensed starlight and divine grace. "But I fell in love with the very beings I was meant to protect from a distance."',
+          '"When Heaven commanded me to remain detached, to let humans face their trials without direct intervention, I... rebelled. Love, I discovered, is stronger than duty, more divine than obedience."',
+          'Her wings fold closer to her body, but remain visible. "I chose to fall rather than abandon those I had grown to love. And in falling, I found my true purpose."'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'admire_sacrifice',
+            text: '"You gave up paradise for love? That\'s not falling - that\'s the most divine act imaginable."',
+            consequence: 'Validates her choice • Profound emotional impact',
+            effects: [{ characterId: 'seraphina', affectionChange: 30 }],
+            nextScene: 'divine_validation'
+          },
+          {
+            id: 'ask_about_consequences',
+            text: '"What were the consequences of your choice? Do you ever regret it?"',
+            consequence: 'Thoughtful question • Shows understanding of sacrifice',
+            effects: [{ characterId: 'seraphina', affectionChange: 18 }],
+            nextScene: 'consequences_discussion'
+          },
+          {
+            id: 'touch_her_wing',
+            text: 'Gently reach out toward her wing. "May I? They\'re beautiful."',
+            consequence: 'Intimate gesture • Shows acceptance and wonder',
+            effects: [{ characterId: 'seraphina', affectionChange: 25 }],
+            nextScene: 'wing_touch_scene'
+          }
+        ]
+      },
+      {
+        id: 'seraphina_promise',
+        title: 'Guardian\'s Vow',
+        text: [
+          'Seraphina\'s expression grows solemn and deeply moved. "Your trust is a gift I will treasure," she says, her voice carrying the weight of divine promise. "I swear to you, by all that I am and all that I was, no harm will come to you while I draw breath."',
+          'She extends her hand, and when you take it, you feel a warmth that seems to flow directly into your soul. "I have watched over mortals for millennia, but never has anyone placed their faith in me so completely, so immediately."',
+          '"You remind me why I chose love over duty," she continues, her pale blue eyes shining. "Why I believed that connection and compassion were more sacred than celestial hierarchy."',
+          'Around you, the very air seems to shimmer with protective energy, and you feel safer than you have in your entire life.'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'reciprocate_protection',
+            text: '"And I promise to trust you completely. You have something pure about you that calls to my soul."',
+            consequence: 'Mutual bond • Deep emotional connection',
+            effects: [{ characterId: 'seraphina', affectionChange: 28 }],
+            nextScene: 'mutual_protection_bond'
+          },
+          {
+            id: 'ask_about_purpose',
+            text: '"You said you found your true purpose in falling. What is that purpose now?"',
+            consequence: 'Philosophical question • Shows interest in her journey',
+            effects: [{ characterId: 'seraphina', affectionChange: 20 }],
+            nextScene: 'purpose_revelation'
+          },
+          {
+            id: 'express_wonder',
+            text: '"I can feel the protection around me. It\'s like being wrapped in pure love and safety."',
+            consequence: 'Acknowledges her power • Shows spiritual sensitivity',
+            effects: [{ characterId: 'seraphina', affectionChange: 25 }],
+            nextScene: 'spiritual_connection'
+          }
+        ]
+      },
+      {
+        id: 'danger_revealed',
+        title: 'The Shadows Beyond',
+        text: [
+          'Seraphina and Lilith exchange a meaningful look before Seraphina speaks. "There are... others of our kind who do not share our philosophy about coexistence with mortals."',
+          '"Ravencroft Manor exists as a sanctuary because your great-aunt established it with powerful protections," Lilith adds. "But those protections only extend so far, and there are those who would see our peaceful existence here as a threat to the old ways."',
+          'Seraphina\'s expression grows grave. "Some vampires believe mortals are only good for feeding. Some angels see my choice to fall as an abomination that must be corrected. And there are darker things than either that hunt in the spaces between worlds."',
+          '"Your inheritance of this place makes you a target," Lilith says quietly. "Not because of who you are, but because of what you represent - the continuation of Cordelia\'s legacy of protection and peace."'
+        ],
+        choices: [
+          {
+            id: 'accept_danger',
+            text: '"I understand the risks. If Cordelia could face these dangers, so can I."',
+            consequence: 'Brave acceptance • Shows courage and determination',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }, { characterId: 'seraphina', affectionChange: 25 }],
+            nextScene: 'courage_acknowledged'
+          },
+          {
+            id: 'ask_for_training',
+            text: '"Then teach me. Help me understand how to protect myself and this place."',
+            consequence: 'Practical approach • Shows willingness to learn',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'seraphina', affectionChange: 22 }],
+            nextScene: 'training_begins'
+          },
+          {
+            id: 'fear_but_determined',
+            text: '"I\'m terrified, but I won\'t run. This place meant something to Cordelia, and now it means something to me."',
+            consequence: 'Honest vulnerability • Shows emotional strength',
+            effects: [{ characterId: 'seraphina', affectionChange: 28 }, { characterId: 'morgana', affectionChange: 15 }],
+            nextScene: 'determined_despite_fear'
+          }
+        ]
+      },
+      // Additional missing scenes for complete story flow
+      {
+        id: 'coven_explanation',
+        title: 'The Ancient Bond',
+        text: [
+          'Lilith pauses thoughtfully. "Three of us call this place home permanently. Myself, Morgana, and Seraphina. We are... an unusual coven, bound not by blood or maker, but by choice and circumstance."',
+          '"Morgana was turned during the Renaissance - a brilliant composer whose music was too pure for mortal understanding. Seraphina... she chose to fall from grace rather than abandon those she had grown to love."',
+          '"And I am the eldest, turned during the dark ages when survival meant learning to find beauty in shadow. We came together here because we shared a vision - that our eternal existence could be used for preservation rather than destruction."',
+          'Her voice grows warmer. "Your great-aunt understood this. She helped us create something unprecedented - a sanctuary where supernatural beings could exist peacefully, contributing rather than consuming."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_about_cordelia_role',
+            text: '"What exactly was Cordelia\'s role in all this? How did a mortal woman become so important to immortal beings?"',
+            consequence: 'Seeks understanding • Shows wisdom',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'cordelia_legacy_revealed'
+          },
+          {
+            id: 'express_honor',
+            text: '"I\'m honored to inherit such a meaningful legacy. I want to understand how I can continue what she started."',
+            consequence: 'Accepts responsibility • Shows commitment',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }, { characterId: 'morgana', affectionChange: 10 }, { characterId: 'seraphina', affectionChange: 15 }],
+            nextScene: 'legacy_continuation'
+          },
+          {
+            id: 'ask_about_others',
+            text: '"Are there other places like this? Other covens trying to coexist peacefully?"',
+            consequence: 'Broader perspective • Shows strategic thinking',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'wider_world_discussion'
+          }
+        ]
+      },
+      {
+        id: 'formal_introductions',
+        title: 'Proper Greetings',
+        text: [
+          'Your formal approach seems to please all three women. Morgana inclines her head gracefully. "Cordelia spoke of you often in her letters. She was very proud of your accomplishments in the mortal world."',
+          'Seraphina moves closer, her presence radiating warmth and protection. "She also mentioned your open mind and kind heart. Qualities that are rare and precious in any world."',
+          'Lilith watches the interaction with approval. "Your great-aunt chose well when she named you as her heir. This place requires someone who can respect the delicate balance we\'ve created here."',
+          'The room feels charged with possibility, as if this moment is the beginning of something significant. You sense that your response here will set the tone for all future relationships.'
+        ],
+        choices: [
+          {
+            id: 'ask_about_letters',
+            text: '"Cordelia wrote about me? What did she tell you?"',
+            consequence: 'Personal curiosity • Shows interest in connection',
+            effects: [{ characterId: 'lilith', affectionChange: 8 }, { characterId: 'morgana', affectionChange: 10 }, { characterId: 'seraphina', affectionChange: 12 }],
+            nextScene: 'cordelia_letters'
+          },
+          {
+            id: 'express_uncertainty',
+            text: '"I hope I can live up to her example. This is all so new and overwhelming."',
+            consequence: 'Honest vulnerability • Invites guidance',
+            effects: [{ characterId: 'seraphina', affectionChange: 18 }, { characterId: 'morgana', affectionChange: 8 }],
+            nextScene: 'reassurance_offered'
+          },
+          {
+            id: 'ask_about_balance',
+            text: '"What kind of balance? I want to understand what maintaining this sanctuary truly means."',
+            consequence: 'Practical focus • Shows responsibility',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }, { characterId: 'seraphina', affectionChange: 10 }],
+            nextScene: 'sanctuary_responsibilities'
+          }
+        ]
+      },
+      {
+        id: 'sanctuary_explanation',
+        title: 'Haven of the Supernatural',
+        text: [
+          'The three women exchange meaningful glances before Lilith speaks. "A sanctuary, in our world, is more than just a safe place. It\'s a location where supernatural beings can exist without the constant threat of hunters, hostile covens, or celestial judgment."',
+          'Seraphina adds, "The protections here are both mystical and practical. Cordelia worked with us to establish wards that hide our presence from those who would do us harm, while also preventing us from causing harm to innocents."',
+          'Morgana\'s voice is soft but clear. "It means we can pursue beauty, creation, and connection rather than mere survival. We can grow and learn rather than simply endure."',
+          'Lilith concludes, "But such places are rare and precious. They require constant maintenance, both magical and mundane. And they require a mortal anchor - someone who bridges our world and yours."'
+        ],
+        choices: [
+          {
+            id: 'accept_anchor_role',
+            text: '"And now I\'m meant to be that anchor? I accept that responsibility."',
+            consequence: 'Accepts destiny • Major story commitment',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }, { characterId: 'morgana', affectionChange: 20 }, { characterId: 'seraphina', affectionChange: 30 }],
+            nextScene: 'anchor_accepted'
+          },
+          {
+            id: 'ask_about_dangers',
+            text: '"What happens if the sanctuary fails? What are we protected from exactly?"',
+            consequence: 'Seeks understanding of stakes • Shows wisdom',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'protection_details'
+          },
+          {
+            id: 'ask_about_magic',
+            text: '"How do the wards work? Is there magic I need to learn or maintain?"',
+            consequence: 'Practical questions • Shows readiness to learn',
+            effects: [{ characterId: 'morgana', affectionChange: 18 }, { characterId: 'seraphina', affectionChange: 15 }],
+            nextScene: 'magical_education'
+          }
+        ]
+      },
+      {
+        id: 'transformation_begin',
+        title: 'The Path to Eternity',
+        text: [
+          'Lilith\'s eyes blaze with an intensity that takes your breath away. "You would truly choose this path? Even knowing that there is no return, no reversal?"',
+          'She takes your hands, her grip firm and cool. "The transformation is not something that can be rushed or taken lightly. It requires perfect trust, absolute love, and complete understanding of what you sacrifice and what you gain."',
+          '"Your mortality, your human connections, your relationship with time itself - all of this will change forever. But you will gain strength, immortality, and a depth of experience beyond mortal comprehension."',
+          'Her voice drops to a whisper. "Most importantly, you will gain the ability to love with the intensity of centuries, to protect what matters with supernatural power, and to create beauty that outlasts civilizations."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'reaffirm_choice',
+            text: '"I understand the cost and I accept it willingly. I want to share eternity with you."',
+            consequence: 'Complete commitment • Begins transformation arc',
+            effects: [{ characterId: 'lilith', affectionChange: 35 }],
+            nextScene: 'transformation_ritual_begins'
+          },
+          {
+            id: 'need_more_time',
+            text: '"I want this, but I need more time to fully understand what I\'m choosing. Can we wait until I\'m completely certain?"',
+            consequence: 'Thoughtful caution • Delays but doesn\'t reject',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'transformation_delayed'
+          },
+          {
+            id: 'ask_about_process',
+            text: '"Tell me everything about the transformation process. I want to understand every detail before I commit."',
+            consequence: 'Seeks complete knowledge • Shows wisdom',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'transformation_education_detailed'
+          }
+        ]
+      },
+      // Complete the remaining missing scenes
+      {
+        id: 'artistic_souls_unite',
+        title: 'Kindred Spirits',
+        text: [
+          'Morgana\'s eyes light up with a joy you sense she rarely experiences. "Finally," she breathes, "someone who understands that creation is the closest thing to divine communion available to our kind."',
+          'She moves to stand beside you, and you feel an electric connection of shared artistic passion. "I have composed for centuries, but always in isolation. The idea of sharing that creative fire with another soul..."',
+          'Her hand hovers near yours. "Would you truly wish to explore that path with me? To dive deep into the wells of inspiration and see what we might create together?"',
+          'The offer carries weight beyond mere collaboration - this is an invitation into the most sacred part of her immortal existence.'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'accept_creative_bond',
+            text: '"Yes, absolutely. I want to explore every facet of creativity with you."',
+            consequence: 'Deep artistic partnership • Major relationship progression',
+            effects: [{ characterId: 'morgana', affectionChange: 35 }],
+            nextScene: 'creative_communion'
+          },
+          {
+            id: 'express_honor',
+            text: '"I\'m honored you would trust me with something so personal and sacred to you."',
+            consequence: 'Respectful appreciation • Builds trust',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }],
+            nextScene: 'honored_trust'
+          },
+          {
+            id: 'ask_about_process',
+            text: '"How do we begin? What does collaborative creation look like for an immortal artist?"',
+            consequence: 'Practical interest • Shows commitment to learning',
+            effects: [{ characterId: 'morgana', affectionChange: 20 }],
+            nextScene: 'creative_process_explanation'
+          }
+        ]
+      },
+      {
+        id: 'divine_validation',
+        title: 'The Highest Love',
+        text: [
+          'Seraphina\'s entire being seems to radiate pure light as tears of joy stream down her face. "Never... in all my millennia of existence... has anyone seen my choice as divine rather than damning."',
+          'She takes your hands, and you feel the warmth of starlight flowing between you. "Heaven taught me that love should be conditional, measured, controlled. But when I saw mortals love fiercely, completely, without reservation... I knew they understood something divine that angels had forgotten."',
+          '"You see it too," she whispers in wonder. "That love without limits, compassion without judgment, protection without dominion - these are the truly sacred acts."',
+          'Her wings spread wide, magnificent and glowing, as if your words have restored something fundamental to her nature.'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'embrace_her_truth',
+            text: '"Your love is the most divine thing I\'ve ever witnessed. Thank you for choosing to fall."',
+            consequence: 'Complete validation • Profound spiritual connection',
+            effects: [{ characterId: 'seraphina', affectionChange: 40 }],
+            nextScene: 'spiritual_awakening'
+          },
+          {
+            id: 'ask_about_heaven',
+            text: '"What was Heaven like before you understood the true nature of love?"',
+            consequence: 'Deep philosophical question • Shows interest in her journey',
+            effects: [{ characterId: 'seraphina', affectionChange: 25 }],
+            nextScene: 'heaven_memories'
+          },
+          {
+            id: 'offer_comfort',
+            text: 'Gently wipe her tears. "You don\'t have to carry that pain alone anymore."',
+            consequence: 'Tender gesture • Offers emotional support',
+            effects: [{ characterId: 'seraphina', affectionChange: 30 }],
+            nextScene: 'comfort_accepted'
+          }
+        ]
+      },
+      {
+        id: 'courage_acknowledged',
+        title: 'Worthy Heir',
+        text: [
+          'Both Lilith and Seraphina regard you with new respect. "Cordelia would be proud," Lilith says quietly. "She faced these same dangers with exactly that kind of determined courage."',
+          'Seraphina nods approvingly. "True bravery isn\'t the absence of fear - it\'s choosing to stand firm despite that fear. You have the heart of a protector."',
+          'Morgana, who has been quietly observing, speaks up. "Courage, yes. But also wisdom. You understand that some things are worth fighting for, worth risking everything to preserve."',
+          'The three exchange meaningful looks. "Very well," Lilith decides. "If you truly wish to continue Cordelia\'s legacy, then we will teach you what you need to know."'
+        ],
+        choices: [
+          {
+            id: 'eager_to_learn',
+            text: '"I\'m ready to learn everything. Where do we start?"',
+            consequence: 'Enthusiastic commitment • Opens training paths',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }, { characterId: 'seraphina', affectionChange: 18 }, { characterId: 'morgana', affectionChange: 12 }],
+            nextScene: 'training_begins'
+          },
+          {
+            id: 'ask_about_cordelia_struggles',
+            text: '"What challenges did Cordelia face? I want to understand what I\'m truly inheriting."',
+            consequence: 'Seeks wisdom from history • Shows thoughtfulness',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }, { characterId: 'morgana', affectionChange: 15 }],
+            nextScene: 'cordelia_challenges'
+          },
+          {
+            id: 'express_gratitude',
+            text: '"Thank you for trusting me with this responsibility. I won\'t let you down."',
+            consequence: 'Grateful acceptance • Builds trust',
+            effects: [{ characterId: 'seraphina', affectionChange: 20 }, { characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'trust_established'
+          }
+        ]
+      },
+      {
+        id: 'anchor_accepted',
+        title: 'The Sacred Covenant',
+        text: [
+          'The three women exchange glances filled with relief and hope. "Then it is decided," Lilith says with formal gravity. "You accept the role of Anchor to Ravencroft Sanctuary."',
+          'Seraphina steps forward, her wings becoming visible and spreading wide. "By my divine nature, I witness this covenant."',
+          'Morgana rises from the piano, her silver eyes bright. "By my artistic soul, I witness this covenant."',
+          'Lilith places her hand over her heart. "By my ancient blood, I witness this covenant. You are now bound to this place and to us, as we are bound to you."',
+          'You feel something fundamental shift in the air around you - a sense of belonging, of purpose, of destiny fulfilled.'
+        ],
+        choices: [
+          {
+            id: 'embrace_destiny',
+            text: '"I feel it - the connection, the responsibility. I\'m exactly where I\'m meant to be."',
+            consequence: 'Complete acceptance • Unlocks full sanctuary powers',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }, { characterId: 'morgana', affectionChange: 25 }, { characterId: 'seraphina', affectionChange: 35 }],
+            nextScene: 'sanctuary_awakening'
+          },
+          {
+            id: 'ask_about_powers',
+            text: '"What does this mean for me? What abilities or responsibilities do I now have?"',
+            consequence: 'Practical questions • Shows readiness to learn',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }, { characterId: 'seraphina', affectionChange: 18 }],
+            nextScene: 'anchor_powers_explained'
+          },
+          {
+            id: 'solemn_vow',
+            text: '"I swear to protect this sanctuary and everyone in it with my life."',
+            consequence: 'Sacred oath • Deep commitment',
+            effects: [{ characterId: 'seraphina', affectionChange: 30 }, { characterId: 'lilith', affectionChange: 25 }, { characterId: 'morgana', affectionChange: 20 }],
+            nextScene: 'sacred_vow_sealed'
+          }
+        ]
+      },
+      {
+        id: 'training_begins',
+        title: 'The First Lessons',
+        text: [
+          'Over the following days, your education in the supernatural world begins in earnest. Lilith teaches you about vampire politics and the delicate balance of power between different supernatural factions.',
+          'Seraphina instructs you in protective wards and divine energy manipulation, showing you how to channel your mortal life force in ways that can shield both yourself and others.',
+          'Morgana shares the deeper mysteries - how music and art can bind spirits, how creativity itself can be a form of magic, how beauty can be a weapon against darkness.',
+          'You discover that being the Anchor gives you unique abilities: you can sense supernatural presences, strengthen the manor\'s protections, and even provide energy to your immortal companions when they need it most.'
+        ],
+        choices: [
+          {
+            id: 'focus_on_protection',
+            text: 'Concentrate on learning protective magic and defensive strategies.',
+            consequence: 'Guardian path • Builds defensive abilities',
+            effects: [{ characterId: 'seraphina', affectionChange: 25 }, { characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'guardian_training'
+          },
+          {
+            id: 'focus_on_diplomacy',
+            text: 'Study supernatural politics and inter-faction relations.',
+            consequence: 'Diplomat path • Builds knowledge and connections',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }, { characterId: 'morgana', affectionChange: 10 }],
+            nextScene: 'diplomatic_training'
+          },
+          {
+            id: 'focus_on_creativity',
+            text: 'Dive deep into the mystical aspects of art and creation.',
+            consequence: 'Artist path • Builds creative magical abilities',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }, { characterId: 'seraphina', affectionChange: 15 }],
+            nextScene: 'creative_magic_training'
+          }
+        ]
+      },
+      // Final batch of missing scenes
+      {
+        id: 'morgana_philosophy',
+        title: 'The Eternal Creative Soul',
+        text: [
+          'Morgana settles beside the piano, her fingers absently playing soft, contemplative notes. "Inspiration... it changes when you have eternity to pursue it. At first, I thought immortality would mean endless creativity, infinite time to perfect my craft."',
+          '"But I discovered something unexpected," she continues, her voice carrying centuries of experience. "Beauty becomes more precious when you understand how fleeting it truly is. Each perfect moment, each sublime melody, each connection with another soul - these become sacred because they exist in defiance of an indifferent universe."',
+          'Her playing grows more complex, weaving melodies that seem to capture the very essence of longing. "I find inspiration in mortality itself - in the courage of mortals who create knowing their time is limited, in the intensity of love that burns bright precisely because it cannot last forever."',
+          'She looks at you directly. "You inspire me because you represent both the beauty and the brevity that gives meaning to art."'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'philosophical_depth',
+            text: '"So immortality taught you to value mortal perspective? That\'s beautifully paradoxical."',
+            consequence: 'Deep understanding • Appreciates the irony',
+            effects: [{ characterId: 'morgana', affectionChange: 30 }],
+            nextScene: 'paradox_appreciation'
+          },
+          {
+            id: 'offer_collaboration',
+            text: '"Then let me share my mortal perspective with your immortal artistry. What could we create together?"',
+            consequence: 'Collaboration offer • Bridges mortal/immortal divide',
+            effects: [{ characterId: 'morgana', affectionChange: 35 }],
+            nextScene: 'creative_partnership'
+          },
+          {
+            id: 'express_honor',
+            text: '"Being your inspiration is the highest compliment I could receive from an artist of your caliber."',
+            consequence: 'Gracious response • Shows humility',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }],
+            nextScene: 'artistic_appreciation'
+          }
+        ]
+      },
+      {
+        id: 'wing_touch_scene',
+        title: 'Sacred Contact',
+        text: [
+          'Seraphina nods, extending one magnificent wing toward you. "Few mortals have ever touched an angel\'s wing. Even fewer have done so with such reverence."',
+          'Your fingers make contact with the soft, luminous feathers, and immediately you feel a surge of warmth and peace unlike anything you\'ve ever experienced. The wing is simultaneously substantial and ethereal, like touching solidified starlight.',
+          'Through the contact, you sense glimpses of her memories - soaring through celestial realms, standing guard over sleeping mortals, the moment she chose love over duty and felt her connection to Heaven strain and finally break.',
+          '"You feel it, don\'t you?" she whispers. "The weight of divine purpose transformed into something more personal, more real." Her wing curves slightly, as if embracing your touch. "This is what love truly is - choosing connection over perfection."'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'understand_sacrifice',
+            text: '"I can feel the magnitude of what you gave up, and the beauty of what you gained instead."',
+            consequence: 'Deep empathy • Understands divine sacrifice',
+            effects: [{ characterId: 'seraphina', affectionChange: 35 }],
+            nextScene: 'divine_understanding'
+          },
+          {
+            id: 'marvel_at_beauty',
+            text: '"Your wings are the most beautiful thing I\'ve ever seen. Thank you for trusting me with this."',
+            consequence: 'Appreciation • Shows wonder and gratitude',
+            effects: [{ characterId: 'seraphina', affectionChange: 28 }],
+            nextScene: 'beauty_acknowledged'
+          },
+          {
+            id: 'ask_about_flight',
+            text: '"Do you still fly? Do you miss the celestial realms?"',
+            consequence: 'Curious question • Shows interest in her nature',
+            effects: [{ characterId: 'seraphina', affectionChange: 20 }],
+            nextScene: 'flight_memories'
+          }
+        ]
+      },
+      {
+        id: 'morgana_loneliness',
+        title: 'The Weight of Memory',
+        text: [
+          'Morgana\'s expression grows distant and melancholy. "The loneliness... it\'s not what mortals imagine. It\'s not about being alone - it\'s about being the sole keeper of countless precious memories."',
+          '"I remember the sound of rain on cobblestones in Prague, 1894. The laughter of a child I taught piano to in Vienna, 1847. The way candlelight looked in my lover\'s eyes in Rome, 1623." Her voice grows softer. "All of those people, all of those moments... they live only in my memory now."',
+          'She plays a few haunting notes. "Sometimes I feel like a living museum, preserving beauty that would otherwise be lost forever. But museums are cold, solitary places."',
+          'Her silver eyes find yours. "Until tonight, I had resigned myself to being the sole guardian of all that beautiful loss. But perhaps... perhaps some memories are meant to be shared."'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'offer_to_share_burden',
+            text: '"Let me help you carry that weight. Share those memories with me - let them live in two hearts instead of one."',
+            consequence: 'Generous offer • Willingness to share emotional burden',
+            effects: [{ characterId: 'morgana', affectionChange: 40 }],
+            nextScene: 'memory_sharing'
+          },
+          {
+            id: 'create_new_memories',
+            text: '"Then let\'s create new memories together. Beautiful moments that we can both treasure."',
+            consequence: 'Forward-looking • Focus on creating rather than preserving',
+            effects: [{ characterId: 'morgana', affectionChange: 35 }],
+            nextScene: 'new_memory_creation'
+          },
+          {
+            id: 'appreciate_preservation',
+            text: '"You\'re not just a museum - you\'re a living testament to the power of beauty to transcend time."',
+            consequence: 'Reframes perspective • Shows deep appreciation',
+            effects: [{ characterId: 'morgana', affectionChange: 30 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'consequences_discussion',
+        title: 'The Price of Love',
+        text: [
+          'Seraphina\'s expression grows thoughtful, tinged with both sadness and resolve. "The consequences were... severe. When an angel chooses to fall, it\'s not simply a matter of relocation. It\'s a fundamental transformation of your very essence."',
+          '"I lost my direct connection to the Divine Source, my ability to exist in multiple planes simultaneously, my perfect certainty about the nature of good and evil." She touches her wings gently. "These wings, once instruments of celestial power, became symbols of my exile."',
+          '"But more than that," she continues, her voice growing stronger, "I lost the community of my fellow angels, the perfect harmony of celestial existence, the comfort of absolute purpose and unquestioning faith."',
+          'Her pale blue eyes meet yours. "And yet... I have never regretted it. Every loss pales beside what I gained - the ability to truly love, to choose compassion over duty, to be more than what I was created to be."'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'admire_growth',
+            text: '"You didn\'t lose yourself - you found yourself. You became more than heaven intended."',
+            consequence: 'Celebrates personal growth • Validates transformation',
+            effects: [{ characterId: 'seraphina', affectionChange: 35 }],
+            nextScene: 'transformation_celebration'
+          },
+          {
+            id: 'offer_community',
+            text: '"You lost one community but gained another. Here, with Lilith and Morgana... and now with me."',
+            consequence: 'Offers belonging • Creates new connections',
+            effects: [{ characterId: 'seraphina', affectionChange: 30 }],
+            nextScene: 'new_community'
+          },
+          {
+            id: 'acknowledge_sacrifice',
+            text: '"Such a profound sacrifice, made out of pure love. I\'m in awe of your courage."',
+            consequence: 'Respectful acknowledgment • Shows understanding',
+            effects: [{ characterId: 'seraphina', affectionChange: 25 }],
+            nextScene: 'courage_recognition'
+          }
+        ]
+      },
+      {
+        id: 'cordelia_legacy_revealed',
+        title: 'The Guardian\'s Tale',
+        text: [
+          'Lilith\'s expression becomes reverent as she speaks of your great-aunt. "Cordelia was extraordinary, even by the standards of remarkable mortals. She inherited this manor when she was barely twenty-five, much as you have now."',
+          '"But unlike most mortals who discover the supernatural world, she didn\'t flee or try to destroy what she found. Instead, she saw possibility where others saw only danger." Lilith moves to an old portrait on the wall. "She proposed something unprecedented - a sanctuary where supernatural beings could exist peacefully, contributing to the world rather than merely surviving in it."',
+          '"For sixty years, she served as our anchor to the mortal world, helping us navigate human society while protecting us from those who would hunt us. She facilitated peace treaties between hostile factions, provided safe passage for refugees from supernatural conflicts, and maintained the delicate balance that keeps this place hidden."',
+          'Her voice grows warm with affection. "But more than that, she loved us - not as exotic curiosities or dangerous creatures to be managed, but as individuals deserving of friendship and respect. She was the first mortal to see us as more than our supernatural natures."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'honor_legacy',
+            text: '"I want to continue her work, to be worthy of the trust she built and the love she shared."',
+            consequence: 'Accepts legacy • Major commitment to sanctuary',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }, { characterId: 'morgana', affectionChange: 20 }, { characterId: 'seraphina', affectionChange: 25 }],
+            nextScene: 'legacy_acceptance'
+          },
+          {
+            id: 'ask_about_love',
+            text: '"Did she ever fall in love with any of you? How did she handle those feelings?"',
+            consequence: 'Personal question • Seeks guidance on mortal/immortal love',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'cordelia_love_story'
+          },
+          {
+            id: 'understand_challenges',
+            text: '"What were the greatest challenges she faced? What almost broke the sanctuary?"',
+            consequence: 'Strategic thinking • Prepares for future challenges',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'sanctuary_challenges'
+          }
+        ]
       }
     ]
   }
