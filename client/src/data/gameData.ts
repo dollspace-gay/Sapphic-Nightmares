@@ -1638,6 +1638,372 @@ export const gameData: Chapter[] = [
             nextScene: 'patient_guidance'
           }
         ]
+      },
+      // Trait-specific special scenes
+      {
+        id: 'psychic_revelation',
+        title: 'Supernatural Sight',
+        text: [
+          'You close your eyes and extend your psychic senses, feeling the supernatural currents that flow through Ravencroft Manor like invisible rivers of power.',
+          'Immediately, you sense multiple presences - ancient, powerful, and decidedly non-human. Lilith\'s aura pulses with dark crimson energy, centuries of accumulated power wrapped around a core of surprising vulnerability.',
+          'But there are others. Upstairs, you sense a silver-bright presence tinged with melancholy - someone who creates beauty from pain. And somewhere else, a golden light that feels like starlight and sacrifice, warm but touched by loss.',
+          'Your psychic sight also reveals the manor itself is alive with protective energy, wards woven into the very stones. This place is a fortress against supernatural threats.'
+        ],
+        choices: [
+          {
+            id: 'share_psychic_insight',
+            text: 'Share what you\'ve sensed with Lilith.',
+            consequence: 'Reveals psychic abilities • Builds trust through honesty',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'psychic_acknowledged'
+          },
+          {
+            id: 'keep_insight_private',
+            text: 'Keep your supernatural perception to yourself for now.',
+            consequence: 'Maintains mystery • Allows for strategic advantage',
+            effects: [{ characterId: 'lilith', affectionChange: 5 }],
+            nextScene: 'psychic_hidden'
+          },
+          {
+            id: 'ask_about_others',
+            text: 'Ask about the other presences you sense in the manor.',
+            consequence: 'Shows awareness • Demonstrates psychic accuracy',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'psychic_accuracy_confirmed'
+          }
+        ]
+      },
+      {
+        id: 'blood_sight_revelation',
+        title: 'The True Nature Revealed',
+        text: [
+          'You focus your blood sight, a rare gift that allows you to perceive the supernatural nature of beings by observing their life force.',
+          'Lilith\'s form shimmers, and you see her true nature - an ancient vampire of immense power, her blood darkened by centuries but still flowing with unnatural vitality. She is old, perhaps four hundred years or more.',
+          'Through the walls, you glimpse two other supernatural signatures. One burns with silver fire - another vampire, but one who retains more humanity. The other glows with divine light, though it\'s dimmed as if something has fallen from grace.',
+          'Most remarkably, you see threads of connection between all three, bonds forged not by blood but by choice, loyalty, and something deeper than friendship.'
+        ],
+        choices: [
+          {
+            id: 'comment_on_age',
+            text: '"You\'re very old, aren\'t you? Four centuries, perhaps more."',
+            consequence: 'Shows supernatural perception • Impresses with accuracy',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'age_accuracy'
+          },
+          {
+            id: 'mention_connections',
+            text: '"I can see the bonds between you three. They\'re beautiful - like family ties made of choice rather than blood."',
+            consequence: 'Perceives relationships • Shows emotional insight',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'bond_recognition'
+          },
+          {
+            id: 'offer_discretion',
+            text: '"Your secrets are safe with me. I understand why you value privacy."',
+            consequence: 'Promises discretion • Builds trust',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'discretion_valued'
+          }
+        ]
+      },
+      {
+        id: 'athletic_demonstration',
+        title: 'Physical Confidence',
+        text: [
+          'Moving with the fluid grace of someone comfortable in their body, you demonstrate your athletic nature. Perhaps it\'s the way you carry yourself, balanced and alert, or how you navigate the manor\'s corridors with confident steps.',
+          'Lilith notices immediately. "You move like someone who takes care of their body. That\'s wise, especially in our world where physical capability can mean the difference between life and death."',
+          'She gestures toward a portrait of a woman in riding attire. "Your great-aunt was also athletic in her youth. She believed that a strong body housed a strong spirit, and both were necessary for the challenges she faced here."',
+          'There\'s approval in her gaze as she continues. "Physical prowess will serve you well. There may come times when you need to run, fight, or simply endure more than most mortals could manage."'
+        ],
+        choices: [
+          {
+            id: 'ask_about_challenges',
+            text: '"What kind of physical challenges might I face here?"',
+            consequence: 'Practical preparation • Shows readiness for danger',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'physical_challenges_explained'
+          },
+          {
+            id: 'offer_protection',
+            text: '"I can handle myself, and I\'d be willing to help protect others if needed."',
+            consequence: 'Protective offer • Shows courage and strength',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'protection_offered'
+          },
+          {
+            id: 'connect_with_cordelia',
+            text: '"I\'d like to hear more about Cordelia\'s experiences. We seem to share similar strengths."',
+            consequence: 'Family connection • Shows interest in legacy',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'cordelia_physical_stories'
+          }
+        ]
+      },
+      {
+        id: 'creative_insight',
+        title: 'The Artist\'s Perspective',
+        text: [
+          'Your creative nature allows you to see beyond the surface of things, to perceive the artistic composition of the moment - the way candlelight creates dramatic shadows, how Lilith\'s pose echoes classical portraiture, the musical quality of her voice.',
+          '"This place is like a living artwork," you observe. "Every detail seems deliberately chosen to create atmosphere and meaning. The architecture, the lighting, even the way you speak - it\'s all composed like a symphony."',
+          'Lilith\'s eyes light up with genuine pleasure. "How perceptive. Yes, we have cultivated this place as more than mere shelter. It is our canvas, our stage, our sanctuary given form through centuries of artistic vision."',
+          'She moves toward a ornate music box on a side table. "Your artistic soul recognizes what we\'ve created here. That suggests you might understand what we are in ways that purely practical minds cannot."'
+        ],
+        choices: [
+          {
+            id: 'appreciate_composition',
+            text: '"I can see the love and care that went into every artistic choice. This isn\'t just a home - it\'s a masterpiece."',
+            consequence: 'Artistic appreciation • Deep understanding of their vision',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }, { characterId: 'morgana', affectionChange: 15 }],
+            nextScene: 'artistic_appreciation'
+          },
+          {
+            id: 'offer_contribution',
+            text: '"I\'d love to contribute to this artistic vision. What role could creativity play in your community?"',
+            consequence: 'Creative collaboration • Shows desire to contribute',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }],
+            nextScene: 'creative_contribution'
+          },
+          {
+            id: 'ask_about_morgana',
+            text: '"I sense there\'s another artist here. Someone who works with music, perhaps?"',
+            consequence: 'Artistic intuition • Shows sensitivity to creative energy',
+            effects: [{ characterId: 'morgana', affectionChange: 20 }],
+            nextScene: 'morgana_creative_connection'
+          }
+        ]
+      },
+      // Flaw-triggered scenes for ongoing character development
+      {
+        id: 'hemophobia_triggered',
+        title: 'Blood and Fear',
+        text: [
+          'As the conversation turns to the supernatural nature of your hosts, the implications become clear - these are vampires, beings who sustain themselves on blood. The thought makes your stomach lurch with familiar dread.',
+          'Your hemophobia has always been a challenge, but here, surrounded by creatures who embody everything your phobia represents, it becomes almost overwhelming. You struggle to maintain composure.',
+          'Lilith notices your distress immediately. "You\'re pale," she observes with concern. "Are you feeling unwell? Perhaps this revelation is more shocking than I anticipated."',
+          'The irony isn\'t lost on you - inheriting a manor full of vampires when the sight of blood makes you weak. But there\'s kindness in Lilith\'s voice, genuine concern rather than predatory interest.'
+        ],
+        choices: [
+          {
+            id: 'admit_hemophobia',
+            text: '"I have hemophobia - the sight of blood terrifies me. I know it might seem strange, given the circumstances."',
+            consequence: 'Honest vulnerability • May gain protection but shows weakness',
+            effects: [{ characterId: 'seraphina', affectionChange: 15 }, { characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'hemophobia_accommodation'
+          },
+          {
+            id: 'push_through_fear',
+            text: 'Try to overcome your fear through sheer willpower.',
+            consequence: 'Shows determination • Difficult but demonstrates courage',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'willpower_struggle'
+          },
+          {
+            id: 'deflect_concern',
+            text: '"I\'m fine, just processing a lot of new information."',
+            consequence: 'Avoids showing weakness • Maintains composure but hides truth',
+            effects: [{ characterId: 'lilith', affectionChange: 5 }],
+            nextScene: 'hidden_struggle'
+          }
+        ]
+      },
+      {
+        id: 'curiosity_compulsion',
+        title: 'The Dangerous Question',
+        text: [
+          'Your dangerously curious nature gets the better of you. Despite every instinct warning you to proceed carefully, you find yourself asking the question you know you shouldn\'t: "What do you actually do for blood? How does feeding work for vampires like you?"',
+          'The words are out before you can stop them, hanging in the air like a challenge. Lilith\'s expression grows complex - part amusement, part concern, part something darker.',
+          '"Your curiosity could be either your greatest asset or your ultimate downfall," she says slowly. "That question... most mortals wouldn\'t dare ask it so directly, especially not upon first meeting."',
+          'But there\'s respect in her voice too, acknowledgment of your boldness even as she recognizes its potential danger.'
+        ],
+        choices: [
+          {
+            id: 'apologize_for_boldness',
+            text: '"I\'m sorry, that was too forward. My curiosity sometimes gets ahead of my common sense."',
+            consequence: 'Shows self-awareness • Acknowledges mistake while maintaining curiosity',
+            effects: [{ characterId: 'lilith', affectionChange: 8 }],
+            nextScene: 'curiosity_acknowledged'
+          },
+          {
+            id: 'defend_curiosity',
+            text: '"If I\'m going to live here, I need to understand the reality of your existence."',
+            consequence: 'Logical justification • Shows practical thinking behind curiosity',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'practical_curiosity'
+          },
+          {
+            id: 'double_down',
+            text: '"I can handle the truth, whatever it is. I\'d rather know than wonder."',
+            consequence: 'Fearless pursuit of knowledge • Very bold but potentially dangerous',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'fearless_inquiry'
+          }
+        ]
+      },
+      // Follow-up scenes for trait-specific paths
+      {
+        id: 'psychic_acknowledged',
+        title: 'Recognized Abilities',
+        text: [
+          '"I can sense supernatural presences," you admit to Lilith. "You\'re ancient and powerful, but there are others here too - someone who creates beauty from pain, and another who carries divine light touched by loss."',
+          'Lilith\'s eyes widen with genuine surprise and respect. "Remarkable. Your psychic sensitivity is quite refined - most humans with such gifts can only sense general supernatural presence, not specific emotional signatures."',
+          'She leans forward with interest. "Your great-aunt Cordelia possessed similar abilities, though hers manifested differently. It seems supernatural sensitivity runs in your bloodline."',
+          'There\'s a new quality to her attention now - not just curiosity about your inheritance, but recognition of your potential value to their community.'
+        ],
+        choices: [
+          {
+            id: 'ask_about_cordelia_abilities',
+            text: '"How did Cordelia\'s psychic abilities manifest? What could she do?"',
+            consequence: 'Family legacy interest • Shows desire to understand heritage',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'cordelia_psychic_legacy'
+          },
+          {
+            id: 'offer_psychic_services',
+            text: '"My abilities could be useful for protection or investigation. I\'d be happy to help."',
+            consequence: 'Practical offer • Shows willingness to contribute unique skills',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'psychic_services_accepted'
+          },
+          {
+            id: 'request_training',
+            text: '"Could you teach me to develop these abilities further?"',
+            consequence: 'Growth mindset • Shows desire for supernatural development',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'psychic_training_offered'
+          }
+        ]
+      },
+      {
+        id: 'bond_recognition',
+        title: 'Deeper Understanding',
+        text: [
+          '"The connections between you three are beautiful," you say, your blood sight still revealing the intricate web of loyalty and affection. "Like a family forged by choice rather than blood."',
+          'For the first time since you arrived, Lilith\'s composed mask slips entirely. Her expression becomes vulnerable, touched by something deeper than surprise - perhaps gratitude for being truly seen.',
+          '"Yes," she says softly. "We are... kindred spirits in the truest sense. Bound not by sire lines or clan obligations, but by choice, trust, and genuine care for one another\'s wellbeing."',
+          'Your blood sight shows you the truth of her words - these bonds pulse with warmth, strengthened by centuries of shared experiences, mutual protection, and chosen family love.'
+        ],
+        choices: [
+          {
+            id: 'express_admiration',
+            text: '"That\'s incredibly rare and precious. You\'ve built something beautiful together."',
+            consequence: 'Validates their relationships • Shows deep appreciation',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }, { characterId: 'morgana', affectionChange: 10 }, { characterId: 'seraphina', affectionChange: 10 }],
+            nextScene: 'family_appreciation'
+          },
+          {
+            id: 'ask_about_joining',
+            text: '"Is there room in your family for someone new? Someone who could understand and value what you\'ve created?"',
+            consequence: 'Direct interest in belonging • Bold but heartfelt request',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }],
+            nextScene: 'family_consideration'
+          },
+          {
+            id: 'promise_protection',
+            text: '"I would never do anything to threaten the bonds between you. They\'re too precious."',
+            consequence: 'Protective promise • Shows understanding of their value',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'bond_protection_vow'
+          }
+        ]
+      },
+      {
+        id: 'creative_contribution',
+        title: 'Artistic Collaboration',
+        text: [
+          '"I\'d love to contribute to this artistic vision," you say, your creative soul already spinning with possibilities. "What role could creativity play in your community?"',
+          'Before Lilith can answer, a new voice drifts down from the upper floor - hauntingly beautiful, like silver bells touched with melancholy. Someone is playing piano, the melody complex and emotionally rich.',
+          '"That," Lilith says with a warm smile, "would be Morgana. She\'s been waiting to meet you, actually. Your great-aunt spoke often of your artistic nature, and Morgana was quite excited about the possibility of a kindred creative spirit joining us."',
+          'The music shifts, becoming more welcoming, as if the pianist has sensed the conversation below and is offering an invitation through melody.'
+        ],
+        choices: [
+          {
+            id: 'follow_the_music',
+            text: '"Could I meet her? That music is incredibly beautiful."',
+            consequence: 'Immediate artistic connection • Shows appreciation for Morgana\'s art',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }],
+            nextScene: 'morgana_introduction'
+          },
+          {
+            id: 'discuss_collaboration',
+            text: '"I have ideas for artistic projects that could enhance the manor\'s atmosphere. Would she be interested in collaborating?"',
+            consequence: 'Proactive creativity • Shows initiative and respect for her work',
+            effects: [{ characterId: 'morgana', affectionChange: 20 }, { characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'artistic_collaboration_planned'
+          },
+          {
+            id: 'ask_about_cordelia_art',
+            text: '"What kind of artistic contributions did Cordelia make? I\'d like to honor her legacy."',
+            consequence: 'Legacy respect • Shows desire to continue family tradition',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }, { characterId: 'morgana', affectionChange: 15 }],
+            nextScene: 'cordelia_artistic_legacy'
+          }
+        ]
+      },
+      {
+        id: 'protection_offered',
+        title: 'Strength Recognized',
+        text: [
+          '"I can handle myself, and I\'d be willing to help protect others if needed," you state with quiet confidence, your athletic bearing lending weight to the words.',
+          'Lilith studies you with new interest. "Protection is... actually something we may need. While this manor is well-warded, there are always those who would threaten what we\'ve built here."',
+          'She moves to the window, gazing out at the darkening grounds. "Your great-aunt served as both anchor and guardian. She had a talent for spotting threats and the physical capability to deal with them when necessary."',
+          '"The question is whether you truly understand what protecting us might entail. It\'s not just about physical confrontation - it\'s about standing between those you care for and forces that would destroy them."'
+        ],
+        choices: [
+          {
+            id: 'accept_guardian_role',
+            text: '"I understand the responsibility. I\'m ready to be both anchor and guardian, like Cordelia was."',
+            consequence: 'Full commitment • Accepts complete responsibility for their safety',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }, { characterId: 'seraphina', affectionChange: 15 }],
+            nextScene: 'guardian_oath'
+          },
+          {
+            id: 'ask_about_threats',
+            text: '"What kind of threats do you face? I need to understand what I\'d be protecting against."',
+            consequence: 'Strategic thinking • Shows tactical preparation mindset',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'threat_assessment'
+          },
+          {
+            id: 'gradual_commitment',
+            text: '"I want to help, but I\'d like to learn more about your world before making such a significant commitment."',
+            consequence: 'Cautious wisdom • Shows thoughtful approach to responsibility',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'gradual_integration'
+          }
+        ]
+      },
+      {
+        id: 'hemophobia_accommodation',
+        title: 'Understanding and Adaptation',
+        text: [
+          '"I have hemophobia," you admit, fighting against the shame you\'ve always felt about this limitation. "The sight of blood terrifies me. I know it might seem strange, given the circumstances."',
+          'Rather than disappointment or amusement, Lilith\'s expression fills with understanding compassion. "Not strange at all. Fear is often our body\'s way of protecting us from trauma. And there are ways to work with such challenges."',
+          'From the upper floor, you hear footsteps approaching - light, purposeful. "Seraphina," Lilith calls softly. "Your expertise may be needed."',
+          'A figure appears at the top of the stairs - tall, graceful, with an aura of gentle strength that your supernatural senses recognize as divine, though tempered by earthly experience.'
+        ],
+        choices: [
+          {
+            id: 'meet_seraphina',
+            text: 'Allow Seraphina to approach and introduce herself.',
+            consequence: 'Openness to help • Shows willingness to accept support',
+            effects: [{ characterId: 'seraphina', affectionChange: 20 }],
+            nextScene: 'seraphina_healer_introduction'
+          },
+          {
+            id: 'ask_about_accommodation',
+            text: '"Are there ways to manage my phobia while still being useful here?"',
+            consequence: 'Practical adaptation • Shows desire to contribute despite limitations',
+            effects: [{ characterId: 'seraphina', affectionChange: 15 }, { characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'phobia_management_discussion'
+          },
+          {
+            id: 'express_determination',
+            text: '"I don\'t want my fear to limit what I can do for this community."',
+            consequence: 'Determined growth • Shows commitment to overcoming challenges',
+            effects: [{ characterId: 'seraphina', affectionChange: 18 }, { characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'fear_overcoming_support'
+          }
+        ]
       }
     ]
   }
