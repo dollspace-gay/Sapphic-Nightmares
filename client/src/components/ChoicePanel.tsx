@@ -18,10 +18,10 @@ export function ChoicePanel() {
   };
   
   return (
-    <div className="bg-gradient-to-t from-vampire-red/90 to-gothic-purple/90 backdrop-blur-sm border-t border-blood-red/30 p-6 lg:p-8">
+    <div className="bg-gradient-to-t from-red-900/90 to-purple-900/90 backdrop-blur-sm border-t border-red-500/30 p-6 lg:p-8">
       <div className="max-w-4xl mx-auto">
-        <h3 className="font-ui font-semibold text-parchment mb-4 flex items-center">
-          <Crosshair className="text-blood-red mr-2 h-5 w-5" />
+        <h3 className="font-ui font-semibold text-white mb-4 flex items-center">
+          <Crosshair className="text-red-400 mr-2 h-5 w-5" />
           Choose your response:
         </h3>
         
@@ -33,19 +33,19 @@ export function ChoicePanel() {
               <Button
                 key={choice.id}
                 onClick={() => makeChoice(choice)}
-                className="w-full text-left bg-midnight/70 hover:bg-vampire-red/50 border border-blood-red/30 rounded-lg p-4 transition-all duration-300 choice-hover group h-auto"
+                className="w-full text-left bg-gray-800/70 hover:bg-red-600/50 border border-red-500/30 rounded-lg p-4 transition-all duration-300 choice-hover group h-auto"
                 variant="outline"
               >
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blood-red rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:pulse-glow">
-                    <span className="text-xs font-bold text-parchment">{index + 1}</span>
+                  <div className="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:pulse-glow">
+                    <span className="text-xs font-bold text-white">{index + 1}</span>
                   </div>
                   <div className="flex-1 text-left">
-                    <p className="font-story text-parchment leading-relaxed">
+                    <p className="font-story text-white leading-relaxed">
                       {choice.text}
                     </p>
-                    <p className="text-moonlight/60 text-xs mt-2 font-ui">
-                      <IconComponent className="inline-block text-blood-red mr-1 h-3 w-3" />
+                    <p className="text-gray-300 text-xs mt-2 font-ui">
+                      <IconComponent className="inline-block text-red-400 mr-1 h-3 w-3" />
                       {choice.consequence}
                     </p>
                   </div>
