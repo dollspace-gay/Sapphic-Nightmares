@@ -135,7 +135,143 @@ export const gameData: Chapter[] = [
             text: '"This is all happening so fast. I need time to understand what this means."',
             consequence: 'Measured response • Preserves agency',
             effects: [{ characterId: 'lilith', affectionChange: 5 }],
-            nextScene: 'tour_manor'
+            nextScene: 'manor_tour'
+          }
+        ]
+      },
+      {
+        id: 'manor_tour',
+        title: 'Halls of Shadows',
+        text: [
+          'Lilith nods with understanding, though you catch a flicker of disappointment in her eyes. "Of course. This is... overwhelming, I imagine." She steps back, giving you space to breathe.',
+          'She gestures toward the towering doors of the library. "Perhaps a tour of the manor would help you understand what you\'ve stumbled into. There are others here you should meet."',
+          'As you walk through corridors lined with ancient portraits whose eyes seem to follow your movement, Lilith speaks softly. "Ravencroft Manor has been home to our coven for over three centuries. We are... selective about our guests."',
+          'You pass by a grand staircase when you hear the soft sound of piano music drifting from somewhere above. The melody is hauntingly beautiful, tinged with melancholy that seems to seep into your very soul.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_about_music',
+            text: '"That music... it\'s beautiful. Who\'s playing?"',
+            consequence: 'Shows interest in other residents',
+            effects: [{ characterId: 'morgana', affectionChange: 5 }],
+            nextScene: 'meet_morgana'
+          },
+          {
+            id: 'ask_about_coven',
+            text: '"A coven? How many of you live here?"',
+            consequence: 'Practical questions • Shows caution',
+            effects: [{ characterId: 'lilith', affectionChange: 8 }],
+            nextScene: 'coven_explanation'
+          },
+          {
+            id: 'express_fear',
+            text: '"I\'m scared. This all feels like a dream... or a nightmare."',
+            consequence: 'Vulnerable honesty • May attract protection',
+            effects: [{ characterId: 'seraphina', affectionChange: 10 }],
+            nextScene: 'seraphina_appears'
+          }
+        ]
+      },
+      {
+        id: 'meet_morgana',
+        title: 'The Shadow Mystic',
+        text: [
+          'Lilith\'s lips curve into a knowing smile. "Ah, you have a good ear. That would be Morgana. She\'s... complicated." There\'s an edge to her voice that suggests a complex history.',
+          'She leads you up the grand staircase, the music growing louder with each step. The melody weaves through minor keys like silk through shadows, speaking of loss and longing.',
+          'You reach a set of ornate double doors, slightly ajar. Through the gap, you can see a figure seated at an antique grand piano, her dark hair cascading like a waterfall as she plays.',
+          'Lilith pushes the door open softly. "Morgana, we have a guest." The music stops abruptly, and the woman at the piano turns. Her silver eyes seem to pierce straight through you, as if reading secrets you didn\'t know you had.'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'compliment_music',
+            text: '"Your playing is extraordinary. That melody... it felt like it was speaking to my soul."',
+            consequence: 'Artistic appreciation • Appeals to her nature',
+            effects: [{ characterId: 'morgana', affectionChange: 15 }],
+            nextScene: 'morgana_interest'
+          },
+          {
+            id: 'ask_about_song',
+            text: '"What was that piece? I\'ve never heard anything like it."',
+            consequence: 'Shows genuine curiosity',
+            effects: [{ characterId: 'morgana', affectionChange: 10 }],
+            nextScene: 'morgana_composition'
+          },
+          {
+            id: 'stay_silent',
+            text: 'Remain silent and wait for her to speak first.',
+            consequence: 'Respectful approach • Shows wisdom',
+            effects: [{ characterId: 'morgana', affectionChange: 8 }],
+            nextScene: 'morgana_observation'
+          }
+        ]
+      },
+      {
+        id: 'seraphina_appears',
+        title: 'Guardian Angel',
+        text: [
+          'Before Lilith can respond to your admission of fear, a gentle voice speaks from behind you both. "Fear is wisdom in the face of the unknown."',
+          'You turn to see a woman descending the staircase like moonlight made manifest. Her platinum hair seems to glow with its own inner light, and when she moves, you could swear you catch glimpses of something shimmering behind her - like wings folded against her back.',
+          'Lilith\'s expression grows complex. "Seraphina. I didn\'t expect you to..." She pauses, then continues more formally. "This is our guest. She\'s just learning about our world."',
+          'Seraphina approaches with fluid grace, her pale blue eyes filled with warmth and something that might be recognition. "You\'re safe here," she says softly, and somehow you believe her completely. "I won\'t let any harm come to you."'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'ask_about_wings',
+            text: '"I thought I saw... are you an angel?"',
+            consequence: 'Direct question • Shows supernatural awareness',
+            effects: [{ characterId: 'seraphina', affectionChange: 12 }],
+            nextScene: 'seraphina_truth'
+          },
+          {
+            id: 'thank_for_protection',
+            text: '"Thank you. I... I feel like I can trust you."',
+            consequence: 'Grateful response • Builds trust',
+            effects: [{ characterId: 'seraphina', affectionChange: 15 }],
+            nextScene: 'seraphina_promise'
+          },
+          {
+            id: 'question_safety',
+            text: '"Safe from what exactly? What kind of danger am I in?"',
+            consequence: 'Practical concerns • Shows intelligence',
+            effects: [{ characterId: 'lilith', affectionChange: -3 }, { characterId: 'seraphina', affectionChange: 8 }],
+            nextScene: 'danger_revealed'
+          }
+        ]
+      },
+      {
+        id: 'transformation_begin',
+        title: 'The Blood Kiss',
+        text: [
+          'Lilith\'s eyes blaze with passion and something darker. "Are you certain? Once this begins, there is no path back to mortality. You will become something... more."',
+          'She traces her finger along your throat, and you feel your pulse quicken under her touch. "The transformation is not just physical. Your very essence will change. You will see the world through eyes that have witnessed centuries."',
+          'Her fangs extend slightly, gleaming like pearls in the moonlight. "But you will also gain power beyond mortal imagination. Strength, speed, senses that can perceive the supernatural world hidden beneath the mundane."',
+          'She leans closer, her lips brushing your ear. "Tell me once more. Are you ready to leave your human life behind forever?"'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'accept_transformation',
+            text: '"Yes. I\'ve never been more certain of anything in my life."',
+            consequence: 'Final commitment • Vampire transformation path',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }],
+            nextScene: 'vampire_transformation'
+          },
+          {
+            id: 'ask_alternatives',
+            text: '"Is there no middle ground? A way to be part of your world without losing my humanity?"',
+            consequence: 'Seeks compromise • Alternative path',
+            effects: [{ characterId: 'lilith', affectionChange: 5 }, { characterId: 'seraphina', affectionChange: 15 }],
+            nextScene: 'alternative_path'
+          },
+          {
+            id: 'last_minute_hesitation',
+            text: '"I... I need just a moment to think about this."',
+            consequence: 'Hesitation • May disappoint Lilith',
+            effects: [{ characterId: 'lilith', affectionChange: -10 }],
+            nextScene: 'lilith_disappointment'
           }
         ]
       }
