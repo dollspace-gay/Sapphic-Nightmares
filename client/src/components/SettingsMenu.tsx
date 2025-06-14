@@ -9,9 +9,10 @@ import { Settings, Users, Heart, Save, FolderOpen, RotateCcw, X } from 'lucide-r
 interface SettingsMenuProps {
   onShowSaveModal: () => void;
   onShowLoadModal: () => void;
+  onToggleSidebar: () => void;
 }
 
-export function SettingsMenu({ onShowSaveModal, onShowLoadModal }: SettingsMenuProps) {
+export function SettingsMenu({ onShowSaveModal, onShowLoadModal, onToggleSidebar }: SettingsMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { gameState, resetGame } = useGame();
   
@@ -55,6 +56,23 @@ export function SettingsMenu({ onShowSaveModal, onShowLoadModal }: SettingsMenuP
           </DialogHeader>
           
           <div className="space-y-6">
+            {/* View Options */}
+            <div>
+              <h3 className="font-ui font-semibold text-white mb-3 flex items-center">
+                View Options
+              </h3>
+              <div className="space-y-2">
+                <Button 
+                  onClick={() => { onToggleSidebar(); setIsOpen(false); }}
+                  className="w-full bg-gray-800/70 hover:bg-red-600/50 border border-red-500/30 text-sm text-white"
+                  variant="outline"
+                >
+                  <Users className="mr-2 h-4 w-4" />
+                  Relationships & Insights
+                </Button>
+              </div>
+            </div>
+
             {/* Game Controls */}
             <div>
               <h3 className="font-ui font-semibold text-white mb-3 flex items-center">

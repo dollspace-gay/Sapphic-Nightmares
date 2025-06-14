@@ -1,12 +1,17 @@
-import { Heart, Users, MapPin, Heart as HeartIcon } from 'lucide-react';
+import { Heart, Users, MapPin, X } from 'lucide-react';
 import { useGame } from '@/contexts/GameContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import { Button } from '@/components/ui/button';
 import { StoryHints } from '@/components/StoryHints';
 
-export function Sidebar() {
+interface SidebarProps {
+  onClose?: () => void;
+}
+
+export function Sidebar({ onClose }: SidebarProps) {
   const { gameState } = useGame();
 
   const getRelationshipStatus = (affection: number) => {
@@ -19,14 +24,26 @@ export function Sidebar() {
   };
 
   return (
-    <div className="lg:w-80 bg-gradient-to-b from-red-900/90 to-purple-900/90 backdrop-blur-sm border-r border-red-500/30">
+    <div className="lg:w-80 w-80 bg-gradient-to-b from-red-900/90 to-purple-900/90 backdrop-blur-sm border-r border-red-500/30">
       {/* Game Title */}
       <div className="p-6 border-b border-red-500/30">
-        <h1 className="font-story text-2xl lg:text-3xl font-bold text-white text-shadow animate-fade-in">
-          <Heart className="inline-block text-red-400 mr-2 h-6 w-6" />
-          Crimson Embrace
-        </h1>
-        <p className="text-gray-300 text-sm mt-1 font-ui">Chapter 1: The Awakening</p>
+        <div className="flex items-center justify-between mb-2">
+          <h1 className="font-story text-xl lg:text-2xl font-bold text-white text-shadow animate-fade-in">
+            <Heart className="inline-block text-red-400 mr-2 h-5 w-5" />
+            Crimson Embrace
+          </h1>
+          {onClose && (
+            <Button
+              onClick={onClose}
+              variant="ghost"
+              size="sm"
+              className="lg:hidden text-gray-300 hover:text-white"
+            >
+              <X className="h-4 w-4" />
+            </Button>
+          )}
+        </div>
+        <p className="text-gray-300 text-sm font-ui">Chapter 1: The Awakening</p>
       </div>
       
       <div className="flex-1 overflow-y-auto p-4 space-y-6">
