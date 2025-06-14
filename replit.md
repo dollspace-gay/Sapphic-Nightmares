@@ -87,6 +87,8 @@ Changelog:
 - June 14, 2025. Initial setup with vampire RPG dating simulator
 - June 14, 2025. Added character creation system with traits, flaws, and boons
 - June 14, 2025. Integrated PostgreSQL database with Drizzle ORM
+- June 14, 2025. Restructured storylines with inheritance backstory and endgame transformation
+- June 14, 2025. Expanded branching narrative with character-specific romance paths
 ```
 
 ## User Preferences
