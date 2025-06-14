@@ -110,13 +110,16 @@ export function GameProvider({ children }: { children: ReactNode }) {
     return () => clearInterval(interval);
   }, [gameState]);
   
-  // Load auto-save on mount
+  // Load auto-save on mount only if it exists and is valid
   useEffect(() => {
     const autoSaveData = localStorage.getItem('crimsonEmbrace_autoSave');
     if (autoSaveData) {
       try {
         const savedState = JSON.parse(autoSaveData);
-        dispatch({ type: 'LOAD_GAME', payload: savedState });
+        // Only load if the save has actual progress (not just character creation)
+        if (savedState.isCharacterCreated && savedState.completedScenes.length > 0) {
+          dispatch({ type: 'LOAD_GAME', payload: savedState });
+        }
       } catch (error) {
         console.error('Failed to load auto-save:', error);
       }
