@@ -23,15 +23,15 @@ export function StoryPanel() {
       <div className="max-w-4xl mx-auto">
         {/* Scene Header */}
         <div className="mb-8 animate-fade-in">
-          <h2 className="font-story text-2xl lg:text-4xl font-bold text-parchment text-shadow mb-2">
+          <h2 className="font-story text-2xl lg:text-4xl font-bold text-white text-shadow mb-2">
             {currentScene.title}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blood-red to-vampire-red rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
         </div>
         
         {/* Story Text */}
-        <div className="bg-midnight/60 backdrop-blur-sm rounded-xl p-8 lg:p-12 border border-blood-red/20 mb-8 animate-slide-up">
-          <div className="font-story text-lg lg:text-xl story-text text-parchment leading-relaxed">
+        <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl p-8 lg:p-12 border border-red-500/30 mb-8 animate-slide-up">
+          <div className="font-story text-lg lg:text-xl story-text text-white leading-relaxed">
             {currentScene.text.map((paragraph, index) => (
               <p key={index} className="mb-6 last:mb-0">
                 {paragraph}
@@ -43,20 +43,20 @@ export function StoryPanel() {
         {/* Character Portrait */}
         {currentScene.character && (
           <div className="mb-8 animate-fade-in">
-            <div className="bg-gradient-to-br from-vampire-red/20 to-gothic-purple/20 rounded-xl p-6 border border-blood-red/30">
+            <div className="bg-gradient-to-br from-red-900/40 to-purple-900/40 rounded-xl p-6 border border-red-500/30">
               <div className="flex items-start space-x-4">
-                <div className={`w-20 h-20 ${currentScene.character.color} rounded-full flex items-center justify-center flex-shrink-0 pulse-glow`}>
-                  <Heart className="h-8 w-8 text-parchment" />
+                <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0 pulse-glow">
+                  <Heart className="h-8 w-8 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-story text-xl font-bold text-parchment mb-1">
+                  <h3 className="font-story text-xl font-bold text-white mb-1">
                     {currentScene.character.name}
                   </h3>
-                  <p className="text-moonlight/80 text-sm mb-2">
+                  <p className="text-gray-300 text-sm mb-2">
                     {currentScene.character.title}
                   </p>
-                  <p className="text-parchment/90 text-sm font-ui">
-                    <Heart className="inline-block text-blood-red mr-1 h-4 w-4" />
+                  <p className="text-gray-200 text-sm font-ui">
+                    <Heart className="inline-block text-red-400 mr-1 h-4 w-4" />
                     Currently: {currentScene.character.status}
                   </p>
                 </div>
