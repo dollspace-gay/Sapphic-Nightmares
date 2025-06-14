@@ -74,6 +74,15 @@ export interface PlayerStats {
   location: string;
 }
 
+export interface ChoiceHistory {
+  sceneId: string;
+  choiceId: string;
+  choiceText: string;
+  consequence: string;
+  timestamp: number;
+  characterEffects: { characterId: string; affectionChange: number }[];
+}
+
 export interface GameState {
   currentChapter: number;
   currentScene: string;
@@ -83,6 +92,7 @@ export interface GameState {
   inventory: string[];
   flags: Record<string, boolean>;
   completedScenes: string[];
+  choiceHistory: ChoiceHistory[];
   isCharacterCreated: boolean;
 }
 
