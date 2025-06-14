@@ -1,0 +1,93 @@
+# Replit.md
+
+## Overview
+
+This is a vampire-themed visual novel game called "Crimson Embrace" built as a full-stack web application. The project implements an interactive story experience where players make choices that affect character relationships and story progression. The application features a React frontend with a gothic vampire aesthetic and an Express.js backend with PostgreSQL database integration for saving/loading game states.
+
+## System Architecture
+
+### Frontend Architecture
+- **Framework**: React with TypeScript using Vite as the build tool
+- **UI Framework**: Shadcn/ui components built on Radix UI primitives
+- **Styling**: Tailwind CSS with custom vampire/gothic theme variables
+- **State Management**: React Context API for game state management
+- **Data Fetching**: TanStack Query (React Query) for server state management
+- **Routing**: Wouter for lightweight client-side routing
+
+### Backend Architecture
+- **Framework**: Express.js with TypeScript
+- **Database**: PostgreSQL with Drizzle ORM for type-safe database operations
+- **Session Management**: Connect-pg-simple for PostgreSQL-backed sessions
+- **Development**: tsx for TypeScript execution in development
+
+### Database Schema
+The application uses two main tables:
+- `users`: Stores user authentication data (id, username, password)
+- `game_states`: Stores saved game progress (id, userId, slotName, gameData, timestamps)
+
+## Key Components
+
+### Game Engine
+- **GameContext**: Central state management for character relationships, current scene, and game progression
+- **Story System**: Structured chapters, scenes, and choices with character affection tracking
+- **Choice System**: Dynamic choice consequences that affect character relationships
+
+### User Interface
+- **GameInterface**: Main game layout with sidebar and story panels
+- **StoryPanel**: Displays current scene text and character information
+- **ChoicePanel**: Interactive choice selection with visual feedback
+- **Sidebar**: Character relationship tracking and game management controls
+- **GameStateModal**: Save/load functionality with slot management
+
+### Character System
+- **Character Profiles**: Three main characters (Lilith, Morgana, Seraphina) with affection tracking
+- **Relationship Status**: Dynamic status updates based on affection levels
+- **Visual Representation**: Color-coded character indicators and progress bars
+
+## Data Flow
+
+1. **Game Initialization**: GameProvider loads initial game state and character data
+2. **Story Progression**: Players navigate through scenes by making choices
+3. **Choice Processing**: Choices trigger character affection changes and scene transitions
+4. **State Persistence**: Game states can be saved to database with custom slot names
+5. **State Restoration**: Saved games can be loaded to restore previous progress
+
+## External Dependencies
+
+### Core Dependencies
+- **@neondatabase/serverless**: Neon PostgreSQL serverless driver
+- **drizzle-orm**: Type-safe SQL query builder and ORM
+- **@tanstack/react-query**: Server state management
+- **express**: Web application framework
+- **react**: UI library
+- **tailwindcss**: Utility-first CSS framework
+
+### UI Components
+- **@radix-ui/***: Comprehensive set of UI primitives
+- **shadcn/ui**: Pre-built component library
+- **lucide-react**: Icon library
+- **class-variance-authority**: Component variant management
+
+## Deployment Strategy
+
+The application is configured for deployment on Replit with:
+- **Build Process**: Vite builds the frontend, esbuild bundles the backend
+- **Production Mode**: Serves static files through Express
+- **Development Mode**: Hot reloading with Vite dev server
+- **Database**: PostgreSQL module enabled in Replit environment
+- **Environment Variables**: DATABASE_URL for database connection
+
+The deployment uses autoscale target with npm scripts for build and start commands. The application listens on port 5000 internally and exposes port 80 externally.
+
+## Changelog
+
+```
+Changelog:
+- June 14, 2025. Initial setup
+```
+
+## User Preferences
+
+```
+Preferred communication style: Simple, everyday language.
+```
