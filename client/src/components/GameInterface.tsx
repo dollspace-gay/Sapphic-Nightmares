@@ -3,6 +3,7 @@ import { Sidebar } from './Sidebar';
 import { StoryPanel } from './StoryPanel';
 import { ChoicePanel } from './ChoicePanel';
 import { GameStateModal } from './GameStateModal';
+import { SettingsMenu } from './SettingsMenu';
 
 export function GameInterface() {
   const [showSaveModal, setShowSaveModal] = useState(false);
@@ -13,12 +14,15 @@ export function GameInterface() {
       {/* Gothic Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-midnight via-gothic-purple/20 to-vampire-red/30"></div>
       
+      {/* Settings Menu */}
+      <SettingsMenu 
+        onShowSaveModal={() => setShowSaveModal(true)}
+        onShowLoadModal={() => setShowLoadModal(true)}
+      />
+      
       {/* Main Game Interface */}
       <div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
-        <Sidebar 
-          onShowSaveModal={() => setShowSaveModal(true)}
-          onShowLoadModal={() => setShowLoadModal(true)}
-        />
+        <Sidebar />
         
         <div className="flex-1 flex flex-col">
           <StoryPanel />
