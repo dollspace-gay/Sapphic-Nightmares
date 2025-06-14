@@ -106,6 +106,81 @@ export const gameData: Chapter[] = [
         ]
       },
       {
+        id: 'first_meeting_polite',
+        title: 'A Gracious Introduction',
+        text: [
+          'Your gentle knock carries a respectful rhythm. After a few moments, the door opens to reveal a woman whose beauty seems to belong to another era entirely. Her deep red dress flows like shadows, and her dark eyes hold depths that seem to span centuries.',
+          '"How refreshing," she says with genuine pleasure, "a visitor who understands the value of courtesy." Her smile is warm, though there\'s something otherworldly about the way the candlelight plays across her features. "I am Lilith Ravencroft, and you must be dear Cordelia\'s great-niece."',
+          'She steps back gracefully, extending her hand in invitation. "Your respectful approach speaks well of your character. Cordelia always said you were raised with proper manners." There\'s approval in her voice, and something else - perhaps relief.',
+          'As you cross the threshold, you feel a subtle shift in the air, as if you\'ve entered a space where different rules apply. The interior is lit by candles and firelight, casting dancing shadows that seem almost alive.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'thank_for_welcome',
+            text: '"Thank you for the warm welcome. I wasn\'t sure what to expect when I arrived."',
+            consequence: 'Grateful and honest • Shows vulnerability',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'honest_uncertainty'
+          },
+          {
+            id: 'ask_about_cordelia_relationship',
+            text: '"You speak of my great-aunt with such fondness. Were you close friends?"',
+            consequence: 'Personal interest • Shows care for family connections',
+            effects: [{ characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'cordelia_friendship'
+          },
+          {
+            id: 'comment_on_atmosphere',
+            text: '"This place has an extraordinary atmosphere. It feels like stepping into another world."',
+            consequence: 'Observant appreciation • Shows sensitivity to supernatural',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'atmospheric_awareness'
+          },
+          {
+            id: 'inquire_about_arrangements',
+            text: '"The lawyer mentioned certain arrangements with the property. I hope my arrival won\'t disrupt your life here."',
+            consequence: 'Considerate approach • Shows respect for existing residents',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'considerate_inquiry'
+          }
+        ]
+      },
+      {
+        id: 'honest_uncertainty',
+        title: 'Shared Vulnerability',
+        text: [
+          'Lilith\'s expression grows warmer at your honesty. "Uncertainty is natural when stepping into the unknown. Your great-aunt felt the same way when she first arrived here decades ago."',
+          'She guides you toward a sitting room where a fire crackles in an ornate fireplace. "Cordelia left detailed instructions about how to... introduce you to our world. She wanted you to feel welcomed, not overwhelmed."',
+          '"We are not ordinary tenants," Lilith continues carefully, watching your reaction. "This manor has served as a sanctuary for beings like myself for over three centuries. Cordelia understood our nature and chose to protect us."',
+          'Her dark eyes search your face. "The question now is whether you, like her, can accept what lies beyond the boundaries of what most consider normal."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'express_openness',
+            text: '"I\'ve always believed there was more to the world than what we see on the surface. I\'m willing to learn."',
+            consequence: 'Open-minded • Shows readiness to accept supernatural',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'supernatural_revelation'
+          },
+          {
+            id: 'ask_about_protection',
+            text: '"What kind of protection? Are you in danger from something?"',
+            consequence: 'Protective instinct • Shows concern for others',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'protection_discussion'
+          },
+          {
+            id: 'request_gradual_explanation',
+            text: '"I want to understand, but could you help me learn gradually? This is all quite overwhelming."',
+            consequence: 'Honest about limits • Shows wisdom in pacing',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'gradual_revelation'
+          }
+        ]
+      },
+      {
         id: 'cordelia_story',
         title: 'Family Secrets',
         text: [
@@ -1390,6 +1465,177 @@ export const gameData: Chapter[] = [
             consequence: 'Strategic thinking • Prepares for future challenges',
             effects: [{ characterId: 'lilith', affectionChange: 25 }],
             nextScene: 'sanctuary_challenges'
+          }
+        ]
+      },
+      // Additional scenes for the polite introduction path
+      {
+        id: 'cordelia_friendship',
+        title: 'A Bond Beyond Time',
+        text: [
+          'Lilith\'s eyes grow distant with memory, and for a moment, you see vulnerability beneath her composed exterior. "Close friends... yes, though that term hardly captures what Cordelia meant to us." She moves toward a portrait of your great-aunt.',
+          '"When she first arrived at this manor, we expected her to flee in terror or attempt to have us destroyed. Instead, she brought us tea and asked if we needed anything." Lilith\'s voice carries amazement even after all these years.',
+          '"Over six decades, she became our anchor to humanity, our protector, and in many ways, our family. She loved us not despite what we are, but because of who we chose to be with that nature."',
+          'Her gaze returns to you. "The bond we shared transcended the typical boundaries between mortal and immortal. She saw past our supernatural nature to the individuals beneath, and we loved her fierce, kind heart in return."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'understand_bond',
+            text: '"That sounds like a beautiful friendship. I can see why you miss her."',
+            consequence: 'Empathetic response • Shows emotional intelligence',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'shared_grief'
+          },
+          {
+            id: 'ask_about_others',
+            text: '"You said \'us\' - are there others here I should meet?"',
+            consequence: 'Practical interest • Shows readiness to meet the coven',
+            effects: [{ characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'meet_the_coven'
+          },
+          {
+            id: 'express_hope',
+            text: '"I hope I can honor that bond she created. I\'d like to understand what made your friendship so special."',
+            consequence: 'Respectful aspiration • Shows desire to continue legacy',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'legacy_continuation'
+          }
+        ]
+      },
+      {
+        id: 'atmospheric_awareness',
+        title: 'Sensitivity to the Unseen',
+        text: [
+          'Lilith pauses, studying you with new interest. "Most mortals feel nothing when they enter our domain, or if they do, they dismiss it as imagination. You, however, have a rare sensitivity."',
+          'She gestures to the candlelit interior where shadows seem to dance with purpose. "This manor exists partially outside normal reality. The barriers between worlds are thin here, maintained by ancient wards and newer protections."',
+          '"Your ability to sense the atmospheric shift suggests you have the potential to understand our world far more easily than most." Her voice carries approval and something that might be excitement.',
+          '"Cordelia had the same gift. It\'s part of what made her such an effective guardian and mediator between our realm and the mortal world."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_about_gift',
+            text: '"Is this sensitivity something I inherited? Can it be developed further?"',
+            consequence: 'Seeks understanding • Shows interest in supernatural abilities',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'supernatural_potential'
+          },
+          {
+            id: 'ask_about_wards',
+            text: '"You mentioned wards and protections. What are you protecting this place from?"',
+            consequence: 'Security-focused • Shows strategic thinking',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'protection_details'
+          },
+          {
+            id: 'express_fascination',
+            text: '"This is incredible. I\'ve always felt like there was more to the world than what most people see."',
+            consequence: 'Wonder and openness • Shows natural acceptance',
+            effects: [{ characterId: 'lilith', affectionChange: 22 }],
+            nextScene: 'natural_acceptance'
+          }
+        ]
+      },
+      {
+        id: 'considerate_inquiry',
+        title: 'Gracious Concern',
+        text: [
+          'Lilith\'s expression brightens with genuine pleasure at your consideration. "How remarkably thoughtful. Cordelia raised you well, even from a distance." She seems almost moved by your courtesy.',
+          '"Your arrival changes nothing we wish to preserve and everything we hope to restore," she says warmly. "We have lived here peacefully for decades under Cordelia\'s protection, but we have missed having a mortal anchor to help us navigate the changing world."',
+          'She guides you into a beautifully appointed sitting room. "The arrangements your great-aunt established were mutually beneficial. We provided her with protection, knowledge, and companionship, while she offered us legitimacy, understanding, and connection to humanity."',
+          '"What we hope is that you might choose to continue that partnership. But unlike legal contracts, this arrangement must be built on genuine care and willing participation from all parties."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'express_interest',
+            text: '"I\'m very interested in learning more about this partnership. What would it involve?"',
+            consequence: 'Genuine curiosity • Shows openness to commitment',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'partnership_explanation'
+          },
+          {
+            id: 'ask_about_protection',
+            text: '"You mentioned providing protection. What kind of dangers exist that I should be aware of?"',
+            consequence: 'Practical concerns • Shows responsibility',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'danger_discussion'
+          },
+          {
+            id: 'offer_provisional_agreement',
+            text: '"I can\'t make any permanent commitments yet, but I\'d like to try continuing Cordelia\'s work, at least initially."',
+            consequence: 'Cautious but willing • Shows thoughtful approach',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'provisional_agreement'
+          }
+        ]
+      },
+      {
+        id: 'supernatural_revelation',
+        title: 'The Truth Unveiled',
+        text: [
+          'Relief washes over Lilith\'s features at your open-minded response. "Your willingness to accept the unknown is a gift, one your great-aunt shared." She settles gracefully across from you.',
+          '"We are vampires," she says simply, watching for your reaction. "Ancient beings who have found sanctuary in this place for over three centuries. Not the monsters of human folklore, but individuals who have learned to exist peacefully alongside mortality."',
+          '"Cordelia discovered our nature within days of inheriting this manor, but instead of fleeing or seeking to destroy us, she chose to understand us. She became our protector, our friend, and the bridge between our world and yours."',
+          'Her dark eyes hold yours steadily. "We hope you might choose a similar path, but we will not pressure or coerce you. The choice must be yours alone, made with full knowledge and genuine willingness."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'accept_with_wonder',
+            text: '"Vampires... that explains so much about this place. I\'m amazed rather than afraid."',
+            consequence: 'Wonder over fear • Shows supernatural acceptance',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }],
+            nextScene: 'amazed_acceptance'
+          },
+          {
+            id: 'ask_practical_questions',
+            text: '"What does this mean for day-to-day life? How does coexistence actually work?"',
+            consequence: 'Practical focus • Shows adaptability',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'practical_coexistence'
+          },
+          {
+            id: 'express_honor',
+            text: '"I\'m honored that you\'re trusting me with this truth. I want to be worthy of that trust."',
+            consequence: 'Grateful response • Shows respect for confidence',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'trust_acknowledged'
+          }
+        ]
+      },
+      {
+        id: 'gradual_revelation',
+        title: 'Gentle Understanding',
+        text: [
+          'Lilith nods approvingly. "Wisdom often lies in recognizing one\'s limits. Cordelia took nearly a month to fully accept and understand our nature. There is no shame in proceeding carefully."',
+          'She settles into a chair across from you, her movements graceful and deliberately non-threatening. "Perhaps we should begin with the basics. This manor has been my home for over four centuries. I am... not entirely human, though I was once."',
+          '"The others who live here share similar natures. We are beings who exist somewhat outside the normal flow of mortal time and society, but we have chosen to live peacefully, contributing to the world rather than taking from it."',
+          'Her voice is patient, giving you time to process. "Your great-aunt helped us maintain that peaceful existence by serving as our connection to the human world. She was our anchor, our protector, and our dear friend."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_about_nature',
+            text: '"When you say \'not entirely human,\' what do you mean exactly?"',
+            consequence: 'Seeks clarification • Shows readiness for more truth',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'nature_explanation'
+          },
+          {
+            id: 'focus_on_cordelia',
+            text: '"Tell me more about Cordelia\'s role. What made her such a good protector and friend?"',
+            consequence: 'Family focus • Shows interest in legacy',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'cordelia_role_detailed'
+          },
+          {
+            id: 'express_gratitude',
+            text: '"Thank you for being so patient with me. This is all quite extraordinary."',
+            consequence: 'Appreciative response • Shows good manners',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'patient_guidance'
           }
         ]
       }
