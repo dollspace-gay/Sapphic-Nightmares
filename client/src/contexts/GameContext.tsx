@@ -157,6 +157,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
       gameState,
       currentScene: getCurrentScene(),
       makeChoice,
+      createCharacter,
       saveGame,
       loadGame,
       resetGame
