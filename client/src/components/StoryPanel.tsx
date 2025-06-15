@@ -19,8 +19,19 @@ export function StoryPanel() {
   }
   
   return (
-    <div className="flex-1 p-8 lg:p-12 overflow-y-auto">
-      <div className="max-w-4xl mx-auto">
+    <div className="flex-1 p-8 lg:p-12 overflow-y-auto relative">
+      {/* Background Image */}
+      {currentScene.background && (
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          style={{
+            backgroundImage: `url(${currentScene.background})`,
+            filter: 'blur(1px) brightness(0.4)'
+          }}
+        />
+      )}
+      
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* Scene Header */}
         <div className="mb-8 animate-fade-in">
           <h2 className="font-story text-2xl lg:text-4xl font-bold text-white text-shadow mb-2">
@@ -30,7 +41,7 @@ export function StoryPanel() {
         </div>
         
         {/* Story Text */}
-        <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl p-8 lg:p-12 border border-red-500/30 mb-8 animate-slide-up">
+        <div className="bg-gray-900/90 backdrop-blur-sm rounded-xl p-8 lg:p-12 border border-red-500/30 mb-8 animate-slide-up shadow-2xl">
           <div className="font-story text-lg lg:text-xl story-text text-white leading-relaxed">
             {currentScene.text.map((paragraph, index) => (
               <p key={index} className="mb-6 last:mb-0">
