@@ -207,43 +207,6 @@ export function Sidebar({ onClose }: SidebarProps) {
             </TabsContent>
           </div>
         </Tabs>
-
-        {/* Player Stats */}
-        <Card className="bg-black/40 border-red-500/30">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-white text-sm flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              Your Status
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="grid grid-cols-2 gap-3 text-xs">
-              <div>
-                <span className="text-gray-400">Health:</span>
-                <p className={`font-medium ${gameState.playerStats.health > 75 ? 'text-green-400' : 
-                  gameState.playerStats.health > 50 ? 'text-yellow-400' : 
-                  gameState.playerStats.health > 25 ? 'text-orange-400' : 'text-red-400'}`}>
-                  {gameState.playerStats.health}/100
-                </p>
-              </div>
-              <div>
-                <span className="text-gray-400">Sanity:</span>
-                <p className={`font-medium ${gameState.playerStats.sanity > 75 ? 'text-green-400' : 
-                  gameState.playerStats.sanity > 50 ? 'text-yellow-400' : 
-                  gameState.playerStats.sanity > 25 ? 'text-orange-400' : 'text-red-400'}`}>
-                  {gameState.playerStats.sanity}/100
-                </p>
-              </div>
-            </div>
-            <div className="pt-1">
-              <span className="text-gray-400 text-xs">Location:</span>
-              <p className="text-white font-medium text-sm">{gameState.playerStats.location}</p>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Adaptive Story Hints */}
-        <StoryHints />
       </div>
     </div>
   );
