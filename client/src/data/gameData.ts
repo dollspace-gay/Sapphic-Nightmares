@@ -10484,6 +10484,2301 @@ export const gameData: Chapter[] = [
             nextScene: 'grief_understanding'
           }
         ]
+      },
+      // Missing Chapter 1 scenes implementation
+      {
+        id: 'individual_passions_revealed',
+        title: 'Personal Interests',
+        text: [
+          'As you speak with each person individually, their unique passions and interests emerge.',
+          'Celeste lights up when discussing her research into vampire genealogies and historical patterns. "I\'ve traced bloodlines back twelve centuries," she says with scholarly excitement.',
+          'Isadora shares her love for political strategy and social dynamics. "Every conversation is a chess match, every gathering a chance to understand power structures."',
+          'The personal connections deepen as you discover the individual humanity behind their supernatural natures.'
+        ],
+        character: characters.celeste,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'express_fascination_with_research',
+            text: '"Your research sounds fascinating. What patterns have you discovered?"',
+            consequence: 'Scholarly interest • Shows appreciation for intellectual pursuits',
+            effects: [{ characterId: 'celeste', affectionChange: 25 }],
+            nextScene: 'celeste_library_offer'
+          },
+          {
+            id: 'appreciate_political_insight',
+            text: '"Isadora, your understanding of social dynamics is impressive. What have you learned about power?"',
+            consequence: 'Political appreciation • Shows respect for strategic thinking',
+            effects: [{ characterId: 'isadora', affectionChange: 20 }],
+            nextScene: 'isadora_political_lessons'
+          },
+          {
+            id: 'ask_about_others_interests',
+            text: '"What about the others? What drives their passions?"',
+            consequence: 'Inclusive curiosity • Shows interest in everyone',
+            effects: [
+              { characterId: 'celeste', affectionChange: 15 },
+              { characterId: 'isadora', affectionChange: 15 }
+            ],
+            nextScene: 'community_roles_explained'
+          }
+        ]
+      },
+      {
+        id: 'community_roles_explained',
+        title: 'The Structure of Sanctuary',
+        text: [
+          'You learn about the intricate roles each person plays in maintaining the sanctuary\'s harmony and security.',
+          'Lilith explains: "Celeste maintains our knowledge archives and researches threats. Isadora handles external relations and political intelligence."',
+          '"Morgana provides artistic soul and emotional healing. Seraphina offers spiritual guidance and protection. Each role is essential."',
+          'The complexity and interdependence of their community becomes clear - everyone contributes something vital.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_about_your_role',
+            text: '"Where do I fit in this structure? What role can I play?"',
+            consequence: 'Role seeking • Shows desire to contribute meaningfully',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'community_needs_assessment'
+          },
+          {
+            id: 'appreciate_complexity',
+            text: '"This is beautifully complex. Everyone has found their perfect niche."',
+            consequence: 'System appreciation • Shows understanding of community dynamics',
+            effects: [
+              { characterId: 'lilith', affectionChange: 15 },
+              { characterId: 'isadora', affectionChange: 12 }
+            ],
+            nextScene: 'earning_place_discussion'
+          },
+          {
+            id: 'offer_flexibility',
+            text: '"I\'m willing to help wherever I\'m needed most. What are the current gaps?"',
+            consequence: 'Flexible service • Shows adaptability and helpfulness',
+            effects: [
+              { characterId: 'lilith', affectionChange: 18 },
+              { characterId: 'celeste', affectionChange: 15 }
+            ],
+            nextScene: 'skill_integration_planning'
+          }
+        ]
+      },
+      {
+        id: 'mutual_introduction',
+        title: 'Opening Your Heart',
+        text: [
+          'You share something meaningful about yourself, opening up about your own hopes, fears, and values.',
+          '"I\'ve always believed that home isn\'t a place, but the people who accept you completely," you say.',
+          'Your vulnerability is met with warmth and understanding. Celeste nods thoughtfully, while Isadora\'s calculating expression softens.',
+          'The reciprocal sharing creates immediate bonds of trust and mutual respect.'
+        ],
+        character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'share_more_about_values',
+            text: 'Continue sharing your core values and what drives you.',
+            consequence: 'Deep sharing • Creates strong emotional connections',
+            effects: [
+              { characterId: 'celeste', affectionChange: 25 },
+              { characterId: 'isadora', affectionChange: 20 }
+            ],
+            nextScene: 'chosen_family_bonds'
+          },
+          {
+            id: 'ask_about_their_values',
+            text: '"What values guide your community? What principles do you share?"',
+            consequence: 'Values inquiry • Seeks understanding of community principles',
+            effects: [
+              { characterId: 'lilith', affectionChange: 18 },
+              { characterId: 'celeste', affectionChange: 20 }
+            ],
+            nextScene: 'wisdom_sharing_culture'
+          },
+          {
+            id: 'express_gratitude_for_acceptance',
+            text: '"Thank you for making me feel so welcome. This acceptance means everything."',
+            consequence: 'Grateful recognition • Shows appreciation for welcome',
+            effects: [
+              { characterId: 'isadora', affectionChange: 22 },
+              { characterId: 'lilith', affectionChange: 15 }
+            ],
+            nextScene: 'earning_place_discussion'
+          }
+        ]
+      },
+      {
+        id: 'chosen_family_bonds',
+        title: 'Bonds Beyond Blood',
+        text: [
+          'The conversation deepens into the meaning of chosen family and how bonds of choice can be stronger than blood.',
+          'Lilith shares: "We\'ve learned that family means those who see your true nature and love you anyway - not those who share your genetics."',
+          'Isadora adds thoughtfully: "In our long lives, we\'ve discovered that loyalty earned is worth more than loyalty assumed."',
+          'You feel the profound truth in their words and the warmth of being welcomed into something precious.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'embrace_chosen_family_concept',
+            text: '"I understand completely. True family chooses to stay through everything."',
+            consequence: 'Family philosophy alignment • Shows deep understanding',
+            effects: [
+              { characterId: 'lilith', affectionChange: 30 },
+              { characterId: 'isadora', affectionChange: 25 }
+            ],
+            nextScene: 'cordelia_legacy_story'
+          },
+          {
+            id: 'share_family_experiences',
+            text: 'Share your own experiences with chosen family and belonging.',
+            consequence: 'Personal sharing • Creates intimate connection',
+            effects: [
+              { characterId: 'lilith', affectionChange: 25 },
+              { characterId: 'celeste', affectionChange: 20 }
+            ],
+            nextScene: 'mutual_understanding'
+          },
+          {
+            id: 'ask_about_challenges',
+            text: '"What challenges has your chosen family faced? How do you work through conflicts?"',
+            consequence: 'Practical inquiry • Seeks understanding of relationship dynamics',
+            effects: [
+              { characterId: 'isadora', affectionChange: 20 },
+              { characterId: 'lilith', affectionChange: 18 }
+            ],
+            nextScene: 'wisdom_sharing_culture'
+          }
+        ]
+      },
+      {
+        id: 'cordelia_legacy_story',
+        title: 'Cordelia\'s Integration',
+        text: [
+          'Lilith\'s eyes grow warm with memory as she shares how Cordelia became part of their family.',
+          '"She arrived much like you - inheriting the manor, uncertain but brave. What made her special was her immediate acceptance of our nature."',
+          '"Most humans fear us or try to change us. Cordelia simply said, \'You are what you are, and I love who you are.\' That acceptance transformed everything."',
+          'The story reveals why your great-aunt was so beloved and provides a template for your own integration.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'follow_cordelias_example',
+            text: '"I want to follow her example. I accept you as you are, completely."',
+            consequence: 'Legacy continuation • Shows commitment to acceptance',
+            effects: [
+              { characterId: 'lilith', affectionChange: 35 },
+              { characterId: 'morgana', affectionChange: 20 }
+            ],
+            nextScene: 'earning_place_discussion'
+          },
+          {
+            id: 'ask_about_her_challenges',
+            text: '"What challenges did she face? How did she overcome them?"',
+            consequence: 'Learning orientation • Seeks practical guidance',
+            effects: [
+              { characterId: 'lilith', affectionChange: 25 },
+              { characterId: 'celeste', affectionChange: 18 }
+            ],
+            nextScene: 'wisdom_sharing_culture'
+          },
+          {
+            id: 'express_honor_at_comparison',
+            text: '"I\'m honored to be compared to her. I hope I can earn that level of trust."',
+            consequence: 'Humble aspiration • Shows respect for legacy',
+            effects: [
+              { characterId: 'lilith', affectionChange: 30 },
+              { characterId: 'isadora', affectionChange: 22 }
+            ],
+            nextScene: 'community_needs_assessment'
+          }
+        ]
+      },
+      {
+        id: 'earning_place_discussion',
+        title: 'Finding Your Place',
+        text: [
+          'The conversation turns to how you can earn your place in this close-knit community.',
+          'Isadora explains: "Belonging here isn\'t automatic - it\'s earned through consistent actions that show you truly understand and support our values."',
+          'Celeste adds: "We\'ve found that the best integration happens when someone finds ways to contribute that match their unique strengths."',
+          'You sense this is about proving yourself through deeds rather than words.'
+        ],
+        character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_how_to_prove_yourself',
+            text: '"What specific actions would demonstrate my commitment to your community?"',
+            consequence: 'Commitment seeking • Shows desire to prove worthiness',
+            effects: [
+              { characterId: 'isadora', affectionChange: 25 },
+              { characterId: 'lilith', affectionChange: 18 }
+            ],
+            nextScene: 'community_needs_assessment'
+          },
+          {
+            id: 'offer_immediate_help',
+            text: '"I\'d like to start helping immediately. What needs attention right now?"',
+            consequence: 'Immediate service • Shows eagerness to contribute',
+            effects: [
+              { characterId: 'celeste', affectionChange: 20 },
+              { characterId: 'isadora', affectionChange: 18 }
+            ],
+            nextScene: 'skill_integration_planning'
+          },
+          {
+            id: 'emphasize_patience',
+            text: '"I understand that trust takes time. I\'m prepared to earn my place gradually."',
+            consequence: 'Patient wisdom • Shows understanding of relationship building',
+            effects: [
+              { characterId: 'isadora', affectionChange: 30 },
+              { characterId: 'luna', affectionChange: 15 }
+            ],
+            nextScene: 'wisdom_sharing_culture'
+          }
+        ]
+      },
+      {
+        id: 'community_needs_assessment',
+        title: 'Identifying Contributions',
+        text: [
+          'You work with the community to identify current needs and how your skills might address them.',
+          'Celeste mentions: "We could use help with historical research and documentation. Many of our stories exist only in memory."',
+          'Isadora notes: "External relations are increasingly complex. Fresh perspectives on human-supernatural diplomacy would be valuable."',
+          'The assessment reveals multiple ways you could contribute meaningfully to the community\'s wellbeing.'
+        ],
+        character: characters.celeste,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'focus_on_historical_documentation',
+            text: '"I\'d love to help preserve your histories. Stories shouldn\'t be lost."',
+            consequence: 'Historical preservation • Shows value for community legacy',
+            effects: [
+              { characterId: 'celeste', affectionChange: 30 },
+              { characterId: 'luna', affectionChange: 20 }
+            ],
+            nextScene: 'skill_integration_planning'
+          },
+          {
+            id: 'offer_diplomatic_perspective',
+            text: '"My human perspective might be useful for external relations work."',
+            consequence: 'Diplomatic contribution • Offers unique viewpoint',
+            effects: [
+              { characterId: 'isadora', affectionChange: 25 },
+              { characterId: 'lilith', affectionChange: 18 }
+            ],
+            nextScene: 'practical_arrangements'
+          },
+          {
+            id: 'suggest_comprehensive_approach',
+            text: '"Could I contribute to multiple areas? I\'d like to be as helpful as possible."',
+            consequence: 'Comprehensive service • Shows broad willingness to help',
+            effects: [
+              { characterId: 'celeste', affectionChange: 25 },
+              { characterId: 'isadora', affectionChange: 20 }
+            ],
+            nextScene: 'wisdom_sharing_culture'
+          }
+        ]
+      },
+      {
+        id: 'skill_integration_planning',
+        title: 'Practical Integration',
+        text: [
+          'Together, you develop a practical plan for integrating your skills and abilities into the community\'s operations.',
+          'The plan balances your desire to help with the need to learn and understand before taking on major responsibilities.',
+          'Each role is designed to build gradually, allowing you to prove yourself while gaining deeper understanding.',
+          'The thoughtful approach ensures successful integration rather than overwhelming you or disrupting existing dynamics.'
+        ],
+        character: characters.celeste,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'start_with_observation',
+            text: '"I\'d like to start by observing and learning before taking on active roles."',
+            consequence: 'Learning first • Shows wisdom in gradual approach',
+            effects: [
+              { characterId: 'celeste', affectionChange: 25 },
+              { characterId: 'luna', affectionChange: 20 }
+            ],
+            nextScene: 'wisdom_sharing_culture'
+          },
+          {
+            id: 'begin_with_simple_tasks',
+            text: '"Let me begin with simple tasks and build up to more complex responsibilities."',
+            consequence: 'Gradual progression • Shows practical wisdom',
+            effects: [
+              { characterId: 'isadora', affectionChange: 22 },
+              { characterId: 'celeste', affectionChange: 20 }
+            ],
+            nextScene: 'practical_arrangements'
+          },
+          {
+            id: 'request_mentorship',
+            text: '"I\'d appreciate mentorship as I learn to contribute effectively."',
+            consequence: 'Mentorship seeking • Shows humility and desire to learn',
+            effects: [
+              { characterId: 'lilith', affectionChange: 25 },
+              { characterId: 'celeste', affectionChange: 22 }
+            ],
+            nextScene: 'wisdom_sharing_culture'
+          }
+        ]
+      },
+      {
+        id: 'wisdom_sharing_culture',
+        title: 'Learning Together',
+        text: [
+          'You discover that the community has a strong culture of sharing wisdom and learning from each other.',
+          'Luna explains: "We believe that knowledge belongs to the community. Each person\'s insights strengthen everyone."',
+          'Celeste adds: "Learning never stops, even with centuries of experience. Fresh perspectives always reveal new truths."',
+          'The emphasis on collective wisdom creates an environment where growth and understanding flourish.'
+        ],
+        character: characters.luna,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'embrace_continuous_learning',
+            text: '"I love the idea of continuous learning. What can I learn from each of you?"',
+            consequence: 'Learning enthusiasm • Shows appreciation for growth',
+            effects: [
+              { characterId: 'luna', affectionChange: 25 },
+              { characterId: 'celeste', affectionChange: 20 }
+            ],
+            nextScene: 'individual_connections'
+          },
+          {
+            id: 'offer_to_share_knowledge',
+            text: '"I\'d like to share what I know too. Learning should be reciprocal."',
+            consequence: 'Knowledge sharing • Shows willingness to contribute wisdom',
+            effects: [
+              { characterId: 'celeste', affectionChange: 25 },
+              { characterId: 'luna', affectionChange: 22 }
+            ],
+            nextScene: 'mutual_understanding'
+          },
+          {
+            id: 'ask_about_learning_methods',
+            text: '"How do you structure learning and knowledge sharing? What are your methods?"',
+            consequence: 'Method inquiry • Shows interest in systematic learning',
+            effects: [
+              { characterId: 'celeste', affectionChange: 30 },
+              { characterId: 'luna', affectionChange: 18 }
+            ],
+            nextScene: 'educational_development'
+          }
+        ]
+      },
+      {
+        id: 'valentina_personal_story',
+        title: 'The Revolutionary\'s Heart',
+        text: [
+          'Valentina sits heavily, her fierce composure cracking as she speaks about Maria.',
+          '"She was an art student. Bright, passionate, full of dreams about changing the world through beauty." Her voice trembles with barely contained emotion.',
+          '"When I found her, she was covered in her own artwork - paintings torn to shreds because she couldn\'t control her strength. She kept apologizing for \'ruining everything.\'"',
+          'Tears shine in Valentina\'s amber eyes. "I held her while she cried, and I swore that no one else would suffer alone like she did. That\'s why this program isn\'t just politics to me - it\'s personal."'
+        ],
+        character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'offer_emotional_support',
+            text: 'Gently place a comforting hand on her shoulder.',
+            consequence: 'Emotional support • Shows compassion for her pain',
+            effects: [{ characterId: 'valentina', affectionChange: 35 }],
+            nextScene: 'valentina_gratitude'
+          },
+          {
+            id: 'validate_her_mission',
+            text: '"Maria\'s story makes the urgency so clear. Thank you for sharing something so personal."',
+            consequence: 'Mission validation • Honors her personal motivation',
+            effects: [{ characterId: 'valentina', affectionChange: 30 }],
+            nextScene: 'revolutionary_determination'
+          },
+          {
+            id: 'ask_about_marias_recovery',
+            text: '"How is Maria now? Was she able to rebuild her life?"',
+            consequence: 'Recovery interest • Shows care for individual outcomes',
+            effects: [{ characterId: 'valentina', affectionChange: 28 }],
+            nextScene: 'rescue_outcomes'
+          }
+        ]
+      },
+      {
+        id: 'game_over_screen',
+        title: 'Journey\'s End',
+        text: [
+          'Your story has reached its conclusion. The choices you made have shaped not only your own destiny, but the fate of the entire supernatural community.',
+          'The relationships you built, the trust you earned or lost, and the values you demonstrated have all contributed to this outcome.',
+          'Though this chapter ends, the impact of your decisions will echo through the community for generations to come.',
+          'Thank you for experiencing the world of Eternal Hearts: A Ravencroft Romance.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'restart_game',
+            text: 'Begin a new story',
+            consequence: 'New beginning • Start fresh journey',
+            effects: [],
+            nextScene: 'character_creation'
+          },
+          {
+            id: 'view_relationship_summary',
+            text: 'Review your relationships',
+            consequence: 'Reflection • See final relationship states',
+            effects: [],
+            nextScene: 'relationship_summary'
+          }
+        ]
+      },
+      {
+        id: 'exile_ending',
+        title: 'Cast Out',
+        text: [
+          'The weight of lost trust has become too heavy to bear. One by one, the vampires have turned away from you, their faith shattered by your choices.',
+          'Lilith speaks with cold finality: "You have proven that you cannot be trusted with our secrets or our safety. You must leave Ravencroft Manor."',
+          'Your belongings are packed quietly. No one meets your eyes as you prepare to go. The family you thought you\'d found has become strangers.',
+          'As you walk through the manor gates for the last time, you realize that trust, once broken, may be impossible to repair. Your exile is complete.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/gothic-manor-entrance.png',
+        choices: [
+          {
+            id: 'accept_exile_with_dignity',
+            text: 'Leave quietly without making things worse.',
+            consequence: 'Dignified departure • Accepts consequences gracefully',
+            effects: [],
+            nextScene: 'game_over_screen'
+          },
+          {
+            id: 'attempt_final_apology',
+            text: 'Try one last time to apologize and make amends.',
+            consequence: 'Final appeal • Attempts reconciliation',
+            effects: [],
+            nextScene: 'relationship_repair'
+          }
+        ]
+      },
+      {
+        id: 'document_demand',
+        title: 'Secrets Demanded',
+        text: [
+          'Your probing into forbidden topics has gone too far. Multiple vampires now see you as a security threat rather than a trusted ally.',
+          'Isadora\'s voice is ice-cold: "You seem to know a great deal about our private matters. Perhaps you should share how you came by this information."',
+          'Raven steps forward menacingly: "Documents. Names. Sources. Now. Or we\'ll assume you\'re working for our enemies."',
+          'The atmosphere has turned hostile. Your curious questions have been interpreted as espionage, and now you must face the consequences.'
+        ],
+        character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'refuse_to_reveal_sources',
+            text: '"I won\'t betray anyone\'s confidence, even to save myself."',
+            consequence: 'Protective silence • Maintains confidentiality despite danger',
+            effects: [
+              { characterId: 'isadora', affectionChange: -20 },
+              { characterId: 'raven', affectionChange: -15 }
+            ],
+            nextScene: 'accusation_escalation'
+          },
+          {
+            id: 'explain_innocent_curiosity',
+            text: '"I was only curious! I meant no harm by asking questions."',
+            consequence: 'Innocent explanation • Claims harmless intent',
+            effects: [
+              { characterId: 'isadora', affectionChange: -10 },
+              { characterId: 'lilith', affectionChange: -8 }
+            ],
+            nextScene: 'trust_evaluation'
+          },
+          {
+            id: 'offer_full_transparency',
+            text: '"I\'ll tell you everything I know and how I learned it."',
+            consequence: 'Complete transparency • Offers full disclosure',
+            effects: [
+              { characterId: 'isadora', affectionChange: 5 },
+              { characterId: 'lilith', affectionChange: 3 }
+            ],
+            nextScene: 'relationship_repair'
+          }
+        ]
+      },
+      {
+        id: 'relationship_repair',
+        title: 'Attempting Reconciliation',
+        text: [
+          'You make a sincere effort to repair the damaged relationships and rebuild lost trust.',
+          'Your words carry genuine remorse and a deep understanding of how your actions affected others.',
+          'Some vampires are willing to listen, while others remain skeptical. The process is slow and uncertain.',
+          'Whether reconciliation is possible depends on the depth of the damage and your sincerity in making amends.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'accept_whatever_outcome',
+            text: '"I accept whatever decision you make. I just needed you to know I\'m truly sorry."',
+            consequence: 'Humble acceptance • Shows genuine remorse',
+            effects: [
+              { characterId: 'lilith', affectionChange: 10 },
+              { characterId: 'seraphina', affectionChange: 8 }
+            ],
+            nextScene: 'forgiveness_consideration'
+          },
+          {
+            id: 'propose_probation_period',
+            text: '"Perhaps I could earn back your trust through a probationary period?"',
+            consequence: 'Earning trust • Proposes gradual rebuilding',
+            effects: [
+              { characterId: 'isadora', affectionChange: 5 },
+              { characterId: 'celeste', affectionChange: 8 }
+            ],
+            nextScene: 'conditional_acceptance'
+          },
+          {
+            id: 'promise_changed_behavior',
+            text: '"I promise to change my behavior completely. Give me one more chance."',
+            consequence: 'Behavioral change • Commits to transformation',
+            effects: [
+              { characterId: 'lilith', affectionChange: 8 },
+              { characterId: 'valentina', affectionChange: 5 }
+            ],
+            nextScene: 'second_chance_consideration'
+          }
+        ]
+      },
+      {
+        id: 'accusation_escalation',
+        title: 'Suspicions Confirmed',
+        text: [
+          'Your refusal to provide information only confirms their worst suspicions about your motives.',
+          'Raven\'s hand moves to her weapon. "Silence is admission of guilt. You\'re working for someone against us."',
+          'Lilith\'s expression turns to stone. "Pack your belongings. You have one hour before we escort you from the grounds."',
+          'The situation has escalated beyond repair. Your attempt to protect confidentiality has been interpreted as proof of betrayal.'
+        ],
+        character: characters.raven,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'leave_immediately',
+            text: 'Pack quickly and leave without further confrontation.',
+            consequence: 'Immediate departure • Avoids further conflict',
+            effects: [],
+            nextScene: 'exile_ending'
+          },
+          {
+            id: 'make_final_appeal',
+            text: 'Try one last desperate attempt to convince them of your innocence.',
+            consequence: 'Final appeal • Last chance for reconciliation',
+            effects: [
+              { characterId: 'lilith', affectionChange: -5 },
+              { characterId: 'raven', affectionChange: -10 }
+            ],
+            nextScene: 'relationship_repair'
+          }
+        ]
+      },
+      {
+        id: 'grief_understanding',
+        title: 'Shared Sorrow',
+        text: [
+          'In a moment of vulnerability, the community shares their deepest grief with you, and you with them.',
+          'Elena speaks of her lost family, Valentina of those she couldn\'t save, and others add their own stories of loss.',
+          'The shared sorrow creates profound bonds of understanding and mutual support.',
+          'You realize that grief shared is grief diminished, and that healing happens in community.'
+        ],
+        character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'offer_comfort_to_all',
+            text: 'Open your arms to comfort anyone who needs it.',
+            consequence: 'Universal comfort • Offers support to everyone',
+            effects: [
+              { characterId: 'elena', affectionChange: 35 },
+              { characterId: 'morgana', affectionChange: 25 },
+              { characterId: 'valentina', affectionChange: 20 }
+            ],
+            nextScene: 'healing_circle'
+          },
+          {
+            id: 'share_your_own_grief',
+            text: 'Share your own experiences with loss and sorrow.',
+            consequence: 'Grief sharing • Creates mutual vulnerability',
+            effects: [
+              { characterId: 'elena', affectionChange: 40 },
+              { characterId: 'seraphina', affectionChange: 25 }
+            ],
+            nextScene: 'mutual_healing'
+          },
+          {
+            id: 'suggest_memorial_ritual',
+            text: '"Perhaps we could create a ritual to honor all those we\'ve lost."',
+            consequence: 'Memorial creation • Proposes healing ceremony',
+            effects: [
+              { characterId: 'luna', affectionChange: 30 },
+              { characterId: 'morgana', affectionChange: 25 }
+            ],
+            nextScene: 'sacred_remembrance'
+          }
+        ]
+      },
+      // Additional orphaned scenes implementation
+      {
+        id: 'isadora_political_lessons',
+        title: 'The Art of Influence',
+        text: [
+          'Isadora shares her centuries of experience with political strategy and social influence.',
+          '"Power is never about force - it\'s about understanding what people want and helping them see how your goals align with theirs," she explains.',
+          '"Every conversation is an opportunity to build alliances, gather information, or plant seeds for future cooperation."',
+          'Her insights reveal the sophisticated political thinking that keeps the supernatural community stable.'
+        ],
+        character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_about_negotiation_tactics',
+            text: '"What are your most effective negotiation tactics?"',
+            consequence: 'Tactical learning • Seeks practical political skills',
+            effects: [{ characterId: 'isadora', affectionChange: 25 }],
+            nextScene: 'political_mastery'
+          },
+          {
+            id: 'discuss_ethical_boundaries',
+            text: '"How do you maintain ethical boundaries while being politically effective?"',
+            consequence: 'Ethical inquiry • Shows moral consideration',
+            effects: [{ characterId: 'isadora', affectionChange: 30 }],
+            nextScene: 'principled_politics'
+          }
+        ]
+      },
+      {
+        id: 'educational_development',
+        title: 'Learning Systems',
+        text: [
+          'You work with Celeste to develop comprehensive educational systems for the community.',
+          'The approach balances formal instruction with experiential learning and mentorship.',
+          'Different learning styles and preferences are accommodated to ensure everyone can participate fully.',
+          'The educational framework becomes a model for other supernatural communities.'
+        ],
+        character: characters.celeste,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'focus_on_practical_skills',
+            text: 'Emphasize practical skills that can be immediately applied.',
+            consequence: 'Practical focus • Prioritizes applicable knowledge',
+            effects: [{ characterId: 'celeste', affectionChange: 30 }],
+            nextScene: 'skill_development'
+          },
+          {
+            id: 'balance_theory_and_practice',
+            text: 'Create balanced curriculum combining theoretical understanding with practical application.',
+            consequence: 'Balanced approach • Integrates different learning approaches',
+            effects: [{ characterId: 'celeste', affectionChange: 35 }],
+            nextScene: 'comprehensive_education'
+          }
+        ]
+      },
+      {
+        id: 'valentina_gratitude',
+        title: 'Revolutionary Appreciation',
+        text: [
+          'Valentina\'s fierce exterior softens as she expresses genuine gratitude for your understanding and support.',
+          '"You didn\'t just hear my words - you felt the pain behind them. That means everything to someone like me."',
+          'Her amber eyes shine with unshed tears. "So few people understand that revolution comes from love, not anger."',
+          'The moment creates a deep bond built on mutual understanding and shared compassion.'
+        ],
+        character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'deepen_revolutionary_bond',
+            text: '"Your passion inspires me. How can I help make your vision real?"',
+            consequence: 'Revolutionary alliance • Commits to shared cause',
+            effects: [{ characterId: 'valentina', affectionChange: 40 }],
+            nextScene: 'revolutionary_partnership'
+          },
+          {
+            id: 'offer_emotional_support',
+            text: '"You don\'t have to carry this burden alone anymore."',
+            consequence: 'Emotional support • Offers partnership in struggle',
+            effects: [{ characterId: 'valentina', affectionChange: 35 }],
+            nextScene: 'shared_burden'
+          }
+        ]
+      },
+      {
+        id: 'revolutionary_determination',
+        title: 'Strengthened Resolve',
+        text: [
+          'Your support strengthens Valentina\'s determination to continue fighting for the marginalized.',
+          '"With allies like you, real change becomes possible. We can build the network of support that so many desperately need."',
+          'Her revolutionary fervor is tempered by wisdom gained through your conversations.',
+          'The partnership promises to create lasting positive change in the supernatural community.'
+        ],
+        character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'plan_systematic_approach',
+            text: '"Let\'s develop a systematic approach to building this network."',
+            consequence: 'Strategic planning • Focuses on organized approach',
+            effects: [{ characterId: 'valentina', affectionChange: 30 }],
+            nextScene: 'network_development'
+          },
+          {
+            id: 'start_with_immediate_needs',
+            text: '"Should we start by addressing the most urgent cases first?"',
+            consequence: 'Immediate action • Prioritizes urgent needs',
+            effects: [{ characterId: 'valentina', affectionChange: 35 }],
+            nextScene: 'crisis_intervention'
+          }
+        ]
+      },
+      {
+        id: 'rescue_outcomes',
+        title: 'Stories of Recovery',
+        text: [
+          'Valentina shares the outcomes of her rescue efforts, both successful recoveries and heartbreaking losses.',
+          '"Maria is thriving now - she teaches art to other young vampires, helping them channel their emotions constructively."',
+          '"But not every story ends well. Dmitri took his own life before we could reach him. That\'s why timing matters so much."',
+          'The mixed outcomes underscore both the importance and the urgency of the work.'
+        ],
+        character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'honor_the_lost',
+            text: '"We should honor those we couldn\'t save by saving others in their memory."',
+            consequence: 'Memorial commitment • Channels grief into purpose',
+            effects: [{ characterId: 'valentina', affectionChange: 40 }],
+            nextScene: 'memorial_dedication'
+          },
+          {
+            id: 'focus_on_prevention',
+            text: '"How can we prevent more tragedies like Dmitri\'s?"',
+            consequence: 'Prevention focus • Seeks proactive solutions',
+            effects: [{ characterId: 'valentina', affectionChange: 35 }],
+            nextScene: 'prevention_strategies'
+          }
+        ]
+      },
+      {
+        id: 'character_creation',
+        title: 'New Beginnings',
+        text: [
+          'You return to the beginning of your journey, ready to make different choices and explore new paths.',
+          'The knowledge of previous experiences gives you wisdom, but the future remains unwritten.',
+          'Each choice still matters, each relationship still needs to be built through genuine connection.',
+          'Your story begins anew with endless possibilities stretching ahead.'
+        ],
+        background: '/backgrounds/title-screen.png',
+        choices: [
+          {
+            id: 'begin_character_creation',
+            text: 'Create your character',
+            consequence: 'Fresh start • Begin new journey',
+            effects: [],
+            nextScene: 'trait_selection'
+          }
+        ]
+      },
+      {
+        id: 'relationship_summary',
+        title: 'Bonds Forged',
+        text: [
+          'Looking back on your journey, you reflect on the relationships you\'ve built and the trust you\'ve earned.',
+          'Each connection tells a story of growth, understanding, and mutual respect developed through your choices.',
+          'The vampire community has been forever changed by your presence, just as you have been changed by theirs.',
+          'These bonds will endure beyond this single story, part of the eternal tapestry of Ravencroft Manor.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'start_new_story',
+            text: 'Begin a new journey',
+            consequence: 'New adventure • Fresh possibilities',
+            effects: [],
+            nextScene: 'character_creation'
+          }
+        ]
+      },
+      {
+        id: 'trust_evaluation',
+        title: 'Weighing Your Worth',
+        text: [
+          'The community carefully evaluates whether your curiosity crossed acceptable boundaries or remained within reasonable limits.',
+          'Lilith leads the discussion: "Intent matters as much as action. Was this genuine curiosity or something more concerning?"',
+          'Different vampires offer varying perspectives, some more forgiving than others.',
+          'Your fate hangs in the balance as they decide whether trust can be maintained or has been irreparably damaged.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'accept_their_judgment',
+            text: '"I accept whatever decision you make. I understand your concerns."',
+            consequence: 'Humble acceptance • Shows respect for community judgment',
+            effects: [{ characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'forgiveness_consideration'
+          },
+          {
+            id: 'defend_your_intentions',
+            text: '"My questions came from genuine interest, never malicious intent."',
+            consequence: 'Intent defense • Clarifies motivations',
+            effects: [{ characterId: 'lilith', affectionChange: 5 }],
+            nextScene: 'conditional_acceptance'
+          }
+        ]
+      },
+      {
+        id: 'forgiveness_consideration',
+        title: 'Mercy\'s Deliberation',
+        text: [
+          'The community weighs the possibility of forgiveness against the need for security.',
+          'Seraphina advocates for mercy: "Forgiveness is divine, and everyone deserves a second chance if they truly repent."',
+          'Raven argues for caution: "Security isn\'t just about us - it\'s about protecting everyone we shelter."',
+          'The decision will set a precedent for how the community handles future trust violations.'
+        ],
+        character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'promise_to_earn_forgiveness',
+            text: '"I will spend however long it takes proving I deserve your forgiveness."',
+            consequence: 'Forgiveness commitment • Pledges to rebuild trust',
+            effects: [{ characterId: 'seraphina', affectionChange: 15 }],
+            nextScene: 'redemption_path'
+          },
+          {
+            id: 'accept_exile_if_necessary',
+            text: '"If exile is what\'s best for everyone\'s safety, I\'ll accept it."',
+            consequence: 'Selfless acceptance • Puts community safety first',
+            effects: [{ characterId: 'lilith', affectionChange: 8 }],
+            nextScene: 'noble_sacrifice'
+          }
+        ]
+      },
+      {
+        id: 'conditional_acceptance',
+        title: 'Probationary Status',
+        text: [
+          'The community decides to allow you to stay under strict conditions and constant supervision.',
+          'Isadora outlines the terms: "Limited access to sensitive information, regular check-ins, and demonstration of trustworthy behavior."',
+          'The probationary period will test whether you can rebuild the trust that was damaged.',
+          'Success means full restoration of your place in the community; failure means permanent exile.'
+        ],
+        character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'accept_probation_eagerly',
+            text: '"I accept these conditions gratefully. Thank you for this chance."',
+            consequence: 'Probation acceptance • Shows gratitude for opportunity',
+            effects: [{ characterId: 'isadora', affectionChange: 12 }],
+            nextScene: 'probationary_period'
+          },
+          {
+            id: 'ask_about_timeline',
+            text: '"How long will the probationary period last?"',
+            consequence: 'Timeline inquiry • Seeks understanding of process',
+            effects: [{ characterId: 'isadora', affectionChange: 8 }],
+            nextScene: 'probation_details'
+          }
+        ]
+      },
+      {
+        id: 'second_chance_consideration',
+        title: 'The Weight of Second Chances',
+        text: [
+          'Your promise of changed behavior is weighed carefully by the community.',
+          'Luna speaks with prophetic wisdom: "I see genuine remorse, but also the difficulty of changing ingrained patterns."',
+          'Celeste adds analytically: "Second chances work best when supported by structural changes, not just good intentions."',
+          'The decision will require both your commitment and the community\'s willingness to invest in your rehabilitation.'
+        ],
+        character: characters.luna,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'propose_accountability_measures',
+            text: '"I want accountability measures to help ensure I keep my promise."',
+            consequence: 'Accountability seeking • Requests support structure',
+            effects: [{ characterId: 'celeste', affectionChange: 15 }],
+            nextScene: 'accountability_framework'
+          },
+          {
+            id: 'ask_for_community_support',
+            text: '"I need your help to change. I can\'t do this alone."',
+            consequence: 'Support request • Acknowledges need for assistance',
+            effects: [{ characterId: 'luna', affectionChange: 12 }],
+            nextScene: 'community_rehabilitation'
+          }
+        ]
+      },
+      {
+        id: 'healing_circle',
+        title: 'Circle of Comfort',
+        text: [
+          'The community forms a healing circle, offering comfort and support to all who are grieving.',
+          'Physical touch, gentle words, and shared presence create a sacred space for processing pain.',
+          'The circle demonstrates that healing happens in community, not in isolation.',
+          'Each person\'s grief is honored while the collective strength helps everyone bear their burdens.'
+        ],
+        character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'establish_regular_circles',
+            text: 'Suggest making healing circles a regular community practice.',
+            consequence: 'Institutionalized healing • Creates ongoing support structure',
+            effects: [
+              { characterId: 'elena', affectionChange: 30 },
+              { characterId: 'seraphina', affectionChange: 25 }
+            ],
+            nextScene: 'therapeutic_community'
+          },
+          {
+            id: 'focus_on_present_healing',
+            text: 'Concentrate fully on the healing happening in this moment.',
+            consequence: 'Present focus • Emphasizes immediate healing',
+            effects: [
+              { characterId: 'morgana', affectionChange: 25 },
+              { characterId: 'elena', affectionChange: 35 }
+            ],
+            nextScene: 'collective_healing'
+          }
+        ]
+      },
+      {
+        id: 'mutual_healing',
+        title: 'Shared Recovery',
+        text: [
+          'You and the community members heal together, supporting each other through shared vulnerability.',
+          'The mutual exchange of comfort and understanding creates deeper bonds than sympathy alone could achieve.',
+          'Everyone discovers that giving healing helps receive it, and receiving healing enables giving it.',
+          'The process transforms individual pain into collective strength and wisdom.'
+        ],
+        character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'develop_healing_partnerships',
+            text: 'Form ongoing healing partnerships with community members.',
+            consequence: 'Partnership formation • Creates sustained support relationships',
+            effects: [
+              { characterId: 'elena', affectionChange: 40 },
+              { characterId: 'morgana', affectionChange: 30 }
+            ],
+            nextScene: 'therapeutic_bonds'
+          },
+          {
+            id: 'share_healing_wisdom',
+            text: 'Document and share the healing wisdom gained through this experience.',
+            consequence: 'Wisdom preservation • Records healing insights',
+            effects: [
+              { characterId: 'celeste', affectionChange: 25 },
+              { characterId: 'luna', affectionChange: 30 }
+            ],
+            nextScene: 'healing_legacy'
+          }
+        ]
+      },
+      {
+        id: 'sacred_remembrance',
+        title: 'Honoring the Lost',
+        text: [
+          'The community creates a sacred ritual to honor and remember all those who have been lost.',
+          'Each name is spoken with love, each story shared with reverence, each memory treasured.',
+          'The ritual transforms grief into celebration of lives lived and love shared.',
+          'The remembrance becomes a healing tradition that will comfort future generations facing loss.'
+        ],
+        character: characters.luna,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'establish_annual_remembrance',
+            text: 'Make this an annual tradition to honor all losses.',
+            consequence: 'Traditional establishment • Creates lasting memorial practice',
+            effects: [
+              { characterId: 'luna', affectionChange: 35 },
+              { characterId: 'morgana', affectionChange: 30 }
+            ],
+            nextScene: 'memorial_tradition'
+          },
+          {
+            id: 'create_memorial_garden',
+            text: 'Propose creating a physical memorial garden for ongoing remembrance.',
+            consequence: 'Memorial creation • Establishes permanent tribute',
+            effects: [
+              { characterId: 'elena', affectionChange: 40 },
+              { characterId: 'seraphina', affectionChange: 25 }
+            ],
+            nextScene: 'living_memorial'
+          }
+        ]
+      },
+      // Final orphaned scenes completion
+      {
+        id: 'political_mastery',
+        title: 'Strategic Excellence',
+        text: [
+          'Under Isadora\'s guidance, you develop sophisticated political and negotiation skills.',
+          'The lessons cover reading body language, managing information flow, building coalitions, and finding win-win solutions.',
+          'Your growing expertise in diplomacy becomes valuable for both internal community dynamics and external relations.',
+          'Political mastery proves to be about creating value for everyone, not just winning.'
+        ],
+        character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'apply_skills_internally',
+            text: 'Use these skills to improve internal community dynamics.',
+            consequence: 'Internal application • Strengthens community relationships',
+            effects: [{ characterId: 'isadora', affectionChange: 30 }],
+            nextScene: 'community_harmony'
+          },
+          {
+            id: 'focus_on_external_relations',
+            text: 'Concentrate on improving external supernatural community relations.',
+            consequence: 'External focus • Builds broader alliances',
+            effects: [{ characterId: 'isadora', affectionChange: 35 }],
+            nextScene: 'diplomatic_success'
+          }
+        ]
+      },
+      {
+        id: 'principled_politics',
+        title: 'Ethics in Action',
+        text: [
+          'You and Isadora develop frameworks for maintaining ethical standards while being politically effective.',
+          'The approach emphasizes transparency, honesty, and mutual benefit while still achieving strategic goals.',
+          'Principled politics proves more sustainable and trustworthy than manipulative tactics.',
+          'Your ethical approach earns respect and creates lasting alliances based on genuine trust.'
+        ],
+        character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'teach_ethical_frameworks',
+            text: 'Share these ethical frameworks with other community members.',
+            consequence: 'Ethics teaching • Spreads principled approach',
+            effects: [{ characterId: 'isadora', affectionChange: 40 }],
+            nextScene: 'moral_leadership'
+          },
+          {
+            id: 'document_best_practices',
+            text: 'Document best practices for future reference and training.',
+            consequence: 'Practice documentation • Preserves ethical methods',
+            effects: [{ characterId: 'celeste', affectionChange: 25 }],
+            nextScene: 'ethical_legacy'
+          }
+        ]
+      },
+      {
+        id: 'skill_development',
+        title: 'Practical Mastery',
+        text: [
+          'Focus on developing immediately applicable practical skills serves the community well.',
+          'Members quickly gain competencies they can use in daily challenges and responsibilities.',
+          'The hands-on approach builds confidence and creates visible improvements in community functioning.',
+          'Practical skills form the foundation for more advanced theoretical understanding later.'
+        ],
+        character: characters.celeste,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'expand_skill_programs',
+            text: 'Develop additional practical skill programs for specialized areas.',
+            consequence: 'Program expansion • Creates comprehensive skill development',
+            effects: [{ characterId: 'celeste', affectionChange: 35 }],
+            nextScene: 'mastery_pathways'
+          },
+          {
+            id: 'create_mentorship_pairs',
+            text: 'Pair experienced members with newcomers for skill transfer.',
+            consequence: 'Mentorship creation • Builds learning relationships',
+            effects: [{ characterId: 'celeste', affectionChange: 30 }],
+            nextScene: 'knowledge_transfer'
+          }
+        ]
+      },
+      {
+        id: 'comprehensive_education',
+        title: 'Holistic Learning',
+        text: [
+          'The balanced educational approach creates well-rounded community members with both practical skills and theoretical understanding.',
+          'Students learn to think critically while also gaining hands-on competencies.',
+          'The comprehensive curriculum becomes a model for other supernatural communities seeking educational excellence.',
+          'Graduates emerge as thoughtful leaders capable of handling complex challenges.'
+        ],
+        character: characters.celeste,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'establish_graduation_ceremonies',
+            text: 'Create formal recognition for educational achievements.',
+            consequence: 'Achievement recognition • Celebrates learning milestones',
+            effects: [{ characterId: 'celeste', affectionChange: 30 }],
+            nextScene: 'academic_excellence'
+          },
+          {
+            id: 'develop_advanced_curricula',
+            text: 'Create advanced programs for continued learning beyond basics.',
+            consequence: 'Advanced development • Enables lifelong learning',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'lifelong_learning'
+          }
+        ]
+      },
+      {
+        id: 'revolutionary_partnership',
+        title: 'United in Change',
+        text: [
+          'Your partnership with Valentina creates a powerful force for positive transformation in supernatural society.',
+          'Together, you develop strategies that are both revolutionary in scope and practical in implementation.',
+          'The collaboration combines your fresh perspective with her experienced passion for justice.',
+          'Your united efforts inspire others to join the movement for progressive change.'
+        ],
+        character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'recruit_additional_allies',
+            text: 'Work together to recruit additional allies for the cause.',
+            consequence: 'Alliance building • Expands revolutionary network',
+            effects: [{ characterId: 'valentina', affectionChange: 40 }],
+            nextScene: 'movement_growth'
+          },
+          {
+            id: 'focus_on_specific_reforms',
+            text: 'Concentrate efforts on achieving specific, measurable reforms.',
+            consequence: 'Reform focus • Targets concrete changes',
+            effects: [{ characterId: 'valentina', affectionChange: 35 }],
+            nextScene: 'reform_success'
+          }
+        ]
+      },
+      {
+        id: 'shared_burden',
+        title: 'Strength in Unity',
+        text: [
+          'By sharing Valentina\'s emotional burden, you help lighten the weight of her revolutionary mission.',
+          'The support allows her to pursue change from a place of hope rather than desperation.',
+          'Your partnership demonstrates that sustainable revolution requires emotional sustainability.',
+          'Together, you create a model for how passionate advocacy can be both effective and healthy.'
+        ],
+        character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'establish_support_networks',
+            text: 'Create support networks for other passionate advocates.',
+            consequence: 'Network creation • Builds emotional support systems',
+            effects: [{ characterId: 'valentina', affectionChange: 45 }],
+            nextScene: 'advocate_support'
+          },
+          {
+            id: 'develop_sustainable_practices',
+            text: 'Develop practices that maintain passion while preventing burnout.',
+            consequence: 'Sustainability focus • Creates healthy advocacy methods',
+            effects: [{ characterId: 'valentina', affectionChange: 40 }],
+            nextScene: 'sustainable_revolution'
+          }
+        ]
+      },
+      {
+        id: 'trait_selection',
+        title: 'Character Creation',
+        text: [
+          'You stand at the beginning of your journey, ready to define the traits that will shape your story.',
+          'Each choice will influence how you interact with the vampire community and the paths available to you.',
+          'Your character\'s unique combination of traits, flaws, and boons will create distinctive opportunities.',
+          'The adventure awaits your decisions.'
+        ],
+        background: '/backgrounds/title-screen.png',
+        choices: [
+          {
+            id: 'begin_trait_selection',
+            text: 'Choose your character traits',
+            consequence: 'Character creation • Define your nature',
+            effects: [],
+            nextScene: 'character_creation_complete'
+          }
+        ]
+      },
+      {
+        id: 'network_development',
+        title: 'Building Connections',
+        text: [
+          'You and Valentina systematically build a network of support for marginalized supernatural beings.',
+          'The network provides emergency assistance, ongoing support, and advocacy for policy changes.',
+          'Careful organization ensures the network can respond quickly while maintaining security.',
+          'The growing community of support creates hope for lasting positive change.'
+        ],
+        character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'expand_geographic_reach',
+            text: 'Expand the network to cover broader geographic areas.',
+            consequence: 'Geographic expansion • Extends support coverage',
+            effects: [{ characterId: 'valentina', affectionChange: 35 }],
+            nextScene: 'regional_networks'
+          },
+          {
+            id: 'deepen_local_connections',
+            text: 'Focus on deepening connections and services in current areas.',
+            consequence: 'Local deepening • Strengthens existing support',
+            effects: [{ characterId: 'valentina', affectionChange: 40 }],
+            nextScene: 'community_strengthening'
+          }
+        ]
+      },
+      {
+        id: 'crisis_intervention',
+        title: 'Emergency Response',
+        text: [
+          'You and Valentina develop rapid response systems for supernatural beings in crisis.',
+          'The intervention protocols balance immediate safety with long-term support and recovery.',
+          'Training programs ensure multiple team members can respond effectively to different types of emergencies.',
+          'Lives are saved through quick action and compassionate follow-up care.'
+        ],
+        character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'expand_response_capabilities',
+            text: 'Expand capabilities to handle more types of crises.',
+            consequence: 'Capability expansion • Increases intervention scope',
+            effects: [{ characterId: 'valentina', affectionChange: 40 }],
+            nextScene: 'comprehensive_response'
+          },
+          {
+            id: 'focus_on_prevention',
+            text: 'Develop programs to prevent crises before they occur.',
+            consequence: 'Prevention focus • Addresses root causes',
+            effects: [{ characterId: 'valentina', affectionChange: 35 }],
+            nextScene: 'crisis_prevention'
+          }
+        ]
+      },
+      {
+        id: 'memorial_dedication',
+        title: 'Honoring the Lost',
+        text: [
+          'You and Valentina create a memorial dedicated to those who were lost before help could reach them.',
+          'The memorial serves as both a place of remembrance and a commitment to preventing future tragedies.',
+          'Each name represents a life that mattered and a reminder of the importance of the work.',
+          'The dedication ceremony brings together supporters from across the supernatural community.'
+        ],
+        character: characters.valentina,
+        background: '/backgrounds/garden-courtyard.png',
+        choices: [
+          {
+            id: 'establish_annual_remembrance',
+            text: 'Create an annual memorial service to honor the lost.',
+            consequence: 'Memorial tradition • Creates ongoing remembrance',
+            effects: [{ characterId: 'valentina', affectionChange: 45 }],
+            nextScene: 'memorial_tradition'
+          },
+          {
+            id: 'channel_grief_into_action',
+            text: 'Use the memorial as inspiration for renewed action.',
+            consequence: 'Grief transformation • Converts sorrow into purpose',
+            effects: [{ characterId: 'valentina', affectionChange: 40 }],
+            nextScene: 'purpose_renewal'
+          }
+        ]
+      },
+      {
+        id: 'prevention_strategies',
+        title: 'Stopping Tragedy',
+        text: [
+          'You develop comprehensive strategies to prevent the kind of tragedies that took Dmitri and others.',
+          'Early intervention programs identify at-risk individuals before crisis points are reached.',
+          'Community education reduces stigma and encourages people to seek help sooner.',
+          'The prevention approach proves more effective than crisis response alone.'
+        ],
+        character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'implement_early_warning_systems',
+            text: 'Create systems to identify and respond to early warning signs.',
+            consequence: 'Warning systems • Enables proactive intervention',
+            effects: [{ characterId: 'valentina', affectionChange: 40 }],
+            nextScene: 'proactive_care'
+          },
+          {
+            id: 'focus_on_community_education',
+            text: 'Concentrate on educating communities about prevention.',
+            consequence: 'Education focus • Builds prevention awareness',
+            effects: [{ characterId: 'valentina', affectionChange: 35 }],
+            nextScene: 'prevention_education'
+          }
+        ]
+      },
+      {
+        id: 'redemption_path',
+        title: 'Road to Forgiveness',
+        text: [
+          'You begin the difficult but necessary work of earning back the trust you lost.',
+          'Each day requires demonstrating through actions that you understand the harm caused and are committed to change.',
+          'The process is slow and sometimes frustrating, but gradual progress becomes visible.',
+          'Redemption proves to be not just about being forgiven, but about becoming worthy of that forgiveness.'
+        ],
+        character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'focus_on_consistent_actions',
+            text: 'Demonstrate change through consistent, trustworthy actions.',
+            consequence: 'Behavioral consistency • Shows reliable transformation',
+            effects: [{ characterId: 'seraphina', affectionChange: 20 }],
+            nextScene: 'trust_rebuilding'
+          },
+          {
+            id: 'seek_guidance_for_improvement',
+            text: 'Ask for guidance on how to improve and make amends.',
+            consequence: 'Guidance seeking • Shows humility and learning desire',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'guided_redemption'
+          }
+        ]
+      },
+      {
+        id: 'noble_sacrifice',
+        title: 'Selfless Choice',
+        text: [
+          'Your willingness to accept exile for the community\'s safety demonstrates genuine remorse and character growth.',
+          'The sacrifice doesn\'t go unnoticed - several community members are moved by your selflessness.',
+          'Though you prepare to leave, the gesture opens unexpected possibilities for reconciliation.',
+          'Sometimes the greatest strength is shown through willingness to give up what you want most.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'accept_exile_gracefully',
+            text: 'Prepare to leave with dignity and gratitude for the time you had.',
+            consequence: 'Graceful departure • Shows maturity and acceptance',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'dignified_exile'
+          },
+          {
+            id: 'express_hope_for_future',
+            text: 'Express hope that your sacrifice contributes to community safety.',
+            consequence: 'Hopeful sacrifice • Shows continued care for community',
+            effects: [{ characterId: 'seraphina', affectionChange: 15 }],
+            nextScene: 'sacrificial_legacy'
+          }
+        ]
+      },
+      {
+        id: 'probationary_period',
+        title: 'Earning Trust',
+        text: [
+          'The probationary period tests your commitment to rebuilding trust through consistent actions.',
+          'Daily interactions are carefully observed, and your responses to challenges are noted.',
+          'Progress is slow but measurable as you demonstrate reliable judgment and trustworthy behavior.',
+          'The structured approach helps both you and the community feel secure during the rebuilding process.'
+        ],
+        character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'exceed_expectations',
+            text: 'Go above and beyond the minimum requirements.',
+            consequence: 'Excellence demonstration • Shows extraordinary commitment',
+            effects: [{ characterId: 'isadora', affectionChange: 18 }],
+            nextScene: 'exceptional_progress'
+          },
+          {
+            id: 'meet_requirements_consistently',
+            text: 'Focus on meeting all requirements consistently and reliably.',
+            consequence: 'Consistent compliance • Shows reliable improvement',
+            effects: [{ characterId: 'isadora', affectionChange: 15 }],
+            nextScene: 'steady_progress'
+          }
+        ]
+      },
+      {
+        id: 'probation_details',
+        title: 'Understanding the Process',
+        text: [
+          'Isadora explains the detailed structure of your probationary period and what success looks like.',
+          'The timeline depends on demonstrated progress rather than fixed dates, ensuring genuine change.',
+          'Regular evaluations will assess both behavior and understanding of why trust was damaged.',
+          'The process is designed to be fair while maintaining community security.'
+        ],
+        character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'commit_to_the_process',
+            text: 'Fully commit to following the process as designed.',
+            consequence: 'Process commitment • Shows acceptance of structure',
+            effects: [{ characterId: 'isadora', affectionChange: 12 }],
+            nextScene: 'probationary_period'
+          },
+          {
+            id: 'ask_about_support_resources',
+            text: 'Ask what support resources are available during probation.',
+            consequence: 'Support inquiry • Seeks help for success',
+            effects: [{ characterId: 'celeste', affectionChange: 10 }],
+            nextScene: 'probation_support'
+          }
+        ]
+      },
+      {
+        id: 'accountability_framework',
+        title: 'Structured Change',
+        text: [
+          'Together, you develop a comprehensive accountability framework to support your behavioral changes.',
+          'The structure includes regular check-ins, specific goals, and measurements of progress.',
+          'Accountability partners help provide support while ensuring consistency in improvement efforts.',
+          'The framework becomes a model for helping others make positive changes in their lives.'
+        ],
+        character: characters.celeste,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'implement_framework_fully',
+            text: 'Embrace the full accountability framework enthusiastically.',
+            consequence: 'Framework embrace • Shows commitment to structured change',
+            effects: [{ characterId: 'celeste', affectionChange: 20 }],
+            nextScene: 'systematic_improvement'
+          },
+          {
+            id: 'adapt_framework_to_needs',
+            text: 'Work to adapt the framework to your specific needs and challenges.',
+            consequence: 'Framework adaptation • Personalizes change approach',
+            effects: [{ characterId: 'celeste', affectionChange: 18 }],
+            nextScene: 'personalized_growth'
+          }
+        ]
+      },
+      {
+        id: 'community_rehabilitation',
+        title: 'Collective Support',
+        text: [
+          'The entire community commits to supporting your rehabilitation and positive change.',
+          'Different members offer various forms of assistance: mentorship, skills training, emotional support.',
+          'The collective approach demonstrates the community\'s commitment to redemption and growth.',
+          'Your rehabilitation becomes a community effort that strengthens everyone involved.'
+        ],
+        character: characters.luna,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'accept_community_support',
+            text: 'Gratefully accept the community\'s support and guidance.',
+            consequence: 'Support acceptance • Shows humility and gratitude',
+            effects: [{ characterId: 'luna', affectionChange: 20 }],
+            nextScene: 'supported_growth'
+          },
+          {
+            id: 'contribute_to_others_growth',
+            text: 'Look for ways to support others\' growth while working on your own.',
+            consequence: 'Mutual support • Shows commitment to community wellbeing',
+            effects: [{ characterId: 'elena', affectionChange: 15 }],
+            nextScene: 'reciprocal_healing'
+          }
+        ]
+      },
+      {
+        id: 'therapeutic_community',
+        title: 'Healing Culture',
+        text: [
+          'The regular healing circles transform the community culture, making emotional support a core value.',
+          'Everyone feels more comfortable sharing struggles and seeking help when needed.',
+          'The therapeutic approach prevents many problems from escalating into serious crises.',
+          'The community becomes known for its emotional intelligence and supportive environment.'
+        ],
+        character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'train_community_therapists',
+            text: 'Train community members in therapeutic techniques.',
+            consequence: 'Therapeutic training • Builds healing capacity',
+            effects: [{ characterId: 'elena', affectionChange: 35 }],
+            nextScene: 'healing_expertise'
+          },
+          {
+            id: 'document_healing_practices',
+            text: 'Document the healing practices for sharing with other communities.',
+            consequence: 'Practice documentation • Spreads healing knowledge',
+            effects: [{ characterId: 'celeste', affectionChange: 30 }],
+            nextScene: 'healing_wisdom'
+          }
+        ]
+      },
+      {
+        id: 'collective_healing',
+        title: 'Community Recovery',
+        text: [
+          'The community\'s collective healing process strengthens bonds and creates deeper understanding.',
+          'Shared healing experiences build empathy and mutual support among all members.',
+          'The process demonstrates that individual healing contributes to community wellbeing.',
+          'Collective recovery becomes more powerful than individual healing efforts alone.'
+        ],
+        character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'celebrate_collective_strength',
+            text: 'Celebrate the strength that comes from healing together.',
+            consequence: 'Strength celebration • Honors collective power',
+            effects: [{ characterId: 'morgana', affectionChange: 30 }],
+            nextScene: 'unified_community'
+          },
+          {
+            id: 'continue_healing_work',
+            text: 'Commit to ongoing healing work as a community practice.',
+            consequence: 'Ongoing commitment • Maintains healing focus',
+            effects: [{ characterId: 'elena', affectionChange: 35 }],
+            nextScene: 'healing_tradition'
+          }
+        ]
+      },
+      {
+        id: 'therapeutic_bonds',
+        title: 'Healing Partnerships',
+        text: [
+          'The ongoing healing partnerships create deep, supportive relationships within the community.',
+          'Partners help each other process emotions, overcome challenges, and celebrate growth.',
+          'The therapeutic bonds demonstrate that healing is both an individual and relational process.',
+          'These partnerships become one of the community\'s greatest strengths.'
+        ],
+        character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'formalize_partnership_program',
+            text: 'Create a formal program for therapeutic partnerships.',
+            consequence: 'Program formalization • Systematizes healing support',
+            effects: [{ characterId: 'elena', affectionChange: 40 }],
+            nextScene: 'healing_system'
+          },
+          {
+            id: 'focus_on_partnership_quality',
+            text: 'Focus on deepening the quality of existing partnerships.',
+            consequence: 'Quality focus • Strengthens current bonds',
+            effects: [{ characterId: 'morgana', affectionChange: 30 }],
+            nextScene: 'deep_connections'
+          }
+        ]
+      },
+      {
+        id: 'healing_legacy',
+        title: 'Wisdom Preserved',
+        text: [
+          'The healing wisdom gained through community experience is carefully documented and preserved.',
+          'Future generations will benefit from the lessons learned about emotional support and recovery.',
+          'The documented practices become resources for other communities facing similar challenges.',
+          'Your healing legacy extends far beyond the immediate community.'
+        ],
+        character: characters.celeste,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'create_healing_library',
+            text: 'Establish a specialized library of healing wisdom and practices.',
+            consequence: 'Library creation • Preserves healing knowledge',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'knowledge_preservation'
+          },
+          {
+            id: 'train_future_healers',
+            text: 'Focus on training future healers in the documented practices.',
+            consequence: 'Healer training • Ensures knowledge continuity',
+            effects: [{ characterId: 'elena', affectionChange: 35 }],
+            nextScene: 'healing_succession'
+          }
+        ]
+      },
+      {
+        id: 'memorial_tradition',
+        title: 'Remembrance Ritual',
+        text: [
+          'The annual memorial tradition becomes a cornerstone of community life.',
+          'Each year, the community gathers to honor those lost and renew commitment to supporting the living.',
+          'The tradition provides comfort to the grieving while inspiring continued dedication to the cause.',
+          'Memorial events strengthen community bonds and preserve important memories.'
+        ],
+        character: characters.luna,
+        background: '/backgrounds/garden-courtyard.png',
+        choices: [
+          {
+            id: 'expand_memorial_activities',
+            text: 'Develop additional memorial activities throughout the year.',
+            consequence: 'Memorial expansion • Creates ongoing remembrance',
+            effects: [{ characterId: 'luna', affectionChange: 30 }],
+            nextScene: 'remembrance_culture'
+          },
+          {
+            id: 'focus_on_celebration_of_life',
+            text: 'Emphasize celebrating the lives lived rather than mourning the losses.',
+            consequence: 'Life celebration • Focuses on positive memories',
+            effects: [{ characterId: 'morgana', affectionChange: 35 }],
+            nextScene: 'joyful_remembrance'
+          }
+        ]
+      },
+      {
+        id: 'living_memorial',
+        title: 'Garden of Memory',
+        text: [
+          'The memorial garden becomes a living tribute where beauty grows from remembrance.',
+          'Each plant represents a life remembered, creating a space of natural peace and reflection.',
+          'The garden provides ongoing comfort to community members processing grief.',
+          'Tending the memorial garden becomes a meditative practice that honors the past while nurturing the future.'
+        ],
+        character: characters.elena,
+        background: '/backgrounds/garden-courtyard.png',
+        choices: [
+          {
+            id: 'expand_garden_program',
+            text: 'Develop programs where community members can participate in garden care.',
+            consequence: 'Garden program • Creates participatory memorial',
+            effects: [{ characterId: 'elena', affectionChange: 40 }],
+            nextScene: 'participatory_memorial'
+          },
+          {
+            id: 'create_garden_ceremonies',
+            text: 'Develop special ceremonies for planting and tending the memorial garden.',
+            consequence: 'Garden ceremonies • Ritualizes memorial care',
+            effects: [{ characterId: 'luna', affectionChange: 35 }],
+            nextScene: 'ritual_gardening'
+          }
+        ]
+      },
+      // Final completion of all orphaned pathways
+      {
+        id: 'community_harmony',
+        title: 'Internal Balance',
+        text: [
+          'Your political skills create unprecedented harmony within the community.',
+          'Conflicts are resolved before they escalate, and everyone feels heard and valued.',
+          'The improved dynamics strengthen both individual relationships and collective effectiveness.',
+          'The community becomes a model of cooperative living and mutual respect.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'maintain_harmony_systems',
+            text: 'Establish systems to maintain this harmony long-term.',
+            consequence: 'System establishment • Creates lasting harmony',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'diplomatic_success',
+        title: 'External Relations Triumph',
+        text: [
+          'Your diplomatic efforts create breakthrough improvements in external supernatural community relations.',
+          'Long-standing conflicts are resolved through skilled negotiation and mutual understanding.',
+          'The success positions your community as a leader in supernatural diplomacy.',
+          'Other communities seek your guidance for their own diplomatic challenges.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'share_diplomatic_methods',
+            text: 'Share successful diplomatic methods with other communities.',
+            consequence: 'Method sharing • Spreads diplomatic success',
+            effects: [{ characterId: 'isadora', affectionChange: 40 }],
+            nextScene: 'diplomatic_legacy'
+          }
+        ]
+      },
+      {
+        id: 'moral_leadership',
+        title: 'Ethical Influence',
+        text: [
+          'Your commitment to ethical frameworks inspires moral leadership throughout the community.',
+          'Others adopt principled approaches to challenges, creating a culture of integrity.',
+          'Ethical decision-making becomes the standard rather than the exception.',
+          'The community\'s moral reputation attracts like-minded individuals seeking principled leadership.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'formalize_ethical_standards',
+            text: 'Create formal ethical standards for community guidance.',
+            consequence: 'Standards formalization • Institutionalizes ethics',
+            effects: [{ characterId: 'seraphina', affectionChange: 35 }],
+            nextScene: 'ethical_community'
+          }
+        ]
+      },
+      {
+        id: 'ethical_legacy',
+        title: 'Principled Foundation',
+        text: [
+          'The documented ethical practices become a lasting legacy for future generations.',
+          'The principles guide decision-making long after current leaders move on.',
+          'Other communities adopt these frameworks, spreading ethical leadership broadly.',
+          'Your contribution to principled governance extends far beyond the immediate community.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'continue_ethical_development',
+            text: 'Continue developing and refining ethical frameworks.',
+            consequence: 'Ongoing development • Advances ethical thinking',
+            effects: [{ characterId: 'celeste', affectionChange: 30 }],
+            nextScene: 'wisdom_evolution'
+          }
+        ]
+      },
+      {
+        id: 'mastery_pathways',
+        title: 'Specialized Excellence',
+        text: [
+          'Expanded skill programs create clear pathways to mastery in specialized areas.',
+          'Community members can pursue deep expertise while contributing to collective knowledge.',
+          'The mastery programs attract talented individuals seeking advanced development opportunities.',
+          'Specialized excellence strengthens the community\'s capability and reputation.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'create_mastery_recognition',
+            text: 'Establish formal recognition for achieved mastery.',
+            consequence: 'Recognition system • Honors expertise achievement',
+            effects: [{ characterId: 'celeste', affectionChange: 35 }],
+            nextScene: 'expertise_celebration'
+          }
+        ]
+      },
+      {
+        id: 'knowledge_transfer',
+        title: 'Wisdom Sharing',
+        text: [
+          'Mentorship pairs create effective knowledge transfer between experienced and new members.',
+          'Learning becomes more personal and effective through one-on-one relationships.',
+          'The mentorship culture ensures important knowledge and skills are preserved.',
+          'Strong bonds develop between mentors and mentees, strengthening community connections.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'expand_mentorship_program',
+            text: 'Expand mentorship to cover all aspects of community life.',
+            consequence: 'Program expansion • Creates comprehensive mentorship',
+            effects: [{ characterId: 'luna', affectionChange: 30 }],
+            nextScene: 'mentorship_culture'
+          }
+        ]
+      },
+      {
+        id: 'academic_excellence',
+        title: 'Educational Achievement',
+        text: [
+          'Formal recognition ceremonies celebrate educational achievements and inspire continued learning.',
+          'The graduation events become important community celebrations that honor intellectual growth.',
+          'Academic excellence becomes a valued community tradition that motivates all members.',
+          'The educational achievements attract attention from other communities seeking similar success.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'establish_academic_traditions',
+            text: 'Create lasting academic traditions and celebrations.',
+            consequence: 'Tradition establishment • Creates educational culture',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'scholarly_community'
+          }
+        ]
+      },
+      {
+        id: 'lifelong_learning',
+        title: 'Continuous Growth',
+        text: [
+          'Advanced curricula ensure that learning never stops, even for the most experienced members.',
+          'The community becomes known for its commitment to intellectual growth and development.',
+          'Lifelong learning creates adaptability and resilience in facing new challenges.',
+          'The culture of continuous education attracts scholars and thinkers from across the supernatural world.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'document_learning_innovations',
+            text: 'Document educational innovations for sharing with other communities.',
+            consequence: 'Innovation documentation • Spreads educational excellence',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'educational_leadership'
+          }
+        ]
+      },
+      {
+        id: 'movement_growth',
+        title: 'Revolutionary Expansion',
+        text: [
+          'Additional allies join the revolutionary movement, creating a powerful network for change.',
+          'The growing movement has the strength and reach to create meaningful systemic improvements.',
+          'Success in recruiting demonstrates the appeal of the revolutionary vision.',
+          'The expanded network can tackle larger challenges and create more significant reforms.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'coordinate_movement_activities',
+            text: 'Coordinate activities across the expanded revolutionary network.',
+            consequence: 'Coordination establishment • Organizes revolutionary efforts',
+            effects: [{ characterId: 'valentina', affectionChange: 45 }],
+            nextScene: 'organized_revolution'
+          }
+        ]
+      },
+      {
+        id: 'reform_success',
+        title: 'Tangible Change',
+        text: [
+          'Specific, measurable reforms are successfully implemented, creating visible improvements.',
+          'The concrete achievements demonstrate that revolutionary ideals can become practical reality.',
+          'Success builds momentum and credibility for additional reform efforts.',
+          'The reforms serve as proof of concept for other communities considering similar changes.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'build_on_reform_success',
+            text: 'Use successful reforms as foundation for additional changes.',
+            consequence: 'Success building • Expands reform achievements',
+            effects: [{ characterId: 'valentina', affectionChange: 40 }],
+            nextScene: 'progressive_transformation'
+          }
+        ]
+      },
+      {
+        id: 'advocate_support',
+        title: 'Sustaining Passion',
+        text: [
+          'Support networks for passionate advocates prevent burnout while maintaining effectiveness.',
+          'The emotional support systems enable sustainable long-term advocacy work.',
+          'Advocates feel supported and understood, reducing isolation and frustration.',
+          'The support networks become a model for other movements seeking sustainable activism.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'formalize_support_systems',
+            text: 'Create formal support systems for all advocacy work.',
+            consequence: 'System formalization • Institutionalizes advocate support',
+            effects: [{ characterId: 'elena', affectionChange: 30 }],
+            nextScene: 'advocacy_infrastructure'
+          }
+        ]
+      },
+      {
+        id: 'sustainable_revolution',
+        title: 'Healthy Change',
+        text: [
+          'Practices that maintain passion while preventing burnout create sustainable revolutionary work.',
+          'The healthy approach proves more effective than unsustainable activism that leads to exhaustion.',
+          'Revolutionary work becomes a long-term commitment rather than a brief burst of activity.',
+          'The sustainable methods inspire others to join the movement without fear of burnout.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'teach_sustainable_methods',
+            text: 'Teach sustainable advocacy methods to other movements.',
+            consequence: 'Method teaching • Spreads sustainable activism',
+            effects: [{ characterId: 'valentina', affectionChange: 50 }],
+            nextScene: 'revolution_mastery'
+          }
+        ]
+      },
+      {
+        id: 'character_creation_complete',
+        title: 'Ready to Begin',
+        text: [
+          'Your character is now complete with traits, flaws, and boons that will shape your journey.',
+          'The unique combination of characteristics opens specific paths and opportunities.',
+          'Your story in the world of Eternal Hearts is ready to unfold.',
+          'The vampires of Ravencroft Manor await your arrival.'
+        ],
+        background: '/backgrounds/title-screen.png',
+        choices: [
+          {
+            id: 'start_main_story',
+            text: 'Begin your story at Ravencroft Manor',
+            consequence: 'Story beginning • Enter the vampire world',
+            effects: [],
+            nextScene: 'the_inheritance'
+          }
+        ]
+      },
+      {
+        id: 'regional_networks',
+        title: 'Expanded Reach',
+        text: [
+          'Geographic expansion creates regional networks that can respond to needs across broader areas.',
+          'The expanded coverage ensures that help is available to more supernatural beings in need.',
+          'Regional coordination improves resource sharing and response effectiveness.',
+          'The network becomes a significant force for positive change across multiple communities.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'establish_regional_coordination',
+            text: 'Create coordination systems for the regional networks.',
+            consequence: 'Coordination creation • Organizes regional efforts',
+            effects: [{ characterId: 'isadora', affectionChange: 30 }],
+            nextScene: 'network_coordination'
+          }
+        ]
+      },
+      {
+        id: 'community_strengthening',
+        title: 'Deep Roots',
+        text: [
+          'Focusing on deepening local connections creates stronger, more resilient community support.',
+          'The intensive local approach builds trust and understanding within specific areas.',
+          'Deep community connections enable more effective and nuanced support services.',
+          'The strengthened local communities become models for intensive support approaches.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'document_community_methods',
+            text: 'Document successful community strengthening methods.',
+            consequence: 'Method documentation • Preserves successful approaches',
+            effects: [{ characterId: 'celeste', affectionChange: 25 }],
+            nextScene: 'community_wisdom'
+          }
+        ]
+      },
+      {
+        id: 'comprehensive_response',
+        title: 'Full-Spectrum Crisis Support',
+        text: [
+          'Expanded crisis response capabilities can handle diverse emergency situations effectively.',
+          'The comprehensive approach ensures appropriate help is available for any type of crisis.',
+          'Multiple response options increase the likelihood of successful intervention.',
+          'The full-spectrum capabilities become a model for other communities developing crisis response.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'train_specialized_responders',
+            text: 'Train specialized responders for different types of crises.',
+            consequence: 'Specialization training • Develops expert responders',
+            effects: [{ characterId: 'raven', affectionChange: 35 }],
+            nextScene: 'crisis_expertise'
+          }
+        ]
+      },
+      {
+        id: 'crisis_prevention',
+        title: 'Proactive Protection',
+        text: [
+          'Prevention programs successfully reduce the number of crises requiring emergency response.',
+          'The proactive approach proves more effective and less traumatic than reactive crisis intervention.',
+          'Prevention work creates lasting improvements in community wellbeing and resilience.',
+          'The prevention success demonstrates the value of addressing root causes rather than just symptoms.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'expand_prevention_programs',
+            text: 'Expand prevention programs to cover additional risk factors.',
+            consequence: 'Prevention expansion • Addresses more potential crises',
+            effects: [{ characterId: 'luna', affectionChange: 30 }],
+            nextScene: 'comprehensive_prevention'
+          }
+        ]
+      },
+      {
+        id: 'purpose_renewal',
+        title: 'Renewed Dedication',
+        text: [
+          'The memorial inspiration renews dedication to the work with fresh energy and commitment.',
+          'Grief transforms into purposeful action that honors those who were lost.',
+          'The renewal creates sustainable motivation that can endure through difficult times.',
+          'Purpose-driven work proves more resilient and effective than guilt-driven activism.'
+        ],
+        background: '/backgrounds/garden-courtyard.png',
+        choices: [
+          {
+            id: 'channel_purpose_into_action',
+            text: 'Channel renewed purpose into concrete action plans.',
+            consequence: 'Purpose channeling • Converts inspiration into action',
+            effects: [{ characterId: 'valentina', affectionChange: 45 }],
+            nextScene: 'inspired_action'
+          }
+        ]
+      },
+      {
+        id: 'proactive_care',
+        title: 'Early Intervention',
+        text: [
+          'Early warning systems enable intervention before crisis points are reached.',
+          'Proactive care proves more effective and less traumatic than emergency response.',
+          'The early intervention approach saves lives while requiring fewer resources.',
+          'Proactive systems become a model for other communities seeking to prevent tragedies.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'refine_warning_systems',
+            text: 'Continuously refine and improve early warning capabilities.',
+            consequence: 'System refinement • Improves early detection',
+            effects: [{ characterId: 'luna', affectionChange: 35 }],
+            nextScene: 'predictive_care'
+          }
+        ]
+      },
+      {
+        id: 'prevention_education',
+        title: 'Community Awareness',
+        text: [
+          'Educational programs build community awareness and capacity for prevention work.',
+          'Education reduces stigma and encourages people to seek help before crises develop.',
+          'Community knowledge creates a network of informal support and early detection.',
+          'Education-based prevention proves sustainable and scalable across different communities.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'develop_education_materials',
+            text: 'Create comprehensive educational materials for broader distribution.',
+            consequence: 'Material development • Enables education scaling',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'education_resources'
+          }
+        ]
+      },
+      {
+        id: 'trust_rebuilding',
+        title: 'Slow Recovery',
+        text: [
+          'Consistent trustworthy actions gradually rebuild the damaged relationships.',
+          'Each demonstration of reliability adds a small piece to the foundation of restored trust.',
+          'The slow but steady progress proves that damaged relationships can be repaired.',
+          'Trust rebuilding becomes a testament to the possibility of redemption and growth.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'continue_consistent_behavior',
+            text: 'Maintain consistent, trustworthy behavior over time.',
+            consequence: 'Consistency maintenance • Builds reliable trust',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'restored_trust'
+          }
+        ]
+      },
+      {
+        id: 'guided_redemption',
+        title: 'Mentored Recovery',
+        text: [
+          'Guidance from community leaders helps navigate the complex process of earning redemption.',
+          'The mentored approach provides structure and support for genuine behavioral change.',
+          'Guided redemption proves more successful than unsupported attempts at improvement.',
+          'The mentorship creates accountability while offering encouragement and wisdom.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'embrace_guided_process',
+            text: 'Fully embrace the guided redemption process.',
+            consequence: 'Process embrace • Commits to mentored growth',
+            effects: [{ characterId: 'seraphina', affectionChange: 25 }],
+            nextScene: 'redemption_progress'
+          }
+        ]
+      },
+      {
+        id: 'dignified_exile',
+        title: 'Noble Departure',
+        text: [
+          'Your graceful acceptance of exile demonstrates character growth and genuine remorse.',
+          'The dignified departure leaves room for possible future reconciliation.',
+          'Even in leaving, you show respect for the community and understanding of their needs.',
+          'The noble exit becomes a powerful statement about taking responsibility for one\'s actions.'
+        ],
+        background: '/backgrounds/gothic-manor-entrance.png',
+        choices: [
+          {
+            id: 'leave_with_hope',
+            text: 'Leave with hope that your example might help others learn from mistakes.',
+            consequence: 'Hopeful departure • Seeks positive legacy despite exile',
+            effects: [],
+            nextScene: 'exile_reflection'
+          }
+        ]
+      },
+      {
+        id: 'sacrificial_legacy',
+        title: 'Example of Growth',
+        text: [
+          'Your willingness to sacrifice for community safety becomes an inspiring example.',
+          'The sacrificial choice demonstrates that genuine growth and character change are possible.',
+          'Your legacy shows that even serious mistakes can lead to wisdom and positive influence.',
+          'The example inspires others to take responsibility for their actions and seek genuine redemption.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'accept_legacy_responsibility',
+            text: 'Accept the responsibility of being an example for others.',
+            consequence: 'Legacy acceptance • Embraces role as example',
+            effects: [{ characterId: 'seraphina', affectionChange: 20 }],
+            nextScene: 'positive_influence'
+          }
+        ]
+      },
+      {
+        id: 'exceptional_progress',
+        title: 'Exceeding Expectations',
+        text: [
+          'Going beyond minimum requirements demonstrates extraordinary commitment to rebuilding trust.',
+          'The exceptional effort impresses even skeptical community members.',
+          'Exceeding expectations accelerates the trust rebuilding process.',
+          'The extraordinary commitment becomes a model for how to approach redemption seriously.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'maintain_exceptional_standards',
+            text: 'Continue maintaining these exceptional standards.',
+            consequence: 'Standard maintenance • Sustains exceptional performance',
+            effects: [{ characterId: 'isadora', affectionChange: 25 }],
+            nextScene: 'trust_acceleration'
+          }
+        ]
+      },
+      {
+        id: 'steady_progress',
+        title: 'Reliable Improvement',
+        text: [
+          'Consistent compliance with requirements shows reliable commitment to change.',
+          'The steady progress builds confidence in your genuine desire to rebuild trust.',
+          'Reliability proves as important as dramatic gestures in demonstrating trustworthiness.',
+          'Steady improvement creates a solid foundation for restored relationships.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'continue_steady_improvement',
+            text: 'Maintain steady, consistent progress.',
+            consequence: 'Progress continuation • Builds reliable improvement',
+            effects: [{ characterId: 'celeste', affectionChange: 18 }],
+            nextScene: 'gradual_restoration'
+          }
+        ]
+      },
+      {
+        id: 'probation_support',
+        title: 'Supported Recovery',
+        text: [
+          'Support resources help ensure success during the challenging probationary period.',
+          'Having access to guidance and assistance makes the rehabilitation process more effective.',
+          'Support systems demonstrate the community\'s genuine investment in your recovery.',
+          'The supported approach increases the likelihood of successful trust rebuilding.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'utilize_support_fully',
+            text: 'Make full use of available support resources.',
+            consequence: 'Support utilization • Maximizes recovery assistance',
+            effects: [{ characterId: 'celeste', affectionChange: 20 }],
+            nextScene: 'supported_progress'
+          }
+        ]
+      },
+      {
+        id: 'systematic_improvement',
+        title: 'Structured Growth',
+        text: [
+          'The accountability framework enables systematic, measurable improvement.',
+          'Structured change proves more effective than unguided attempts at personal growth.',
+          'The systematic approach creates clear milestones and measures of progress.',
+          'Structured improvement becomes a model for others seeking to make positive changes.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'refine_improvement_systems',
+            text: 'Continuously refine and improve the systematic approach.',
+            consequence: 'System refinement • Enhances improvement methods',
+            effects: [{ characterId: 'celeste', affectionChange: 30 }],
+            nextScene: 'optimization_mastery'
+          }
+        ]
+      },
+      {
+        id: 'personalized_growth',
+        title: 'Tailored Development',
+        text: [
+          'Adapting the framework to personal needs makes the change process more effective.',
+          'Personalized approaches recognize that different people need different support methods.',
+          'Tailored development demonstrates the flexibility and thoughtfulness of the community\'s approach.',
+          'Personalized growth becomes more sustainable and authentic than generic improvement programs.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'share_personalization_insights',
+            text: 'Share insights about personalizing growth approaches with others.',
+            consequence: 'Insight sharing • Helps others personalize their growth',
+            effects: [{ characterId: 'luna', affectionChange: 25 }],
+            nextScene: 'growth_wisdom'
+          }
+        ]
+      },
+      {
+        id: 'supported_growth',
+        title: 'Community-Assisted Development',
+        text: [
+          'Community support creates an environment where positive change can flourish.',
+          'The collective investment in your growth demonstrates the power of community rehabilitation.',
+          'Supported growth proves more successful and sustainable than isolated attempts at improvement.',
+          'The community support model becomes an example for other groups seeking to help members grow.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'contribute_to_community_growth',
+            text: 'Look for ways to contribute to others\' growth and development.',
+            consequence: 'Growth contribution • Supports others\' development',
+            effects: [{ characterId: 'elena', affectionChange: 30 }],
+            nextScene: 'mutual_development'
+          }
+        ]
+      },
+      {
+        id: 'reciprocal_healing',
+        title: 'Mutual Support',
+        text: [
+          'Supporting others\' growth while working on your own creates powerful reciprocal healing.',
+          'The mutual support demonstrates that rehabilitation can strengthen the entire community.',
+          'Reciprocal healing builds connections and understanding between community members.',
+          'The approach shows that helping others is part of one\'s own healing journey.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'formalize_reciprocal_support',
+            text: 'Create formal systems for reciprocal support and growth.',
+            consequence: 'System formalization • Institutionalizes mutual support',
+            effects: [{ characterId: 'elena', affectionChange: 35 }],
+            nextScene: 'support_systems'
+          }
+        ]
       }
     ]
   }
