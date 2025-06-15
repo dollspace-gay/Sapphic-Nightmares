@@ -152,7 +152,7 @@ export const gameData: Chapter[] = [
           '"Please, come in. We have much to discuss, and the night is still young. Your aunt was very dear to us, and we hope to understand what her legacy means to you."'
         ],
         character: characters.lilith,
-        background: '/backgrounds/grand-hall.svg',
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'thank_for_welcome',
@@ -221,7 +221,7 @@ export const gameData: Chapter[] = [
           'There\'s no hostility in her tone, only mild amusement at your pragmatic approach. "Your great-aunt had a similar directness. She also tested boundaries when she first arrived."'
         ],
         character: characters.lilith,
-        background: '/backgrounds/grand-hall.svg',
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'apologize_for_presumption',
@@ -331,7 +331,7 @@ export const gameData: Chapter[] = [
           'Her dark eyes search your face. "The question now is whether you, like her, can accept what lies beyond the boundaries of what most consider normal."'
         ],
         character: characters.lilith,
-        background: '/backgrounds/grand-hall.svg',
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'express_openness',
@@ -434,7 +434,7 @@ export const gameData: Chapter[] = [
           'Opening the journal, you see Cordelia\'s familiar handwriting: "Day 127 - I begin to understand that immortality is not a curse, but a responsibility. To love deeply, to protect fiercely, to never forget what it means to be human while becoming something more."'
         ],
         character: characters.lilith,
-        background: '/backgrounds/library.svg',
+        background: '/backgrounds/library.png',
         choices: [
           {
             id: 'read_more',
@@ -2028,7 +2028,7 @@ export const gameData: Chapter[] = [
           '"That," Lilith says with a warm smile, "would be Morgana. She\'s been waiting to meet you, actually. Your great-aunt spoke often of your artistic nature, and Morgana was quite excited about the possibility of a kindred creative spirit joining us."',
           'The music shifts, becoming more welcoming, as if the pianist has sensed the conversation below and is offering an invitation through melody.'
         ],
-        background: '/backgrounds/grand-hall.svg',
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'follow_the_music',
@@ -3015,7 +3015,7 @@ export const gameData: Chapter[] = [
           '"However," she continues, "our current isolation strategy has a 23% mortality rate among new vampires who never find guidance. We\'re essentially practicing selective survival - helping only those lucky enough to find us."'
         ],
         character: characters.celeste,
-        background: '/backgrounds/library.svg',
+        background: '/backgrounds/library.png',
         choices: [
           {
             id: 'ask_for_recommendation',
@@ -3049,7 +3049,7 @@ export const gameData: Chapter[] = [
           'The weight of centuries of tradition clashes with the urgency of change. Lives hang in the balance - both those within these walls and those struggling alone in the darkness beyond.',
           'This is your moment. The coven awaits your judgment.'
         ],
-        background: '/backgrounds/grand-hall.svg',
+        background: '/backgrounds/grand-hall.png',
         character: characters.lilith,
         choices: [
           {
