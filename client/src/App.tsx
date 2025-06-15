@@ -5,11 +5,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Game from "@/pages/Game";
 import NotFound from "@/pages/not-found";
+import StoryTreeDev from "@/pages/StoryTreeDev";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Game} />
+      <Route path="/dev/story-tree" component={StoryTreeDev} />
       <Route component={NotFound} />
     </Switch>
   );

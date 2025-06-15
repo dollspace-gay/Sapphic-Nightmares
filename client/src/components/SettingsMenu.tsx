@@ -4,7 +4,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Separator } from '@/components/ui/separator';
 import { Progress } from '@/components/ui/progress';
 import { useGame } from '../contexts/GameContext';
-import { Settings, Users, Heart, Save, FolderOpen, RotateCcw, X } from 'lucide-react';
+import { Settings, Users, Heart, Save, FolderOpen, RotateCcw, X, Code } from 'lucide-react';
+import { useLocation } from 'wouter';
 
 interface SettingsMenuProps {
   onShowSaveModal: () => void;
@@ -15,6 +16,7 @@ interface SettingsMenuProps {
 export function SettingsMenu({ onShowSaveModal, onShowLoadModal, onToggleSidebar }: SettingsMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { gameState, resetGame } = useGame();
+  const [location, navigate] = useLocation();
   
   const handleNewGame = () => {
     if (confirm('Are you sure you want to start a new game? This will erase your current progress.')) {
@@ -118,57 +120,95 @@ export function SettingsMenu({ onShowSaveModal, onShowLoadModal, onToggleSidebar
                 </Button>
               </div>
             </div>
-            
-            <Separator className="bg-gray-700" />
-            
-            {/* Character Relationships */}
+
+            {/* Developer Mode */}
             <div>
               <h3 className="font-ui font-semibold text-white mb-3 flex items-center">
-                <Users className="text-red-400 mr-2 h-5 w-5" />
-                Relationships
+                <Code className="text-purple-400 mr-2 h-5 w-5" />
+                Developer Tools
               </h3>
-              
-              <div className="space-y-3">
-                {Object.values(gameState.characters).map((character) => (
-                  <div key={character.id} className="bg-gray-800/50 rounded-lg p-3 border border-red-500/20">
-                    <div className="flex items-center mb-2">
-                      <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-3">
-                        <Heart className="h-4 w-4 text-white" />
-                      </div>
-                      <span className="font-story font-semibold text-white">{character.name}</span>
-                    </div>
-                    <Progress 
-                      value={character.affection} 
-                      className="w-full h-2 mb-1 bg-gray-700/70"
-                    />
-                    <span className="text-xs text-gray-300">{character.status}</span>
-                  </div>
-                ))}
+              <div className="space-y-2">
+                <Button 
+                  onClick={() => { 
+                    navigate('/dev/story-tree'); 
+                    setIsOpen(false); 
+                  }}
+                  className="w-full bg-purple-800/70 hover:bg-purple-600/50 border border-purple-500/30 text-sm text-white"
+                  variant="outline"
+                >
+                  <Code className="mr-2 h-4 w-4" />
+                  Story Tree Visualizer
+                </Button>
+                
+                {location !== '/' && (
+                  <Button 
+                    onClick={() => { 
+                      navigate('/'); 
+                      setIsOpen(false); 
+                    }}
+                    className="w-full bg-gray-800/70 hover:bg-gray-600/50 border border-gray-500/30 text-sm text-white"
+                    variant="outline"
+                  >
+                    Back to Game
+                  </Button>
+                )}
               </div>
             </div>
             
             <Separator className="bg-gray-700" />
             
-            {/* Player Stats */}
-            <div>
-              <h3 className="font-ui font-semibold text-white mb-3">Your Status</h3>
-              <div className="bg-gray-800/50 rounded-lg p-4">
-                <div className="space-y-2 text-xs">
-                  <div className="flex">
-                    <span className="text-gray-300">Health: </span>
-                    <span className="text-white">{gameState.playerStats.health}</span>
-                  </div>
-                  <div className="flex">
-                    <span className="text-gray-300">Sanity: </span>
-                    <span className="text-white">{gameState.playerStats.sanity}</span>
-                  </div>
-                  <div className="flex">
-                    <span className="text-gray-300">Location: </span>
-                    <span className="text-white">{gameState.playerStats.location}</span>
+            {/* Character Relationships - Only show in game mode */}
+            {location === '/' && (
+              <>
+                <div>
+                  <h3 className="font-ui font-semibold text-white mb-3 flex items-center">
+                    <Users className="text-red-400 mr-2 h-5 w-5" />
+                    Relationships
+                  </h3>
+                  
+                  <div className="space-y-3">
+                    {Object.values(gameState.characters).map((character) => (
+                      <div key={character.id} className="bg-gray-800/50 rounded-lg p-3 border border-red-500/20">
+                        <div className="flex items-center mb-2">
+                          <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                            <Heart className="h-4 w-4 text-white" />
+                          </div>
+                          <span className="font-story font-semibold text-white">{character.name}</span>
+                        </div>
+                        <Progress 
+                          value={character.affection} 
+                          className="w-full h-2 mb-1 bg-gray-700/70"
+                        />
+                        <span className="text-xs text-gray-300">{character.status}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-            </div>
+                
+                <Separator className="bg-gray-700" />
+                
+                {/* Player Stats */}
+                <div>
+                  <h3 className="font-ui font-semibold text-white mb-3">Your Status</h3>
+                  <div className="bg-gray-800/50 rounded-lg p-4">
+                    <div className="space-y-2 text-xs">
+                      <div className="flex">
+                        <span className="text-gray-300">Health: </span>
+                        <span className="text-white">{gameState.playerStats.health}</span>
+                      </div>
+                      <div className="flex">
+                        <span className="text-gray-300">Sanity: </span>
+                        <span className="text-white">{gameState.playerStats.sanity}</span>
+                      </div>
+                      <div className="flex">
+                        <span className="text-gray-300">Location: </span>
+                        <span className="text-white">{gameState.playerStats.location}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </DialogContent>
       </Dialog>
