@@ -3322,6 +3322,893 @@ export const gameData: Chapter[] = [
             nextScene: 'principled_neutrality'
           }
         ]
+      },
+      // Missing scenes from Chapter 1
+      {
+        id: 'manor_exploration',
+        title: 'Exploring the Manor',
+        text: [
+          'The corridors of Ravencroft Manor stretch before you, filled with centuries of history. Paintings of stern ancestors line the walls, their eyes seeming to follow your movement.',
+          'Each room tells a story - the library with its ancient tomes, the conservatory where moonlight streams through stained glass, the drawing room where shadows seem to dance.',
+          'You sense this exploration is more than curiosity. The manor itself seems to be evaluating you, determining if you\'re worthy of the secrets it holds.'
+        ],
+        choices: [
+          {
+            id: 'examine_paintings',
+            text: 'Study the ancestral portraits more closely.',
+            consequence: 'Investigative approach • Shows interest in family history',
+            effects: [{ characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'cordelia_memories'
+          },
+          {
+            id: 'explore_library',
+            text: 'Head to the library to examine the ancient books.',
+            consequence: 'Scholarly approach • Shows intellectual curiosity',
+            effects: [{ characterId: 'celeste', affectionChange: 12 }],
+            nextScene: 'forbidden_knowledge_access'
+          },
+          {
+            id: 'visit_conservatory',
+            text: 'Enter the moonlit conservatory.',
+            consequence: 'Aesthetic appreciation • Shows sensitivity to beauty',
+            effects: [{ characterId: 'elena', affectionChange: 10 }],
+            nextScene: 'manor_secrets'
+          }
+        ]
+      },
+      {
+        id: 'worthiness_test',
+        title: 'The Test of Worth',
+        text: [
+          'Lilith observes you carefully as the other vampires watch with varying degrees of interest and skepticism.',
+          '"Every Anchor must prove themselves worthy of the trust we place in them," she explains. "Cordelia earned our respect through her courage, wisdom, and unwavering loyalty."',
+          '"The question is: what qualities do you possess that make you suitable to follow in her footsteps?"',
+          'The weight of their collective gaze settles upon you. This moment will define how the coven sees you going forward.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'demonstrate_courage',
+            text: '"I may not know everything about your world, but I\'m not afraid to learn and face whatever comes."',
+            consequence: 'Shows bravery • Willing to face unknown dangers',
+            effects: [{ characterId: 'raven', affectionChange: 15 }, { characterId: 'valentina', affectionChange: 12 }],
+            nextScene: 'courage_recognition'
+          },
+          {
+            id: 'show_compassion',
+            text: '"I believe every being deserves understanding and protection, regardless of what they are."',
+            consequence: 'Shows empathy • Values all forms of life',
+            effects: [{ characterId: 'seraphina', affectionChange: 18 }, { characterId: 'morgana', affectionChange: 12 }],
+            nextScene: 'natural_acceptance'
+          },
+          {
+            id: 'offer_practical_skills',
+            text: '"I bring fresh perspective and practical skills that could benefit everyone here."',
+            consequence: 'Pragmatic approach • Focuses on useful contributions',
+            effects: [{ characterId: 'celeste', affectionChange: 15 }, { characterId: 'isadora', affectionChange: 10 }],
+            nextScene: 'practical_arrangements'
+          }
+        ]
+      },
+      {
+        id: 'revelation_preparation',
+        title: 'Preparing for Truth',
+        text: [
+          'The atmosphere in the room shifts as Lilith prepares to reveal the fundamental truth of what you\'ve inherited.',
+          '"What I\'m about to tell you will change everything you thought you knew about Cordelia, about this manor, and about the world itself."',
+          'She pauses, studying your face. "Some mortals cannot handle the reality of our existence. Others embrace it with surprising grace."',
+          '"Tell me - are you prepared to learn truths that most humans spend their entire lives never knowing?"'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ready_for_truth',
+            text: '"I need to know the truth, whatever it is. I can handle it."',
+            consequence: 'Direct acceptance • Shows mental fortitude',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'arrangement_explanation'
+          },
+          {
+            id: 'express_nervousness',
+            text: '"I\'m nervous, but I need to understand what Cordelia was involved in."',
+            consequence: 'Honest vulnerability • Shows courage despite fear',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }, { characterId: 'seraphina', affectionChange: 8 }],
+            nextScene: 'patient_guidance'
+          },
+          {
+            id: 'ask_for_support',
+            text: '"This feels overwhelming. Will you help me understand?"',
+            consequence: 'Seeks guidance • Shows wisdom in asking for help',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'morgana', affectionChange: 10 }],
+            nextScene: 'gentle_guidance'
+          }
+        ]
+      },
+      {
+        id: 'respectful_entry',
+        title: 'A Respectful Introduction',
+        text: [
+          'You take a deep breath and step forward with careful composure, showing respect for what is clearly a significant moment.',
+          '"I\'m honored to meet you all. Cordelia spoke of her dear friends often, though I\'m beginning to understand there was much she didn\'t tell me."',
+          'Your respectful approach seems to ease some of the tension in the room. Several of the assembled figures nod approvingly.',
+          'Lilith\'s expression softens slightly. "Respect and humility. Cordelia chose her successor well, it seems."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_about_cordelia_role',
+            text: '"Could you help me understand what role Cordelia played here?"',
+            consequence: 'Seeks understanding • Shows desire to honor legacy',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'cordelia_role_detailed'
+          },
+          {
+            id: 'express_gratitude',
+            text: '"Thank you for welcoming me. I hope I can live up to whatever trust you placed in her."',
+            consequence: 'Shows appreciation • Acknowledges responsibility',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }, { characterId: 'isadora', affectionChange: 8 }],
+            nextScene: 'legacy_acceptance'
+          },
+          {
+            id: 'observe_carefully',
+            text: 'Continue to observe and listen, letting them guide the conversation.',
+            consequence: 'Patient observation • Shows wisdom in restraint',
+            effects: [{ characterId: 'celeste', affectionChange: 10 }, { characterId: 'luna', affectionChange: 8 }],
+            nextScene: 'coven_hierarchy_revealed'
+          }
+        ]
+      },
+      // Additional missing scenes - Batch 1
+      {
+        id: 'gracious_apology_accepted',
+        title: 'Grace in Acceptance',
+        text: [
+          'The tension in the room dissolves as your sincere apology is met with understanding nods.',
+          '"No harm done," Lilith says warmly. "Your reaction was entirely natural. We forget sometimes how overwhelming our world can be to mortals."',
+          'Morgana steps forward with a gentle smile. "I remember my first encounter with the supernatural. I was terrified and fascinated in equal measure."',
+          'Your gracious handling of an awkward moment seems to have earned you some respect among the assembled vampires.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'express_curiosity',
+            text: '"I\'m still fascinated, honestly. There\'s so much I want to understand."',
+            consequence: 'Shows intellectual curiosity • Open to learning',
+            effects: [{ characterId: 'celeste', affectionChange: 15 }, { characterId: 'morgana', affectionChange: 10 }],
+            nextScene: 'structured_education'
+          },
+          {
+            id: 'ask_about_morgana',
+            text: '"Morgana, what was your first supernatural encounter like?"',
+            consequence: 'Personal interest • Builds connections through stories',
+            effects: [{ characterId: 'morgana', affectionChange: 18 }],
+            nextScene: 'morgana_past'
+          },
+          {
+            id: 'show_appreciation',
+            text: '"Thank you all for being so understanding. I promise to do better."',
+            consequence: 'Shows humility • Commits to improvement',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }, { characterId: 'seraphina', affectionChange: 10 }],
+            nextScene: 'trust_established'
+          }
+        ]
+      },
+      {
+        id: 'practical_philosophy',
+        title: 'Philosophy in Practice',
+        text: [
+          'Your practical approach to the supernatural revelation intrigues several of the vampires.',
+          '"Interesting," Celeste observes. "Most humans either flee in terror or become obsessed with the mystical aspects. You\'re looking for practical applications."',
+          'Isadora nods approvingly. "Pragmatism is valuable. Cordelia had that same quality - she always asked \'what does this mean for daily life?\' rather than getting lost in romantic notions."',
+          'Your grounded approach seems to resonate with the more practical-minded members of the coven.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'ask_about_daily_life',
+            text: '"Exactly. How does this arrangement actually work day-to-day?"',
+            consequence: 'Practical focus • Wants concrete understanding',
+            effects: [{ characterId: 'celeste', affectionChange: 20 }, { characterId: 'isadora', affectionChange: 15 }],
+            nextScene: 'arrangement_details'
+          },
+          {
+            id: 'inquire_about_cordelia',
+            text: '"What practical challenges did Cordelia face in this role?"',
+            consequence: 'Learning from precedent • Values experience',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'cordelia_challenges'
+          },
+          {
+            id: 'discuss_expectations',
+            text: '"What practical expectations do you have for me as the new Anchor?"',
+            consequence: 'Direct communication • Seeks clarity on responsibilities',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'isadora', affectionChange: 12 }],
+            nextScene: 'anchor_powers_explained'
+          }
+        ]
+      },
+      {
+        id: 'cordelia_memories',
+        title: 'Echoes of Cordelia',
+        text: [
+          'As you study the ancestral portraits, one face draws your attention - a woman who bears a striking resemblance to Cordelia, painted centuries ago.',
+          '"That\'s Cordelia\'s ancestor, Evangeline," Lilith explains, appearing beside you. "The bloodline has always had a connection to our kind."',
+          '"Cordelia used to stand here just as you are now, trying to understand her place in a story much larger than herself."',
+          'The weight of inheritance feels heavier as you realize this connection spans generations.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_about_bloodline',
+            text: '"Is there something special about Cordelia\'s family line?"',
+            consequence: 'Investigates heritage • Seeks deeper understanding',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'cordelia_psychic_legacy'
+          },
+          {
+            id: 'express_connection',
+            text: '"I feel like I\'m following in footsteps I don\'t fully understand yet."',
+            consequence: 'Vulnerable admission • Shows weight of responsibility',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'seraphina', affectionChange: 10 }],
+            nextScene: 'legacy_continuation'
+          },
+          {
+            id: 'ask_about_cordelia_feelings',
+            text: '"How did Cordelia handle this overwhelming sense of destiny?"',
+            consequence: 'Seeks emotional guidance • Values personal experience',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'cordelia_journey'
+          }
+        ]
+      },
+      {
+        id: 'arrangement_explanation',
+        title: 'The Ancient Compact',
+        text: [
+          'Lilith settles into a chair, her ancient eyes reflecting the weight of centuries.',
+          '"The arrangement is simple in concept, complex in practice. We are vampires - immortal, powerful, but bound by certain... limitations."',
+          '"We cannot simply exist in the modern world without legitimate connections to humanity. Cordelia provided that legitimacy."',
+          '"As our Anchor, you become the bridge between our world and yours. In return, you receive our protection, our knowledge, and our friendship."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_about_limitations',
+            text: '"What kind of limitations do you face?"',
+            consequence: 'Seeks specific information • Understanding constraints',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }, { characterId: 'celeste', affectionChange: 8 }],
+            nextScene: 'protection_discussion'
+          },
+          {
+            id: 'inquire_about_benefits',
+            text: '"What does this protection and knowledge actually mean?"',
+            consequence: 'Practical inquiry • Wants concrete understanding',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }, { characterId: 'isadora', affectionChange: 10 }],
+            nextScene: 'magical_education'
+          },
+          {
+            id: 'accept_arrangement',
+            text: '"I understand. I\'m willing to honor Cordelia\'s commitment."',
+            consequence: 'Direct acceptance • Shows commitment to legacy',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }, { characterId: 'valentina', affectionChange: 15 }],
+            nextScene: 'arrangement_honored'
+          }
+        ]
+      },
+      {
+        id: 'manor_secrets',
+        title: 'Hidden Depths',
+        text: [
+          'The conservatory is breathtaking in the moonlight, but as you explore, you notice subtle details that speak of deeper mysteries.',
+          'Certain plants seem to shimmer with an otherworldly glow. Some of the architectural details don\'t match any historical period you recognize.',
+          'Elena appears silently beside you, her artistic eye noting your observation. "Beautiful, isn\'t it? And far older than it appears."',
+          '"This manor has been... modified over the centuries to serve needs beyond those of ordinary humans."'
+        ],
+        character: characters.elena,
+        choices: [
+          {
+            id: 'ask_about_modifications',
+            text: '"What kind of modifications? This is fascinating."',
+            consequence: 'Shows interest in supernatural architecture • Academic curiosity',
+            effects: [{ characterId: 'elena', affectionChange: 15 }, { characterId: 'celeste', affectionChange: 10 }],
+            nextScene: 'historical_tour'
+          },
+          {
+            id: 'appreciate_beauty',
+            text: '"It\'s incredible how beauty and mystery can coexist like this."',
+            consequence: 'Aesthetic appreciation • Shows artistic sensitivity',
+            effects: [{ characterId: 'elena', affectionChange: 20 }, { characterId: 'morgana', affectionChange: 12 }],
+            nextScene: 'artistic_appreciation'
+          },
+          {
+            id: 'express_wonder',
+            text: '"I feel like Alice stepping through the looking glass."',
+            consequence: 'Literary reference • Shows wonder at transformation',
+            effects: [{ characterId: 'elena', affectionChange: 18 }, { characterId: 'seraphina', affectionChange: 10 }],
+            nextScene: 'sanctuary_awakening'
+          }
+        ]
+      },
+      // Critical missing scenes - Batch 2
+      {
+        id: 'protection_discussion',
+        title: 'Understanding Protection',
+        text: [
+          'Lilith explains the nature of vampire limitations with careful detail.',
+          '"We cannot easily navigate modern bureaucracy - no birth certificates, no official identities that withstand scrutiny. Cordelia provided legal legitimacy."',
+          '"More than that, she offered protection from those who would hunt us. A mortal advocate, someone who could speak for us in the human world."',
+          '"In return, we offered her knowledge of the supernatural world, protection from its dangers, and friendship that spans centuries."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_about_hunters',
+            text: '"Are there really people who hunt vampires?"',
+            consequence: 'Investigates threats • Shows awareness of danger',
+            effects: [{ characterId: 'raven', affectionChange: 15 }, { characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'danger_discussion'
+          },
+          {
+            id: 'understand_legitimacy',
+            text: '"I see. You need someone who exists in official records to vouch for you."',
+            consequence: 'Grasps practical needs • Shows understanding',
+            effects: [{ characterId: 'celeste', affectionChange: 18 }, { characterId: 'isadora', affectionChange: 12 }],
+            nextScene: 'practical_coexistence'
+          },
+          {
+            id: 'accept_role',
+            text: '"I understand the responsibility. I\'m willing to take it on."',
+            consequence: 'Accepts commitment • Shows dedication',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }, { characterId: 'valentina', affectionChange: 15 }],
+            nextScene: 'acceptance_path'
+          }
+        ]
+      },
+      {
+        id: 'acceptance_path',
+        title: 'The Path Forward',
+        text: [
+          'Your acceptance creates a wave of relief and approval throughout the room.',
+          '"Welcome, then, to our sanctuary," Lilith says formally. "You are now under our protection, and we under yours."',
+          'Morgana steps forward with a gentle smile. "It\'s been too long since we\'ve had an Anchor. The manor feels more complete already."',
+          'You sense this is more than just acceptance - it\'s the beginning of a profound transformation in your life.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_next_steps',
+            text: '"What happens now? How do I learn what I need to know?"',
+            consequence: 'Practical focus • Ready to begin',
+            effects: [{ characterId: 'celeste', affectionChange: 15 }, { characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'structured_education'
+          },
+          {
+            id: 'express_gratitude',
+            text: '"Thank you for welcoming me. I won\'t let you down."',
+            consequence: 'Shows appreciation • Commits to excellence',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'seraphina', affectionChange: 12 }],
+            nextScene: 'trust_established'
+          },
+          {
+            id: 'ask_about_residents',
+            text: '"I\'d love to get to know everyone better. Could you introduce me properly?"',
+            consequence: 'Social approach • Builds relationships',
+            effects: [{ characterId: 'morgana', affectionChange: 15 }, { characterId: 'elena', affectionChange: 12 }],
+            nextScene: 'resident_introductions'
+          }
+        ]
+      },
+      {
+        id: 'proof_demanded',
+        title: 'Skeptical Inquiry',
+        text: [
+          'Your demand for proof creates a tense moment in the room. Several vampires exchange glances.',
+          'Raven steps forward, her predatory grace unmistakable. "Proof? How much proof do you need?"',
+          'Her canines extend visibly, her eyes flash with an inhuman light, and shadows seem to bend around her.',
+          'The demonstration is brief but undeniable. The supernatural is real, and you\'re standing in a room full of it.'
+        ],
+        character: characters.raven,
+        choices: [
+          {
+            id: 'accept_proof',
+            text: '"That\'s... that\'s definitely proof. I believe you."',
+            consequence: 'Accepts evidence • Shows adaptability',
+            effects: [{ characterId: 'raven', affectionChange: 12 }, { characterId: 'lilith', affectionChange: 8 }],
+            nextScene: 'amazed_acceptance'
+          },
+          {
+            id: 'ask_for_explanation',
+            text: '"Incredible. How is any of this possible?"',
+            consequence: 'Scientific curiosity • Seeks understanding',
+            effects: [{ characterId: 'celeste', affectionChange: 20 }, { characterId: 'raven', affectionChange: 8 }],
+            nextScene: 'nature_explanation'
+          },
+          {
+            id: 'step_back_respectfully',
+            text: '"I\'m sorry I doubted you. This is just... a lot to process."',
+            consequence: 'Apologetic response • Shows respect',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }, { characterId: 'seraphina', affectionChange: 10 }],
+            nextScene: 'patient_guidance'
+          }
+        ]
+      },
+      {
+        id: 'choice_explanation',
+        title: 'Understanding Choice',
+        text: [
+          'Lilith\'s expression becomes more serious as she addresses your hesitation.',
+          '"I understand your uncertainty. This is not a decision to be made lightly, and we respect that."',
+          '"But understand this - once you know what we are, you cannot simply return to your old life unchanged. The supernatural world has revealed itself to you."',
+          '"You can choose to be part of it as our Anchor, or... we will need to discuss alternatives."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_about_alternatives',
+            text: '"What alternatives are you talking about?"',
+            consequence: 'Seeks clarification • Wants full understanding',
+            effects: [{ characterId: 'lilith', affectionChange: 10 }, { characterId: 'celeste', affectionChange: 8 }],
+            nextScene: 'provisional_agreement'
+          },
+          {
+            id: 'accept_responsibility',
+            text: '"I understand. I\'ll honor Cordelia\'s commitment."',
+            consequence: 'Accepts duty • Shows maturity',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }, { characterId: 'isadora', affectionChange: 15 }],
+            nextScene: 'arrangement_honored'
+          },
+          {
+            id: 'ask_for_time',
+            text: '"Could I have some time to think about this? It\'s overwhelming."',
+            consequence: 'Requests consideration • Shows thoughtfulness',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }, { characterId: 'luna', affectionChange: 10 }],
+            nextScene: 'contemplation_time'
+          }
+        ]
+      },
+      {
+        id: 'practical_arrangements',
+        title: 'The Practical Reality',
+        text: [
+          'Your offer of practical skills intrigues several of the more pragmatically minded vampires.',
+          'Celeste nods approvingly. "Practical skills are invaluable. The modern world requires constant adaptation."',
+          'Isadora leans forward with interest. "What specific skills do you bring? We\'ve found that fresh perspectives on contemporary life are often our greatest asset."',
+          'Your practical approach seems to resonate with those who value concrete contributions over romantic notions.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'offer_modern_knowledge',
+            text: '"I understand modern technology, social media, contemporary culture - things that might be challenging for immortals."',
+            consequence: 'Offers modern expertise • Practical value',
+            effects: [{ characterId: 'celeste', affectionChange: 25 }, { characterId: 'isadora', affectionChange: 18 }],
+            nextScene: 'partnership_explanation'
+          },
+          {
+            id: 'mention_professional_skills',
+            text: '"I have professional experience that could help with legal and administrative needs."',
+            consequence: 'Professional competence • Addresses specific needs',
+            effects: [{ characterId: 'isadora', affectionChange: 22 }, { characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'arrangement_details'
+          },
+          {
+            id: 'offer_research_abilities',
+            text: '"I\'m good at research and analysis. I could help with information gathering and problem-solving."',
+            consequence: 'Analytical skills • Intellectual contribution',
+            effects: [{ characterId: 'celeste', affectionChange: 30 }, { characterId: 'luna', affectionChange: 15 }],
+            nextScene: 'structured_education'
+          }
+        ]
+      },
+      // Essential connection scenes - Batch 3
+      {
+        id: 'cordelia_journey',
+        title: 'Cordelia\'s Path',
+        text: [
+          'Lilith\'s eyes grow distant as she recalls Cordelia\'s early days.',
+          '"She struggled at first, as anyone would. The weight of responsibility, the fear of making mistakes that could endanger everyone."',
+          '"But she found her strength in connection - she learned each of our stories, understood our individual needs and fears."',
+          '"By the end, she wasn\'t just our Anchor. She was family. That\'s what made her loss so... difficult."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'offer_similar_commitment',
+            text: '"I want to follow her example. I want to be family too."',
+            consequence: 'Deep commitment • Shows desire for genuine connection',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }, { characterId: 'morgana', affectionChange: 15 }],
+            nextScene: 'family_appreciation'
+          },
+          {
+            id: 'ask_about_stories',
+            text: '"Could you help me learn everyone\'s stories, the way she did?"',
+            consequence: 'Follows precedent • Shows interest in individuals',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }, { characterId: 'seraphina', affectionChange: 12 }],
+            nextScene: 'individual_connections'
+          },
+          {
+            id: 'express_sympathy',
+            text: '"I\'m sorry for your loss. She must have meant a great deal to all of you."',
+            consequence: 'Shows empathy • Acknowledges grief',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'luna', affectionChange: 15 }],
+            nextScene: 'shared_grief'
+          }
+        ]
+      },
+      {
+        id: 'patient_courtship',
+        title: 'The Gentle Approach',
+        text: [
+          'Morgana steps forward with a understanding smile, her artistic nature appreciating the delicate situation.',
+          '"There\'s no rush," she says gently. "The most beautiful connections develop slowly, like a painting taking shape."',
+          '"We\'ve waited this long for a new Anchor. We can wait a little longer for you to feel comfortable with us."',
+          'Her patience seems to ease some of the pressure you\'ve been feeling.'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'appreciate_patience',
+            text: '"Thank you. That means more than you know."',
+            consequence: 'Shows gratitude • Builds trust through patience',
+            effects: [{ characterId: 'morgana', affectionChange: 20 }, { characterId: 'seraphina', affectionChange: 12 }],
+            nextScene: 'trust_established'
+          },
+          {
+            id: 'ask_about_art',
+            text: '"You mentioned painting. Are you an artist?"',
+            consequence: 'Personal interest • Builds individual connection',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }],
+            nextScene: 'morgana_artistic_bond'
+          },
+          {
+            id: 'express_readiness',
+            text: '"Actually, I think I\'m ready now. Your kindness helps."',
+            consequence: 'Overcomes hesitation • Shows positive response to care',
+            effects: [{ characterId: 'morgana', affectionChange: 18 }, { characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'arrangement_honored'
+          }
+        ]
+      },
+      {
+        id: 'morgana_past',
+        title: 'Shadows of the Past',
+        text: [
+          'Morgana\'s expression becomes thoughtful, tinged with ancient sadness.',
+          '"I was a young woman in Renaissance Italy when I encountered my first vampire. I thought I was going mad - seeing shadows move, hearing whispers in empty rooms."',
+          '"When I finally met him, he was kind but tragic. He taught me that the world held wonders and terrors beyond human imagination."',
+          '"Eventually, he offered me a choice - remain human and forget, or join him in immortality. I chose... differently than most expect."'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'ask_about_choice',
+            text: '"What choice did you make? Why was it different?"',
+            consequence: 'Shows deep interest • Wants to understand her journey',
+            effects: [{ characterId: 'morgana', affectionChange: 22 }],
+            nextScene: 'morgana_emotional_connection'
+          },
+          {
+            id: 'relate_to_experience',
+            text: '"I can relate to that feeling of thinking you might be going mad."',
+            consequence: 'Shares vulnerability • Creates emotional bond',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }, { characterId: 'seraphina', affectionChange: 10 }],
+            nextScene: 'mutual_understanding'
+          },
+          {
+            id: 'appreciate_story',
+            text: '"Thank you for sharing that with me. It helps me understand."',
+            consequence: 'Shows gratitude • Values personal revelation',
+            effects: [{ characterId: 'morgana', affectionChange: 18 }],
+            nextScene: 'philosophical_discussion'
+          }
+        ]
+      },
+      {
+        id: 'philosophical_discussion',
+        title: 'Questions of Existence',
+        text: [
+          'Seraphina moves closer, her fallen angel nature drawn to deeper questions.',
+          '"These encounters force us to confront fundamental questions about existence, purpose, the nature of good and evil."',
+          '"What does it mean to be human when you discover beings who transcend human limitations? What does it mean to be moral when the world operates by different rules?"',
+          'Her questions hang in the air, challenging you to think beyond simple acceptance or rejection.'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'engage_philosophically',
+            text: '"Those are profound questions. I think morality transcends species - it\'s about how we treat others."',
+            consequence: 'Philosophical depth • Shows ethical thinking',
+            effects: [{ characterId: 'seraphina', affectionChange: 25 }, { characterId: 'celeste', affectionChange: 15 }],
+            nextScene: 'seraphina_philosophical_bond'
+          },
+          {
+            id: 'admit_confusion',
+            text: '"I don\'t know. These questions are overwhelming, but important."',
+            consequence: 'Honest uncertainty • Shows intellectual humility',
+            effects: [{ characterId: 'seraphina', affectionChange: 18 }, { characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'contemplation_time'
+          },
+          {
+            id: 'focus_on_practical',
+            text: '"Those are important questions, but right now I need to focus on the practical reality."',
+            consequence: 'Pragmatic approach • Prioritizes immediate needs',
+            effects: [{ characterId: 'celeste', affectionChange: 15 }, { characterId: 'isadora', affectionChange: 12 }],
+            nextScene: 'practical_arrangements'
+          }
+        ]
+      },
+      {
+        id: 'umbra_first_encounter',
+        title: 'A Shy Introduction',
+        text: [
+          'In a corner of the room, you notice a figure that seems to be made of living shadow, with points of starlight twinkling within the darkness.',
+          'The entity notices your gaze and seems to shrink back, clearly shy and uncertain.',
+          '"That\'s Umbra," Lilith explains gently. "They\'re... unique, even among us. An eldritch being who found sanctuary here."',
+          'Umbra waves tentatively, their form shifting like liquid night sky, clearly wanting to be friendly but unsure how.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'wave_back_gently',
+            text: 'Wave back with a warm smile.',
+            consequence: 'Gentle acceptance • Shows kindness to the shy',
+            effects: [{ characterId: 'umbra', affectionChange: 18 }],
+            nextScene: 'umbra_grateful_response'
+          },
+          {
+            id: 'approach_carefully',
+            text: 'Take a step closer and speak softly. "Hello, Umbra. I\'m pleased to meet you."',
+            consequence: 'Direct but gentle approach • Shows courage and kindness',
+            effects: [{ characterId: 'umbra', affectionChange: 25 }],
+            nextScene: 'umbra_friendship_begins'
+          },
+          {
+            id: 'ask_lilith_quietly',
+            text: 'Whisper to Lilith: "Should I try to talk to them, or would that be overwhelming?"',
+            consequence: 'Considerate approach • Shows sensitivity to comfort levels',
+            effects: [{ characterId: 'umbra', affectionChange: 15 }, { characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'umbra_shares_story'
+          }
+        ]
+      },
+      {
+        id: 'gentle_guidance',
+        title: 'Patient Understanding',
+        text: [
+          'Lilith\'s expression softens with maternal warmth as she recognizes your need for support.',
+          '"Of course we\'ll help you understand. This is precisely what Cordelia meant when she said you had the right temperament for this role."',
+          '"Wisdom isn\'t about having all the answers immediately. It\'s about knowing when to ask for guidance and being willing to learn."',
+          'Her reassurance helps calm the overwhelming nature of everything you\'ve discovered.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_about_cordelia_temperament',
+            text: '"What did Cordelia mean about my temperament? How did she know?"',
+            consequence: 'Seeks deeper understanding • Wants to know Cordelia\'s reasoning',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'cordelia_choice_story'
+          },
+          {
+            id: 'request_structured_learning',
+            text: '"Could we approach this systematically? I learn better with structure."',
+            consequence: 'Organized approach • Shows good learning strategy',
+            effects: [{ characterId: 'celeste', affectionChange: 20 }, { characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'structured_education'
+          },
+          {
+            id: 'express_gratitude_trust',
+            text: '"Thank you for being patient with me. I want to earn the trust you\'re showing."',
+            consequence: 'Shows appreciation • Commits to earning confidence',
+            effects: [{ characterId: 'lilith', affectionChange: 22 }, { characterId: 'seraphina', affectionChange: 12 }],
+            nextScene: 'trust_established'
+          }
+        ]
+      },
+      // Comprehensive missing scenes - Final batch
+      {
+        id: 'seraphina_fall_story',
+        title: 'The Fall from Grace',
+        text: [
+          'Seraphina\'s expression becomes distant, touched with ancient sorrow.',
+          '"I was once something... different. Pure, you might say. But purity without understanding is merely ignorance."',
+          '"I chose to fall, to experience the full spectrum of existence - love, loss, passion, pain. Only through understanding darkness can one truly appreciate light."',
+          '"Now I exist between realms, neither fully divine nor wholly earthbound. It\'s a lonely existence, but one I chose freely."'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'express_admiration',
+            text: '"That took incredible courage. You chose experience over certainty."',
+            consequence: 'Admires her choice • Shows respect for difficult decisions',
+            effects: [{ characterId: 'seraphina', affectionChange: 25 }],
+            nextScene: 'seraphina_love_capacity'
+          },
+          {
+            id: 'offer_understanding',
+            text: '"You don\'t have to be lonely anymore. You have family here."',
+            consequence: 'Offers companionship • Shows empathy for isolation',
+            effects: [{ characterId: 'seraphina', affectionChange: 30 }, { characterId: 'morgana', affectionChange: 12 }],
+            nextScene: 'spiritual_connection'
+          },
+          {
+            id: 'ask_about_regrets',
+            text: '"Do you ever regret your choice?"',
+            consequence: 'Deep personal question • Shows interest in her inner life',
+            effects: [{ characterId: 'seraphina', affectionChange: 20 }],
+            nextScene: 'seraphina_purpose_recognition'
+          }
+        ]
+      },
+      {
+        id: 'mortal_love_path',
+        title: 'The Beauty of Mortality',
+        text: [
+          'The conversation shifts to deeper themes as several vampires consider your unique perspective.',
+          '"There\'s something precious about mortal love," Morgana muses. "It\'s intense because it\'s fleeting. Every moment matters because there are only so many."',
+          'Seraphina nods thoughtfully. "Immortal love develops differently - slowly, with the luxury of eternity. But mortal love... it burns bright and beautiful."',
+          'Their words make you consider what you might be offering these ancient beings - not just legitimacy, but the gift of mortal perspective on love and connection.'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'embrace_mortal_perspective',
+            text: '"Maybe that\'s what I can offer - a reminder of what it means to love with urgency and passion."',
+            consequence: 'Philosophical insight • Offers unique value',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }, { characterId: 'seraphina', affectionChange: 20 }],
+            nextScene: 'love_development_path'
+          },
+          {
+            id: 'ask_about_immortal_love',
+            text: '"What is immortal love like? How does it feel different?"',
+            consequence: 'Curious about their experience • Shows interest in understanding',
+            effects: [{ characterId: 'seraphina', affectionChange: 18 }, { characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'bond_strength_explanation'
+          },
+          {
+            id: 'suggest_balance',
+            text: '"Maybe we can learn from each other - the passion of mortality and the depth of immortality."',
+            consequence: 'Seeks mutual understanding • Proposes exchange of perspectives',
+            effects: [{ characterId: 'morgana', affectionChange: 22 }, { characterId: 'seraphina', affectionChange: 18 }],
+            nextScene: 'mutual_recognition'
+          }
+        ]
+      },
+      {
+        id: 'contemplation_time',
+        title: 'Time to Reflect',
+        text: [
+          'Lilith nods with understanding. "Of course. This is not a decision to be rushed."',
+          '"Take all the time you need. Walk the grounds, explore the manor, speak with whoever you\'d like. When you\'re ready, we\'ll be here."',
+          'The pressure lifts from your shoulders. Having time to process everything makes the overwhelming situation feel more manageable.',
+          'You sense this patience is itself a gift - showing you the kind of consideration you could expect as part of this unusual family.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'explore_manor_alone',
+            text: '"I\'d like to explore the manor and get a feel for this place."',
+            consequence: 'Independent exploration • Shows desire to understand environment',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'manor_tour_begins'
+          },
+          {
+            id: 'ask_for_company',
+            text: '"Could someone show me around? I\'d like to learn more about everyone."',
+            consequence: 'Social approach • Shows interest in building relationships',
+            effects: [{ characterId: 'morgana', affectionChange: 15 }, { characterId: 'elena', affectionChange: 12 }],
+            nextScene: 'guided_tour'
+          },
+          {
+            id: 'request_quiet_conversation',
+            text: '"Actually, could I speak with you privately, Lilith? I have some questions."',
+            consequence: 'Seeks guidance • Values leadership perspective',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'private_consultations'
+          }
+        ]
+      },
+      {
+        id: 'cordelia_wisdom',
+        title: 'Lessons from the Past',
+        text: [
+          'Lilith shares more of Cordelia\'s wisdom as you seek to understand your role.',
+          '"Cordelia once told me that being an Anchor wasn\'t about being perfect - it was about being present. Being genuinely interested in each person\'s story."',
+          '"She said the hardest part wasn\'t learning our supernatural natures, but remembering that underneath it all, we\'re still individuals with hopes, fears, and dreams."',
+          '"\'Love them as they are,\' she said, \'not as what they represent.\' That\'s what made her special."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'commit_to_individual_focus',
+            text: '"I want to know each of you as individuals. Will you help me learn your stories?"',
+            consequence: 'Personal commitment • Shows desire for genuine connection',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }, { characterId: 'morgana', affectionChange: 15 }],
+            nextScene: 'individual_connections'
+          },
+          {
+            id: 'ask_about_hopes_dreams',
+            text: '"What hopes and dreams do immortals have? I\'d love to understand."',
+            consequence: 'Deep curiosity • Shows interest in their humanity',
+            effects: [{ characterId: 'seraphina', affectionChange: 20 }, { characterId: 'elena', affectionChange: 15 }],
+            nextScene: 'philosophical_connection'
+          },
+          {
+            id: 'express_determination',
+            text: '"I want to honor her memory by following her example. I\'ll try to love you all as you are."',
+            consequence: 'Emotional commitment • Shows dedication to Cordelia\'s legacy',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }, { characterId: 'umbra', affectionChange: 18 }],
+            nextScene: 'family_appreciation'
+          }
+        ]
+      },
+      {
+        id: 'trust_established',
+        title: 'Foundations of Trust',
+        text: [
+          'Your sincere approach and willingness to learn has created a foundation of trust with the coven.',
+          '"Trust is earned slowly and lost quickly," Lilith observes. "But you\'ve made an excellent beginning."',
+          'Around the room, you see nods of approval and genuine smiles. The initial tension has transformed into cautious optimism.',
+          'You sense that while there\'s still much to learn and prove, you\'ve successfully taken the first crucial steps toward acceptance.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_about_next_steps',
+            text: '"What should I focus on learning first?"',
+            consequence: 'Practical approach • Ready to begin education',
+            effects: [{ characterId: 'celeste', affectionChange: 15 }, { characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'structured_education'
+          },
+          {
+            id: 'offer_reciprocal_trust',
+            text: '"I trust you all too. Thank you for being patient with me."',
+            consequence: 'Mutual trust • Shows appreciation for their consideration',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'seraphina', affectionChange: 15 }],
+            nextScene: 'sanctuary_commitment'
+          },
+          {
+            id: 'express_excitement',
+            text: '"I\'m excited to learn about all of your individual stories and interests."',
+            consequence: 'Enthusiastic engagement • Shows genuine interest',
+            effects: [{ characterId: 'morgana', affectionChange: 18 }, { characterId: 'elena', affectionChange: 15 }],
+            nextScene: 'individual_connections'
+          }
+        ]
+      },
+      {
+        id: 'structured_education',
+        title: 'A Systematic Approach',
+        text: [
+          'Celeste steps forward with obvious enthusiasm for organizing your education.',
+          '"Excellent approach. I\'ve actually prepared a comprehensive curriculum covering supernatural history, coven dynamics, and practical safety measures."',
+          '"We\'ll start with the basics - understanding different supernatural species, their strengths and limitations, and how our community functions."',
+          'Her systematic approach makes the overwhelming task of learning about the supernatural world feel manageable and exciting.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'express_enthusiasm',
+            text: '"That sounds perfect. I\'m ready to be a good student."',
+            consequence: 'Eager to learn • Shows academic enthusiasm',
+            effects: [{ characterId: 'celeste', affectionChange: 25 }],
+            nextScene: 'magical_education'
+          },
+          {
+            id: 'ask_about_practical_skills',
+            text: '"Will this include learning how to help with day-to-day challenges you face?"',
+            consequence: 'Practical focus • Shows desire to be useful',
+            effects: [{ characterId: 'celeste', affectionChange: 20 }, { characterId: 'isadora', affectionChange: 15 }],
+            nextScene: 'practical_coexistence'
+          },
+          {
+            id: 'inquire_about_safety',
+            text: '"Safety measures sound important. What kinds of dangers should I be aware of?"',
+            consequence: 'Safety conscious • Shows understanding of risks',
+            effects: [{ characterId: 'celeste', affectionChange: 18 }, { characterId: 'raven', affectionChange: 12 }],
+            nextScene: 'danger_discussion'
+          }
+        ]
       }
     ]
   }
