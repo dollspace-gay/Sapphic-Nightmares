@@ -168,6 +168,8 @@ Changelog:
 - June 15, 2025. Rebuilt enhanced standalone distribution with all new features (Chapter 2, journal system, achievements, recovery actions, character backstories)
 - June 15, 2025. Consolidated duplicate distribution folders - removed redundant 'standalone' folder, kept 'game-distribution' as primary
 - June 15, 2025. Created comprehensive standalone package 'Eternal-Hearts-Ravencroft-Romance-Enhanced.tar.gz' with cross-platform support
+- June 15, 2025. Cleaned up project structure - removed orphaned 'EternalHearts-Standalone' folder and redundant tar.gz archives
+- June 15, 2025. Streamlined to single enhanced distribution package containing all new features and improvements
 ```
 
 ## User Preferences
