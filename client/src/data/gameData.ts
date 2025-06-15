@@ -14473,11 +14473,20 @@ export const initialGameState = {
   playerStats: {
     health: 100,
     sanity: 100,
-    location: 'Ravencroft Manor Gates'
+    location: 'Ravencroft Manor Gates',
+    maxHealth: 100,
+    maxSanity: 100,
+    restCount: 0,
+    meditationCount: 0
   },
   inventory: [],
   flags: {},
   completedScenes: [],
   choiceHistory: [],
-  isCharacterCreated: false
+  isCharacterCreated: false,
+  journal: [],
+  achievements: [],
+  unlockedBackstories: [],
+  availableRecoveryActions: ['basic_rest', 'meditation', 'social_recovery'],
+  lastRecoveryTimes: {}
 };
