@@ -2381,6 +2381,10 @@ export const gameData: Chapter[] = [
         text: [
           'The next evening, Lilith leads you to the manor\'s grand ballroom where elegant figures move like shadows through candlelight. "Tonight, you meet the others," she says with both warmth and warning in her voice.',
           'The room falls silent as you enter. Seven pairs of eyes turn toward you - each gaze carrying centuries of experience, secrets, and distinct personalities that immediately set them apart.',
+          'Morgana stands near an antique piano, her midnight-black hair cascading in waves and silver eyes holding artistic depths. Beside her, Seraphina glows with ethereal beauty - platinum hair seeming to carry its own light, pale blue eyes radiating divine compassion.',
+          'Valentina\'s fierce amber eyes burn with revolutionary passion, her wild crimson curls and battle-scarred olive skin marking her as the coven\'s warrior-activist. Raven towers nearby with Nordic features carved from marble, ice-blue eyes and platinum braids speaking of ancient Viking strength.',
+          'Celeste adjusts her wire-rimmed glasses, honey-blonde hair pulled back practically as her intelligent hazel eyes process every detail. Luna emerges from the shadows like living starlight - silver-white hair shimmering, deep violet eyes holding cosmic knowledge.',
+          'Elena hovers at the periphery, ash-blonde hair framing a heart-shaped face filled with centuries of artistic melancholy, while Isadora commands attention from the center - auburn hair in perfect chignon, emerald eyes calculating, wearing luxury that speaks of power and wealth.',
           '"Sisters," Lilith announces, "meet our new anchor. She has proven herself worthy of consideration, but the choice of full acceptance lies with all of us."',
           'You sense the complex web of relationships here - alliances forged through shared struggles, rivalries born of conflicting philosophies, and deeper bonds that transcend simple friendship.'
         ],
@@ -2491,9 +2495,10 @@ export const gameData: Chapter[] = [
         title: 'The Web of Relationships',
         text: [
           'You observe carefully, noting the subtle interactions between the vampires. The social dynamics are complex, layered with centuries of shared history.',
-          'Valentina and Raven stand slightly apart from the others, their body language suggesting a friendship built on mutual respect for strength. They exchange a meaningful glance when Isadora speaks.',
-          'Celeste and Luna seem to orbit each other with scholarly connection, occasionally whispering about mystical matters. Elena hovers on the periphery, beautiful but isolated.',
-          'Isadora commands attention from the center, but you notice the slight tension when she looks toward Valentina - old philosophical differences, perhaps political rivalries about the coven\'s direction.'
+          'Valentina\'s fierce amber eyes and battle-scarred hands speak with Raven\'s ice-blue Nordic gaze and towering presence - their body language suggesting a friendship built on mutual respect for strength. They exchange a meaningful glance when Isadora speaks.',
+          'Celeste adjusts her wire-rimmed glasses as she whispers with Luna, whose silver-white hair shimmers in the candlelight - their scholarly connection evident in how they orbit each other discussing mystical matters.',
+          'Elena\'s ash-blonde hair catches the light as she hovers on the periphery, her artistic melancholy keeping her isolated despite her ethereal beauty.',
+          'Isadora\'s perfectly coiffed auburn hair and emerald silk dress command attention from the center, but you notice the slight tension when her calculating emerald eyes look toward Valentina\'s revolutionary passion - old philosophical differences, perhaps political rivalries about the coven\'s direction.'
         ],
         choices: [
           {
@@ -2879,7 +2884,8 @@ export const gameData: Chapter[] = [
         title: 'Something in the Shadows',
         text: [
           'As you explore the manor, you notice shadows that seem to move independently of their sources. In the corner of your vision, darkness pools and swirls with an almost sentient quality.',
-          'At first, you think it might be a trick of the candlelight, but then you see tiny points of starlight glimmering within the shadows - like distant galaxies viewed through a telescope.',
+          'At first, you think it might be a trick of the candlelight, but then you see tiny points of starlight glimmering within the shadows - like distant galaxies viewed through a telescope. The entity appears to be composed of living darkness interwoven with constellation patterns, creating a form that\'s both beautiful and otherworldly.',
+          'When the shadows shift, you catch glimpses of what might be a vaguely humanoid shape - tall and graceful, but made entirely of cosmic void punctuated by stars. The being seems to exist partially in this dimension and partially elsewhere, their form flickering between solid shadow and translucent starlight.',
           'The darkness recoils when you look directly at it, as if embarrassed to be noticed. Yet you sense no malevolence, only a profound shyness and... curiosity about you.',
           'Lilith notices your distraction. "Ah," she says with gentle amusement, "it seems Umbra has taken an interest in you. They\'re quite harmless, despite appearances."'
         ],
@@ -2984,7 +2990,8 @@ export const gameData: Chapter[] = [
         title: 'A Heart of Starlight',
         text: [
           'The shadows seem to shimmer with emotion, and the starlight points pulse brighter. "No one has ever... called my voice beautiful before."',
-          'Slowly, carefully, the darkness begins to form a more defined shape - still shadow, but vaguely humanoid, with those points of light creating constellation patterns throughout their form.',
+          'Slowly, carefully, the darkness begins to form a more defined shape - still shadow, but vaguely humanoid, with those points of light creating constellation patterns throughout their form. You can now see they\'re tall and graceful, their "body" composed of flowing darkness that moves like liquid night, punctuated by stars that form intricate celestial maps across their form.',
+          'Their "face" is the most remarkable part - a void where features should be, but filled with swirling galaxies and nebulae that create expressions of cosmic emotion. When they speak, the stars pulse in rhythm with their words.',
           '"I have been alone in the void between stars for eons. When I found this place, these people... it was the first time I understood what mortals call \'home.\'"',
           'There\'s such genuine warmth in their cosmic voice that you feel your heart ache for their ancient loneliness.'
         ],

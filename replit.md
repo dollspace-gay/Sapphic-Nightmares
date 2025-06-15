@@ -152,6 +152,10 @@ Changelog:
 - June 15, 2025. Enhanced choice UI with uniform styling - removed consequence hints and visual danger indicators for immersive discovery gameplay
 - June 15, 2025. Updated Sidebar to display both affection and trust levels with color-coded status indicators reflecting relationship safety
 - June 15, 2025. Created secret probing mechanics where investigating forbidden topics gradually erodes trust across all coven members
+- June 15, 2025. Enhanced character introduction scenes with detailed physical descriptions for immersive character visualization
+- June 15, 2025. Added comprehensive physical descriptions for all 9 main characters: Lilith, Morgana, Seraphina, Valentina, Raven, Celeste, Luna, Elena, Isadora, and Umbra
+- June 15, 2025. Integrated character appearance details naturally into first introduction scenes and key interaction moments
+- June 15, 2025. Created consistent visual identity for each character highlighting their unique supernatural nature and personality traits
 ```
 
 ## User Preferences
