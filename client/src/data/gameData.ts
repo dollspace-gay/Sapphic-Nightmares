@@ -12779,6 +12779,1244 @@ export const gameData: Chapter[] = [
             nextScene: 'support_systems'
           }
         ]
+      },
+      // Final set of orphaned scenes
+      {
+        id: 'healing_expertise',
+        title: 'Therapeutic Mastery',
+        text: [
+          'Community members develop advanced therapeutic skills through comprehensive training.',
+          'The expertise enables professional-quality emotional support and healing services.',
+          'Therapeutic mastery creates a community known for exceptional healing capabilities.',
+          'The expertise becomes a valuable resource for other communities seeking healing knowledge.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'establish_healing_certification',
+            text: 'Create certification programs for therapeutic expertise.',
+            consequence: 'Certification creation • Formalizes healing expertise',
+            effects: [{ characterId: 'elena', affectionChange: 40 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'healing_wisdom',
+        title: 'Documented Knowledge',
+        text: [
+          'Healing practices are thoroughly documented for preservation and sharing.',
+          'The documented wisdom becomes a valuable resource for future generations.',
+          'Other communities benefit from access to proven healing methodologies.',
+          'The healing knowledge creates a lasting legacy of emotional support expertise.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'share_wisdom_broadly',
+            text: 'Share healing wisdom with supernatural communities worldwide.',
+            consequence: 'Wisdom sharing • Spreads healing knowledge globally',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'unified_community',
+        title: 'Collective Strength',
+        text: [
+          'The community achieves unprecedented unity while maintaining individual diversity.',
+          'Collective healing creates bonds that strengthen everyone without eliminating uniqueness.',
+          'The unified approach enables tackling larger challenges with coordinated effort.',
+          'Unity becomes a source of strength rather than conformity.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'maintain_unity_diversity_balance',
+            text: 'Ensure unity never sacrifices healthy individual diversity.',
+            consequence: 'Balance maintenance • Preserves individual uniqueness within unity',
+            effects: [{ characterId: 'morgana', affectionChange: 35 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'healing_tradition',
+        title: 'Lasting Practice',
+        text: [
+          'Ongoing healing work becomes a permanent community tradition.',
+          'The tradition ensures that emotional support remains a core community value.',
+          'Future generations inherit both the knowledge and commitment to healing.',
+          'The healing tradition becomes part of the community\'s essential identity.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'strengthen_healing_tradition',
+            text: 'Continuously strengthen and evolve the healing tradition.',
+            consequence: 'Tradition strengthening • Ensures healing legacy',
+            effects: [{ characterId: 'elena', affectionChange: 40 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'healing_system',
+        title: 'Formalized Support',
+        text: [
+          'Formal therapeutic partnership programs create systematic healing support.',
+          'The systematized approach ensures consistent, high-quality emotional care.',
+          'Formal systems make healing support accessible and reliable for all community members.',
+          'The healing system becomes a model for other communities developing support structures.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'expand_healing_systems',
+            text: 'Expand formal healing systems to cover all aspects of wellbeing.',
+            consequence: 'System expansion • Creates comprehensive healing support',
+            effects: [{ characterId: 'elena', affectionChange: 45 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'deep_connections',
+        title: 'Profound Bonds',
+        text: [
+          'Focusing on partnership quality creates extraordinarily deep healing relationships.',
+          'The profound connections enable healing at levels not possible through surface interactions.',
+          'Deep therapeutic bonds become one of the community\'s greatest sources of strength.',
+          'The quality-focused approach proves more effective than quantity-based support systems.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'nurture_deep_bonds',
+            text: 'Continue nurturing and protecting these deep healing connections.',
+            consequence: 'Bond nurturing • Maintains profound therapeutic relationships',
+            effects: [{ characterId: 'morgana', affectionChange: 35 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'knowledge_preservation',
+        title: 'Wisdom Legacy',
+        text: [
+          'A specialized healing library preserves all therapeutic knowledge and wisdom.',
+          'The preserved knowledge ensures that healing expertise will never be lost.',
+          'Future healers will have access to comprehensive resources for learning and development.',
+          'The knowledge preservation becomes a gift to countless future generations.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'expand_knowledge_collection',
+            text: 'Continuously expand the healing knowledge collection.',
+            consequence: 'Collection expansion • Grows healing wisdom repository',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'healing_succession',
+        title: 'Future Healers',
+        text: [
+          'Training future healers ensures continuity of therapeutic expertise.',
+          'The succession planning guarantees that healing knowledge will be passed forward.',
+          'New healers bring fresh perspectives while preserving essential wisdom.',
+          'The succession creates an unbroken chain of healing knowledge and capability.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'establish_healer_lineages',
+            text: 'Create formal lineages of healing knowledge and mentorship.',
+            consequence: 'Lineage establishment • Creates healing knowledge inheritance',
+            effects: [{ characterId: 'elena', affectionChange: 45 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'remembrance_culture',
+        title: 'Memorial Integration',
+        text: [
+          'Memorial activities become integrated throughout the year, not just at formal events.',
+          'The remembrance culture keeps the memory of the lost alive in daily community life.',
+          'Ongoing memorial activities provide continuous comfort and connection.',
+          'The culture ensures that loss becomes part of the community\'s strength rather than just its sorrow.'
+        ],
+        background: '/backgrounds/garden-courtyard.png',
+        choices: [
+          {
+            id: 'weave_remembrance_into_daily_life',
+            text: 'Integrate remembrance more deeply into all aspects of community life.',
+            consequence: 'Daily integration • Makes remembrance part of everyday experience',
+            effects: [{ characterId: 'luna', affectionChange: 35 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'joyful_remembrance',
+        title: 'Celebration of Life',
+        text: [
+          'Memorial focus shifts to celebrating the joy and love that the lost brought to the world.',
+          'Joyful remembrance proves more healing than sorrowful mourning.',
+          'The celebration approach honors the positive impact of those who are gone.',
+          'Joyful memorial practices inspire others to live fully and love deeply.'
+        ],
+        background: '/backgrounds/garden-courtyard.png',
+        choices: [
+          {
+            id: 'spread_joyful_memorial_practices',
+            text: 'Share joyful memorial practices with other grieving communities.',
+            consequence: 'Practice sharing • Spreads healing memorial approaches',
+            effects: [{ characterId: 'morgana', affectionChange: 40 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'participatory_memorial',
+        title: 'Community Gardening',
+        text: [
+          'Community members actively participate in caring for the memorial garden.',
+          'Participatory memorial work creates ongoing connection and healing.',
+          'The shared gardening becomes a meditative practice that strengthens community bonds.',
+          'Active participation makes memorial care a source of comfort rather than burden.'
+        ],
+        background: '/backgrounds/garden-courtyard.png',
+        choices: [
+          {
+            id: 'expand_participatory_programs',
+            text: 'Develop additional participatory memorial programs.',
+            consequence: 'Program expansion • Creates more memorial participation opportunities',
+            effects: [{ characterId: 'elena', affectionChange: 45 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'ritual_gardening',
+        title: 'Sacred Cultivation',
+        text: [
+          'Special ceremonies transform memorial garden care into sacred ritual.',
+          'Ritual gardening creates meaningful spiritual experiences for participants.',
+          'The ceremonies provide structure and depth to memorial practices.',
+          'Sacred cultivation becomes a powerful form of grief processing and healing.'
+        ],
+        background: '/backgrounds/garden-courtyard.png',
+        choices: [
+          {
+            id: 'develop_seasonal_rituals',
+            text: 'Create seasonal ritual cycles for memorial garden care.',
+            consequence: 'Ritual development • Creates ongoing sacred practices',
+            effects: [{ characterId: 'luna', affectionChange: 40 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      // Completion of final 30 orphaned scenes
+      {
+        id: 'diplomatic_legacy',
+        title: 'Diplomatic Excellence Spread',
+        text: [
+          'Your diplomatic methods become widely adopted across supernatural communities.',
+          'The legacy of successful negotiation creates lasting peace between previously hostile groups.',
+          'Diplomatic excellence becomes your lasting contribution to supernatural society.',
+          'Future generations benefit from the peaceful relations your methods established.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'continue_diplomatic_work',
+            text: 'Continue advancing diplomatic practices and training.',
+            consequence: 'Ongoing diplomacy • Maintains peace-building efforts',
+            effects: [{ characterId: 'isadora', affectionChange: 30 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'ethical_community',
+        title: 'Principled Society',
+        text: [
+          'The community becomes known throughout supernatural society for its ethical standards.',
+          'Principled decision-making attracts like-minded individuals seeking moral leadership.',
+          'The ethical community becomes a beacon of integrity in a complex world.',
+          'Your contribution to principled governance creates lasting positive change.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'expand_ethical_influence',
+            text: 'Work to expand ethical standards to other communities.',
+            consequence: 'Ethical expansion • Spreads principled governance',
+            effects: [{ characterId: 'seraphina', affectionChange: 35 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'wisdom_evolution',
+        title: 'Growing Understanding',
+        text: [
+          'Ethical frameworks continue evolving through ongoing development and refinement.',
+          'The living wisdom adapts to new challenges while maintaining core principles.',
+          'Evolutionary ethics prove more robust than rigid dogma.',
+          'The growing understanding creates increasingly sophisticated moral guidance.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'document_wisdom_growth',
+            text: 'Document the evolution of ethical wisdom for future study.',
+            consequence: 'Documentation • Preserves wisdom development',
+            effects: [{ characterId: 'celeste', affectionChange: 30 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'expertise_celebration',
+        title: 'Mastery Recognition',
+        text: [
+          'Formal recognition of achieved mastery creates inspiring celebration of excellence.',
+          'The celebrations honor both individual achievement and collective support.',
+          'Mastery recognition motivates others to pursue their own areas of expertise.',
+          'The recognition system becomes a valued community tradition.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'establish_mastery_traditions',
+            text: 'Create lasting traditions around mastery achievement and recognition.',
+            consequence: 'Tradition creation • Establishes excellence culture',
+            effects: [{ characterId: 'celeste', affectionChange: 35 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'mentorship_culture',
+        title: 'Teaching Community',
+        text: [
+          'Comprehensive mentorship creates a culture where teaching and learning are deeply valued.',
+          'The mentorship approach ensures knowledge transfer while building strong relationships.',
+          'Teaching becomes a honored role that strengthens the entire community.',
+          'The culture creates continuous growth and development for all members.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'honor_teaching_contributions',
+            text: 'Create special recognition for outstanding mentorship and teaching.',
+            consequence: 'Teaching honor • Celebrates mentorship contributions',
+            effects: [{ characterId: 'luna', affectionChange: 30 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'scholarly_community',
+        title: 'Academic Excellence',
+        text: [
+          'Academic traditions establish the community as a center of learning and scholarship.',
+          'The scholarly reputation attracts students and researchers from across the supernatural world.',
+          'Academic excellence becomes a defining characteristic of community identity.',
+          'The scholarly community contributes significantly to supernatural knowledge advancement.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'establish_academic_exchange',
+            text: 'Create academic exchange programs with other scholarly communities.',
+            consequence: 'Exchange creation • Builds scholarly networks',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'educational_leadership',
+        title: 'Learning Innovation',
+        text: [
+          'Educational innovations become models adopted by communities worldwide.',
+          'The leadership in learning creates lasting improvements in supernatural education.',
+          'Innovation documentation spreads effective educational methods broadly.',
+          'Educational leadership becomes a significant legacy contribution.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'continue_innovation',
+            text: 'Continue developing and sharing educational innovations.',
+            consequence: 'Ongoing innovation • Maintains educational leadership',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'organized_revolution',
+        title: 'Coordinated Change',
+        text: [
+          'Organized revolutionary activities create systematic positive change across multiple communities.',
+          'Coordination enables larger-scale reforms than isolated efforts could achieve.',
+          'The organized approach proves more effective than scattered individual actions.',
+          'Revolutionary coordination becomes a model for sustainable social change.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'institutionalize_coordination',
+            text: 'Create permanent institutions for revolutionary coordination.',
+            consequence: 'Institutionalization • Creates lasting change infrastructure',
+            effects: [{ characterId: 'valentina', affectionChange: 45 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'progressive_transformation',
+        title: 'Expanding Reform',
+        text: [
+          'Successful reforms create foundation for additional progressive transformations.',
+          'The expanding changes demonstrate that systematic improvement is possible.',
+          'Progressive transformation builds momentum for continued positive change.',
+          'The success creates a model for other communities seeking similar reforms.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'accelerate_transformation',
+            text: 'Use momentum to accelerate progressive transformation efforts.',
+            consequence: 'Acceleration • Speeds positive change',
+            effects: [{ characterId: 'valentina', affectionChange: 40 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'advocacy_infrastructure',
+        title: 'Support Systems',
+        text: [
+          'Formal support systems create infrastructure for sustainable advocacy work.',
+          'The infrastructure ensures advocates have resources needed for long-term effectiveness.',
+          'Advocacy support becomes institutionalized rather than dependent on individual effort.',
+          'The infrastructure model spreads to other movements seeking sustainability.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'strengthen_infrastructure',
+            text: 'Continuously strengthen and expand advocacy support infrastructure.',
+            consequence: 'Infrastructure strengthening • Builds advocacy capacity',
+            effects: [{ characterId: 'elena', affectionChange: 30 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'revolution_mastery',
+        title: 'Change Expertise',
+        text: [
+          'Teaching sustainable advocacy methods creates expertise in revolutionary change.',
+          'The mastery of sustainable revolution spreads effective methods widely.',
+          'Change expertise prevents the burnout and exhaustion common in activist movements.',
+          'Revolutionary mastery becomes a valued skill across the supernatural community.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'establish_revolution_academy',
+            text: 'Create formal training programs for sustainable revolutionary methods.',
+            consequence: 'Academy establishment • Formalizes change training',
+            effects: [{ characterId: 'valentina', affectionChange: 50 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'the_inheritance',
+        title: 'A New Beginning',
+        text: [
+          'You stand before the imposing gates of Ravencroft Manor, the Gothic architecture looming against storm clouds.',
+          'The inheritance letter crinkles in your hand as you approach your great-aunt Cordelia\'s estate.',
+          'Strange sensations prickle along your skin - as if the very air here holds secrets.',
+          'Your journey into the supernatural world is about to begin.'
+        ],
+        background: '/backgrounds/gothic-manor-entrance.png',
+        choices: [
+          {
+            id: 'approach_manor_confidently',
+            text: 'Walk confidently to the front door.',
+            consequence: 'Confident approach • Shows self-assurance',
+            effects: [],
+            nextScene: 'manor_entrance'
+          },
+          {
+            id: 'observe_surroundings_carefully',
+            text: 'Take time to observe the manor and surroundings carefully.',
+            consequence: 'Careful observation • Shows attention to detail',
+            effects: [],
+            nextScene: 'manor_observation'
+          }
+        ]
+      },
+      {
+        id: 'network_coordination',
+        title: 'Regional Organization',
+        text: [
+          'Coordination systems enable effective management of regional support networks.',
+          'The organizational structure ensures resources reach where they\'re needed most.',
+          'Regional coordination prevents duplication while maximizing coverage.',
+          'The coordination model becomes valuable for other large-scale support efforts.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'refine_coordination_methods',
+            text: 'Continuously refine coordination methods for maximum effectiveness.',
+            consequence: 'Method refinement • Improves coordination efficiency',
+            effects: [{ characterId: 'isadora', affectionChange: 30 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'community_wisdom',
+        title: 'Documented Methods',
+        text: [
+          'Successful community strengthening methods are preserved for future reference.',
+          'The documented wisdom becomes a resource for other communities seeking deep connections.',
+          'Community wisdom spreads effective approaches for building strong local bonds.',
+          'The methods create lasting improvements in community development practices.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'share_community_methods',
+            text: 'Share community strengthening methods with other groups.',
+            consequence: 'Method sharing • Spreads community development wisdom',
+            effects: [{ characterId: 'celeste', affectionChange: 25 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'crisis_expertise',
+        title: 'Specialized Response',
+        text: [
+          'Specialized crisis responders develop expertise in handling diverse emergency situations.',
+          'The specialized training creates highly effective crisis intervention capabilities.',
+          'Crisis expertise ensures appropriate help is available for any emergency type.',
+          'The specialized approach becomes a model for other crisis response programs.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'expand_specialization_training',
+            text: 'Develop additional specialized training programs for crisis response.',
+            consequence: 'Training expansion • Builds crisis response expertise',
+            effects: [{ characterId: 'raven', affectionChange: 35 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'comprehensive_prevention',
+        title: 'Complete Coverage',
+        text: [
+          'Expanded prevention programs address all major risk factors for crisis development.',
+          'Comprehensive coverage ensures no potential crisis source is overlooked.',
+          'The complete approach proves more effective than partial prevention efforts.',
+          'Comprehensive prevention becomes the gold standard for crisis prevention work.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'maintain_comprehensive_approach',
+            text: 'Continue maintaining and improving comprehensive prevention coverage.',
+            consequence: 'Approach maintenance • Sustains complete prevention',
+            effects: [{ characterId: 'luna', affectionChange: 30 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'inspired_action',
+        title: 'Purpose-Driven Work',
+        text: [
+          'Renewed purpose translates into concrete action plans that honor the lost while helping the living.',
+          'Purpose-driven work proves more sustainable and effective than guilt-motivated activism.',
+          'The inspired action creates meaningful progress while maintaining emotional health.',
+          'Purpose-driven activism becomes a model for sustainable social change work.'
+        ],
+        background: '/backgrounds/garden-courtyard.png',
+        choices: [
+          {
+            id: 'institutionalize_purpose_approach',
+            text: 'Create systems to maintain purpose-driven rather than guilt-driven work.',
+            consequence: 'Purpose institutionalization • Maintains healthy motivation',
+            effects: [{ characterId: 'valentina', affectionChange: 45 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'predictive_care',
+        title: 'Advanced Warning Systems',
+        text: [
+          'Refined early warning systems achieve remarkable accuracy in predicting crisis development.',
+          'Predictive care enables intervention at the earliest possible stage.',
+          'The advanced systems prevent most crises from developing past manageable stages.',
+          'Predictive care becomes a breakthrough approach to crisis prevention.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'share_predictive_methods',
+            text: 'Share predictive care methods with other prevention programs.',
+            consequence: 'Method sharing • Spreads predictive care innovation',
+            effects: [{ characterId: 'luna', affectionChange: 35 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'education_resources',
+        title: 'Learning Materials',
+        text: [
+          'Comprehensive educational materials enable scaling of prevention education.',
+          'The resources make prevention knowledge accessible to diverse communities.',
+          'Educational materials become widely used tools for crisis prevention work.',
+          'The resources create lasting improvements in prevention education effectiveness.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'continue_resource_development',
+            text: 'Continue developing and updating educational resources.',
+            consequence: 'Resource development • Maintains educational effectiveness',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'restored_trust',
+        title: 'Relationship Renewal',
+        text: [
+          'Consistent trustworthy behavior successfully rebuilds damaged relationships.',
+          'The restored trust creates stronger bonds than existed before the damage.',
+          'Successful trust rebuilding demonstrates that redemption is possible.',
+          'The restoration becomes an inspiring example of growth and forgiveness.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'maintain_rebuilt_trust',
+            text: 'Continue behaviors that maintain and strengthen rebuilt trust.',
+            consequence: 'Trust maintenance • Sustains restored relationships',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'redemption_progress',
+        title: 'Guided Growth',
+        text: [
+          'The guided redemption process creates measurable progress toward full restoration.',
+          'Mentored growth proves more effective than unsupported attempts at change.',
+          'The redemption progress inspires hope for others seeking similar growth.',
+          'Guided redemption becomes a model for effective rehabilitation approaches.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'complete_redemption_process',
+            text: 'Commit to completing the full redemption process.',
+            consequence: 'Process completion • Achieves full rehabilitation',
+            effects: [{ characterId: 'seraphina', affectionChange: 30 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'exile_reflection',
+        title: 'Learning from Loss',
+        text: [
+          'Even in exile, the experience becomes a source of wisdom and growth.',
+          'Reflection on mistakes creates insights that could help others avoid similar errors.',
+          'The exile experience demonstrates that growth can emerge from even the most difficult circumstances.',
+          'Learning from loss transforms exile into an opportunity for contribution.'
+        ],
+        background: '/backgrounds/gothic-manor-entrance.png',
+        choices: [
+          {
+            id: 'document_lessons_learned',
+            text: 'Document lessons learned for others who might face similar challenges.',
+            consequence: 'Lesson documentation • Shares wisdom from experience',
+            effects: [],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'positive_influence',
+        title: 'Example of Growth',
+        text: [
+          'Your example of taking responsibility and growing from mistakes influences others.',
+          'The positive influence demonstrates that character development is always possible.',
+          'Others are inspired to examine their own behavior and seek improvement.',
+          'Positive influence creates ripple effects of growth throughout the community.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'continue_positive_example',
+            text: 'Continue being a positive example of growth and responsibility.',
+            consequence: 'Example continuation • Maintains positive influence',
+            effects: [{ characterId: 'seraphina', affectionChange: 25 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'trust_acceleration',
+        title: 'Rapid Progress',
+        text: [
+          'Exceptional performance accelerates the trust rebuilding process beyond normal timelines.',
+          'The rapid progress demonstrates extraordinary commitment to change.',
+          'Trust acceleration creates momentum that benefits all restoration efforts.',
+          'The accelerated approach becomes a model for intensive rehabilitation programs.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'maintain_exceptional_pace',
+            text: 'Continue the exceptional performance that enables rapid trust building.',
+            consequence: 'Pace maintenance • Sustains accelerated progress',
+            effects: [{ characterId: 'isadora', affectionChange: 30 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'gradual_restoration',
+        title: 'Steady Rebuilding',
+        text: [
+          'Steady improvement creates a solid foundation for gradual relationship restoration.',
+          'The reliable progress builds confidence in long-term positive change.',
+          'Gradual restoration proves more sustainable than dramatic but unsustained efforts.',
+          'The steady approach creates lasting improvements in trust and connection.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'continue_steady_rebuilding',
+            text: 'Maintain the steady approach to relationship rebuilding.',
+            consequence: 'Rebuilding continuation • Sustains gradual restoration',
+            effects: [{ characterId: 'celeste', affectionChange: 20 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'supported_progress',
+        title: 'Assisted Development',
+        text: [
+          'Support resources significantly enhance the effectiveness of rehabilitation efforts.',
+          'Assisted development creates better outcomes than unsupported attempts at change.',
+          'The supported approach demonstrates the value of community investment in individual growth.',
+          'Supported progress becomes a model for effective rehabilitation programs.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'maximize_support_utilization',
+            text: 'Continue making full use of available support resources.',
+            consequence: 'Support maximization • Optimizes assisted development',
+            effects: [{ characterId: 'celeste', affectionChange: 25 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'optimization_mastery',
+        title: 'System Perfection',
+        text: [
+          'Continuous refinement creates optimized systems for systematic improvement.',
+          'The optimization mastery enables helping others achieve more effective personal growth.',
+          'Perfected systems become valuable resources for community development.',
+          'Optimization mastery creates lasting contributions to personal growth methodology.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'share_optimization_methods',
+            text: 'Share optimization methods with others seeking systematic improvement.',
+            consequence: 'Method sharing • Spreads optimization mastery',
+            effects: [{ characterId: 'celeste', affectionChange: 35 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'growth_wisdom',
+        title: 'Personalization Insights',
+        text: [
+          'Insights about personalizing growth approaches help others customize their development.',
+          'Growth wisdom recognizes that effective personal development must be individually tailored.',
+          'The personalization insights become valuable for community members seeking change.',
+          'Growth wisdom creates more effective and sustainable personal development approaches.'
+        ],
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'develop_personalization_guides',
+            text: 'Create guides to help others personalize their growth approaches.',
+            consequence: 'Guide development • Enables customized personal growth',
+            effects: [{ characterId: 'luna', affectionChange: 30 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'mutual_development',
+        title: 'Reciprocal Growth',
+        text: [
+          'Contributing to others\' growth while developing personally creates powerful mutual development.',
+          'The reciprocal approach strengthens both individual growth and community bonds.',
+          'Mutual development proves more effective than isolated personal improvement efforts.',
+          'The approach becomes a model for community-based personal development.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'institutionalize_mutual_growth',
+            text: 'Create formal programs for mutual development and reciprocal growth.',
+            consequence: 'Program institutionalization • Formalizes mutual development',
+            effects: [{ characterId: 'elena', affectionChange: 35 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'support_systems',
+        title: 'Formal Mutual Aid',
+        text: [
+          'Formal systems for reciprocal support create institutional mutual aid.',
+          'The systems ensure that mutual support becomes reliable rather than dependent on individual initiative.',
+          'Formalized mutual aid creates sustainable support networks.',
+          'The support systems become a cornerstone of community resilience and growth.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'expand_support_networks',
+            text: 'Continuously expand and strengthen formal support networks.',
+            consequence: 'Network expansion • Grows mutual aid capacity',
+            effects: [{ characterId: 'elena', affectionChange: 40 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      // Final 2 scenes to complete story structure
+      {
+        id: 'manor_entrance',
+        title: 'The Grand Entrance',
+        text: [
+          'You approach the imposing front door of Ravencroft Manor with confidence.',
+          'The heavy oak door is adorned with intricate Gothic metalwork that seems to pulse with its own energy.',
+          'Before you can knock, the door swings open silently, revealing a dimly lit entrance hall.',
+          'Your confident approach has been noticed - someone was expecting you.'
+        ],
+        background: '/backgrounds/gothic-manor-entrance.png',
+        choices: [
+          {
+            id: 'enter_immediately',
+            text: 'Step inside without hesitation.',
+            consequence: 'Bold entry • Shows fearlessness',
+            effects: [],
+            nextScene: 'grand_hall_arrival'
+          },
+          {
+            id: 'call_out_greeting',
+            text: 'Call out a polite greeting before entering.',
+            consequence: 'Polite announcement • Shows respect',
+            effects: [],
+            nextScene: 'welcomed_entry'
+          }
+        ]
+      },
+      {
+        id: 'manor_observation',
+        title: 'Careful Assessment',
+        text: [
+          'You take time to study the manor and its surroundings before approaching.',
+          'The Gothic architecture reveals subtle details: protective symbols carved into stone, windows that seem to watch back.',
+          'Gardens show signs of careful tending, and you notice movement in upper windows - you are not alone here.',
+          'Your careful observation reveals this is a place of power and ancient secrets.'
+        ],
+        background: '/backgrounds/gothic-manor-entrance.png',
+        choices: [
+          {
+            id: 'approach_respectfully',
+            text: 'Approach the door with respectful caution.',
+            consequence: 'Respectful approach • Shows wisdom and courtesy',
+            effects: [],
+            nextScene: 'respectful_arrival'
+          },
+          {
+            id: 'look_for_alternative_entrance',
+            text: 'Look for a servants\' entrance or side door.',
+            consequence: 'Alternative approach • Shows humility',
+            effects: [],
+            nextScene: 'humble_entry'
+          }
+        ]
+      },
+      // Completing the final 4 arrival scenes
+      {
+        id: 'grand_hall_arrival',
+        title: 'Bold Entrance',
+        text: [
+          'You step boldly into the manor, your footsteps echoing in the grand entrance hall.',
+          'Candles flicker to life as you enter, illuminating portraits of stern-faced ancestors whose eyes seem to track your movement.',
+          'A figure emerges from the shadows - tall, elegant, with an otherworldly grace that immediately marks them as supernatural.',
+          'Your bold entrance has made an impression; there\'s approval in their ancient eyes.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'meet_gaze_confidently',
+            text: 'Meet their gaze with confident directness.',
+            consequence: 'Confident meeting • Shows strength and fearlessness',
+            effects: [{ characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'first_vampire_encounter'
+          },
+          {
+            id: 'bow_respectfully',
+            text: 'Offer a respectful bow of greeting.',
+            consequence: 'Respectful greeting • Shows courtesy despite boldness',
+            effects: [{ characterId: 'lilith', affectionChange: 8 }],
+            nextScene: 'formal_introduction'
+          }
+        ]
+      },
+      {
+        id: 'welcomed_entry',
+        title: 'Courteous Arrival',
+        text: [
+          'Your polite greeting echoes through the entrance hall before a warm voice responds from within.',
+          '"Welcome, dear child. We have been expecting you." The voice carries centuries of wisdom and gentle authority.',
+          'A figure glides forward - ethereally beautiful with silver hair and eyes that hold starlight. This can only be Lilith herself.',
+          'Your courteous approach has earned immediate approval from the coven\'s leader.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'express_gratitude',
+            text: '"Thank you for welcoming me. I\'m honored to be here."',
+            consequence: 'Grateful recognition • Shows appreciation for hospitality',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'warm_reception'
+          },
+          {
+            id: 'ask_about_expectations',
+            text: '"You were expecting me? How did you know I would come?"',
+            consequence: 'Curious inquiry • Shows intelligent interest',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'prophetic_knowledge'
+          }
+        ]
+      },
+      {
+        id: 'respectful_arrival',
+        title: 'Wise Approach',
+        text: [
+          'You approach the door with the caution of someone who recognizes they are entering a place of power.',
+          'Before you can knock, the door opens to reveal a woman of impossible beauty with knowing eyes.',
+          '"Your respectful approach shows wisdom beyond your years," she says with approval. "I am Lilith, and you are most welcome here."',
+          'Your careful observation and respectful manner have created an excellent first impression.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'acknowledge_power_sensed',
+            text: '"I could sense this was a place of great power and deserved respect."',
+            consequence: 'Power recognition • Shows supernatural awareness',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'supernatural_awareness'
+          },
+          {
+            id: 'express_humble_gratitude',
+            text: '"Thank you for your welcome, Lady Lilith. I am grateful for your hospitality."',
+            consequence: 'Humble gratitude • Shows proper respect and courtesy',
+            effects: [{ characterId: 'lilith', affectionChange: 16 }],
+            nextScene: 'gracious_welcome'
+          }
+        ]
+      },
+      {
+        id: 'humble_entry',
+        title: 'Modest Beginning',
+        text: [
+          'You find a smaller side entrance, choosing humility over presumption.',
+          'A gentle voice calls out before you can knock: "There is no need for the servant\'s entrance, child. You are family here."',
+          'The main door opens, and Lilith herself appears with a warm smile. "Your humility is touching, but unnecessary. You belong here."',
+          'Your modest approach has revealed your character and earned deep respect.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'explain_humble_intention',
+            text: '"I didn\'t want to presume. I wasn\'t sure of my place here."',
+            consequence: 'Humble explanation • Shows thoughtful consideration',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'family_recognition'
+          },
+          {
+            id: 'accept_belonging_gratefully',
+            text: '"Thank you for saying I belong here. That means everything to me."',
+            consequence: 'Grateful acceptance • Shows appreciation for belonging',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'immediate_acceptance'
+          }
+        ]
+      },
+      // Final 8 scenes to complete perfect story structure
+      {
+        id: 'first_vampire_encounter',
+        title: 'Meeting the Ancient',
+        text: [
+          'You hold the vampire\'s gaze steadily, neither backing down nor showing aggression.',
+          'A slow smile spreads across their perfect features. "Impressive. Most mortals cannot meet my eyes so directly."',
+          '"I am Lilith Ravencroft, and you... you have Cordelia\'s strength." Her voice carries the weight of centuries.',
+          'Your fearless confidence has earned immediate respect from the coven\'s ancient leader.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_about_cordelia',
+            text: '"Tell me about my great-aunt. What was she like?"',
+            consequence: 'Family inquiry • Shows desire to understand legacy',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'cordelia_memories'
+          },
+          {
+            id: 'acknowledge_vampire_nature',
+            text: '"You\'re a vampire. I can sense it."',
+            consequence: 'Direct acknowledgment • Shows supernatural awareness',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'nature_revelation'
+          }
+        ]
+      },
+      {
+        id: 'formal_introduction',
+        title: 'Courtly Manners',
+        text: [
+          'Your respectful bow is received with gracious approval.',
+          '"Such lovely manners," Lilith says warmly. "Cordelia taught you well, even from a distance."',
+          '"I am Lilith Ravencroft, guardian of this sanctuary and keeper of its secrets. You are most welcome here."',
+          'Your combination of boldness and respect has struck the perfect balance.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'express_honor',
+            text: '"The honor is mine, Lady Lilith. This place feels... significant."',
+            consequence: 'Respectful recognition • Shows appreciation for significance',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'sanctuary_significance'
+          },
+          {
+            id: 'ask_about_secrets',
+            text: '"What secrets does this sanctuary hold?"',
+            consequence: 'Secret inquiry • Shows curiosity about mysteries',
+            effects: [{ characterId: 'lilith', affectionChange: 14 }],
+            nextScene: 'mystery_introduction'
+          }
+        ]
+      },
+      {
+        id: 'warm_reception',
+        title: 'Gracious Welcome',
+        text: [
+          'Lilith\'s smile radiates genuine warmth as she extends her hand in greeting.',
+          '"Your gratitude is touching, but unnecessary. You are family here, and family is always welcome."',
+          '"Cordelia spoke of you often in her letters. She would be so proud to see the person you\'ve become."',
+          'The warmth of your reception makes you feel immediately at home in this mysterious place.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_about_cordelias_letters',
+            text: '"She wrote about me? What did she say?"',
+            consequence: 'Personal interest • Shows curiosity about aunt\'s perspective',
+            effects: [{ characterId: 'lilith', affectionChange: 16 }],
+            nextScene: 'cordelias_words'
+          },
+          {
+            id: 'express_family_gratitude',
+            text: '"Thank you for calling me family. I\'ve never felt like I belonged anywhere before."',
+            consequence: 'Belonging appreciation • Shows emotional vulnerability',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'finding_belonging'
+          }
+        ]
+      },
+      {
+        id: 'prophetic_knowledge',
+        title: 'Foreseen Arrival',
+        text: [
+          'Lilith\'s eyes take on an otherworldly gleam as she speaks of your anticipated arrival.',
+          '"Some among us have the gift of foresight. Luna saw your coming in the patterns of stars and shadow."',
+          '"But more than prophecy, we felt the pull when Cordelia\'s protection passed to you. The manor itself called to you."',
+          'The revelation that your arrival was both foreseen and magically connected fills you with wonder.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_about_protection',
+            text: '"What protection did Cordelia pass to me?"',
+            consequence: 'Protection inquiry • Shows desire to understand inheritance',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'magical_inheritance'
+          },
+          {
+            id: 'ask_about_luna',
+            text: '"I\'d like to meet Luna and learn about her gift."',
+            consequence: 'Seer interest • Shows curiosity about prophetic abilities',
+            effects: [{ characterId: 'luna', affectionChange: 12 }],
+            nextScene: 'seer_introduction'
+          }
+        ]
+      },
+      {
+        id: 'supernatural_awareness',
+        title: 'Recognized Sensitivity',
+        text: [
+          'Lilith\'s eyes widen with surprise and approval at your supernatural awareness.',
+          '"Remarkable. Few mortals can sense our nature so readily. You have inherited more than Cordelia\'s estate."',
+          '"The sensitivity to supernatural energy runs in your bloodline, though it rarely manifests so strongly."',
+          'Your natural ability to perceive the supernatural has revealed hidden potential within you.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_about_bloodline_gift',
+            text: '"Is this sensitivity something I can develop further?"',
+            consequence: 'Gift development • Shows interest in supernatural abilities',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'ability_development'
+          },
+          {
+            id: 'ask_about_manor_residents',
+            text: '"Are there others here like you? Can I sense them too?"',
+            consequence: 'Resident inquiry • Shows awareness of community',
+            effects: [{ characterId: 'lilith', affectionChange: 16 }],
+            nextScene: 'community_sensing'
+          }
+        ]
+      },
+      {
+        id: 'gracious_welcome',
+        title: 'Noble Courtesy',
+        text: [
+          'Lilith\'s expression softens with genuine pleasure at your formal courtesy.',
+          '"Such grace and proper respect. Cordelia raised you well, even from afar."',
+          '"Please, there is no need for such formality among family. You may simply call me Lilith."',
+          'Your respectful approach has earned deep appreciation and immediate acceptance.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'accept_familial_warmth',
+            text: '"Thank you, Lilith. It means everything to be considered family."',
+            consequence: 'Family acceptance • Shows appreciation for inclusion',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'family_bonds'
+          },
+          {
+            id: 'maintain_respectful_distance',
+            text: '"I appreciate your kindness, but I want to earn my place here first."',
+            consequence: 'Earned respect • Shows desire to prove worthiness',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'proving_worth'
+          }
+        ]
+      },
+      {
+        id: 'family_recognition',
+        title: 'Understanding Humility',
+        text: [
+          'Lilith\'s expression fills with profound understanding and warmth.',
+          '"Your uncertainty shows wisdom, but let me be clear: you belong here not because of what you might prove, but because of who you are."',
+          '"Cordelia\'s blood runs in your veins, but more importantly, her heart beats in your chest. That humility proves it."',
+          'Your humble honesty has revealed the depth of your character and earned profound respect.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'accept_belonging',
+            text: '"If you\'re certain I belong here, then I gratefully accept my place."',
+            consequence: 'Belonging acceptance • Shows trust in judgment',
+            effects: [{ characterId: 'lilith', affectionChange: 22 }],
+            nextScene: 'accepted_family'
+          },
+          {
+            id: 'ask_about_cordelia_heart',
+            text: '"What do you mean about Cordelia\'s heart beating in my chest?"',
+            consequence: 'Heart inquiry • Shows curiosity about spiritual connection',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'spiritual_legacy'
+          }
+        ]
+      },
+      {
+        id: 'immediate_acceptance',
+        title: 'Grateful Belonging',
+        text: [
+          'Tears of joy shine in your eyes as you accept Lilith\'s declaration of belonging.',
+          '"Your gratitude touches my ancient heart," Lilith says softly. "Welcome home, dear child."',
+          '"This has been your home all along - you simply needed to find your way here. Cordelia always knew you would."',
+          'The overwhelming sense of finally belonging somewhere creates an instant, deep connection with Lilith.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_about_coming_home',
+            text: '"How did Cordelia know I would find my way here?"',
+            consequence: 'Destiny inquiry • Shows curiosity about predetermined path',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'destined_arrival'
+          },
+          {
+            id: 'express_overwhelming_gratitude',
+            text: '"I never expected to feel so immediately welcome. Thank you for giving me a home."',
+            consequence: 'Deep gratitude • Shows profound appreciation',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'heartfelt_welcome'
+          }
+        ]
       }
     ]
   }
