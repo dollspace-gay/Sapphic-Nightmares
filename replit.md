@@ -135,6 +135,12 @@ Changelog:
 - June 15, 2025. Added authentic calligraphic typography (Great Vibes, Dancing Script, Alex Brush) for quill pen aesthetic
 - June 15, 2025. Fixed file serving path issues in standalone launcher for proper game loading
 - June 15, 2025. Created comprehensive GitHub README with installation instructions, feature overview, and development guide
+- June 15, 2025. Implemented meaningful player stats integration with health/sanity costs for forbidden knowledge, cosmic encounters, and political stress
+- June 15, 2025. Enhanced UI to display color-coded health/sanity values (green/yellow/orange/red based on thresholds) with "/100" format
+- June 15, 2025. Added GameContext support for playerStatEffects processing to modify health and sanity based on player choices
+- June 15, 2025. Created Chapter 1 pacing improvements with early character introduction scenes for better balance and flow
+- June 15, 2025. Added sanity costs (-8 to -25) for cosmic exposure, eldritch communication learning, and witnessing true otherworldly forms
+- June 15, 2025. Integrated health stress effects (-5 to -8) for managing political tensions and making difficult governance decisions
 ```
 
 ## User Preferences

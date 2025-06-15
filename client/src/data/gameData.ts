@@ -322,6 +322,191 @@ export const gameData: Chapter[] = [
             consequence: 'Considerate approach • Shows respect for existing residents',
             effects: [{ characterId: 'lilith', affectionChange: 18 }],
             nextScene: 'considerate_inquiry'
+          },
+          {
+            id: 'notice_other_presences',
+            text: '"I sense I\'m not the only guest here tonight. May I meet the others?"',
+            consequence: 'Perceptive awareness • Shows interest in meeting everyone',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'early_introductions'
+          }
+        ]
+      },
+      {
+        id: 'early_introductions',
+        title: 'Meeting the Residents',
+        text: [
+          'Lilith\'s eyes brighten with approval at your perceptiveness. "Very observant. Yes, you\'re quite right - we are a community here."',
+          'She leads you into the grand hall where several figures emerge from the shadows and adjoining rooms, each moving with an otherworldly grace.',
+          'A elegant woman in deep purple approaches first. "I am Isadora," she says with practiced diplomacy. "Welcome to Ravencroft Manor."',
+          'Behind her, a woman with silver-streaked hair and knowing eyes steps forward. "Celeste," she introduces herself simply. "I manage our... research collections."',
+          'The introductions create an immediate sense of the diverse personalities within this mysterious household.'
+        ],
+        character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'greet_each_respectfully',
+            text: 'Take time to greet each person individually and learn their names properly.',
+            consequence: 'Respectful approach • Shows genuine interest in everyone',
+            effects: [
+              { characterId: 'isadora', affectionChange: 15 },
+              { characterId: 'celeste', affectionChange: 12 },
+              { characterId: 'lilith', affectionChange: 8 }
+            ],
+            nextScene: 'respectful_introductions'
+          },
+          {
+            id: 'ask_about_community',
+            text: '"How long have you all lived here together? This seems like a close-knit community."',
+            consequence: 'Community interest • Shows appreciation for their bonds',
+            effects: [
+              { characterId: 'isadora', affectionChange: 12 },
+              { characterId: 'lilith', affectionChange: 10 }
+            ],
+            nextScene: 'community_history'
+          },
+          {
+            id: 'express_gratitude',
+            text: '"Thank you all for welcoming me. I hope I can contribute positively to your community."',
+            consequence: 'Grateful newcomer • Shows desire to contribute',
+            effects: [
+              { characterId: 'isadora', affectionChange: 18 },
+              { characterId: 'celeste', affectionChange: 15 }
+            ],
+            nextScene: 'integration_discussion'
+          }
+        ]
+      },
+      {
+        id: 'respectful_introductions',
+        title: 'Personal Connections',
+        text: [
+          'You take genuine time with each introduction, making eye contact and asking thoughtful questions about their roles in the household.',
+          'Isadora responds warmly to your diplomatic approach. "How refreshing to meet someone who values proper introductions."',
+          'Celeste nods approvingly. "Attention to individual worth is a valuable trait. I sense you understand that each person brings unique contributions."',
+          'Your respectful approach creates immediate positive impressions and sets the foundation for meaningful relationships.'
+        ],
+        character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_about_individual_interests',
+            text: 'Ask each person about their personal interests and passions.',
+            consequence: 'Personal interest • Shows genuine curiosity about individuals',
+            effects: [
+              { characterId: 'celeste', affectionChange: 20 },
+              { characterId: 'isadora', affectionChange: 15 }
+            ],
+            nextScene: 'individual_passions_revealed'
+          },
+          {
+            id: 'express_eagerness_to_learn',
+            text: '"I\'d love to learn more about everyone\'s role in making this community work."',
+            consequence: 'Learning eagerness • Shows appreciation for community structure',
+            effects: [
+              { characterId: 'isadora', affectionChange: 18 },
+              { characterId: 'lilith', affectionChange: 12 }
+            ],
+            nextScene: 'community_roles_explained'
+          },
+          {
+            id: 'offer_own_introduction',
+            text: 'Share something meaningful about yourself to reciprocate their openness.',
+            consequence: 'Reciprocal sharing • Shows willingness to be vulnerable',
+            effects: [
+              { characterId: 'celeste', affectionChange: 22 },
+              { characterId: 'isadora', affectionChange: 20 }
+            ],
+            nextScene: 'mutual_introduction'
+          }
+        ]
+      },
+      {
+        id: 'community_history',
+        title: 'Bonds of Time',
+        text: [
+          'Isadora and Lilith exchange a meaningful glance before Isadora speaks. "Some of us have been here for decades, others are more recent additions."',
+          '"What makes this community special," Lilith adds, "is not the length of time we\'ve known each other, but the depth of trust we\'ve built."',
+          'Celeste interjects thoughtfully: "We\'ve learned that true family is chosen, not born. Your great-aunt understood this when she welcomed us."',
+          'You sense layers of history and connection that run deeper than mere cohabitation.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'appreciate_chosen_family',
+            text: '"I love the idea of chosen family. Blood doesn\'t always mean belonging."',
+            consequence: 'Family philosophy • Shows understanding of chosen bonds',
+            effects: [
+              { characterId: 'lilith', affectionChange: 25 },
+              { characterId: 'isadora', affectionChange: 18 }
+            ],
+            nextScene: 'chosen_family_bonds'
+          },
+          {
+            id: 'ask_about_cordelia_integration',
+            text: '"How did Cordelia become part of your family? What made her special?"',
+            consequence: 'Legacy interest • Shows desire to understand aunt\'s role',
+            effects: [
+              { characterId: 'lilith', affectionChange: 20 },
+              { characterId: 'celeste', affectionChange: 15 }
+            ],
+            nextScene: 'cordelia_legacy_story'
+          },
+          {
+            id: 'express_honor',
+            text: '"I\'m honored to be welcomed into such a close community. I hope to earn my place here."',
+            consequence: 'Humble gratitude • Shows respect for existing bonds',
+            effects: [
+              { characterId: 'isadora', affectionChange: 22 },
+              { characterId: 'lilith', affectionChange: 18 }
+            ],
+            nextScene: 'earning_place_discussion'
+          }
+        ]
+      },
+      {
+        id: 'integration_discussion',
+        title: 'Finding Your Place',
+        text: [
+          'Your thoughtful words create a warm atmosphere of acceptance. Isadora steps forward with a diplomatic smile.',
+          '"Contribution is exactly what makes a community thrive. Each of us brings something unique to our shared life here."',
+          'Celeste adds: "The question isn\'t whether you can contribute, but how your particular strengths will enhance what we\'ve built together."',
+          'You feel the beginning of belonging, a sense that there might truly be a place for you in this extraordinary household.'
+        ],
+        character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_about_needs',
+            text: '"What does the community need most? Where could I make the biggest difference?"',
+            consequence: 'Service orientation • Shows desire to help where needed most',
+            effects: [
+              { characterId: 'isadora', affectionChange: 25 },
+              { characterId: 'celeste', affectionChange: 20 }
+            ],
+            nextScene: 'community_needs_assessment'
+          },
+          {
+            id: 'share_skills',
+            text: 'Mention specific skills you have that might benefit the community.',
+            consequence: 'Skill sharing • Shows practical readiness to contribute',
+            effects: [
+              { characterId: 'celeste', affectionChange: 22 },
+              { characterId: 'isadora', affectionChange: 18 }
+            ],
+            nextScene: 'skill_integration_planning'
+          },
+          {
+            id: 'emphasize_learning',
+            text: '"I\'m eager to learn from all of you. Everyone here clearly has wisdom to share."',
+            consequence: 'Learning humility • Shows respect for others\' knowledge',
+            effects: [
+              { characterId: 'celeste', affectionChange: 24 },
+              { characterId: 'lilith', affectionChange: 15 }
+            ],
+            nextScene: 'wisdom_sharing_culture'
           }
         ]
       },
@@ -9073,8 +9258,11 @@ export const gameData: Chapter[] = [
           {
             id: 'ask_to_learn_communication',
             text: '"Could you teach me to understand this form of communication?"',
-            consequence: 'Communication learning • Wants to learn eldritch language',
+            consequence: 'Communication learning • Heavy sanity cost for learning eldritch language',
             effects: [{ characterId: 'umbra', affectionChange: 60 }],
+            playerStatEffects: {
+              sanityChange: -20
+            },
             nextScene: 'patient_guidance'
           },
           {
@@ -9108,8 +9296,11 @@ export const gameData: Chapter[] = [
           {
             id: 'offer_eternal_friendship',
             text: '"You have my friendship for as long as existence itself endures."',
-            consequence: 'Eternal bond • Offers timeless friendship',
+            consequence: 'Eternal bond • Sanity cost for comprehending infinite timescales',
             effects: [{ characterId: 'umbra', affectionChange: 75 }],
+            playerStatEffects: {
+              sanityChange: -12
+            },
             nextScene: 'sacred_vow_sealed'
           },
           {
