@@ -5,7 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { useGame } from '@/contexts/GameContext';
+import { GameProvider } from '@/contexts/GameContext';
+import { useLocation } from 'wouter';
 
 interface TreeNode {
   id: string;
@@ -22,10 +23,10 @@ interface TreeNode {
   level: number;
 }
 
-export default function StoryTreeDev() {
-  const { makeChoice } = useGame();
+function StoryTreeDevContent() {
   const [selectedScene, setSelectedScene] = useState<any>(null);
   const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set());
+  const [location, navigate] = useLocation();
 
   // Build the story tree structure
   const storyTree = useMemo(() => {
@@ -74,18 +75,10 @@ export default function StoryTreeDev() {
   };
 
   const jumpToScene = (sceneId: string) => {
-    const allScenes = gameData.flatMap(chapter => chapter.scenes);
-    const scene = allScenes.find(s => s.id === sceneId);
-    if (scene) {
-      // This is a dev tool, so we'll use the choice mechanism to jump to scenes
-      makeChoice({
-        id: 'dev_jump',
-        text: 'Developer Jump',
-        consequence: 'Dev Mode',
-        effects: [],
-        nextScene: sceneId
-      });
-    }
+    // For the developer tool, we'll navigate back to the game with a URL parameter
+    // The main game can handle scene jumping through URL params or localStorage
+    localStorage.setItem('devJumpToScene', sceneId);
+    navigate('/');
   };
 
   const renderNode = (node: TreeNode): JSX.Element => {
@@ -226,5 +219,14 @@ export default function StoryTreeDev() {
         </Card>
       </div>
     </div>
+  );
+}
+
+// Wrap with GameProvider for compatibility but make it standalone
+export default function StoryTreeDev() {
+  return (
+    <GameProvider>
+      <StoryTreeDevContent />
+    </GameProvider>
   );
 }
