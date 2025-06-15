@@ -62,6 +62,22 @@ function gameReducer(state: GameState, action: GameAction): GameState {
           }
         }
       });
+
+      // Apply player stat effects (health and sanity changes)
+      if (choice.playerStatEffects) {
+        if (choice.playerStatEffects.healthChange) {
+          newState.playerStats.health = Math.max(
+            0,
+            Math.min(100, newState.playerStats.health + choice.playerStatEffects.healthChange)
+          );
+        }
+        if (choice.playerStatEffects.sanityChange) {
+          newState.playerStats.sanity = Math.max(
+            0,
+            Math.min(100, newState.playerStats.sanity + choice.playerStatEffects.sanityChange)
+          );
+        }
+      }
       
       // Progress to next scene if specified
       if (choice.nextScene) {

@@ -2361,12 +2361,15 @@ export const gameData: Chapter[] = [
           {
             id: 'request_forbidden_knowledge',
             text: '"I\'m interested in the forbidden texts. I believe knowledge itself isn\'t dangerous - only ignorance is."',
-            consequence: 'Dangerous knowledge sought • May have severe consequences',
+            consequence: 'Dangerous knowledge sought • Sanity cost for forbidden secrets',
             effects: [
               { characterId: 'celeste', affectionChange: 30 },
               { characterId: 'luna', affectionChange: -10 },
               { characterId: 'seraphina', affectionChange: -15 }
             ],
+            playerStatEffects: {
+              sanityChange: -15
+            },
             nextScene: 'forbidden_knowledge_access'
           },
           {
@@ -2842,8 +2845,11 @@ export const gameData: Chapter[] = [
           {
             id: 'eager_for_wonders',
             text: '"I\'m excited to see these wonders. Show me everything you\'re comfortable sharing."',
-            consequence: 'Enthusiastic acceptance • Opens cosmic experiences',
+            consequence: 'Enthusiastic acceptance • Moderate sanity cost for cosmic exposure',
             effects: [{ characterId: 'umbra', affectionChange: 35 }],
+            playerStatEffects: {
+              sanityChange: -8
+            },
             nextScene: 'umbra_shares_cosmic_wonders'
           },
           {
@@ -8421,8 +8427,11 @@ export const gameData: Chapter[] = [
           {
             id: 'accept_knowledge_fully',
             text: '"Yes, I want to learn everything. I\'m ready for the responsibility."',
-            consequence: 'Full knowledge acceptance • Embraces complete learning',
+            consequence: 'Full knowledge acceptance • Heavy sanity cost for complete forbidden learning',
             effects: [{ characterId: 'celeste', affectionChange: 50 }],
+            playerStatEffects: {
+              sanityChange: -25
+            },
             nextScene: 'cordelia_research_revealed'
           },
           {
@@ -8956,8 +8965,11 @@ export const gameData: Chapter[] = [
           {
             id: 'embrace_true_form',
             text: '"You\'re beautiful in ways I never imagined possible. Of course I accept you."',
-            consequence: 'Complete acceptance • Embraces their true eldritch nature',
+            consequence: 'Complete acceptance • Sanity cost for witnessing true eldritch form',
             effects: [{ characterId: 'umbra', affectionChange: 70 }],
+            playerStatEffects: {
+              sanityChange: -10
+            },
             nextScene: 'umbra_touched_by_understanding'
           },
           {
@@ -9243,11 +9255,14 @@ export const gameData: Chapter[] = [
           {
             id: 'call_for_cooling_off_period',
             text: 'Suggest a temporary pause in political discussions to let emotions settle.',
-            consequence: 'Cooling off • Seeks to reduce immediate tensions',
+            consequence: 'Cooling off • Health stress from managing political tensions',
             effects: [
               { characterId: 'lilith', affectionChange: 30 },
               { characterId: 'seraphina', affectionChange: 25 }
             ],
+            playerStatEffects: {
+              healthChange: -5
+            },
             nextScene: 'strategic_patience'
           },
           {
