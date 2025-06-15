@@ -152,6 +152,7 @@ export const gameData: Chapter[] = [
           '"Please, come in. We have much to discuss, and the night is still young. Your aunt was very dear to us, and we hope to understand what her legacy means to you."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.svg',
         choices: [
           {
             id: 'thank_for_welcome',
@@ -220,6 +221,7 @@ export const gameData: Chapter[] = [
           'There\'s no hostility in her tone, only mild amusement at your pragmatic approach. "Your great-aunt had a similar directness. She also tested boundaries when she first arrived."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.svg',
         choices: [
           {
             id: 'apologize_for_presumption',
@@ -329,6 +331,7 @@ export const gameData: Chapter[] = [
           'Her dark eyes search your face. "The question now is whether you, like her, can accept what lies beyond the boundaries of what most consider normal."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.svg',
         choices: [
           {
             id: 'express_openness',
@@ -431,6 +434,7 @@ export const gameData: Chapter[] = [
           'Opening the journal, you see Cordelia\'s familiar handwriting: "Day 127 - I begin to understand that immortality is not a curse, but a responsibility. To love deeply, to protect fiercely, to never forget what it means to be human while becoming something more."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/library.svg',
         choices: [
           {
             id: 'read_more',
