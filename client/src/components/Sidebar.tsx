@@ -98,11 +98,19 @@ export function Sidebar({ onClose }: SidebarProps) {
             <div className="grid grid-cols-2 gap-3 text-xs">
               <div>
                 <span className="text-gray-400">Health:</span>
-                <p className="text-white font-medium">{gameState.playerStats.health}</p>
+                <p className={`font-medium ${gameState.playerStats.health > 75 ? 'text-green-400' : 
+                  gameState.playerStats.health > 50 ? 'text-yellow-400' : 
+                  gameState.playerStats.health > 25 ? 'text-orange-400' : 'text-red-400'}`}>
+                  {gameState.playerStats.health}/100
+                </p>
               </div>
               <div>
                 <span className="text-gray-400">Sanity:</span>
-                <p className="text-white font-medium">{gameState.playerStats.sanity}</p>
+                <p className={`font-medium ${gameState.playerStats.sanity > 75 ? 'text-green-400' : 
+                  gameState.playerStats.sanity > 50 ? 'text-yellow-400' : 
+                  gameState.playerStats.sanity > 25 ? 'text-orange-400' : 'text-red-400'}`}>
+                  {gameState.playerStats.sanity}/100
+                </p>
               </div>
             </div>
             <div className="pt-1">

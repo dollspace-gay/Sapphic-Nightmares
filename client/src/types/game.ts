@@ -17,6 +17,10 @@ export interface Choice {
     characterId: string;
     affectionChange: number;
   }[];
+  playerStatEffects?: {
+    healthChange?: number;
+    sanityChange?: number;
+  };
   nextScene?: string;
   requirements?: {
     characterId: string;
@@ -69,8 +73,8 @@ export interface PlayerCharacter {
 }
 
 export interface PlayerStats {
-  health: string;
-  sanity: string;
+  health: number;
+  sanity: number;
   location: string;
 }
 
