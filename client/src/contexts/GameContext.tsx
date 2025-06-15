@@ -259,7 +259,16 @@ function gameReducer(state: GameState, action: GameAction): GameState {
 }
 
 export function GameProvider({ children }: { children: ReactNode }) {
-  const [gameState, dispatch] = useReducer(gameReducer, initialGameState);
+  // Initialize achievements in the game state
+  const initialStateWithAchievements = {
+    ...initialGameState,
+    achievements: achievements.map(achievement => ({
+      ...achievement,
+      unlocked: false
+    }))
+  };
+  
+  const [gameState, dispatch] = useReducer(gameReducer, initialStateWithAchievements);
   
   // Auto-save functionality
   useEffect(() => {
