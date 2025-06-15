@@ -1,0 +1,48 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="manorGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c2c54;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f23;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="1200" height="800" fill="url(#skyGradient)"/>
+  
+  <!-- Mist/fog layers -->
+  <ellipse cx="600" cy="700" rx="800" ry="150" fill="#f0f0f0" opacity="0.1"/>
+  <ellipse cx="400" cy="750" rx="600" ry="100" fill="#f0f0f0" opacity="0.08"/>
+  <ellipse cx="800" cy="720" rx="500" ry="80" fill="#f0f0f0" opacity="0.06"/>
+  
+  <!-- Manor silhouette -->
+  <path d="M200 600 L200 400 L300 300 L350 350 L400 300 L500 400 L500 200 L550 150 L600 200 L650 150 L700 200 L700 400 L800 300 L850 350 L900 300 L1000 400 L1000 600 Z" fill="url(#manorGradient)"/>
+  
+  <!-- Gothic spires -->
+  <polygon points="520,200 540,120 560,200" fill="#0a0a1a"/>
+  <polygon points="620,200 640,120 660,200" fill="#0a0a1a"/>
+  <polygon points="320,350 340,280 360,350" fill="#0a0a1a"/>
+  <polygon points="820,350 840,280 860,350" fill="#0a0a1a"/>
+  
+  <!-- Windows with warm light -->
+  <rect x="250" y="450" width="30" height="40" fill="#ffdd44" opacity="0.8"/>
+  <rect x="320" y="420" width="25" height="35" fill="#ffdd44" opacity="0.7"/>
+  <rect x="450" y="380" width="20" height="30" fill="#ffdd44" opacity="0.6"/>
+  <rect x="730" y="390" width="25" height="35" fill="#ffdd44" opacity="0.7"/>
+  <rect x="850" y="440" width="30" height="40" fill="#ffdd44" opacity="0.8"/>
+  
+  <!-- Grand entrance door -->
+  <rect x="580" y="520" width="40" height="80" fill="#654321"/>
+  <circle cx="600" cy="560" r="2" fill="#ffdd44"/>
+  
+  <!-- Ivy and vegetation -->
+  <path d="M200 600 Q250 580 300 600 Q350 580 400 600" stroke="#2d5016" stroke-width="3" fill="none"/>
+  <path d="M800 600 Q850 580 900 600 Q950 580 1000 600" stroke="#2d5016" stroke-width="3" fill="none"/>
+  
+  <!-- Cobblestone drive -->
+  <ellipse cx="600" cy="680" rx="400" ry="80" fill="#3a3a3a" opacity="0.6"/>
+  <ellipse cx="600" cy="720" rx="350" ry="60" fill="#2a2a2a" opacity="0.4"/>
+</svg>

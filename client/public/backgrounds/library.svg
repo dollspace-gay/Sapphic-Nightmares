@@ -1,0 +1,69 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="libraryWalls" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3a3a5a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2a;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="lampGlow" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" style="stop-color:#ffdd44;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#ffdd44;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#libraryWalls)"/>
+  
+  <!-- Floor -->
+  <rect y="650" width="1200" height="150" fill="#2a1a1a"/>
+  
+  <!-- Bookshelves -->
+  <rect x="50" y="150" width="100" height="500" fill="#4a3a2a"/>
+  <rect x="200" y="150" width="100" height="500" fill="#4a3a2a"/>
+  <rect x="900" y="150" width="100" height="500" fill="#4a3a2a"/>
+  <rect x="1050" y="150" width="100" height="500" fill="#4a3a2a"/>
+  
+  <!-- Books on shelves -->
+  <rect x="60" y="160" width="8" height="40" fill="#8b4513"/>
+  <rect x="70" y="160" width="12" height="40" fill="#654321"/>
+  <rect x="85" y="160" width="10" height="40" fill="#2e4a2e"/>
+  <rect x="100" y="160" width="15" height="40" fill="#4a2e4a"/>
+  
+  <rect x="60" y="220" width="10" height="35" fill="#6b4423"/>
+  <rect x="75" y="220" width="8" height="35" fill="#2a4a5a"/>
+  <rect x="90" y="220" width="12" height="35" fill="#4a2c2c"/>
+  
+  <!-- Central reading area -->
+  <ellipse cx="600" cy="650" rx="300" ry="100" fill="#3a2a2a"/>
+  
+  <!-- Reading table -->
+  <rect x="500" y="500" width="200" height="150" fill="#5a4a3a"/>
+  <rect x="480" y="520" width="240" height="10" fill="#4a3a2a"/>
+  
+  <!-- Chair -->
+  <rect x="450" y="580" width="60" height="70" fill="#3a2a1a"/>
+  <rect x="460" y="520" width="40" height="60" fill="#3a2a1a"/>
+  
+  <!-- Desk lamp -->
+  <rect x="580" y="480" width="6" height="40" fill="#8b7355"/>
+  <ellipse cx="590" cy="470" rx="20" ry="10" fill="#4a4a2a"/>
+  <circle cx="590" cy="470" r="15" fill="url(#lampGlow)"/>
+  
+  <!-- Open books on table -->
+  <rect x="520" y="530" width="40" height="30" fill="#f4f4f4" opacity="0.9"/>
+  <rect x="570" y="530" width="35" height="25" fill="#f4f4f4" opacity="0.9"/>
+  
+  <!-- Ancient tome -->
+  <rect x="620" y="525" width="50" height="35" fill="#654321"/>
+  <rect x="625" y="530" width="40" height="25" fill="#8b7355"/>
+  
+  <!-- Mystical orb -->
+  <circle cx="650" cy="480" r="25" fill="#4a2a5a" opacity="0.7"/>
+  <circle cx="650" cy="480" r="15" fill="#8a4a8a" opacity="0.5"/>
+  
+  <!-- Gothic window -->
+  <path d="M350 150 Q400 100 450 150 L450 400 L350 400 Z" fill="#1a1a3a"/>
+  <path d="M370 180 Q400 160 430 180 L430 350 L370 350 Z" fill="#2a2a4a" opacity="0.3"/>
+  
+  <!-- Moonlight through window -->
+  <polygon points="380,200 420,220 410,350 390,350" fill="#ffffff" opacity="0.1"/>
+</svg>

@@ -1,0 +1,68 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nightSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="moonGlow" cx="80%" cy="20%" r="15%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Night sky -->
+  <rect width="1200" height="800" fill="url(#nightSky)"/>
+  
+  <!-- Moon -->
+  <circle cx="950" cy="150" r="60" fill="#f4f4f4" opacity="0.9"/>
+  <circle cx="950" cy="150" r="120" fill="url(#moonGlow)"/>
+  
+  <!-- Stars -->
+  <circle cx="200" cy="100" r="2" fill="#ffffff" opacity="0.8"/>
+  <circle cx="400" cy="80" r="1.5" fill="#ffffff" opacity="0.7"/>
+  <circle cx="600" cy="120" r="1" fill="#ffffff" opacity="0.6"/>
+  <circle cx="800" cy="90" r="2" fill="#ffffff" opacity="0.8"/>
+  <circle cx="300" cy="150" r="1" fill="#ffffff" opacity="0.5"/>
+  
+  <!-- Manor walls in background -->
+  <rect x="0" y="300" width="1200" height="200" fill="#2a2a3a"/>
+  
+  <!-- Garden paths -->
+  <path d="M0 600 Q300 580 600 600 Q900 620 1200 600" stroke="#4a4a3a" stroke-width="40" fill="none"/>
+  <ellipse cx="600" cy="600" rx="200" ry="50" fill="#3a3a2a"/>
+  
+  <!-- Fountain centerpiece -->
+  <circle cx="600" cy="500" r="80" fill="#5a5a6a"/>
+  <circle cx="600" cy="500" r="60" fill="#1a1a2a"/>
+  <rect x="590" y="450" width="20" height="50" fill="#6a6a7a"/>
+  <ellipse cx="600" cy="440" rx="15" ry="5" fill="#6a6a7a"/>
+  
+  <!-- Water in fountain -->
+  <circle cx="600" cy="500" r="55" fill="#2a3a5a" opacity="0.7"/>
+  
+  <!-- Topiaries -->
+  <circle cx="300" cy="550" r="40" fill="#2a4a2a"/>
+  <rect x="295" y="590" width="10" height="30" fill="#4a3a2a"/>
+  
+  <circle cx="900" cy="550" r="40" fill="#2a4a2a"/>
+  <rect x="895" y="590" width="10" height="30" fill="#4a3a2a"/>
+  
+  <!-- Rose bushes -->
+  <ellipse cx="150" cy="580" rx="50" ry="30" fill="#3a4a3a"/>
+  <circle cx="140" cy="570" r="3" fill="#8a2a2a"/>
+  <circle cx="160" cy="575" r="3" fill="#8a2a2a"/>
+  
+  <ellipse cx="1050" cy="580" rx="50" ry="30" fill="#3a4a3a"/>
+  <circle cx="1040" cy="570" r="3" fill="#8a2a2a"/>
+  <circle cx="1060" cy="575" r="3" fill="#8a2a2a"/>
+  
+  <!-- Gothic arches along walls -->
+  <path d="M100 500 Q150 450 200 500" stroke="#4a4a5a" stroke-width="3" fill="none"/>
+  <path d="M300 500 Q350 450 400 500" stroke="#4a4a5a" stroke-width="3" fill="none"/>
+  <path d="M800 500 Q850 450 900 500" stroke="#4a4a5a" stroke-width="3" fill="none"/>
+  <path d="M1000 500 Q1050 450 1100 500" stroke="#4a4a5a" stroke-width="3" fill="none"/>
+  
+  <!-- Ivy on walls -->
+  <path d="M50 500 Q100 480 150 500 Q200 480 250 500" stroke="#2a4a2a" stroke-width="4" fill="none"/>
+  <path d="M950 500 Q1000 480 1050 500 Q1100 480 1150 500" stroke="#2a4a2a" stroke-width="4" fill="none"/>
+</svg>
