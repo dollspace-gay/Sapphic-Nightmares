@@ -141,6 +141,8 @@ Changelog:
 - June 15, 2025. Created Chapter 1 pacing improvements with early character introduction scenes for better balance and flow
 - June 15, 2025. Added sanity costs (-8 to -25) for cosmic exposure, eldritch communication learning, and witnessing true otherworldly forms
 - June 15, 2025. Integrated health stress effects (-5 to -8) for managing political tensions and making difficult governance decisions
+- June 15, 2025. Applied critical security patch: updated Vite from 5.4.14 to 5.4.15 to address CVE-2025-30208 vulnerability
+- June 15, 2025. Rebuilt all standalone distribution packages (Windows, macOS, Linux, Universal) with security-patched codebase
 ```
 
 ## User Preferences
