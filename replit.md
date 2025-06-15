@@ -129,6 +129,10 @@ Changelog:
 - June 15, 2025. Automated background assignment system based on scene content and location context for consistent visual storytelling
 - June 15, 2025. Renamed game to "Eternal Hearts: A Ravencroft Romance" and implemented professional title screen with menu navigation
 - June 15, 2025. Added title screen with Start Game, Load Game, and Developer Mode options in gothic red/purple aesthetic
+- June 15, 2025. Implemented comprehensive cross-platform wrapper system for standalone distribution
+- June 15, 2025. Created self-contained game packages for Windows, macOS, and Linux with double-click launchers
+- June 15, 2025. Built embedded Node.js launcher with native HTTP server eliminating external dependencies
+- June 15, 2025. Added authentic calligraphic typography (Great Vibes, Dancing Script, Alex Brush) for quill pen aesthetic
 ```
 
 ## User Preferences
