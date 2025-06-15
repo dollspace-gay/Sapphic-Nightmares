@@ -24,7 +24,12 @@ type GameAction =
   | { type: 'LOAD_GAME'; payload: GameState }
   | { type: 'RESET_GAME' }
   | { type: 'UPDATE_AFFECTION'; payload: { characterId: string; change: number } }
-  | { type: 'UPDATE_TRUST'; payload: { characterId: string; change: number } };
+  | { type: 'UPDATE_TRUST'; payload: { characterId: string; change: number } }
+  | { type: 'ADD_JOURNAL_ENTRY'; payload: JournalEntry }
+  | { type: 'UNLOCK_ACHIEVEMENT'; payload: string }
+  | { type: 'PERFORM_RECOVERY'; payload: { actionId: string; healthRestore: number; sanityRestore: number } }
+  | { type: 'UNLOCK_BACKSTORY'; payload: string }
+  | { type: 'UPDATE_PLAYER_STATS'; payload: { health?: number; sanity?: number; location?: string } };
 
 function gameReducer(state: GameState, action: GameAction): GameState {
   switch (action.type) {
@@ -177,6 +182,68 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         }
       };
       
+    case 'UPDATE_TRUST':
+      return {
+        ...state,
+        characters: {
+          ...state.characters,
+          [action.payload.characterId]: {
+            ...state.characters[action.payload.characterId],
+            trust: Math.max(
+              0, 
+              Math.min(100, state.characters[action.payload.characterId].trust + action.payload.change)
+            )
+          }
+        }
+      };
+      
+    case 'ADD_JOURNAL_ENTRY':
+      return {
+        ...state,
+        journal: [...state.journal, action.payload]
+      };
+      
+    case 'UNLOCK_ACHIEVEMENT':
+      return {
+        ...state,
+        achievements: state.achievements.map(achievement =>
+          achievement.id === action.payload
+            ? { ...achievement, unlocked: true, unlockedAt: Date.now() }
+            : achievement
+        )
+      };
+      
+    case 'PERFORM_RECOVERY':
+      return {
+        ...state,
+        playerStats: {
+          ...state.playerStats,
+          health: Math.min(state.playerStats.maxHealth, state.playerStats.health + action.payload.healthRestore),
+          sanity: Math.min(state.playerStats.maxSanity, state.playerStats.sanity + action.payload.sanityRestore),
+          restCount: action.payload.actionId === 'basic_rest' ? state.playerStats.restCount + 1 : state.playerStats.restCount,
+          meditationCount: action.payload.actionId === 'meditation' ? state.playerStats.meditationCount + 1 : state.playerStats.meditationCount
+        },
+        lastRecoveryTimes: {
+          ...state.lastRecoveryTimes,
+          [action.payload.actionId]: Date.now()
+        }
+      };
+      
+    case 'UNLOCK_BACKSTORY':
+      return {
+        ...state,
+        unlockedBackstories: [...state.unlockedBackstories, action.payload]
+      };
+      
+    case 'UPDATE_PLAYER_STATS':
+      return {
+        ...state,
+        playerStats: {
+          ...state.playerStats,
+          ...action.payload
+        }
+      };
+      
     case 'LOAD_GAME':
       return action.payload;
       
@@ -251,6 +318,39 @@ export function GameProvider({ children }: { children: ReactNode }) {
     localStorage.removeItem('crimsonEmbrace_autoSave');
     dispatch({ type: 'RESET_GAME' });
   };
+
+  const addJournalEntry = (entry: JournalEntry) => {
+    dispatch({ type: 'ADD_JOURNAL_ENTRY', payload: entry });
+  };
+
+  const unlockAchievement = (achievementId: string) => {
+    dispatch({ type: 'UNLOCK_ACHIEVEMENT', payload: achievementId });
+  };
+
+  const performRecoveryAction = (actionId: string) => {
+    // Will implement recovery action logic later
+    const healthRestore = actionId === 'basic_rest' ? 20 : actionId === 'meditation' ? 15 : 10;
+    const sanityRestore = actionId === 'meditation' ? 25 : actionId === 'basic_rest' ? 10 : 15;
+    
+    dispatch({ 
+      type: 'PERFORM_RECOVERY', 
+      payload: { actionId, healthRestore, sanityRestore } 
+    });
+
+    // Add journal entry for recovery action
+    const entry: JournalEntry = {
+      id: `recovery_${Date.now()}`,
+      type: 'recovery',
+      title: `Recovery: ${actionId.replace('_', ' ').toUpperCase()}`,
+      description: `Restored ${healthRestore} health and ${sanityRestore} sanity through ${actionId.replace('_', ' ')}.`,
+      timestamp: Date.now()
+    };
+    addJournalEntry(entry);
+  };
+
+  const unlockBackstory = (backstoryId: string) => {
+    dispatch({ type: 'UNLOCK_BACKSTORY', payload: backstoryId });
+  };
   
   return (
     <GameContext.Provider value={{
@@ -260,7 +360,11 @@ export function GameProvider({ children }: { children: ReactNode }) {
       createCharacter,
       saveGame,
       loadGame,
-      resetGame
+      resetGame,
+      addJournalEntry,
+      unlockAchievement,
+      performRecoveryAction,
+      unlockBackstory
     }}>
       {children}
     </GameContext.Provider>
