@@ -117,6 +117,7 @@ export const gameData: Chapter[] = [
           'According to the letter, the manor comes with... tenants. Long-term residents who have "historical agreements" with the property. The lawyer had been frustratingly vague about the details, mentioning only that they are "nocturnal by nature" and "require certain accommodations."',
           'As you reach the massive oak doors, you notice they bear intricate carvings - symbols that seem to shift and dance when you\'re not looking directly at them. Your great-aunt\'s final note echoes in your mind: "The women of Ravencroft will test you, child. Be true to yourself, and you may find more than you ever imagined possible."'
         ],
+        background: '/backgrounds/gothic-manor-entrance.png',
         choices: [
           {
             id: 'knock_boldly',
@@ -1011,7 +1012,7 @@ export const gameData: Chapter[] = [
           'Her words carry the weight of genuine vulnerability, and you sense she rarely shares such personal insights about her work.'
         ],
         character: characters.morgana,
-        background: '/backgrounds/music-room.svg',
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'understand_loneliness',
@@ -5044,7 +5045,7 @@ export const gameData: Chapter[] = [
           '"Would you... would you like to create something with me? Something that\'s uniquely ours?"'
         ],
         character: characters.morgana,
-        background: '/backgrounds/music-room.svg',
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'eagerly_accept',
