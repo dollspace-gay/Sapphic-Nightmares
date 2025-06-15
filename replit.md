@@ -143,6 +143,9 @@ Changelog:
 - June 15, 2025. Integrated health stress effects (-5 to -8) for managing political tensions and making difficult governance decisions
 - June 15, 2025. Applied critical security patch: updated Vite from 5.4.14 to 5.4.15 to address CVE-2025-30208 vulnerability
 - June 15, 2025. Rebuilt all standalone distribution packages (Windows, macOS, Linux, Universal) with security-patched codebase
+- June 15, 2025. Enhanced character flaw system with meaningful gameplay impacts: sanity/health penalties, vulnerability mechanics, and random triggers
+- June 15, 2025. Implemented mental fortitude mechanics: Mental Fortitude (50% sanity reduction), Iron Will (25% reduction), both together (immunity)
+- June 15, 2025. Added Umbra romance unlock requiring both Mental Fortitude and Iron Will boons for cosmic entity relationship path
 ```
 
 ## User Preferences
