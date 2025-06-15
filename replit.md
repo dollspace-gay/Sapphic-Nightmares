@@ -146,6 +146,7 @@ Changelog:
 - June 15, 2025. Enhanced character flaw system with meaningful gameplay impacts: sanity/health penalties, vulnerability mechanics, and random triggers
 - June 15, 2025. Implemented mental fortitude mechanics: Mental Fortitude (50% sanity reduction), Iron Will (25% reduction), both together (immunity)
 - June 15, 2025. Added Umbra romance unlock requiring both Mental Fortitude and Iron Will boons for cosmic entity relationship path
+- June 15, 2025. Enhanced Unnaturally Lucky boon with disaster avoidance, fortuitous discoveries, and miraculous reversals for comprehensive positive gameplay effects
 ```
 
 ## User Preferences
