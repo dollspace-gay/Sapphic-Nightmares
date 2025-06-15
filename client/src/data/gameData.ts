@@ -90,6 +90,16 @@ export const characters: Record<string, Character> = {
     status: 'Melancholic',
     avatar: 'paintbrush',
     color: 'bg-shadow-gray'
+  },
+  umbra: {
+    id: 'umbra',
+    name: 'Umbra',
+    title: 'The Gentle Shadow • Ancient Guardian',
+    description: 'An ancient eldritch entity of living shadow and starlight who manifests as pools of darkness with glowing points of light. Despite their cosmic horror appearance, they are incredibly shy and deeply affectionate to those they trust.',
+    affection: 0,
+    status: 'Timid',
+    avatar: 'void',
+    color: 'bg-void-purple'
   }
 };
 
@@ -2590,6 +2600,246 @@ export const gameData: Chapter[] = [
             consequence: 'Practical approach • Tests boundaries',
             effects: [{ characterId: 'lilith', affectionChange: 3 }],
             nextScene: 'unlocked_discovery'
+          }
+        ]
+      },
+      // Umbra introduction scenes - the shy eldritch companion
+      {
+        id: 'umbra_first_encounter',
+        title: 'Something in the Shadows',
+        text: [
+          'As you explore the manor, you notice shadows that seem to move independently of their sources. In the corner of your vision, darkness pools and swirls with an almost sentient quality.',
+          'At first, you think it might be a trick of the candlelight, but then you see tiny points of starlight glimmering within the shadows - like distant galaxies viewed through a telescope.',
+          'The darkness recoils when you look directly at it, as if embarrassed to be noticed. Yet you sense no malevolence, only a profound shyness and... curiosity about you.',
+          'Lilith notices your distraction. "Ah," she says with gentle amusement, "it seems Umbra has taken an interest in you. They\'re quite harmless, despite appearances."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'approach_umbra_gently',
+            text: 'Speak softly to the shadows: "Hello there. I\'m not going to hurt you."',
+            consequence: 'Gentle approach • Shows kindness to unusual beings',
+            effects: [{ characterId: 'umbra', affectionChange: 15 }, { characterId: 'lilith', affectionChange: 8 }],
+            nextScene: 'umbra_shy_response'
+          },
+          {
+            id: 'ask_lilith_about_umbra',
+            text: 'Ask Lilith: "What exactly is Umbra? How long have they lived here?"',
+            consequence: 'Seeks understanding • Shows respectful curiosity',
+            effects: [{ characterId: 'lilith', affectionChange: 10 }, { characterId: 'umbra', affectionChange: 5 }],
+            nextScene: 'umbra_explanation'
+          },
+          {
+            id: 'ignore_and_continue',
+            text: 'Pretend you didn\'t notice anything unusual and continue the conversation.',
+            consequence: 'Polite disregard • Avoids potential awkwardness',
+            effects: [{ characterId: 'lilith', affectionChange: 5 }],
+            nextScene: 'conversation_continues'
+          }
+        ]
+      },
+      {
+        id: 'umbra_shy_response',
+        title: 'The Shadow\'s First Words',
+        text: [
+          'The shadows pause in their retreat, and you hear the faintest whisper - like wind through distant stars: "You... you are not afraid?"',
+          'The voice seems to come from everywhere and nowhere at once, carrying notes of ancient loneliness and tentative hope. The starlight points within the darkness pulse gently, like a nervous heartbeat.',
+          'Lilith smiles warmly. "Umbra rarely speaks to newcomers. You\'ve made quite an impression."',
+          'The shadows edge slightly closer, still maintaining a respectful distance. "The others... they accepted me, but you are the first to speak gently from the beginning."'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'reassure_umbra',
+            text: '"I could never be afraid of someone who seems so gentle. Your voice is beautiful."',
+            consequence: 'Heartfelt reassurance • Shows genuine acceptance',
+            effects: [{ characterId: 'umbra', affectionChange: 25 }, { characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'umbra_touched_by_kindness'
+          },
+          {
+            id: 'express_curiosity',
+            text: '"I\'m curious about you, not afraid. Would you like to tell me about yourself?"',
+            consequence: 'Interested inquiry • Shows desire to understand',
+            effects: [{ characterId: 'umbra', affectionChange: 20 }, { characterId: 'lilith', affectionChange: 8 }],
+            nextScene: 'umbra_shares_story'
+          },
+          {
+            id: 'offer_friendship',
+            text: '"Everyone deserves kindness. I\'d like to be your friend, if you\'d like that."',
+            consequence: 'Friendship offer • Shows welcoming nature',
+            effects: [{ characterId: 'umbra', affectionChange: 30 }, { characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'umbra_friendship_begins'
+          }
+        ]
+      },
+      {
+        id: 'umbra_explanation',
+        title: 'An Ancient Presence',
+        text: [
+          'Lilith\'s expression grows thoughtful. "Umbra is older than any of us - perhaps older than this realm itself. They are what mortals might call an eldritch entity, though that term hardly does justice to their gentle nature."',
+          '"They arrived here centuries ago, drawn by the sanctuary we created. Unlike the cosmic horrors of legend, Umbra seeks only peace and companionship. They are incredibly shy but deeply loving to those who show them kindness."',
+          'The shadows seem to curl in on themselves, as if embarrassed by the attention. A soft whisper drifts from the darkness: "I did not mean to disturb..."',
+          'Lilith shakes her head. "You disturb nothing, dear one. You are as much a part of this family as any of us."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'welcome_umbra',
+            text: 'Address the shadows directly: "You\'re not disturbing anything. I\'m honored to meet you."',
+            consequence: 'Direct welcome • Shows immediate acceptance',
+            effects: [{ characterId: 'umbra', affectionChange: 20 }, { characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'umbra_grateful_response'
+          },
+          {
+            id: 'ask_about_eldritch_nature',
+            text: '"What does it mean to be an eldritch entity? I want to understand."',
+            consequence: 'Seeks deeper understanding • Shows intellectual curiosity',
+            effects: [{ characterId: 'umbra', affectionChange: 15 }, { characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'eldritch_nature_explained'
+          },
+          {
+            id: 'focus_on_family_aspect',
+            text: '"I love that you\'ve created a family here that includes everyone, regardless of their nature."',
+            consequence: 'Appreciates inclusivity • Shows value alignment',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'umbra', affectionChange: 12 }],
+            nextScene: 'family_values_discussion'
+          }
+        ]
+      },
+      {
+        id: 'umbra_touched_by_kindness',
+        title: 'A Heart of Starlight',
+        text: [
+          'The shadows seem to shimmer with emotion, and the starlight points pulse brighter. "No one has ever... called my voice beautiful before."',
+          'Slowly, carefully, the darkness begins to form a more defined shape - still shadow, but vaguely humanoid, with those points of light creating constellation patterns throughout their form.',
+          '"I have been alone in the void between stars for eons. When I found this place, these people... it was the first time I understood what mortals call \'home.\'"',
+          'There\'s such genuine warmth in their cosmic voice that you feel your heart ache for their ancient loneliness.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'ask_about_loneliness',
+            text: '"That sounds incredibly lonely. I\'m so glad you found a home here."',
+            consequence: 'Empathetic response • Shows emotional understanding',
+            effects: [{ characterId: 'umbra', affectionChange: 25 }],
+            nextScene: 'umbra_shares_deeper_feelings'
+          },
+          {
+            id: 'offer_companionship',
+            text: '"You never have to be alone again. I\'d love to spend time with you."',
+            consequence: 'Companionship offer • Shows commitment to connection',
+            effects: [{ characterId: 'umbra', affectionChange: 30 }],
+            nextScene: 'umbra_companionship_accepted'
+          },
+          {
+            id: 'admire_their_form',
+            text: '"Your constellation form is absolutely beautiful. You\'re like living art."',
+            consequence: 'Aesthetic appreciation • Shows wonder at their nature',
+            effects: [{ characterId: 'umbra', affectionChange: 20 }],
+            nextScene: 'umbra_form_appreciation'
+          }
+        ]
+      },
+      // Additional Umbra continuation scenes
+      {
+        id: 'umbra_shares_deeper_feelings',
+        title: 'Ancient Solitude',
+        text: [
+          'The starlight within Umbra\'s form pulses with a rhythm like a heartbeat. "Loneliness... yes, that is the correct word. For eons I drifted between realms, observing but never connecting."',
+          '"I watched civilizations rise and fall, saw love bloom and fade, but I was always... outside. Too different, too frightening. Until I found this sanctuary."',
+          'Their form shifts closer, still respectfully distant but clearly wanting connection. "You speak of gladness, but do you truly understand what you offer? Friendship with one such as I?"',
+          'There\'s vulnerability in their cosmic voice, a trembling hope that they barely dare to express.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'affirm_friendship_completely',
+            text: '"I understand exactly what I\'m offering. True friendship, without conditions or fear."',
+            consequence: 'Unconditional acceptance • Strongest possible bond',
+            effects: [{ characterId: 'umbra', affectionChange: 40 }],
+            nextScene: 'umbra_overwhelming_gratitude'
+          },
+          {
+            id: 'want_to_learn_more',
+            text: '"I want to understand you completely. Will you teach me about your world, your experiences?"',
+            consequence: 'Deep curiosity • Shows commitment to understanding',
+            effects: [{ characterId: 'umbra', affectionChange: 35 }],
+            nextScene: 'umbra_shares_cosmic_stories'
+          },
+          {
+            id: 'promise_patience',
+            text: '"I promise to be patient as we learn about each other. Friendship takes time to grow."',
+            consequence: 'Thoughtful approach • Shows wisdom about relationships',
+            effects: [{ characterId: 'umbra', affectionChange: 30 }],
+            nextScene: 'umbra_appreciates_patience'
+          }
+        ]
+      },
+      {
+        id: 'umbra_companionship_accepted',
+        title: 'A Bond Across Realms',
+        text: [
+          'The constellation patterns within Umbra\'s form suddenly brighten, creating what can only be described as the cosmic equivalent of a smile. "You would... truly wish to spend time with me?"',
+          '"I must warn you - my nature is not always... comfortable for mortals. Sometimes I forget myself and the shadows grow too deep, or the starlight becomes too bright."',
+          'They seem to gather courage from your acceptance. "But if you are willing, I would treasure every moment of companionship. I have so much to show you, so many wonders from beyond the veil."',
+          'You sense this is a turning point - Umbra is offering to share their cosmic nature with you completely.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'eager_for_wonders',
+            text: '"I\'m excited to see these wonders. Show me everything you\'re comfortable sharing."',
+            consequence: 'Enthusiastic acceptance • Opens cosmic experiences',
+            effects: [{ characterId: 'umbra', affectionChange: 35 }],
+            nextScene: 'umbra_shares_cosmic_wonders'
+          },
+          {
+            id: 'comfort_with_nature',
+            text: '"I\'m not afraid of your true nature. Be yourself around me, always."',
+            consequence: 'Complete acceptance • Encourages authenticity',
+            effects: [{ characterId: 'umbra', affectionChange: 40 }],
+            nextScene: 'umbra_reveals_true_self'
+          },
+          {
+            id: 'mutual_sharing',
+            text: '"I\'ll share my world with you too. We can learn from each other."',
+            consequence: 'Reciprocal offer • Creates balanced relationship',
+            effects: [{ characterId: 'umbra', affectionChange: 32 }],
+            nextScene: 'umbra_mutual_discovery'
+          }
+        ]
+      },
+      {
+        id: 'umbra_form_appreciation',
+        title: 'Beauty in the Void',
+        text: [
+          'Umbra\'s constellation form shimmers and shifts, the starlight points creating new patterns like a living galaxy. "You... you see beauty in this form? Others have called it terrible, alien, wrong."',
+          '"I chose this manifestation because it felt most true to what I am - darkness touched by distant light, void given gentle purpose. But I worried it would frighten you."',
+          'The patterns in their form become more intricate, more beautiful, as if your acceptance has given them permission to truly be themselves.',
+          '"If you find beauty in what I am, perhaps... perhaps I need not hide so much of myself."'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'encourage_authenticity',
+            text: '"Please don\'t hide yourself. You\'re magnificent exactly as you are."',
+            consequence: 'Encourages self-acceptance • Builds confidence',
+            effects: [{ characterId: 'umbra', affectionChange: 38 }],
+            nextScene: 'umbra_gains_confidence'
+          },
+          {
+            id: 'ask_about_other_forms',
+            text: '"Can you take other forms? I\'d love to see all the ways you can exist."',
+            consequence: 'Curious about abilities • Shows interest in their nature',
+            effects: [{ characterId: 'umbra', affectionChange: 25 }],
+            nextScene: 'umbra_demonstrates_forms'
+          },
+          {
+            id: 'focus_on_essence',
+            text: '"Your form is beautiful, but it\'s your gentle spirit that truly amazes me."',
+            consequence: 'Values inner nature • Deepest appreciation',
+            effects: [{ characterId: 'umbra', affectionChange: 42 }],
+            nextScene: 'umbra_touched_by_understanding'
           }
         ]
       }

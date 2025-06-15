@@ -35,6 +35,7 @@
   --blood-red: hsl(348, 83%, 57%);
   --moonlight: hsl(0, 0%, 85%);
   --parchment: hsl(60, 29%, 95%);
+  --void-purple: hsl(260, 100%, 15%);
 }
 
 .dark {
@@ -117,6 +118,14 @@
   
   .bg-moonlight {
     background-color: var(--moonlight) !important;
+  }
+  
+  .void-purple {
+    color: var(--void-purple) !important;
+  }
+  
+  .bg-void-purple {
+    background-color: var(--void-purple) !important;
   }
   
   .parchment {
