@@ -277,7 +277,45 @@ function StoryTreeDevContent() {
                   });
                   
                   if (missing.length > 0) {
-                    alert(`Missing scenes:\n${missing.join('\n')}`);
+                    // Create a dialog with selectable text
+                    const dialog = document.createElement('div');
+                    dialog.style.cssText = `
+                      position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                      background: white; border: 2px solid #333; border-radius: 8px;
+                      padding: 20px; max-width: 500px; max-height: 400px;
+                      overflow-y: auto; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                      font-family: monospace;
+                    `;
+                    
+                    const overlay = document.createElement('div');
+                    overlay.style.cssText = `
+                      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                      background: rgba(0,0,0,0.5); z-index: 999;
+                    `;
+                    
+                    dialog.innerHTML = `
+                      <h3 style="margin: 0 0 15px 0; color: #333;">Missing Scenes (${missing.length})</h3>
+                      <div style="background: #f5f5f5; padding: 10px; border-radius: 4px; margin-bottom: 15px;">
+                        <pre style="margin: 0; white-space: pre-wrap; user-select: text;">${missing.join('\n')}</pre>
+                      </div>
+                      <button id="copyBtn" style="margin-right: 10px; padding: 8px 16px; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer;">Copy to Clipboard</button>
+                      <button id="closeBtn" style="padding: 8px 16px; background: #666; color: white; border: none; border-radius: 4px; cursor: pointer;">Close</button>
+                    `;
+                    
+                    document.body.appendChild(overlay);
+                    document.body.appendChild(dialog);
+                    
+                    document.getElementById('copyBtn')?.addEventListener('click', () => {
+                      navigator.clipboard.writeText(missing.join('\n'));
+                    });
+                    
+                    const closeDialog = () => {
+                      document.body.removeChild(dialog);
+                      document.body.removeChild(overlay);
+                    };
+                    
+                    document.getElementById('closeBtn')?.addEventListener('click', closeDialog);
+                    overlay.addEventListener('click', closeDialog);
                   } else {
                     alert('No missing scenes found! All story paths are complete.');
                   }
