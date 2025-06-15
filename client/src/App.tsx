@@ -11,6 +11,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Game} />
+      <Route path="/dev" component={StoryTreeDev} />
       <Route path="/dev/story-tree" component={StoryTreeDev} />
       <Route component={NotFound} />
     </Switch>

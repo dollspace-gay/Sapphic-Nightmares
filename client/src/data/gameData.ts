@@ -6356,6 +6356,1465 @@ export const gameData: Chapter[] = [
             nextScene: 'wider_world_discussion'
           }
         ]
+      },
+      // Batch 12 - Final missing scenes for complete story coverage
+      {
+        id: 'courage_recognition',
+        title: 'Acknowledging Inner Strength',
+        text: [
+          'Your companions look at you with newfound respect and admiration.',
+          'Lilith speaks first: "The courage you\'ve shown isn\'t the kind that boasts or seeks attention. It\'s the quiet bravery of someone willing to step into the unknown for love."',
+          'Raven nods approvingly: "True courage isn\'t fearlessness - it\'s feeling the fear and choosing to act anyway."',
+          'You feel recognized not for what you\'ve accomplished, but for the character you\'ve revealed through your choices.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'humble_acceptance',
+            text: '"I\'m just trying to be worthy of the trust you\'ve placed in me."',
+            consequence: 'Humble response • Shows continued dedication to earning trust',
+            effects: [{ characterId: 'lilith', affectionChange: 35 }, { characterId: 'raven', affectionChange: 25 }],
+            nextScene: 'guardian_oath'
+          },
+          {
+            id: 'acknowledge_growth',
+            text: '"You\'ve all helped me discover courage I didn\'t know I had."',
+            consequence: 'Growth recognition • Credits others for personal development',
+            effects: [{ characterId: 'lilith', affectionChange: 40 }, { characterId: 'morgana', affectionChange: 20 }],
+            nextScene: 'transformation_celebration'
+          },
+          {
+            id: 'promise_continued_bravery',
+            text: '"I promise to keep choosing courage, even when it\'s difficult."',
+            consequence: 'Future commitment • Vows ongoing bravery',
+            effects: [{ characterId: 'lilith', affectionChange: 45 }, { characterId: 'raven', affectionChange: 30 }],
+            nextScene: 'sacred_vow_sealed'
+          }
+        ]
+      },
+      {
+        id: 'legacy_acceptance',
+        title: 'Embracing Cordelia\'s Vision',
+        text: [
+          'Standing in the room where Cordelia once made her own promises, you feel the weight and honor of carrying forward her legacy.',
+          'Lilith speaks with reverence: "She would be so proud to see you here, accepting the responsibility she carried for decades."',
+          '"Cordelia\'s legacy isn\'t just about maintaining tradition - it\'s about growing it, making it stronger for future generations."',
+          'You understand that you\'re not just replacing her, but evolving her work into something new and more powerful.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'honor_her_vision',
+            text: '"I want to honor her vision while adding my own perspective to strengthen it."',
+            consequence: 'Legacy evolution • Balances tradition with innovation',
+            effects: [{ characterId: 'lilith', affectionChange: 45 }, { characterId: 'isadora', affectionChange: 25 }],
+            nextScene: 'cordelia_artistic_legacy'
+          },
+          {
+            id: 'promise_growth',
+            text: '"I promise to help her legacy grow and flourish, not just survive."',
+            consequence: 'Growth commitment • Promises dynamic legacy continuation',
+            effects: [{ characterId: 'lilith', affectionChange: 50 }],
+            nextScene: 'sanctuary_responsibilities'
+          },
+          {
+            id: 'ask_about_her_hopes',
+            text: '"What were her deepest hopes for the future? I want to understand her dreams."',
+            consequence: 'Vision alignment • Seeks to understand Cordelia\'s aspirations',
+            effects: [{ characterId: 'lilith', affectionChange: 40 }],
+            nextScene: 'cordelia_love_story'
+          }
+        ]
+      },
+      {
+        id: 'cordelia_love_story',
+        title: 'The Heart Behind the Legacy',
+        text: [
+          'Lilith\'s expression becomes tender as she shares Cordelia\'s most personal story.',
+          '"Cordelia loved deeply - not just this coven, but each individual soul within it. She saw our potential when we couldn\'t see it ourselves."',
+          '"Her greatest joy was watching vampires discover their capacity for growth, for change, for becoming more than they thought possible."',
+          '"That love - fierce, protective, nurturing - is what made her irreplaceable. And it\'s what I see growing in you."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'embrace_love_legacy',
+            text: '"I want to love this family the way she did - completely and unconditionally."',
+            consequence: 'Love commitment • Embraces emotional legacy',
+            effects: [{ characterId: 'lilith', affectionChange: 55 }, { characterId: 'elena', affectionChange: 30 }],
+            nextScene: 'family_appreciation'
+          },
+          {
+            id: 'learn_from_her_example',
+            text: '"How can I learn to see potential in others the way she did?"',
+            consequence: 'Wisdom seeking • Wants to develop Cordelia\'s gift for seeing potential',
+            effects: [{ characterId: 'lilith', affectionChange: 45 }],
+            nextScene: 'patient_guidance'
+          },
+          {
+            id: 'honor_her_heart',
+            text: '"Her love created this sanctuary. I want to help it continue growing."',
+            consequence: 'Legacy honor • Commits to continuing her loving work',
+            effects: [{ characterId: 'lilith', affectionChange: 50 }, { characterId: 'morgana', affectionChange: 25 }],
+            nextScene: 'sanctuary_challenges'
+          }
+        ]
+      },
+      {
+        id: 'sanctuary_challenges',
+        title: 'Facing Future Difficulties',
+        text: [
+          'The conversation turns to the practical challenges that lie ahead.',
+          'Celeste speaks pragmatically: "Running a sanctuary isn\'t just about love and good intentions. There will be conflicts, resource issues, and difficult decisions."',
+          'Raven adds: "External threats, internal disagreements, political pressures from other supernatural communities."',
+          'You realize that accepting this role means preparing for challenges that will test every aspect of your character.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'prepare_systematically',
+            text: '"Let\'s create systems and plans to handle these challenges proactively."',
+            consequence: 'Strategic preparation • Focuses on systematic readiness',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }, { characterId: 'raven', affectionChange: 25 }],
+            nextScene: 'threat_assessment'
+          },
+          {
+            id: 'rely_on_team',
+            text: '"I don\'t have to face these challenges alone. We\'ll handle them together."',
+            consequence: 'Team approach • Emphasizes collective problem-solving',
+            effects: [{ characterId: 'celeste', affectionChange: 35 }, { characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'collaborative_governance'
+          },
+          {
+            id: 'accept_learning_curve',
+            text: '"I\'ll make mistakes, but I\'ll learn from them and keep improving."',
+            consequence: 'Growth mindset • Accepts imperfection while committing to improvement',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'patient_guidance'
+          }
+        ]
+      },
+      {
+        id: 'shared_grief',
+        title: 'Mourning Together',
+        text: [
+          'A moment of shared sadness passes through the room as everyone processes the losses that brought you here.',
+          'Elena speaks quietly: "We all carry grief - for Cordelia, for the isolation we\'ve endured, for the world that doesn\'t understand us."',
+          'Seraphina adds: "But grief shared becomes something different. It becomes connection, understanding, the foundation for healing."',
+          'You feel the weight of their collective sorrow, but also the strength that comes from bearing it together.'
+        ],
+        character: characters.elena,
+        choices: [
+          {
+            id: 'offer_comfort',
+            text: '"Your grief is safe with me. Let me help carry it."',
+            consequence: 'Emotional support • Offers to share their burden',
+            effects: [{ characterId: 'elena', affectionChange: 45 }, { characterId: 'seraphina', affectionChange: 25 }],
+            nextScene: 'elena_comfort_accepted'
+          },
+          {
+            id: 'share_your_grief',
+            text: '"I have my own grief too. Maybe we can heal together."',
+            consequence: 'Mutual vulnerability • Shares personal pain',
+            effects: [{ characterId: 'elena', affectionChange: 50 }, { characterId: 'umbra', affectionChange: 25 }],
+            nextScene: 'comfort_accepted'
+          },
+          {
+            id: 'focus_on_hope',
+            text: '"From this shared grief, we\'ll build something beautiful together."',
+            consequence: 'Transformative perspective • Sees grief as foundation for growth',
+            effects: [{ characterId: 'elena', affectionChange: 40 }, { characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'new_community'
+          }
+        ]
+      },
+      {
+        id: 'supernatural_potential',
+        title: 'Recognizing Hidden Abilities',
+        text: [
+          'During your time at the sanctuary, you begin to notice subtle changes in yourself.',
+          'Your intuition seems sharper, your empathy more precise, your ability to sense the supernatural more acute.',
+          'Celeste observes: "Living among us is awakening latent psychic abilities. This often happens to Anchors."',
+          'You realize that your role here isn\'t just changing you emotionally and socially, but potentially on a fundamental level.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'embrace_development',
+            text: '"I welcome these changes. They\'ll help me serve everyone better."',
+            consequence: 'Ability acceptance • Embraces supernatural development',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'psychic_training_offered'
+          },
+          {
+            id: 'ask_about_extent',
+            text: '"How far might these abilities develop? What should I expect?"',
+            consequence: 'Informed preparation • Seeks understanding of potential',
+            effects: [{ characterId: 'celeste', affectionChange: 35 }],
+            nextScene: 'anchor_powers_explained'
+          },
+          {
+            id: 'request_guidance',
+            text: '"Will you help me understand and control these developing abilities?"',
+            consequence: 'Seeks mentorship • Requests guidance in development',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'psychic_training_offered'
+          }
+        ]
+      },
+      {
+        id: 'natural_acceptance',
+        title: 'Feeling at Home',
+        text: [
+          'Over time, what once felt strange and supernatural now feels natural and comfortable.',
+          'The vampires\' nocturnal schedule becomes your rhythm, their concerns become your concerns, their joys become your joys.',
+          'Morgana smiles as she observes: "You\'ve stopped seeing us as \'other.\' We\'re just... family now."',
+          'The transition from visitor to family member feels complete and effortless.'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'acknowledge_belonging',
+            text: '"You\'re right. This isn\'t about vampires and humans anymore - it\'s just about family."',
+            consequence: 'Family recognition • Acknowledges complete integration',
+            effects: [{ characterId: 'morgana', affectionChange: 40 }, { characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'new_community'
+          },
+          {
+            id: 'appreciate_transition',
+            text: '"The beautiful thing is how natural this feels now. Like I was always meant to be here."',
+            consequence: 'Destiny acceptance • Feels naturally placed',
+            effects: [{ characterId: 'morgana', affectionChange: 45 }],
+            nextScene: 'living_testament'
+          },
+          {
+            id: 'commit_to_growth',
+            text: '"And I want to keep growing into this role, becoming even more than I am now."',
+            consequence: 'Continued development • Commits to ongoing growth',
+            effects: [{ characterId: 'morgana', affectionChange: 50 }],
+            nextScene: 'transformation_celebration'
+          }
+        ]
+      },
+      // Batch 13 - Partnership and collaboration scenes
+      {
+        id: 'partnership_explanation',
+        title: 'Defining the Relationship',
+        text: [
+          'The nature of your partnership with the coven becomes clearer through open discussion.',
+          'Lilith explains: "You\'re not our employee or servant - you\'re our partner. We make decisions together, share responsibilities, support each other."',
+          '"This is a relationship of equals, despite the differences in our nature. Your mortality brings perspectives we need."',
+          'The mutual respect and collaboration feels both empowering and humbling.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'embrace_equality',
+            text: '"I appreciate being treated as an equal partner. That means everything to me."',
+            consequence: 'Partnership appreciation • Values equal treatment',
+            effects: [{ characterId: 'lilith', affectionChange: 40 }, { characterId: 'valentina', affectionChange: 20 }],
+            nextScene: 'collaborative_governance'
+          },
+          {
+            id: 'offer_unique_perspective',
+            text: '"I promise to always offer my honest perspective, even when it differs from yours."',
+            consequence: 'Authentic contribution • Commits to honest input',
+            effects: [{ characterId: 'lilith', affectionChange: 45 }],
+            nextScene: 'diplomatic_bridge_building'
+          },
+          {
+            id: 'ask_about_boundaries',
+            text: '"What are the boundaries of this partnership? What decisions require consensus?"',
+            consequence: 'Practical clarity • Seeks clear expectations',
+            effects: [{ characterId: 'lilith', affectionChange: 35 }, { characterId: 'celeste', affectionChange: 20 }],
+            nextScene: 'collaborative_governance'
+          }
+        ]
+      },
+      {
+        id: 'danger_discussion',
+        title: 'Understanding the Risks',
+        text: [
+          'Raven takes the lead in explaining the various dangers you might face in your new role.',
+          '"Supernatural politics are volatile. Rival covens might see you as a threat or a prize to be captured."',
+          '"Hunters still exist, though they\'re less common than in past centuries. And rogue vampires who reject our peaceful approach."',
+          '"Knowledge of these threats is your first line of defense."'
+        ],
+        character: characters.raven,
+        choices: [
+          {
+            id: 'request_training',
+            text: '"I want comprehensive training in recognizing and avoiding these threats."',
+            consequence: 'Safety priority • Requests thorough preparation',
+            effects: [{ characterId: 'raven', affectionChange: 40 }],
+            nextScene: 'threat_assessment'
+          },
+          {
+            id: 'ask_about_protection',
+            text: '"What protection measures are already in place? How do we maintain security?"',
+            consequence: 'Security awareness • Seeks understanding of current protections',
+            effects: [{ characterId: 'raven', affectionChange: 35 }, { characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'fortress_ravencroft'
+          },
+          {
+            id: 'focus_on_prevention',
+            text: '"I\'d rather prevent conflicts than fight them. How do we avoid making enemies?"',
+            consequence: 'Peaceful approach • Prioritizes conflict prevention',
+            effects: [{ characterId: 'raven', affectionChange: 30 }, { characterId: 'isadora', affectionChange: 25 }],
+            nextScene: 'diplomatic_bridge_building'
+          }
+        ]
+      },
+      {
+        id: 'provisional_agreement',
+        title: 'Trial Period Begins',
+        text: [
+          'The group agrees to begin with a provisional period to see how the arrangement works for everyone.',
+          'Isadora suggests: "Perhaps a trial period would be wise - three months to see how we all adapt to this new dynamic."',
+          'Celeste nods: "It takes time to fully understand the scope of the role and whether it\'s truly right for you."',
+          'The gradual approach feels both careful and caring.'
+        ],
+        character: characters.isadora,
+        choices: [
+          {
+            id: 'accept_trial_period',
+            text: '"A trial period makes sense. I want this to work for everyone."',
+            consequence: 'Reasonable approach • Accepts gradual integration',
+            effects: [{ characterId: 'isadora', affectionChange: 35 }, { characterId: 'celeste', affectionChange: 25 }],
+            nextScene: 'gradual_integration'
+          },
+          {
+            id: 'express_confidence',
+            text: '"I understand the caution, but I\'m confident this is right for all of us."',
+            consequence: 'Self-assured • Shows confidence in decision',
+            effects: [{ characterId: 'isadora', affectionChange: 30 }, { characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'arrangement_honored'
+          },
+          {
+            id: 'suggest_milestones',
+            text: '"Could we set specific milestones to evaluate progress during the trial?"',
+            consequence: 'Structured approach • Suggests measurable goals',
+            effects: [{ characterId: 'isadora', affectionChange: 40 }, { characterId: 'celeste', affectionChange: 30 }],
+            nextScene: 'arrangement_details'
+          }
+        ]
+      },
+      {
+        id: 'amazed_acceptance',
+        title: 'Wonder at the Impossible',
+        text: [
+          'The reality of your situation hits you with renewed force - you\'re being accepted into a family of vampires.',
+          'The impossibility of it all strikes you: just weeks ago, vampires were mythology, and now you\'re about to become their advocate.',
+          'Seraphina smiles at your expression: "The wonder never completely fades. Every day here still amazes me."',
+          'You realize that maintaining this sense of awe might be important for staying grounded.'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'embrace_wonder',
+            text: '"I hope I never lose this sense of wonder. It makes everything more beautiful."',
+            consequence: 'Wonder preservation • Values maintaining awe',
+            effects: [{ characterId: 'seraphina', affectionChange: 40 }, { characterId: 'umbra', affectionChange: 25 }],
+            nextScene: 'spiritual_awakening'
+          },
+          {
+            id: 'acknowledge_privilege',
+            text: '"I\'m amazed by the privilege of being trusted with something so extraordinary."',
+            consequence: 'Privilege recognition • Shows gratitude for opportunity',
+            effects: [{ characterId: 'seraphina', affectionChange: 45 }],
+            nextScene: 'honored_trust'
+          },
+          {
+            id: 'share_excitement',
+            text: '"The impossibility of it makes it even more exciting. We\'re writing a new kind of story."',
+            consequence: 'Excitement about novelty • Appreciates groundbreaking nature',
+            effects: [{ characterId: 'seraphina', affectionChange: 35 }, { characterId: 'morgana', affectionChange: 20 }],
+            nextScene: 'new_memory_creation'
+          }
+        ]
+      },
+      {
+        id: 'practical_coexistence',
+        title: 'Daily Life Together',
+        text: [
+          'The conversation turns to the practical aspects of living together.',
+          'Elena explains: "We\'ll need to coordinate schedules, share responsibilities, respect each other\'s space and needs."',
+          'Celeste adds: "Your human needs - sleep schedule, food, social connections - will need to be accommodated."',
+          'The attention to practical details shows their genuine commitment to making this work.'
+        ],
+        character: characters.elena,
+        choices: [
+          {
+            id: 'appreciate_consideration',
+            text: '"Thank you for thinking about my practical needs. That consideration means a lot."',
+            consequence: 'Gratitude for thoughtfulness • Appreciates practical care',
+            effects: [{ characterId: 'elena', affectionChange: 35 }, { characterId: 'celeste', affectionChange: 20 }],
+            nextScene: 'arrangement_details'
+          },
+          {
+            id: 'offer_flexibility',
+            text: '"I\'m happy to adapt my schedule and habits to work better with yours."',
+            consequence: 'Flexible accommodation • Shows willingness to adapt',
+            effects: [{ characterId: 'elena', affectionChange: 40 }],
+            nextScene: 'gradual_integration'
+          },
+          {
+            id: 'suggest_trial_run',
+            text: '"Maybe we could do a trial run to work out any practical issues?"',
+            consequence: 'Practical testing • Suggests experimental approach',
+            effects: [{ characterId: 'elena', affectionChange: 30 }, { characterId: 'celeste', affectionChange: 25 }],
+            nextScene: 'provisional_agreement'
+          }
+        ]
+      },
+      {
+        id: 'trust_acknowledged',
+        title: 'The Gift of Confidence',
+        text: [
+          'A moment of profound recognition passes between you as the depth of trust being offered becomes clear.',
+          'Lilith speaks with quiet intensity: "Trust, once broken between mortals and vampires, takes generations to rebuild."',
+          '"By offering you our trust, we\'re risking everything we\'ve built. By accepting it, you\'re taking responsibility for our future."',
+          'The weight of mutual trust settles between you like a sacred bond.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'vow_protection',
+            text: '"I will guard your trust as carefully as I guard your lives."',
+            consequence: 'Sacred protection • Commits to preserving trust',
+            effects: [{ characterId: 'lilith', affectionChange: 50 }],
+            nextScene: 'bond_protection_vow'
+          },
+          {
+            id: 'promise_worthiness',
+            text: '"I promise to prove worthy of this trust every single day."',
+            consequence: 'Daily commitment • Vows ongoing worthiness',
+            effects: [{ characterId: 'lilith', affectionChange: 45 }, { characterId: 'isadora', affectionChange: 20 }],
+            nextScene: 'guardian_oath'
+          },
+          {
+            id: 'acknowledge_reciprocity',
+            text: '"This trust goes both ways. I\'m trusting you with my life and future too."',
+            consequence: 'Mutual trust • Recognizes reciprocal vulnerability',
+            effects: [{ characterId: 'lilith', affectionChange: 55 }],
+            nextScene: 'sacred_vow_sealed'
+          }
+        ]
+      },
+      {
+        id: 'nature_explanation',
+        title: 'Understanding Vampire Nature',
+        text: [
+          'Celeste takes time to explain the nuances of vampire nature that aren\'t found in mythology.',
+          '"We\'re not the monsters of legend. We experience the full range of emotions, form deep relationships, create art, pursue knowledge."',
+          '"The need for blood is real, but we\'ve developed ethical ways to manage it. Consent, partnerships with willing donors, medical sources."',
+          '"We\'re people who happen to be vampires, not vampires who used to be people."'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'appreciate_complexity',
+            text: '"I appreciate you explaining the reality rather than letting me rely on myths."',
+            consequence: 'Reality appreciation • Values truth over fiction',
+            effects: [{ characterId: 'celeste', affectionChange: 35 }],
+            nextScene: 'coven_hierarchy_revealed'
+          },
+          {
+            id: 'ask_about_ethics',
+            text: '"Tell me more about the ethical frameworks you\'ve developed."',
+            consequence: 'Ethical interest • Wants to understand moral systems',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }, { characterId: 'seraphina', affectionChange: 20 }],
+            nextScene: 'philosophical_connection'
+          },
+          {
+            id: 'focus_on_individuality',
+            text: '"So each of you is a unique individual, just like any human community."',
+            consequence: 'Individual recognition • Sees them as distinct people',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'individual_connections'
+          }
+        ]
+      },
+      {
+        id: 'cordelia_role_detailed',
+        title: 'The Anchor\'s Daily Life',
+        text: [
+          'Lilith provides detailed insight into what Cordelia\'s role actually involved day-to-day.',
+          '"She was mediator, counselor, advocate, and sometimes simply a friend who listened without judgment."',
+          '"Some days involved complex negotiations with supernatural communities. Others were just about being present for someone having a difficult century."',
+          '"The role shaped itself around her strengths and grew with her understanding."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_about_mediation',
+            text: '"What kinds of conflicts did she mediate? How did she approach resolution?"',
+            consequence: 'Mediation interest • Seeks conflict resolution skills',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }],
+            nextScene: 'diplomatic_bridge_building'
+          },
+          {
+            id: 'focus_on_counseling',
+            text: '"The counseling aspect appeals to me. How do you help someone process centuries of experience?"',
+            consequence: 'Counseling interest • Values emotional support work',
+            effects: [{ characterId: 'lilith', affectionChange: 35 }, { characterId: 'elena', affectionChange: 25 }],
+            nextScene: 'patient_guidance'
+          },
+          {
+            id: 'appreciate_flexibility',
+            text: '"I like that the role can grow and change. It won\'t be static or limiting."',
+            consequence: 'Flexibility appreciation • Values adaptive role',
+            effects: [{ characterId: 'lilith', affectionChange: 40 }],
+            nextScene: 'arrangement_details'
+          }
+        ]
+      },
+      // Batch 14 - Guidance, training and development scenes
+      {
+        id: 'patient_guidance',
+        title: 'Learning from Experience',
+        text: [
+          'Lilith takes on the role of mentor, sharing her wisdom with gentle patience.',
+          '"Cordelia taught me that the best guidance comes through questions, not commands. I\'ll help you discover your own answers."',
+          '"Experience is the best teacher, but wisdom shared can help you avoid unnecessary pain."',
+          'Her approach feels both supportive and empowering, encouraging growth rather than dependence.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'appreciate_approach',
+            text: '"I appreciate learning through discovery rather than being told what to do."',
+            consequence: 'Learning preference • Values guided discovery',
+            effects: [{ characterId: 'lilith', affectionChange: 35 }],
+            nextScene: 'psychic_training_offered'
+          },
+          {
+            id: 'ask_about_cordelia_methods',
+            text: '"How did Cordelia teach? What methods worked best for her students?"',
+            consequence: 'Teaching interest • Wants to understand educational approaches',
+            effects: [{ characterId: 'lilith', affectionChange: 40 }],
+            nextScene: 'cordelia_research_revealed'
+          },
+          {
+            id: 'request_specific_guidance',
+            text: '"What are the most important lessons I should focus on first?"',
+            consequence: 'Priority seeking • Wants to focus efforts effectively',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }],
+            nextScene: 'gradual_integration'
+          }
+        ]
+      },
+      {
+        id: 'physical_challenges_explained',
+        title: 'The Body\'s Adaptation',
+        text: [
+          'Celeste explains the physical realities of living in a vampire household.',
+          '"Your sleep schedule will gradually shift to match ours. Your body will adapt to lower light levels, different meal times."',
+          '"Some humans develop enhanced night vision, improved hearing. Your body is remarkably adaptable."',
+          '"We\'ll monitor your health carefully and adjust as needed."'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'embrace_adaptation',
+            text: '"I\'m curious to see how my body adapts. It sounds fascinating."',
+            consequence: 'Adaptation enthusiasm • Interested in physical changes',
+            effects: [{ characterId: 'celeste', affectionChange: 35 }],
+            nextScene: 'supernatural_potential'
+          },
+          {
+            id: 'request_monitoring',
+            text: '"I\'d appreciate careful monitoring. I want to stay healthy through the transition."',
+            consequence: 'Health priority • Values medical oversight',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'arrangement_details'
+          },
+          {
+            id: 'ask_about_reversibility',
+            text: '"Are these changes permanent? Can I return to a normal human schedule if needed?"',
+            consequence: 'Cautious inquiry • Seeks understanding of permanence',
+            effects: [{ characterId: 'celeste', affectionChange: 30 }],
+            nextScene: 'gradual_integration'
+          }
+        ]
+      },
+      {
+        id: 'cordelia_physical_stories',
+        title: 'Precedent from the Past',
+        text: [
+          'Lilith shares stories of Cordelia\'s own adaptation to vampire life.',
+          '"Cordelia initially struggled with the schedule change, but within months she was thriving on four hours of sleep."',
+          '"She developed remarkable intuition about supernatural presences. Could sense a vampire from across a crowded room."',
+          '"Her body adapted beautifully, but more importantly, she adapted emotionally and spiritually to our world."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'focus_on_intuition',
+            text: '"The supernatural intuition sounds incredibly useful. How did she develop it?"',
+            consequence: 'Ability interest • Wants to develop supernatural senses',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }],
+            nextScene: 'psychic_training_offered'
+          },
+          {
+            id: 'appreciate_adaptation',
+            text: '"It\'s encouraging to know someone else made this transition successfully."',
+            consequence: 'Hope from precedent • Takes comfort in her example',
+            effects: [{ characterId: 'lilith', affectionChange: 35 }],
+            nextScene: 'cordelia_psychic_legacy'
+          },
+          {
+            id: 'ask_about_emotional_adaptation',
+            text: '"Tell me more about the emotional and spiritual adaptation. That seems most important."',
+            consequence: 'Holistic focus • Prioritizes emotional/spiritual growth',
+            effects: [{ characterId: 'lilith', affectionChange: 40 }],
+            nextScene: 'spiritual_awakening'
+          }
+        ]
+      },
+      {
+        id: 'morgana_creative_connection',
+        title: 'Artistic Kinship',
+        text: [
+          'The connection between you and Morgana deepens through shared creative energy.',
+          '"I feel it," she says with wonder. "A resonance between our creative spirits. It\'s like finding a missing harmony."',
+          '"You see art the way I do - not just as decoration, but as a language for things too deep for words."',
+          'The artistic bond feels both inspiring and intimate.'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'explore_resonance',
+            text: '"This resonance is amazing. What can we create together with this connection?"',
+            consequence: 'Creative collaboration • Excited about joint artistic potential',
+            effects: [{ characterId: 'morgana', affectionChange: 45 }],
+            nextScene: 'artistic_collaboration_planned'
+          },
+          {
+            id: 'appreciate_understanding',
+            text: '"Finally, someone who understands that art is a language of the soul."',
+            consequence: 'Artistic appreciation • Values deep creative understanding',
+            effects: [{ characterId: 'morgana', affectionChange: 40 }],
+            nextScene: 'creative_communion'
+          },
+          {
+            id: 'offer_inspiration',
+            text: '"Let me inspire your art as you inspire mine. We can create something eternal."',
+            consequence: 'Mutual inspiration • Proposes reciprocal creative relationship',
+            effects: [{ characterId: 'morgana', affectionChange: 50 }],
+            nextScene: 'memory_sharing'
+          }
+        ]
+      },
+      {
+        id: 'willpower_struggle',
+        title: 'Testing Inner Strength',
+        text: [
+          'A moment arises that tests your resolve and commitment to this new path.',
+          'The weight of responsibility, the strangeness of your situation, and the enormity of the commitment all press against your determination.',
+          'Seraphina notices your struggle: "Every important choice involves a battle between fear and courage, doubt and faith."',
+          'You realize this internal struggle is a natural part of growth.'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'acknowledge_struggle',
+            text: '"You\'re right. This is harder than I expected, but I\'m not giving up."',
+            consequence: 'Honest acknowledgment • Shows resilience despite difficulty',
+            effects: [{ characterId: 'seraphina', affectionChange: 35 }, { characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'courage_recognition'
+          },
+          {
+            id: 'seek_support',
+            text: '"I could use some encouragement right now. This feels overwhelming."',
+            consequence: 'Vulnerability • Asks for emotional support',
+            effects: [{ characterId: 'seraphina', affectionChange: 40 }],
+            nextScene: 'comfort_accepted'
+          },
+          {
+            id: 'push_through_doubt',
+            text: '"Doubt is just fear trying to protect me. I choose courage over comfort."',
+            consequence: 'Determined resolution • Overcomes doubt through willpower',
+            effects: [{ characterId: 'seraphina', affectionChange: 45 }, { characterId: 'raven', affectionChange: 25 }],
+            nextScene: 'determined_despite_fear'
+          }
+        ]
+      },
+      {
+        id: 'hidden_struggle',
+        title: 'Beneath the Surface',
+        text: [
+          'You notice signs that not everything is as harmonious as it appears on the surface.',
+          'There are tensions, old wounds, unresolved conflicts that the coven is working to heal.',
+          'Elena speaks quietly: "We\'re not perfect. We have our own struggles, our own healing to do."',
+          'Understanding their vulnerabilities makes them seem more human, more relatable.'
+        ],
+        character: characters.elena,
+        choices: [
+          {
+            id: 'offer_support',
+            text: '"Maybe having an outside perspective can help with some of these old wounds."',
+            consequence: 'Healing offer • Proposes to help with internal conflicts',
+            effects: [{ characterId: 'elena', affectionChange: 40 }, { characterId: 'seraphina', affectionChange: 20 }],
+            nextScene: 'elena_comfort_accepted'
+          },
+          {
+            id: 'appreciate_honesty',
+            text: '"Thank you for being honest about the struggles. Perfection would be intimidating."',
+            consequence: 'Honesty appreciation • Values authentic disclosure',
+            effects: [{ characterId: 'elena', affectionChange: 35 }],
+            nextScene: 'shared_grief'
+          },
+          {
+            id: 'ask_how_to_help',
+            text: '"How can I best support everyone through their individual healing journeys?"',
+            consequence: 'Supportive inquiry • Seeks to understand how to help',
+            effects: [{ characterId: 'elena', affectionChange: 45 }],
+            nextScene: 'patient_guidance'
+          }
+        ]
+      },
+      {
+        id: 'curiosity_acknowledged',
+        title: 'Questions Welcome',
+        text: [
+          'Your natural curiosity about their world is met with appreciation rather than annoyance.',
+          'Celeste smiles: "Your questions show genuine interest in understanding, not just satisfying curiosity."',
+          '"We\'ve lived with these realities for so long, we sometimes forget how remarkable they must seem to newcomers."',
+          'Your inquisitive nature is clearly seen as an asset rather than a burden.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'express_fascination',
+            text: '"Everything here fascinates me. I want to understand it all."',
+            consequence: 'Intellectual enthusiasm • Shows genuine fascination',
+            effects: [{ characterId: 'celeste', affectionChange: 35 }],
+            nextScene: 'forbidden_knowledge_access'
+          },
+          {
+            id: 'promise_thoughtful_inquiry',
+            text: '"I\'ll keep asking questions, but I promise they\'ll always be respectful and purposeful."',
+            consequence: 'Respectful curiosity • Commits to thoughtful inquiry',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'coven_hierarchy_revealed'
+          },
+          {
+            id: 'offer_fresh_perspective',
+            text: '"My outsider perspective might help you see familiar things in new ways."',
+            consequence: 'Perspective offering • Proposes mutual learning',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'diplomatic_bridge_building'
+          }
+        ]
+      },
+      {
+        id: 'practical_curiosity',
+        title: 'Everyday Wonders',
+        text: [
+          'Your questions shift to practical matters - how do they handle daily life, logistics, the mundane details of immortal existence.',
+          'Morgana laughs: "You want to know about laundry and grocery shopping? How wonderfully human."',
+          '"The truth is, immortal life still requires attention to practical details. We\'ve just had more time to optimize our systems."',
+          'The blend of supernatural existence with ordinary concerns feels both amusing and reassuring.'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'appreciate_normalcy',
+            text: '"It\'s comforting to know that even immortals have to deal with mundane tasks."',
+            consequence: 'Normalcy comfort • Takes comfort in ordinary concerns',
+            effects: [{ characterId: 'morgana', affectionChange: 30 }, { characterId: 'elena', affectionChange: 20 }],
+            nextScene: 'practical_coexistence'
+          },
+          {
+            id: 'ask_about_optimization',
+            text: '"I\'d love to learn about these optimized systems. Centuries of experience must create great efficiency."',
+            consequence: 'Efficiency interest • Wants to learn optimized approaches',
+            effects: [{ characterId: 'morgana', affectionChange: 35 }, { characterId: 'celeste', affectionChange: 20 }],
+            nextScene: 'arrangement_details'
+          },
+          {
+            id: 'offer_human_perspective',
+            text: '"Maybe I can offer a fresh perspective on some of these systems."',
+            consequence: 'Collaborative improvement • Offers to contribute ideas',
+            effects: [{ characterId: 'morgana', affectionChange: 40 }],
+            nextScene: 'partnership_explanation'
+          }
+        ]
+      },
+      {
+        id: 'fearless_inquiry',
+        title: 'Courage in Questions',
+        text: [
+          'You find yourself asking the difficult questions that others might shy away from.',
+          'Questions about death, immortality, the ethics of vampirism, the cost of eternal life.',
+          'Seraphina responds with deep respect: "These are the questions that matter. Shallow curiosity we can handle anywhere - profound inquiry is precious."',
+          'Your willingness to engage with complex topics clearly impresses them.'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'pursue_ethics',
+            text: '"I\'m particularly interested in how you\'ve developed ethical frameworks for immortal existence."',
+            consequence: 'Ethical inquiry • Seeks understanding of moral systems',
+            effects: [{ characterId: 'seraphina', affectionChange: 45 }],
+            nextScene: 'philosophical_connection'
+          },
+          {
+            id: 'explore_costs',
+            text: '"What are the hidden costs of immortality that mortals don\'t consider?"',
+            consequence: 'Cost awareness • Seeks understanding of immortal challenges',
+            effects: [{ characterId: 'seraphina', affectionChange: 40 }, { characterId: 'elena', affectionChange: 20 }],
+            nextScene: 'hidden_struggle'
+          },
+          {
+            id: 'discuss_meaning',
+            text: '"How do you find meaning and purpose across centuries of existence?"',
+            consequence: 'Existential inquiry • Explores purpose in immortality',
+            effects: [{ characterId: 'seraphina', affectionChange: 50 }],
+            nextScene: 'purpose_revelation'
+          }
+        ]
+      },
+      // Batch 15 - Training, legacy and character-specific scenes
+      {
+        id: 'cordelia_psychic_legacy',
+        title: 'Inherited Abilities',
+        text: [
+          'Celeste reveals more about Cordelia\'s unique psychic abilities and how they might manifest in you.',
+          '"Cordelia developed remarkable empathic abilities - she could sense emotional states, detect deception, even glimpse surface thoughts when necessary."',
+          '"These abilities seem to run in certain bloodlines. You may already be showing early signs."',
+          'The possibility of developing supernatural abilities both excites and concerns you.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'embrace_potential',
+            text: '"I\'m ready to explore these abilities responsibly. Will you guide my development?"',
+            consequence: 'Ability acceptance • Embraces psychic potential with guidance',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'psychic_training_offered'
+          },
+          {
+            id: 'express_concerns',
+            text: '"These abilities sound powerful. How do I ensure I use them ethically?"',
+            consequence: 'Ethical concern • Worried about responsible use',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }, { characterId: 'seraphina', affectionChange: 20 }],
+            nextScene: 'psychic_services_accepted'
+          },
+          {
+            id: 'ask_about_control',
+            text: '"Can these abilities be controlled? I don\'t want to accidentally invade anyone\'s privacy."',
+            consequence: 'Privacy concern • Worried about unwanted intrusion',
+            effects: [{ characterId: 'celeste', affectionChange: 50 }],
+            nextScene: 'patient_guidance'
+          }
+        ]
+      },
+      {
+        id: 'psychic_services_accepted',
+        title: 'Offering Your Gifts',
+        text: [
+          'The coven warmly accepts your offer to use developing psychic abilities in service of the community.',
+          'Lilith explains: "Cordelia often used her empathic abilities to mediate conflicts, detect threats, and provide emotional support."',
+          '"Your growing abilities could serve similar purposes - helping heal old wounds, building trust, protecting the sanctuary."',
+          'The prospect of using supernatural gifts for the good of others feels deeply meaningful.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'commit_to_service',
+            text: '"I want to use these gifts the way Cordelia did - to heal and protect."',
+            consequence: 'Service commitment • Dedicates abilities to community welfare',
+            effects: [{ characterId: 'lilith', affectionChange: 50 }, { characterId: 'celeste', affectionChange: 25 }],
+            nextScene: 'guardian_oath'
+          },
+          {
+            id: 'request_training',
+            text: '"I\'ll need proper training to use these abilities effectively and safely."',
+            consequence: 'Training request • Seeks proper preparation',
+            effects: [{ characterId: 'lilith', affectionChange: 40 }],
+            nextScene: 'psychic_training_offered'
+          },
+          {
+            id: 'ask_about_cordelia_methods',
+            text: '"How exactly did Cordelia use her abilities? What techniques did she develop?"',
+            consequence: 'Method inquiry • Wants to understand Cordelia\'s approach',
+            effects: [{ characterId: 'lilith', affectionChange: 45 }],
+            nextScene: 'cordelia_research_revealed'
+          }
+        ]
+      },
+      {
+        id: 'psychic_training_offered',
+        title: 'Developing Your Gifts',
+        text: [
+          'Celeste offers to personally train you in developing and controlling your emerging psychic abilities.',
+          '"We\'ll start with meditation, energy awareness, emotional shielding. The fundamentals that keep you safe."',
+          '"Then we\'ll work on active abilities - reading emotions, detecting deception, projecting calm when needed."',
+          'The structured approach to supernatural development feels both exciting and reassuring.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'begin_immediately',
+            text: '"Let\'s start right away. I\'m eager to begin developing these abilities."',
+            consequence: 'Immediate start • Enthusiastic about training',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'patience_training'
+          },
+          {
+            id: 'ask_about_commitment',
+            text: '"What kind of time commitment does this training require?"',
+            consequence: 'Practical planning • Seeks understanding of requirements',
+            effects: [{ characterId: 'celeste', affectionChange: 35 }],
+            nextScene: 'arrangement_details'
+          },
+          {
+            id: 'request_safety_focus',
+            text: '"I want to prioritize safety and control above all else."',
+            consequence: 'Safety priority • Emphasizes responsible development',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'gradual_integration'
+          }
+        ]
+      },
+      {
+        id: 'family_consideration',
+        title: 'Weighing the Decision',
+        text: [
+          'The magnitude of joining a vampire family gives you pause as you consider all the implications.',
+          'This isn\'t just changing jobs or moving - it\'s fundamentally altering the trajectory of your entire life.',
+          'Elena notices your contemplation: "Take all the time you need. This decision will affect everyone, so it should feel completely right."',
+          'The weight of the choice settles over you, but so does the exciting possibility of a truly extraordinary life.'
+        ],
+        character: characters.elena,
+        choices: [
+          {
+            id: 'acknowledge_magnitude',
+            text: '"You\'re right, this is the biggest decision I\'ve ever made. But I think it\'s the right one."',
+            consequence: 'Thoughtful acceptance • Recognizes significance while choosing to proceed',
+            effects: [{ characterId: 'elena', affectionChange: 40 }, { characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'trust_acknowledged'
+          },
+          {
+            id: 'express_readiness',
+            text: '"I\'ve thought it through carefully. I\'m ready for this extraordinary life."',
+            consequence: 'Confident readiness • Shows decisive commitment',
+            effects: [{ characterId: 'elena', affectionChange: 35 }, { characterId: 'isadora', affectionChange: 20 }],
+            nextScene: 'amazed_acceptance'
+          },
+          {
+            id: 'ask_for_time',
+            text: '"Could I have a little more time to process everything before making my final decision?"',
+            consequence: 'Thoughtful delay • Requests additional consideration time',
+            effects: [{ characterId: 'elena', affectionChange: 45 }],
+            nextScene: 'provisional_agreement'
+          }
+        ]
+      },
+      {
+        id: 'bond_protection_vow',
+        title: 'Sacred Promise',
+        text: [
+          'In a moment of profound connection, you make a solemn vow to protect the bonds you\'re forming.',
+          '"I swear to guard not just your secrets and your safety, but the trust and love we\'re building together."',
+          'Lilith\'s eyes shine with emotion: "That vow goes both ways. We will protect you as fiercely as you protect us."',
+          'The mutual commitment feels like a sacred contract sealed not with signatures, but with hearts.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'seal_with_ceremony',
+            text: '"Should we mark this commitment with some kind of ceremony or ritual?"',
+            consequence: 'Ceremonial marking • Seeks formal recognition of vows',
+            effects: [{ characterId: 'lilith', affectionChange: 50 }, { characterId: 'seraphina', affectionChange: 25 }],
+            nextScene: 'guardian_oath'
+          },
+          {
+            id: 'focus_on_daily_proof',
+            text: '"I\'ll prove this vow through my daily actions, not just my words."',
+            consequence: 'Action commitment • Emphasizes proof through behavior',
+            effects: [{ characterId: 'lilith', affectionChange: 45 }, { characterId: 'raven', affectionChange: 20 }],
+            nextScene: 'living_testament'
+          },
+          {
+            id: 'include_everyone',
+            text: '"This vow extends to everyone here. You\'re all my family now."',
+            consequence: 'Inclusive commitment • Extends vow to entire coven',
+            effects: [
+              { characterId: 'lilith', affectionChange: 55 },
+              { characterId: 'elena', affectionChange: 25 },
+              { characterId: 'morgana', affectionChange: 20 }
+            ],
+            nextScene: 'new_community'
+          }
+        ]
+      },
+      {
+        id: 'morgana_introduction',
+        title: 'The Artist\'s Welcome',
+        text: [
+          'Morgana approaches with an elegant grace that speaks to centuries of refined movement.',
+          '"Welcome to our sanctuary. I sense an artistic soul in you - there\'s a creative energy that\'s quite lovely."',
+          'She gestures to the artwork adorning the walls: "Art has always been my way of processing the complexity of immortal existence."',
+          'Her immediate recognition of your creative nature feels both flattering and slightly unnerving.'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'appreciate_art',
+            text: '"Your artwork is breathtaking. Each piece tells such a rich story."',
+            consequence: 'Artistic appreciation • Shows genuine admiration for her work',
+            effects: [{ characterId: 'morgana', affectionChange: 35 }],
+            nextScene: 'artistic_appreciation'
+          },
+          {
+            id: 'share_creative_interests',
+            text: '"I do love art and creativity. What mediums do you work in?"',
+            consequence: 'Creative curiosity • Shows interest in her artistic practice',
+            effects: [{ characterId: 'morgana', affectionChange: 40 }],
+            nextScene: 'morgana_creative_connection'
+          },
+          {
+            id: 'ask_about_creative_process',
+            text: '"How has immortality changed your artistic vision over the centuries?"',
+            consequence: 'Deep inquiry • Interested in how time affects creativity',
+            effects: [{ characterId: 'morgana', affectionChange: 45 }],
+            nextScene: 'artistic_collaboration_planned'
+          }
+        ]
+      },
+      {
+        id: 'artistic_collaboration_planned',
+        title: 'Creative Partnership',
+        text: [
+          'Morgana\'s excitement about potential artistic collaboration is infectious.',
+          '"I haven\'t had a creative partner in decades. The possibility of fresh perspectives, new techniques, collaborative inspiration..."',
+          '"We could create something neither of us could achieve alone - art that bridges mortal and immortal experience."',
+          'The prospect of creating meaningful art together feels like a beautiful way to deepen your connection.'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'propose_joint_project',
+            text: '"Let\'s start with a joint project that tells the story of this sanctuary."',
+            consequence: 'Collaborative proposal • Suggests meaningful shared project',
+            effects: [{ characterId: 'morgana', affectionChange: 50 }],
+            nextScene: 'cordelia_artistic_legacy'
+          },
+          {
+            id: 'offer_fresh_perspective',
+            text: '"I\'d love to bring a mortal perspective to immortal themes in your art."',
+            consequence: 'Perspective offering • Proposes unique viewpoint contribution',
+            effects: [{ characterId: 'morgana', affectionChange: 45 }],
+            nextScene: 'memory_sharing'
+          },
+          {
+            id: 'ask_about_teaching',
+            text: '"Would you teach me some of your techniques? I want to learn from your centuries of experience."',
+            consequence: 'Learning request • Seeks artistic mentorship',
+            effects: [{ characterId: 'morgana', affectionChange: 40 }],
+            nextScene: 'patient_guidance'
+          }
+        ]
+      },
+      {
+        id: 'cordelia_artistic_legacy',
+        title: 'The Creative Inheritance',
+        text: [
+          'Morgana shares how Cordelia influenced and supported the artistic life of the sanctuary.',
+          '"Cordelia wasn\'t an artist herself, but she understood the importance of beauty, creativity, and self-expression for immortal wellbeing."',
+          '"She encouraged everyone to pursue their passions, provided resources, created spaces for artistic exploration."',
+          '"Your own creative spirit could continue that legacy - supporting and inspiring everyone\'s artistic growth."'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'embrace_cultural_role',
+            text: '"I\'d love to help cultivate a thriving artistic culture here."',
+            consequence: 'Cultural commitment • Embraces role in creative community',
+            effects: [{ characterId: 'morgana', affectionChange: 50 }, { characterId: 'elena', affectionChange: 25 }],
+            nextScene: 'new_community'
+          },
+          {
+            id: 'propose_art_programs',
+            text: '"Maybe we could develop formal programs - workshops, exhibitions, creative collaborations."',
+            consequence: 'Program proposal • Suggests structured artistic activities',
+            effects: [{ characterId: 'morgana', affectionChange: 45 }, { characterId: 'celeste', affectionChange: 20 }],
+            nextScene: 'arrangement_details'
+          },
+          {
+            id: 'honor_cordelia_vision',
+            text: '"I want to honor Cordelia\'s vision while adding my own creative energy to it."',
+            consequence: 'Legacy honor • Combines respect with innovation',
+            effects: [{ characterId: 'morgana', affectionChange: 55 }],
+            nextScene: 'legacy_acceptance'
+          }
+        ]
+      },
+      {
+        id: 'guardian_oath',
+        title: 'The Sacred Vow',
+        text: [
+          'In a moment heavy with significance, you formally accept the role of Guardian and Anchor.',
+          'Lilith speaks with ceremonial gravity: "Do you swear to protect this sanctuary, guide this family, and serve as bridge between our worlds?"',
+          '"Do you promise to honor Cordelia\'s legacy while forging your own path forward?"',
+          'The weight of the oath settles on your shoulders, but it feels like purpose rather than burden.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'swear_complete_oath',
+            text: '"I swear all of this, with my whole heart and soul."',
+            consequence: 'Full commitment • Complete acceptance of all responsibilities',
+            effects: [
+              { characterId: 'lilith', affectionChange: 60 },
+              { characterId: 'isadora', affectionChange: 30 },
+              { characterId: 'celeste', affectionChange: 25 }
+            ],
+            nextScene: 'sacred_vow_sealed'
+          },
+          {
+            id: 'swear_with_conditions',
+            text: '"I swear this oath, and I ask for your patience as I grow into these responsibilities."',
+            consequence: 'Humble commitment • Accepts while acknowledging learning needs',
+            effects: [{ characterId: 'lilith', affectionChange: 50 }, { characterId: 'elena', affectionChange: 25 }],
+            nextScene: 'patient_guidance'
+          },
+          {
+            id: 'modify_oath',
+            text: '"I swear to protect and guide, but I want this to be a partnership, not a hierarchy."',
+            consequence: 'Partnership emphasis • Seeks collaborative rather than hierarchical structure',
+            effects: [{ characterId: 'lilith', affectionChange: 55 }, { characterId: 'valentina', affectionChange: 30 }],
+            nextScene: 'collaborative_governance'
+          }
+        ]
+      },
+      // Batch 16 - Final completion batch with remaining core scenes
+      {
+        id: 'threat_assessment',
+        title: 'Understanding the Dangers',
+        text: [
+          'Raven provides a comprehensive overview of potential threats to the sanctuary.',
+          '"External threats include rival covens seeking to expand territory, hunters who still operate in secret, and rogue vampires who might expose us all."',
+          '"Internal threats are subtler - conflicts between members, breaches of trust, or decisions that could fracture our unity."',
+          'The systematic approach to threat awareness feels both sobering and reassuring.'
+        ],
+        character: characters.raven,
+        choices: [
+          {
+            id: 'focus_on_prevention',
+            text: '"How do we prevent these threats rather than just respond to them?"',
+            consequence: 'Prevention focus • Prioritizes proactive threat management',
+            effects: [{ characterId: 'raven', affectionChange: 40 }],
+            nextScene: 'fortress_ravencroft'
+          },
+          {
+            id: 'ask_about_early_warning',
+            text: '"What early warning systems do we have in place?"',
+            consequence: 'Security interest • Seeks understanding of detection methods',
+            effects: [{ characterId: 'raven', affectionChange: 35 }],
+            nextScene: 'strategic_patience'
+          },
+          {
+            id: 'offer_human_perspective',
+            text: '"My mortal perspective might help identify threats you haven\'t considered."',
+            consequence: 'Perspective contribution • Offers unique viewpoint on security',
+            effects: [{ characterId: 'raven', affectionChange: 45 }],
+            nextScene: 'collaborative_governance'
+          }
+        ]
+      },
+      {
+        id: 'gradual_integration',
+        title: 'Taking It Slowly',
+        text: [
+          'The decision is made to integrate you into the sanctuary gradually, allowing everyone to adjust.',
+          'Elena explains: "This approach respects both your need to adapt and our need to ensure compatibility."',
+          '"We\'ll start with extended visits, then longer stays, building up to full residency as everyone becomes comfortable."',
+          'The measured pace feels considerate and wise.'
+        ],
+        character: characters.elena,
+        choices: [
+          {
+            id: 'appreciate_consideration',
+            text: '"Thank you for being so thoughtful about this transition."',
+            consequence: 'Gratitude • Appreciates careful approach',
+            effects: [{ characterId: 'elena', affectionChange: 35 }, { characterId: 'celeste', affectionChange: 20 }],
+            nextScene: 'arrangement_details'
+          },
+          {
+            id: 'suggest_milestones',
+            text: '"Should we establish specific milestones to evaluate progress?"',
+            consequence: 'Structured approach • Proposes measurable integration goals',
+            effects: [{ characterId: 'elena', affectionChange: 40 }, { characterId: 'isadora', affectionChange: 25 }],
+            nextScene: 'arrangement_details'
+          },
+          {
+            id: 'express_eagerness',
+            text: '"I\'m excited to take this journey, even if we\'re going slowly."',
+            consequence: 'Positive attitude • Shows enthusiasm despite gradual pace',
+            effects: [{ characterId: 'elena', affectionChange: 45 }],
+            nextScene: 'amazed_acceptance'
+          }
+        ]
+      },
+      {
+        id: 'arrangement_honored',
+        title: 'Keeping Promises',
+        text: [
+          'The commitment to honor all arrangements and agreements becomes a cornerstone of trust.',
+          'Isadora speaks with approval: "Your word clearly means something to you. That\'s the foundation of all good relationships."',
+          '"When promises are kept consistently, trust grows naturally. When they\'re broken, it can take years to rebuild."',
+          'The emphasis on reliability and integrity resonates deeply with your values.'
+        ],
+        character: characters.isadora,
+        choices: [
+          {
+            id: 'commit_to_reliability',
+            text: '"My word is my bond. You can count on me to keep every promise I make."',
+            consequence: 'Reliability commitment • Emphasizes trustworthiness',
+            effects: [{ characterId: 'isadora', affectionChange: 45 }],
+            nextScene: 'trust_acknowledged'
+          },
+          {
+            id: 'ask_about_expectations',
+            text: '"What promises and commitments are most important to honor here?"',
+            consequence: 'Expectation clarity • Seeks understanding of key commitments',
+            effects: [{ characterId: 'isadora', affectionChange: 40 }],
+            nextScene: 'arrangement_details'
+          },
+          {
+            id: 'appreciate_emphasis',
+            text: '"I appreciate that integrity matters so much here. It shows the quality of this community."',
+            consequence: 'Value appreciation • Recognizes community character',
+            effects: [{ characterId: 'isadora', affectionChange: 50 }],
+            nextScene: 'coven_hierarchy_revealed'
+          }
+        ]
+      },
+      {
+        id: 'arrangement_details',
+        title: 'Working Out the Specifics',
+        text: [
+          'The conversation turns to practical details of how your new role will function day-to-day.',
+          'Celeste takes the lead: "We\'ll need to establish schedules, responsibilities, boundaries, and protocols for various situations."',
+          'Isadora adds: "Clear expectations prevent misunderstandings and help everyone feel secure in their roles."',
+          'The attention to practical details shows their commitment to making this work smoothly.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'request_written_guidelines',
+            text: '"Could we document these arrangements so everyone has clear reference?"',
+            consequence: 'Documentation request • Seeks formal clarity',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }, { characterId: 'isadora', affectionChange: 25 }],
+            nextScene: 'negotiation_begins'
+          },
+          {
+            id: 'suggest_trial_period',
+            text: '"Maybe we could start with provisional arrangements and adjust as we learn?"',
+            consequence: 'Flexible approach • Suggests adaptive arrangements',
+            effects: [{ characterId: 'celeste', affectionChange: 35 }],
+            nextScene: 'provisional_agreement'
+          },
+          {
+            id: 'focus_on_communication',
+            text: '"I think regular check-ins will be more important than rigid rules."',
+            consequence: 'Communication emphasis • Prioritizes ongoing dialogue',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'collaborative_governance'
+          }
+        ]
+      },
+      {
+        id: 'negotiation_begins',
+        title: 'Finding Common Ground',
+        text: [
+          'The process of negotiating your role becomes an exercise in collaborative problem-solving.',
+          'Everyone contributes ideas, concerns, and suggestions, working toward arrangements that serve everyone\'s needs.',
+          'Lilith observes: "This is exactly how Cordelia approached decisions - inclusive, thoughtful, focused on the common good."',
+          'The collaborative approach makes you feel valued as an equal participant rather than a supplicant.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'appreciate_inclusion',
+            text: '"I love that everyone gets input. This feels like true partnership."',
+            consequence: 'Partnership appreciation • Values inclusive decision-making',
+            effects: [{ characterId: 'lilith', affectionChange: 40 }, { characterId: 'valentina', affectionChange: 20 }],
+            nextScene: 'collaborative_governance'
+          },
+          {
+            id: 'contribute_actively',
+            text: '"Let me contribute some ideas based on my perspective and experience."',
+            consequence: 'Active participation • Offers to contribute to solutions',
+            effects: [{ characterId: 'lilith', affectionChange: 35 }],
+            nextScene: 'partnership_explanation'
+          },
+          {
+            id: 'seek_win_win',
+            text: '"I want to find solutions that benefit everyone, not just accommodate me."',
+            consequence: 'Win-win focus • Prioritizes mutual benefit',
+            effects: [{ characterId: 'lilith', affectionChange: 45 }],
+            nextScene: 'diplomatic_bridge_building'
+          }
+        ]
+      },
+      {
+        id: 'manor_tour_begins',
+        title: 'Exploring Your New Home',
+        text: [
+          'The comprehensive tour of Ravencroft Manor reveals the depth of history and care invested in this sanctuary.',
+          'Elena guides you through libraries, art studios, meditation spaces, and comfortable living areas.',
+          '"Every room has been designed with both beauty and function in mind. This is a home, not just a residence."',
+          'The thoughtful design and maintenance show how much this place means to everyone who lives here.'
+        ],
+        character: characters.elena,
+        choices: [
+          {
+            id: 'appreciate_design',
+            text: '"The attention to detail is incredible. Every space feels both beautiful and purposeful."',
+            consequence: 'Design appreciation • Recognizes thoughtful planning',
+            effects: [{ characterId: 'elena', affectionChange: 35 }, { characterId: 'morgana', affectionChange: 20 }],
+            nextScene: 'historical_tour'
+          },
+          {
+            id: 'ask_about_personalization',
+            text: '"Can I contribute to the design and feel of the spaces? Add my own touches?"',
+            consequence: 'Personalization interest • Wants to contribute to home feel',
+            effects: [{ characterId: 'elena', affectionChange: 40 }],
+            nextScene: 'resident_introductions'
+          },
+          {
+            id: 'focus_on_comfort',
+            text: '"It really does feel like a home, not just a grand mansion. That\'s special."',
+            consequence: 'Comfort recognition • Appreciates homey atmosphere',
+            effects: [{ characterId: 'elena', affectionChange: 45 }],
+            nextScene: 'practical_coexistence'
+          }
+        ]
+      },
+      {
+        id: 'historical_tour',
+        title: 'Stories in Stone',
+        text: [
+          'The manor\'s history unfolds as you explore rooms that have witnessed decades of vampire life.',
+          'Lilith shares stories: "This library saw countless late-night philosophical discussions. That parlor hosted negotiations that prevented wars."',
+          '"Every corner holds memories of growth, conflict, resolution, and love. You\'re about to become part of that history."',
+          'The weight of historical significance makes your future role feel both daunting and honored.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'honor_the_history',
+            text: '"I want to add to this history respectfully, honoring what came before while building the future."',
+            consequence: 'Historical respect • Balances tradition with progress',
+            effects: [{ characterId: 'lilith', affectionChange: 45 }, { characterId: 'isadora', affectionChange: 25 }],
+            nextScene: 'legacy_acceptance'
+          },
+          {
+            id: 'ask_about_stories',
+            text: '"Will you tell me more of these stories? I want to understand the full context."',
+            consequence: 'Story interest • Seeks deeper historical understanding',
+            effects: [{ characterId: 'lilith', affectionChange: 40 }],
+            nextScene: 'cordelia_love_story'
+          },
+          {
+            id: 'focus_on_future',
+            text: '"I\'m excited about the history we\'ll create together in these rooms."',
+            consequence: 'Future focus • Emphasizes upcoming shared experiences',
+            effects: [{ characterId: 'lilith', affectionChange: 50 }],
+            nextScene: 'new_memory_creation'
+          }
+        ]
+      },
+      {
+        id: 'resident_introductions',
+        title: 'Meeting the Family',
+        text: [
+          'Formal introductions allow you to connect with each resident as an individual rather than part of a group.',
+          'Each person shares something personal - a passion, a concern, a hope for the future.',
+          'The individual connections feel more intimate and meaningful than group interactions.',
+          'You begin to see the unique personality and story of each family member.'
+        ],
+        choices: [
+          {
+            id: 'focus_on_individuals',
+            text: 'Take time to really connect with each person individually.',
+            consequence: 'Individual connection • Prioritizes personal relationships',
+            effects: [
+              { characterId: 'elena', affectionChange: 25 },
+              { characterId: 'morgana', affectionChange: 25 },
+              { characterId: 'celeste', affectionChange: 20 }
+            ],
+            nextScene: 'individual_connections'
+          },
+          {
+            id: 'ask_about_roles',
+            text: 'Learn about everyone\'s specific roles and contributions to the sanctuary.',
+            consequence: 'Role understanding • Seeks to understand community structure',
+            effects: [
+              { characterId: 'celeste', affectionChange: 30 },
+              { characterId: 'isadora', affectionChange: 25 }
+            ],
+            nextScene: 'coven_hierarchy_revealed'
+          },
+          {
+            id: 'share_about_yourself',
+            text: 'Open up about your own background, interests, and hopes.',
+            consequence: 'Personal sharing • Offers reciprocal openness',
+            effects: [
+              { characterId: 'elena', affectionChange: 30 },
+              { characterId: 'seraphina', affectionChange: 25 }
+            ],
+            nextScene: 'memory_sharing'
+          }
+        ]
+      },
+      {
+        id: 'conversation_continues',
+        title: 'Deepening Understanding',
+        text: [
+          'As conversations deepen, barriers continue to fall and genuine connections form.',
+          'What started as formal introductions becomes natural, flowing dialogue about hopes, dreams, and experiences.',
+          'You find yourself laughing, debating, and sharing in ways that feel entirely natural.',
+          'The transition from stranger to family member is happening more quickly than you expected.'
+        ],
+        choices: [
+          {
+            id: 'embrace_natural_flow',
+            text: 'Let the conversations develop organically without forcing connection.',
+            consequence: 'Natural development • Allows authentic relationship building',
+            effects: [
+              { characterId: 'elena', affectionChange: 25 },
+              { characterId: 'morgana', affectionChange: 20 },
+              { characterId: 'umbra', affectionChange: 25 }
+            ],
+            nextScene: 'natural_acceptance'
+          },
+          {
+            id: 'ask_thoughtful_questions',
+            text: 'Ask deeper questions that show genuine interest in their experiences.',
+            consequence: 'Thoughtful inquiry • Shows deep interest in their lives',
+            effects: [
+              { characterId: 'celeste', affectionChange: 30 },
+              { characterId: 'seraphina', affectionChange: 25 }
+            ],
+            nextScene: 'fearless_inquiry'
+          },
+          {
+            id: 'share_vulnerabilities',
+            text: 'Share some of your own vulnerabilities and uncertainties.',
+            consequence: 'Vulnerable sharing • Opens up authentically',
+            effects: [
+              { characterId: 'elena', affectionChange: 35 },
+              { characterId: 'seraphina', affectionChange: 30 }
+            ],
+            nextScene: 'shared_grief'
+          }
+        ]
       }
     ]
   }
