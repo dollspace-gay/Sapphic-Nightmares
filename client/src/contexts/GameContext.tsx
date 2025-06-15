@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
-import { GameState, Choice, PlayerCharacter } from '../types/game';
+import { GameState, Choice, PlayerCharacter, JournalEntry, Achievement, RecoveryAction } from '../types/game';
 import { initialGameState, gameData } from '../data/gameData';
 
 interface GameContextType {
@@ -10,6 +10,10 @@ interface GameContextType {
   saveGame: (slotName: string) => void;
   loadGame: (gameState: GameState) => void;
   resetGame: () => void;
+  addJournalEntry: (entry: JournalEntry) => void;
+  unlockAchievement: (achievementId: string) => void;
+  performRecoveryAction: (actionId: string) => void;
+  unlockBackstory: (backstoryId: string) => void;
 }
 
 const GameContext = createContext<GameContextType | undefined>(undefined);
