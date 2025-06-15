@@ -1,6 +1,9 @@
 import { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
 import { GameState, Choice, PlayerCharacter, JournalEntry, Achievement, RecoveryAction } from '../types/game';
 import { initialGameState, gameData } from '../data/gameData';
+import { achievements, checkAchievements } from '../data/achievements';
+import { checkBackstoryUnlocks } from '../data/characterBackstories';
+import { applyCharacterEffects } from '../utils/characterEffects';
 
 interface GameContextType {
   gameState: GameState;
@@ -294,7 +297,52 @@ export function GameProvider({ children }: { children: ReactNode }) {
   };
   
   const makeChoice = (choice: Choice) => {
-    dispatch({ type: 'MAKE_CHOICE', payload: choice });
+    // Apply character trait effects to choice
+    const modifiedChoice = gameState.playerCharacter 
+      ? applyCharacterEffects([choice], gameState.playerCharacter)[0]
+      : choice;
+    
+    dispatch({ type: 'MAKE_CHOICE', payload: modifiedChoice });
+    
+    // Add journal entry for choice
+    const journalEntry: JournalEntry = {
+      id: `choice_${Date.now()}`,
+      type: 'choice',
+      title: modifiedChoice.text,
+      description: modifiedChoice.consequence || 'Made a significant decision',
+      timestamp: Date.now(),
+      sceneId: gameState.currentScene,
+      metadata: {
+        effects: modifiedChoice.effects,
+        playerStatEffects: modifiedChoice.playerStatEffects
+      }
+    };
+    addJournalEntry(journalEntry);
+    
+    // Check for achievement unlocks
+    setTimeout(() => {
+      const newAchievements = checkAchievements(gameState);
+      newAchievements.forEach(achievementId => {
+        unlockAchievement(achievementId);
+      });
+      
+      // Check for backstory unlocks
+      const newBackstories = checkBackstoryUnlocks(gameState);
+      newBackstories.forEach(backstoryId => {
+        unlockBackstory(backstoryId);
+        
+        // Add journal entry for backstory unlock
+        const backstoryEntry: JournalEntry = {
+          id: `backstory_${Date.now()}`,
+          type: 'backstory',
+          title: 'Character Story Unlocked',
+          description: `A character has shared more of their past with you`,
+          timestamp: Date.now(),
+          metadata: { backstoryId }
+        };
+        addJournalEntry(backstoryEntry);
+      });
+    }, 100);
   };
   
   const createCharacter = (character: PlayerCharacter) => {

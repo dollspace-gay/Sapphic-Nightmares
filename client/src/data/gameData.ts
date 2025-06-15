@@ -14462,6 +14462,420 @@ export const gameData: Chapter[] = [
         ]
       }
     ]
+  },
+  
+  // Chapter 2: Political Tensions
+  {
+    id: 'chapter_2',
+    title: 'Political Tensions',
+    scenes: [
+      {
+        id: 'chapter_2_start',
+        title: 'Brewing Storm',
+        text: [
+          'Several weeks have passed since your arrival at Ravencroft Manor. You\'ve begun to understand the delicate balance of power that exists among the vampire residents.',
+          'However, tensions that have long simmered beneath the surface are beginning to boil over.',
+          'Valentina, the revolutionary, and Isadora, the traditionalist socialite, have been increasingly at odds.',
+          'Their philosophical differences about how the coven should interact with the modern world have reached a breaking point.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'observe_tensions',
+            text: 'Observe the growing tensions carefully before taking action.',
+            consequence: 'Cautious observation • Gather information before acting',
+            effects: [{ characterId: 'celeste', affectionChange: 8 }],
+            nextScene: 'valentina_proposal'
+          },
+          {
+            id: 'seek_lilith_counsel',
+            text: 'Seek Lilith\'s guidance on handling the situation.',
+            consequence: 'Leadership consultation • Shows respect for authority',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'lilith_political_advice'
+          },
+          {
+            id: 'talk_to_morgana',
+            text: 'Ask Morgana for her mystical insight into the conflict.',
+            consequence: 'Mystical consultation • Seeks deeper understanding',
+            effects: [{ characterId: 'morgana', affectionChange: 10 }],
+            nextScene: 'morgana_political_vision'
+          }
+        ]
+      },
+      
+      {
+        id: 'valentina_proposal',
+        title: 'The Revolutionary\'s Vision',
+        text: [
+          'You find Valentina in the library, surrounded by books on political theory and social movements.',
+          'Her passionate eyes burn with conviction as she looks up from her reading.',
+          '"The time for hiding in shadows is over," she declares. "We have the power to shape the modern world, not merely observe it from the sidelines."',
+          '"Isadora and her traditional approach will keep us trapped in the past forever. We need progressive action."'
+        ],
+        character: characters.valentina,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'support_valentina',
+            text: 'Express support for Valentina\'s progressive vision.',
+            consequence: 'Progressive alliance • Supports modernization',
+            effects: [
+              { characterId: 'valentina', affectionChange: 25 },
+              { characterId: 'isadora', affectionChange: -15 },
+              { characterId: 'lilith', affectionChange: -8 }
+            ],
+            playerStatEffects: { sanityChange: -5 },
+            nextScene: 'valentina_detailed_plan'
+          },
+          {
+            id: 'express_concerns',
+            text: 'Voice concerns about the potential risks of rapid change.',
+            consequence: 'Diplomatic caution • Shows balanced thinking',
+            effects: [
+              { characterId: 'valentina', affectionChange: 5 },
+              { characterId: 'celeste', affectionChange: 12 },
+              { characterId: 'lilith', affectionChange: 8 }
+            ],
+            nextScene: 'valentina_frustrated_response'
+          },
+          {
+            id: 'ask_specifics',
+            text: 'Ask for specific details about her proposed changes.',
+            consequence: 'Information gathering • Seeks concrete plans',
+            effects: [
+              { characterId: 'valentina', affectionChange: 10 },
+              { characterId: 'celeste', affectionChange: 8 }
+            ],
+            nextScene: 'valentina_detailed_plan'
+          }
+        ]
+      },
+      
+      {
+        id: 'lilith_political_advice',
+        title: 'The Matriarch\'s Wisdom',
+        text: [
+          'Lilith receives you in her private study, a room that radiates ancient authority.',
+          'She listens carefully as you describe the growing tensions between Valentina and Isadora.',
+          '"I have governed this coven for centuries," she says thoughtfully. "Change is inevitable, but it must be managed carefully."',
+          '"Both Valentina and Isadora have valid concerns. The challenge is finding a path that honors our traditions while adapting to modern realities."'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_lilith_preference',
+            text: 'Ask Lilith which approach she personally favors.',
+            consequence: 'Direct inquiry • Seeks leadership guidance',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'lilith_reveals_preference'
+          },
+          {
+            id: 'suggest_mediation',
+            text: 'Suggest that you could help mediate between the factions.',
+            consequence: 'Diplomatic offer • Takes initiative in conflict resolution',
+            effects: [
+              { characterId: 'lilith', affectionChange: 20 },
+              { characterId: 'celeste', affectionChange: 15 }
+            ],
+            playerStatEffects: { healthChange: -3 },
+            nextScene: 'lilith_mediation_approval'
+          },
+          {
+            id: 'express_neutrality',
+            text: 'Express that you see merit in both perspectives.',
+            consequence: 'Neutral stance • Shows diplomatic balance',
+            effects: [
+              { characterId: 'lilith', affectionChange: 12 },
+              { characterId: 'morgana', affectionChange: 8 }
+            ],
+            nextScene: 'lilith_neutrality_response'
+          }
+        ]
+      },
+      
+      {
+        id: 'morgana_political_vision',
+        title: 'Shadows of the Future',
+        text: [
+          'Morgana\'s eyes grow distant as she peers into realms beyond ordinary perception.',
+          'The shadows around her seem to whisper secrets as she considers your question.',
+          '"The threads of fate are tangled here," she murmurs. "I see two paths diverging - one leads to growth through strife, the other to stagnation through peace."',
+          '"The choice you make will ripple through decades to come. Trust your instincts, for they are guided by forces older than politics."'
+        ],
+        character: characters.morgana,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'ask_about_consequences',
+            text: 'Ask Morgana to elaborate on the long-term consequences.',
+            consequence: 'Mystical inquiry • Seeks deeper understanding',
+            effects: [{ characterId: 'morgana', affectionChange: 18 }],
+            playerStatEffects: { sanityChange: -8 },
+            nextScene: 'morgana_dark_prophecy'
+          },
+          {
+            id: 'request_guidance',
+            text: 'Ask for her guidance on which path to choose.',
+            consequence: 'Mystical guidance • Relies on supernatural wisdom',
+            effects: [{ characterId: 'morgana', affectionChange: 15 }],
+            nextScene: 'morgana_cryptic_advice'
+          },
+          {
+            id: 'thank_and_leave',
+            text: 'Thank Morgana and decide to make your own choice.',
+            consequence: 'Independent decision • Shows personal agency',
+            effects: [
+              { characterId: 'morgana', affectionChange: 10 },
+              { characterId: 'lilith', affectionChange: 5 }
+            ],
+            nextScene: 'isadora_confrontation'
+          }
+        ]
+      },
+      
+      {
+        id: 'isadora_confrontation',
+        title: 'The Traditionalist\'s Stand',
+        text: [
+          'You encounter Isadora in the ballroom, where she\'s arranging fresh flowers with meticulous care.',
+          'Her elegant composure barely masks her frustration as she speaks.',
+          '"Valentina\'s reckless ideas will destroy everything we\'ve built," she says with controlled anger.',
+          '"Our traditions have kept us safe for centuries. This rush toward modernity is nothing but dangerous foolishness that will expose us all."'
+        ],
+        character: characters.isadora,
+        background: '/backgrounds/ballroom.png',
+        choices: [
+          {
+            id: 'support_isadora',
+            text: 'Agree that tradition and caution are important.',
+            consequence: 'Traditional alliance • Supports established ways',
+            effects: [
+              { characterId: 'isadora', affectionChange: 25 },
+              { characterId: 'valentina', affectionChange: -15 },
+              { characterId: 'raven', affectionChange: -8 }
+            ],
+            nextScene: 'isadora_traditional_plan'
+          },
+          {
+            id: 'challenge_isadora',
+            text: 'Gently challenge her resistance to all change.',
+            consequence: 'Diplomatic challenge • Questions rigid thinking',
+            effects: [
+              { characterId: 'isadora', affectionChange: -5 },
+              { characterId: 'valentina', affectionChange: 8 },
+              { characterId: 'celeste', affectionChange: 10 }
+            ],
+            nextScene: 'isadora_defensive_response'
+          },
+          {
+            id: 'ask_about_fears',
+            text: 'Ask what specifically she fears about Valentina\'s proposals.',
+            consequence: 'Understanding inquiry • Seeks deeper motivations',
+            effects: [
+              { characterId: 'isadora', affectionChange: 12 },
+              { characterId: 'morgana', affectionChange: 5 }
+            ],
+            nextScene: 'isadora_reveals_fears'
+          }
+        ]
+      },
+      
+      {
+        id: 'valentina_detailed_plan',
+        title: 'The Progressive Agenda',
+        text: [
+          'Valentina\'s eyes light up as she shares her vision for the future.',
+          '"We could establish vampire-owned businesses, influence politics from within, use our abilities to actually help humanity instead of preying on them."',
+          '"Imagine a world where we work alongside humans as partners, not predators. We have so much to offer."',
+          'Her passion is infectious, but you can see the risks in her ambitious plans.'
+        ],
+        character: characters.valentina,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'full_commitment',
+            text: 'Offer your full commitment to her cause.',
+            consequence: 'Revolutionary alliance • Complete dedication to change',
+            effects: [
+              { characterId: 'valentina', affectionChange: 35 },
+              { characterId: 'isadora', affectionChange: -25 },
+              { characterId: 'raven', affectionChange: 15 }
+            ],
+            playerStatEffects: { healthChange: -8 },
+            nextScene: 'valentina_grateful_response'
+          },
+          {
+            id: 'gradual_approach',
+            text: 'Suggest a more gradual approach to implementing changes.',
+            consequence: 'Moderate progression • Balances innovation with caution',
+            effects: [
+              { characterId: 'valentina', affectionChange: 15 },
+              { characterId: 'celeste', affectionChange: 18 },
+              { characterId: 'lilith', affectionChange: 12 }
+            ],
+            nextScene: 'compromise_discussion'
+          },
+          {
+            id: 'express_doubts',
+            text: 'Express doubts about the feasibility of her plans.',
+            consequence: 'Realistic concerns • Questions implementation',
+            effects: [
+              { characterId: 'valentina', affectionChange: -10 },
+              { characterId: 'isadora', affectionChange: 8 },
+              { characterId: 'morgana', affectionChange: 5 }
+            ],
+            nextScene: 'valentina_defensive_argument'
+          }
+        ]
+      },
+      
+      {
+        id: 'isadora_traditional_plan',
+        title: 'The Wisdom of Ages',
+        text: [
+          'Isadora\'s voice takes on the weight of centuries as she explains her perspective.',
+          '"Our discretion has protected us through wars, plagues, and the rise and fall of empires. We survive by remaining hidden."',
+          '"The old ways work because they\'ve been tested by time. Valentina\'s experiments could destroy us all."',
+          'Her fear is genuine, born from knowledge of past disasters when vampires became too bold.'
+        ],
+        character: characters.isadora,
+        background: '/backgrounds/ballroom.png',
+        choices: [
+          {
+            id: 'embrace_tradition',
+            text: 'Agree that the traditional ways should be preserved.',
+            consequence: 'Traditional alliance • Supports established order',
+            effects: [
+              { characterId: 'isadora', affectionChange: 35 },
+              { characterId: 'valentina', affectionChange: -25 },
+              { characterId: 'lilith', affectionChange: 15 }
+            ],
+            nextScene: 'isadora_relief_response'
+          },
+          {
+            id: 'suggest_adaptation',
+            text: 'Suggest that tradition can adapt without abandoning core values.',
+            consequence: 'Adaptive tradition • Modernizes while preserving essence',
+            effects: [
+              { characterId: 'isadora', affectionChange: 10 },
+              { characterId: 'celeste', affectionChange: 20 },
+              { characterId: 'morgana', affectionChange: 12 }
+            ],
+            nextScene: 'compromise_discussion'
+          },
+          {
+            id: 'challenge_fear',
+            text: 'Gently challenge her fear of all change.',
+            consequence: 'Progressive challenge • Questions conservative stance',
+            effects: [
+              { characterId: 'isadora', affectionChange: -15 },
+              { characterId: 'valentina', affectionChange: 12 },
+              { characterId: 'raven', affectionChange: 8 }
+            ],
+            nextScene: 'isadora_angry_response'
+          }
+        ]
+      },
+      
+      {
+        id: 'compromise_discussion',
+        title: 'Seeking Middle Ground',
+        text: [
+          'You find yourself in the unique position of potentially bridging the gap between two opposing philosophies.',
+          'Both Valentina and Isadora have valid concerns, and perhaps there\'s a way to honor both perspectives.',
+          'The challenge will be convincing both factions that compromise isn\'t betrayal.',
+          'Your diplomatic efforts could shape the future of the entire coven.'
+        ],
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'propose_council',
+            text: 'Propose forming a council with representatives from both sides.',
+            consequence: 'Democratic solution • Creates formal decision-making structure',
+            effects: [
+              { characterId: 'lilith', affectionChange: 25 },
+              { characterId: 'celeste', affectionChange: 20 },
+              { characterId: 'valentina', affectionChange: 10 },
+              { characterId: 'isadora', affectionChange: 10 }
+            ],
+            playerStatEffects: { healthChange: -5 },
+            nextScene: 'council_formation'
+          },
+          {
+            id: 'gradual_reform',
+            text: 'Suggest implementing small changes gradually over time.',
+            consequence: 'Gradual reform • Minimizes risk while allowing progress',
+            effects: [
+              { characterId: 'celeste', affectionChange: 25 },
+              { characterId: 'valentina', affectionChange: 15 },
+              { characterId: 'isadora', affectionChange: 15 },
+              { characterId: 'morgana', affectionChange: 10 }
+            ],
+            nextScene: 'gradual_reform_plan'
+          },
+          {
+            id: 'suggest_trial_period',
+            text: 'Propose a trial period for new policies with built-in safeguards.',
+            consequence: 'Experimental approach • Tests changes safely',
+            effects: [
+              { characterId: 'valentina', affectionChange: 20 },
+              { characterId: 'isadora', affectionChange: 8 },
+              { characterId: 'lilith', affectionChange: 15 }
+            ],
+            nextScene: 'trial_period_discussion'
+          }
+        ]
+      },
+      
+      {
+        id: 'council_formation',
+        title: 'Democratic Governance',
+        text: [
+          'Your proposal for a governing council resonates with Lilith\'s desire for structured leadership.',
+          'The idea of formal representation gives both factions a voice while maintaining order.',
+          '"This could work," Lilith muses. "We\'ve governed by tradition and authority for so long, perhaps it\'s time for a more inclusive approach."',
+          'The formation of the council marks a new chapter in vampire governance at Ravencroft Manor.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'volunteer_leadership',
+            text: 'Volunteer to help lead the council formation process.',
+            consequence: 'Leadership initiative • Takes responsibility for implementation',
+            effects: [
+              { characterId: 'lilith', affectionChange: 30 },
+              { characterId: 'celeste', affectionChange: 25 }
+            ],
+            playerStatEffects: { healthChange: -10 },
+            nextScene: 'chapter_2_conclusion_council'
+          },
+          {
+            id: 'suggest_elections',
+            text: 'Suggest holding elections for council positions.',
+            consequence: 'Democratic process • Ensures fair representation',
+            effects: [
+              { characterId: 'valentina', affectionChange: 20 },
+              { characterId: 'raven', affectionChange: 15 }
+            ],
+            nextScene: 'election_planning'
+          },
+          {
+            id: 'recommend_advisors',
+            text: 'Recommend that experienced members serve as advisors.',
+            consequence: 'Balanced wisdom • Combines new ideas with experience',
+            effects: [
+              { characterId: 'isadora', affectionChange: 18 },
+              { characterId: 'morgana', affectionChange: 15 },
+              { characterId: 'lilith', affectionChange: 12 }
+            ],
+            nextScene: 'advisor_system'
+          }
+        ]
+      }
+    ]
   }
 ];
 
@@ -14485,7 +14899,29 @@ export const initialGameState = {
   choiceHistory: [],
   isCharacterCreated: false,
   journal: [],
-  achievements: [],
+  achievements: [
+    { id: 'first_steps', unlocked: false },
+    { id: 'manor_explorer', unlocked: false },
+    { id: 'chapter_one_complete', unlocked: false },
+    { id: 'chapter_two_complete', unlocked: false },
+    { id: 'first_friend', unlocked: false },
+    { id: 'trusted_ally', unlocked: false },
+    { id: 'beloved', unlocked: false },
+    { id: 'social_butterfly', unlocked: false },
+    { id: 'lilith_confidant', unlocked: false },
+    { id: 'morgana_mystic', unlocked: false },
+    { id: 'survivor', unlocked: false },
+    { id: 'iron_will', unlocked: false },
+    { id: 'resilient', unlocked: false },
+    { id: 'master_diplomat', unlocked: false },
+    { id: 'secret_keeper', unlocked: false },
+    { id: 'lore_master', unlocked: false },
+    { id: 'truth_seeker', unlocked: false },
+    { id: 'cosmic_witness', unlocked: false },
+    { id: 'perfect_balance', unlocked: false },
+    { id: 'peace_maker', unlocked: false },
+    { id: 'master_of_manor', unlocked: false }
+  ],
   unlockedBackstories: [],
   availableRecoveryActions: ['basic_rest', 'meditation', 'social_recovery'],
   lastRecoveryTimes: {}
