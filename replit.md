@@ -147,6 +147,11 @@ Changelog:
 - June 15, 2025. Implemented mental fortitude mechanics: Mental Fortitude (50% sanity reduction), Iron Will (25% reduction), both together (immunity)
 - June 15, 2025. Added Umbra romance unlock requiring both Mental Fortitude and Iron Will boons for cosmic entity relationship path
 - June 15, 2025. Enhanced Unnaturally Lucky boon with disaster avoidance, fortuitous discoveries, and miraculous reversals for comprehensive positive gameplay effects
+- June 15, 2025. Implemented comprehensive trust system with dangerous dialogue options that can lead to hostility, exile, or death without visual warnings
+- June 15, 2025. Added trust-based bad endings: multiple hostile characters trigger death, widespread distrust causes exile, Lilith hostility is fatal
+- June 15, 2025. Enhanced choice UI with uniform styling - removed consequence hints and visual danger indicators for immersive discovery gameplay
+- June 15, 2025. Updated Sidebar to display both affection and trust levels with color-coded status indicators reflecting relationship safety
+- June 15, 2025. Created secret probing mechanics where investigating forbidden topics gradually erodes trust across all coven members
 ```
 
 ## User Preferences
