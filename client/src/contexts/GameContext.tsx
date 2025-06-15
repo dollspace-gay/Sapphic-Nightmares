@@ -19,7 +19,8 @@ type GameAction =
   | { type: 'CREATE_CHARACTER'; payload: PlayerCharacter }
   | { type: 'LOAD_GAME'; payload: GameState }
   | { type: 'RESET_GAME' }
-  | { type: 'UPDATE_AFFECTION'; payload: { characterId: string; change: number } };
+  | { type: 'UPDATE_AFFECTION'; payload: { characterId: string; change: number } }
+  | { type: 'UPDATE_TRUST'; payload: { characterId: string; change: number } };
 
 function gameReducer(state: GameState, action: GameAction): GameState {
   switch (action.type) {
@@ -39,7 +40,7 @@ function gameReducer(state: GameState, action: GameAction): GameState {
       const choice = action.payload;
       const newState = { ...state };
       
-      // Apply character affection changes
+      // Apply character affection and trust changes
       choice.effects.forEach(effect => {
         if (newState.characters[effect.characterId]) {
           newState.characters[effect.characterId].affection = Math.max(
@@ -47,18 +48,40 @@ function gameReducer(state: GameState, action: GameAction): GameState {
             Math.min(100, newState.characters[effect.characterId].affection + effect.affectionChange)
           );
           
-          // Update character status based on affection level
+          // Apply trust changes if specified
+          if (effect.trustChange !== undefined) {
+            newState.characters[effect.characterId].trust = Math.max(
+              0, 
+              Math.min(100, newState.characters[effect.characterId].trust + effect.trustChange)
+            );
+          }
+          
+          // Update character status based on affection and trust levels
           const affection = newState.characters[effect.characterId].affection;
-          if (affection >= 80) {
-            newState.characters[effect.characterId].status = 'Deeply in Love';
-          } else if (affection >= 60) {
-            newState.characters[effect.characterId].status = 'Smitten';
-          } else if (affection >= 40) {
-            newState.characters[effect.characterId].status = 'Interested';
-          } else if (affection >= 20) {
-            newState.characters[effect.characterId].status = 'Curious';
+          const trust = newState.characters[effect.characterId].trust;
+          
+          // Trust-based danger states override normal affection states
+          if (trust <= 10) {
+            newState.characters[effect.characterId].status = 'Hostile';
+          } else if (trust <= 20) {
+            newState.characters[effect.characterId].status = 'Deeply Suspicious';
+          } else if (trust <= 30) {
+            newState.characters[effect.characterId].status = 'Distrustful';
+          } else if (trust <= 40) {
+            newState.characters[effect.characterId].status = 'Wary';
           } else {
-            newState.characters[effect.characterId].status = 'Indifferent';
+            // Normal affection-based states when trust is adequate
+            if (affection >= 80) {
+              newState.characters[effect.characterId].status = 'Deeply in Love';
+            } else if (affection >= 60) {
+              newState.characters[effect.characterId].status = 'Smitten';
+            } else if (affection >= 40) {
+              newState.characters[effect.characterId].status = 'Interested';
+            } else if (affection >= 20) {
+              newState.characters[effect.characterId].status = 'Curious';
+            } else {
+              newState.characters[effect.characterId].status = 'Neutral';
+            }
           }
         }
       });

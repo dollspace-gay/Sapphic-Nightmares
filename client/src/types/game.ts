@@ -4,6 +4,7 @@ export interface Character {
   title: string;
   description: string;
   affection: number;
+  trust: number;
   status: string;
   avatar: string;
   color: string;
@@ -16,6 +17,7 @@ export interface Choice {
   effects: {
     characterId: string;
     affectionChange: number;
+    trustChange?: number;
   }[];
   playerStatEffects?: {
     healthChange?: number;
@@ -24,8 +26,11 @@ export interface Choice {
   nextScene?: string;
   requirements?: {
     characterId: string;
-    minAffection: number;
+    minAffection?: number;
+    minTrust?: number;
   }[];
+  dangerLevel?: 'low' | 'medium' | 'high' | 'lethal';
+  secretsProbed?: string[];
 }
 
 export interface Scene {

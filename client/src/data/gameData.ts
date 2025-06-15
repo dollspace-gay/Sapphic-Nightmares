@@ -7,6 +7,7 @@ export const characters: Record<string, Character> = {
     title: 'Ancient Vampire • Coven Leader',
     description: 'The enigmatic leader of the vampire coven, Lilith is both alluring and dangerous.',
     affection: 0,
+    trust: 50,
     status: 'Neutral',
     avatar: 'vampire-fangs',
     color: 'bg-blood-red'
@@ -17,6 +18,7 @@ export const characters: Record<string, Character> = {
     title: 'Shadow Mystic • Coven Elder',
     description: 'A mysterious vampire with deep knowledge of dark magic and ancient secrets.',
     affection: 0,
+    trust: 30,
     status: 'Neutral',
     avatar: 'moon',
     color: 'bg-gothic-purple'
@@ -27,6 +29,7 @@ export const characters: Record<string, Character> = {
     title: 'Fallen Angel • Protector',
     description: 'Once an angel, now caught between light and darkness, devoted to protecting you.',
     affection: 0,
+    trust: 70,
     status: 'Neutral',
     avatar: 'star',
     color: 'bg-moonlight'
@@ -37,6 +40,7 @@ export const characters: Record<string, Character> = {
     title: 'Passionate Revolutionary • Former Soldier',
     description: 'A fiery Spanish vampire with crimson curls and fierce amber eyes. Once fought in mortal wars, now battles for vampire rights and equality within the coven.',
     affection: 0,
+    trust: 45,
     status: 'Challenging',
     avatar: 'sword',
     color: 'bg-sunset-orange'
@@ -47,6 +51,7 @@ export const characters: Record<string, Character> = {
     title: 'Scholar Keeper • Ancient Librarian',
     description: 'A brilliant French vampire with steel-gray eyes behind wire-rimmed glasses. Keeper of the manor\'s vast supernatural library and forbidden knowledge.',
     affection: 0,
+    trust: 40,
     status: 'Analytical',
     avatar: 'book',
     color: 'bg-deep-indigo'
@@ -57,6 +62,7 @@ export const characters: Record<string, Character> = {
     title: 'Wild Huntress • Guardian of Borders',
     description: 'A fierce Nordic vampire with braided platinum hair and ice-blue eyes. Prefers wilderness to civilization, hunts supernatural threats to the coven.',
     affection: 0,
+    trust: 35,
     status: 'Wary',
     avatar: 'wolf',
     color: 'bg-frost-blue'
@@ -67,6 +73,7 @@ export const characters: Record<string, Character> = {
     title: 'Enchanting Socialite • Political Strategist',
     description: 'An Italian vampire with dark olive skin and emerald eyes. Master of social manipulation and political intrigue from her Renaissance court days.',
     affection: 0,
+    trust: 25,
     status: 'Calculating',
     avatar: 'crown',
     color: 'bg-emerald-green'
@@ -77,6 +84,7 @@ export const characters: Record<string, Character> = {
     title: 'Mystical Seer • Oracle of Futures',
     description: 'A mysterious vampire with silver-white hair and violet eyes that see beyond the veil. Practices ancient divination and prophetic magic.',
     affection: 0,
+    trust: 60,
     status: 'Enigmatic',
     avatar: 'crystal-ball',
     color: 'bg-mystic-purple'
@@ -87,6 +95,7 @@ export const characters: Record<string, Character> = {
     title: 'Tormented Artist • Eternal Muse',
     description: 'A haunted Russian vampire with raven-black hair and pale gray eyes. Creates dark masterpieces while struggling with the weight of immortal memories.',
     affection: 0,
+    trust: 55,
     status: 'Melancholic',
     avatar: 'paintbrush',
     color: 'bg-shadow-gray'
@@ -97,6 +106,7 @@ export const characters: Record<string, Character> = {
     title: 'The Gentle Shadow • Ancient Guardian',
     description: 'An ancient eldritch entity of living shadow and starlight who manifests as pools of darkness with glowing points of light. Despite their cosmic horror appearance, they are incredibly shy and deeply affectionate to those they trust.',
     affection: 0,
+    trust: 20,
     status: 'Timid',
     avatar: 'void',
     color: 'bg-void-purple'
