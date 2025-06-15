@@ -110,6 +110,11 @@ Changelog:
 - June 14, 2025. Added complex relationship dynamics, political factions, and character rivalries
 - June 14, 2025. Integrated trait-specific special choices with purple styling distinction
 - June 14, 2025. Created extensive backstories and secrets for all new vampire characters
+- June 15, 2025. Added Umbra - shy eldritch horror companion with starlight constellation form
+- June 15, 2025. Created developer mode story tree visualizer with scrollable navigation
+- June 15, 2025. Built Chapter 2 "Contentious Proposal" - major political conflict between Valentina and Isadora
+- June 15, 2025. Added advisory consultation scenes with Lilith and Celeste for informed decision-making
+- June 15, 2025. Implemented branching outcomes: revolutionary alliance, traditionalist victory, compromise, or neutrality
 ```
 
 ## User Preferences
