@@ -28,13 +28,13 @@ function StoryTreeDevContent() {
   const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set());
   const [location, navigate] = useLocation();
 
-  // Build the story tree structure
+  // Build the story tree structure - show all scenes from all chapters
   const storyTree = useMemo(() => {
     const allScenes = gameData.flatMap(chapter => chapter.scenes);
     const sceneMap = new Map(allScenes.map(scene => [scene.id, scene]));
     
     const buildTree = (sceneId: string, level: number = 0, visited: Set<string> = new Set()): TreeNode | null => {
-      if (visited.has(sceneId) || level > 8) return null; // Prevent infinite loops and limit depth
+      if (visited.has(sceneId) || level > 10) return null; // Prevent infinite loops and allow deeper nesting
       
       const scene = sceneMap.get(sceneId);
       if (!scene) return null;
@@ -61,7 +61,88 @@ function StoryTreeDevContent() {
       };
     };
 
-    return buildTree('arrival');
+    // Build trees organized by chapters
+    const chapterNodes: TreeNode[] = [];
+    
+    // Process each chapter
+    gameData.forEach((chapter, chapterIndex) => {
+      const chapterScenes: TreeNode[] = [];
+      const processedScenes = new Set<string>();
+      
+      // Build trees for each scene in the chapter
+      chapter.scenes.forEach(scene => {
+        if (!processedScenes.has(scene.id)) {
+          const sceneTree = buildTree(scene.id);
+          if (sceneTree) {
+            chapterScenes.push(sceneTree);
+            // Mark all scenes in this tree as processed
+            const markProcessed = (node: TreeNode) => {
+              processedScenes.add(node.id);
+              node.children.forEach(markProcessed);
+            };
+            markProcessed(sceneTree);
+          }
+        }
+      });
+      
+      // Create chapter node
+      if (chapterScenes.length > 0) {
+        chapterNodes.push({
+          id: `chapter_${chapterIndex}`,
+          title: `${chapter.title} (${chapterScenes.length} scenes)`,
+          text: [`Chapter ${chapterIndex + 1}: ${chapter.title}`],
+          choices: [],
+          children: chapterScenes,
+          level: 0
+        });
+      }
+    });
+    
+    // Find orphaned scenes (not in any chapter's scenes array)
+    const allChapterSceneIds = new Set(gameData.flatMap(c => c.scenes.map(s => s.id)));
+    const referencedSceneIds = new Set<string>();
+    
+    // Collect all scene IDs referenced in choices
+    allScenes.forEach(scene => {
+      scene.choices.forEach(choice => {
+        if (choice.nextScene) {
+          referencedSceneIds.add(choice.nextScene);
+        }
+      });
+    });
+    
+    // Find orphaned scenes
+    const orphanedScenes: TreeNode[] = [];
+    referencedSceneIds.forEach(sceneId => {
+      if (!allChapterSceneIds.has(sceneId) && sceneMap.has(sceneId)) {
+        const orphanTree = buildTree(sceneId);
+        if (orphanTree) {
+          orphanedScenes.push(orphanTree);
+        }
+      }
+    });
+    
+    // Add orphaned scenes as a separate chapter if any exist
+    if (orphanedScenes.length > 0) {
+      chapterNodes.push({
+        id: 'orphaned_scenes',
+        title: `Orphaned Scenes (${orphanedScenes.length} scenes)`,
+        text: ['Scenes referenced in choices but not in chapter definitions'],
+        choices: [],
+        children: orphanedScenes,
+        level: 0
+      });
+    }
+    
+    // Create a virtual root that contains all chapters
+    return {
+      id: 'root',
+      title: `Story Tree (${chapterNodes.length} chapters, ${allScenes.length} total scenes)`,
+      text: ['All story branches organized by chapters'],
+      choices: [],
+      children: chapterNodes,
+      level: -1
+    };
   }, []);
 
   const toggleExpanded = (nodeId: string) => {
@@ -175,6 +256,35 @@ function StoryTreeDevContent() {
                 className="text-xs"
               >
                 Expand All
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  // Find missing scenes
+                  const allScenes = gameData.flatMap(chapter => chapter.scenes);
+                  const sceneMap = new Map(allScenes.map(scene => [scene.id, scene]));
+                  const missing: string[] = [];
+                  
+                  allScenes.forEach(scene => {
+                    scene.choices.forEach(choice => {
+                      if (choice.nextScene && !sceneMap.has(choice.nextScene)) {
+                        if (!missing.includes(choice.nextScene)) {
+                          missing.push(choice.nextScene);
+                        }
+                      }
+                    });
+                  });
+                  
+                  if (missing.length > 0) {
+                    alert(`Missing scenes:\n${missing.join('\n')}`);
+                  } else {
+                    alert('No missing scenes found! All story paths are complete.');
+                  }
+                }}
+                className="text-xs"
+              >
+                Check Missing
               </Button>
             </div>
           </CardHeader>
