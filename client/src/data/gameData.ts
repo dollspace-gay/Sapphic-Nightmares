@@ -185,6 +185,24 @@ export const gameData: Chapter[] = [
             consequence: 'Appreciative response • Shows aesthetic appreciation',
             effects: [{ characterId: 'lilith', affectionChange: 10 }],
             nextScene: 'manor_appreciation'
+          },
+          {
+            id: 'probe_financial_arrangements',
+            text: '"I\'ll need to review all financial arrangements and rental agreements. As the new owner, I have certain legal obligations."',
+            consequence: 'Legal scrutiny • Threatens established privacy',
+            effects: [{ characterId: 'lilith', affectionChange: -5, trustChange: -12 }],
+            dangerLevel: 'medium',
+            secretsProbed: ['financial_secrecy'],
+            nextScene: 'financial_tension'
+          },
+          {
+            id: 'question_aunt_death',
+            text: '"I find it strange that Cordelia died so suddenly. The doctor said it was her heart, but she was in perfect health when I last saw her."',
+            consequence: 'Suspicion about death • Implies foul play',
+            effects: [{ characterId: 'lilith', affectionChange: -8, trustChange: -18 }],
+            dangerLevel: 'high',
+            secretsProbed: ['cordelia_death'],
+            nextScene: 'death_suspicion'
           }
         ]
       },
@@ -10308,6 +10326,142 @@ export const gameData: Chapter[] = [
             consequence: 'Patience sharing • Teaches mindfulness to others',
             effects: [{ characterId: 'seraphina', affectionChange: 60 }, { characterId: 'elena', affectionChange: 20 }],
             nextScene: 'memory_sharing'
+          }
+        ]
+      },
+      // Bad Ending Scenes - Trust System
+      {
+        id: 'multiple_hostility_bad_end',
+        title: 'The Coven\'s Wrath',
+        text: [
+          'Your relentless probing and accusations have finally pushed the coven beyond their breaking point. As you enter the grand hall, you find them all waiting - their eyes cold and predatory.',
+          '"You have tested our patience for the last time," Lilith says, her voice like winter ice. "We welcomed you into our sanctuary, and you repaid our hospitality with suspicion and betrayal."',
+          'Morgana steps forward, shadows writhing around her fingers. "Some mortals cannot be trusted with our secrets. They see only threats where we offer friendship."',
+          'You realize too late that these supernatural beings are not merely playing at being dangerous - they are apex predators, and you have cornered yourself with no escape.',
+          'The last thing you see are their eyes, glowing with an inhuman hunger you should have recognized from the beginning.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'game_over',
+            text: '[GAME OVER] - Your distrust has led to your doom.',
+            consequence: 'Fatal outcome • The coven eliminates the threat you posed',
+            effects: [],
+            nextScene: 'game_over_screen'
+          }
+        ]
+      },
+      {
+        id: 'lilith_hostility_bad_end',
+        title: 'The Leader\'s Judgment',
+        text: [
+          'Lilith stands alone in the candlelit study, her ancient eyes reflecting centuries of accumulated wisdom and wrath. Your constant questioning of her authority and probing into forbidden matters has finally crossed an unforgivable line.',
+          '"I have ruled this coven for over eight hundred years," she says quietly, her voice carrying the weight of ages. "I have protected these vampires through inquisitions, wars, and the rise of the modern world."',
+          'She approaches slowly, each step deliberate and final. "Your great-aunt understood the delicate balance required to maintain our existence. You... you see only puzzles to solve and secrets to expose."',
+          'Her hand moves faster than your eyes can follow. The last sensation you experience is the realization that some mysteries are meant to remain buried.',
+          'Ancient power brooks no challenge from mortal arrogance.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/library.png',
+        choices: [
+          {
+            id: 'game_over_lilith',
+            text: '[GAME OVER] - The ancient leader has rendered her final judgment.',
+            consequence: 'Fatal outcome • Lilith eliminates a threat to coven stability',
+            effects: [],
+            nextScene: 'game_over_screen'
+          }
+        ]
+      },
+      {
+        id: 'widespread_distrust_bad_end',
+        title: 'Exile from Paradise',
+        text: [
+          'The entire coven has gathered in the grand hall, their faces a mixture of disappointment and cold resolve. Your pattern of suspicion and probing has eroded any chance of belonging here.',
+          '"We had hoped," Celeste says sadly, closing an ancient tome with finality, "that Cordelia\'s blood would carry her wisdom. Instead, we find only paranoia and accusation."',
+          'Valentina shakes her head. "In all my centuries of fighting for justice, I have learned to distinguish between healthy caution and destructive suspicion. You embody the latter."',
+          'Lilith steps forward with a scroll already prepared. "By unanimous decision of the Ravencroft Coven, you are hereby exiled from these lands. You have until dawn to gather your belongings and leave forever."',
+          'Elena looks away as she adds quietly, "The manor will be sold. Find somewhere else to cast your shadows of doubt."',
+          'You realize you\'ve lost not just a home, but the chance to be part of something extraordinary - destroyed by your own inability to trust.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'accept_exile',
+            text: 'Accept the exile and leave Ravencroft Manor forever.',
+            consequence: 'Exile ending • Lost the chance for supernatural belonging',
+            effects: [],
+            nextScene: 'exile_ending'
+          }
+        ]
+      },
+      {
+        id: 'financial_tension',
+        title: 'Legal Complications',
+        text: [
+          'Lilith\'s expression grows noticeably cooler as she processes your legalistic approach. The warm welcome dissipates like morning mist.',
+          '"I see," she says carefully, her tone now measured and cautious. "You wish to treat this as a business transaction rather than... a homecoming."',
+          'She exchanges a meaningful glance with someone in the shadows behind her. "Very well. We shall provide you with whatever documentation satisfies your legal obligations. Though I confess, your aunt never required such... formalities."',
+          'The atmosphere has shifted palpably. Where there was warmth, now there is polite distance.',
+          '"Perhaps we should discuss these arrangements tomorrow, in daylight, when such matters seem more... appropriate."'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'insist_on_documents',
+            text: '"I appreciate your understanding. When can I expect to review the rental agreements and tax records?"',
+            consequence: 'Persistent legal pressure • Further erodes goodwill',
+            effects: [{ characterId: 'lilith', affectionChange: -3, trustChange: -8 }],
+            dangerLevel: 'medium',
+            nextScene: 'document_demand'
+          },
+          {
+            id: 'apologize_business_tone',
+            text: '"I apologize if I sounded cold. It\'s just that everything happened so suddenly with Cordelia\'s passing."',
+            consequence: 'Attempt to repair relations • Partial recovery',
+            effects: [{ characterId: 'lilith', affectionChange: 5, trustChange: 2 }],
+            nextScene: 'relationship_repair'
+          }
+        ]
+      },
+      {
+        id: 'death_suspicion',
+        title: 'Dangerous Accusations',
+        text: [
+          'The temperature in the room seems to drop ten degrees. Lilith\'s violet eyes narrow dangerously, and you hear what sounds like a sharp intake of breath from the shadows.',
+          '"Suspicion about Cordelia\'s death?" Lilith\'s voice is silk wrapped around steel. "That is a very serious accusation to level at people who cared for her deeply."',
+          'A figure emerges from the shadows - a tall woman with predatory grace and ice-cold eyes. "Perhaps," the newcomer says softly, "our new... landlord would prefer to discuss such matters with the local authorities instead of us."',
+          'Lilith raises a hand slightly, and the other woman steps back. "Forgive my companion. Raven becomes protective when family is... questioned. Tell me, what exactly are you implying?"',
+          'You realize you may have just accused a house full of supernatural beings of murder. The air crackles with dangerous tension.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'double_down_suspicion',
+            text: '"I\'m not implying anything. I\'m stating that I find the circumstances of her death suspicious and I want answers."',
+            consequence: 'Direct accusation • Severe trust damage to all',
+            effects: [
+              { characterId: 'lilith', affectionChange: -15, trustChange: -25 },
+              { characterId: 'raven', affectionChange: -20, trustChange: -30 },
+              { characterId: 'morgana', affectionChange: -10, trustChange: -20 }
+            ],
+            dangerLevel: 'lethal',
+            secretsProbed: ['murder_accusation'],
+            nextScene: 'accusation_escalation'
+          },
+          {
+            id: 'backtrack_carefully',
+            text: '"I... I\'m sorry. I\'m grieving and not thinking clearly. Of course you cared for her. I just... miss her terribly."',
+            consequence: 'Careful retreat • Minimal damage control',
+            effects: [
+              { characterId: 'lilith', affectionChange: -2, trustChange: -5 },
+              { characterId: 'raven', affectionChange: -5, trustChange: -8 }
+            ],
+            nextScene: 'grief_understanding'
           }
         ]
       }

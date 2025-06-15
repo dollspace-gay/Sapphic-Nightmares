@@ -101,6 +101,54 @@ function gameReducer(state: GameState, action: GameAction): GameState {
           );
         }
       }
+
+      // Check for dangerous trust levels and trigger bad endings
+      const hostileCharacters = Object.values(newState.characters).filter(char => char.trust <= 10);
+      const deeplyMistrustfulCharacters = Object.values(newState.characters).filter(char => char.trust <= 20);
+      
+      if (hostileCharacters.length >= 2) {
+        // Multiple characters are hostile - trigger immediate bad ending
+        newState.currentScene = 'multiple_hostility_bad_end';
+        newState.playerStats.health = 0;
+        return newState;
+      } else if (hostileCharacters.length === 1 && hostileCharacters[0].id === 'lilith') {
+        // Lilith specifically is hostile - leader's wrath bad ending
+        newState.currentScene = 'lilith_hostility_bad_end';
+        newState.playerStats.health = 0;
+        return newState;
+      } else if (deeplyMistrustfulCharacters.length >= 4) {
+        // Widespread distrust - exile bad ending
+        newState.currentScene = 'widespread_distrust_bad_end';
+        return newState;
+      }
+
+      // Track secrets probed for cumulative distrust
+      if (choice.secretsProbed) {
+        choice.secretsProbed.forEach(secret => {
+          if (!newState.flags[`secret_${secret}_probed`]) {
+            newState.flags[`secret_${secret}_probed`] = true;
+            // Apply trust penalties for probing dangerous secrets
+            Object.keys(newState.characters).forEach(charId => {
+              if (newState.characters[charId].trust > 30) {
+                newState.characters[charId].trust = Math.max(
+                  20, 
+                  newState.characters[charId].trust - Math.floor(Math.random() * 8 + 3)
+                );
+              }
+            });
+          }
+        });
+      }
+
+      // Store choice in history with trust tracking
+      newState.choiceHistory.push({
+        sceneId: newState.currentScene,
+        choiceId: choice.id,
+        choiceText: choice.text,
+        consequence: choice.consequence,
+        timestamp: Date.now(),
+        characterEffects: choice.effects
+      });
       
       // Progress to next scene if specified
       if (choice.nextScene) {
