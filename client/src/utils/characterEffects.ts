@@ -375,10 +375,10 @@ export function generateTraitSpecificChoices(character: PlayerCharacter | undefi
   if (hasPlayerBoon(character, 'psychic')) {
     specialChoices.push({
       id: 'psychic_insight',
-      text: '[Psychic] Focus your supernatural senses to read the room\'s emotional atmosphere.',
-      consequence: 'Psychic insight • Reveals hidden tensions and supernatural presences',
+      text: '[Psychic] Focus your supernatural senses to read the area before proceeding.',
+      consequence: 'Psychic insight • Gathers information then returns to door choices',
       effects: [],
-      nextScene: 'psychic_revelation'
+      nextScene: 'psychic_door_insight'
     });
   }
   
@@ -386,10 +386,10 @@ export function generateTraitSpecificChoices(character: PlayerCharacter | undefi
   if (hasPlayerBoon(character, 'bloodsight')) {
     specialChoices.push({
       id: 'blood_sight_analysis',
-      text: '[Blood Sight] Examine the supernatural nature of those present.',
-      consequence: 'Blood sight • Reveals true supernatural nature and power levels',
+      text: '[Blood Sight] Use your rare gift to examine supernatural presences before entering.',
+      consequence: 'Blood sight • Detects supernatural nature then returns to door choices',
       effects: [],
-      nextScene: 'blood_sight_revelation'
+      nextScene: 'blood_sight_door_analysis'
     });
   }
   
