@@ -165,6 +165,9 @@ Changelog:
 - June 15, 2025. Fixed ES module compatibility issues in standalone launcher for cross-platform deployment
 - June 15, 2025. Created updated distribution packages for Windows, macOS, Linux, and Universal platforms
 - June 15, 2025. Verified standalone launcher functionality and HTTP server operation for offline gameplay
+- June 15, 2025. Rebuilt enhanced standalone distribution with all new features (Chapter 2, journal system, achievements, recovery actions, character backstories)
+- June 15, 2025. Consolidated duplicate distribution folders - removed redundant 'standalone' folder, kept 'game-distribution' as primary
+- June 15, 2025. Created comprehensive standalone package 'Eternal-Hearts-Ravencroft-Romance-Enhanced.tar.gz' with cross-platform support
 ```
 
 ## User Preferences
