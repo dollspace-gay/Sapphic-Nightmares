@@ -4209,6 +4209,705 @@ export const gameData: Chapter[] = [
             nextScene: 'danger_discussion'
           }
         ]
+      },
+      // Continue adding missing scenes - Batch 4
+      {
+        id: 'cordelia_choice_story',
+        title: 'How Cordelia Chose You',
+        text: [
+          'Lilith\'s eyes soften as she recalls Cordelia\'s final conversations.',
+          '"She spoke of you often in her last months. \'There\'s something special about her,\' she would say. \'A strength that doesn\'t boast, a kindness that doesn\'t judge.\'"',
+          '"Cordelia had what she called \'the Sight\' - not supernatural, but an ability to see people\'s true nature. She saw in you someone who could love us as we are."',
+          '"\'She won\'t try to change us or save us,\' Cordelia said. \'She\'ll simply accept us and help us be better versions of ourselves.\'"'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'feel_honored',
+            text: '"I\'m honored she saw that in me. I hope I can live up to her faith."',
+            consequence: 'Humble acceptance • Shows appreciation for trust',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }, { characterId: 'seraphina', affectionChange: 15 }],
+            nextScene: 'legacy_acceptance'
+          },
+          {
+            id: 'ask_about_sight',
+            text: '"Tell me more about this \'Sight\' she had. Was it supernatural?"',
+            consequence: 'Curious about abilities • Shows interest in understanding',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'celeste', affectionChange: 12 }],
+            nextScene: 'cordelia_psychic_legacy'
+          },
+          {
+            id: 'express_determination',
+            text: '"I want to be the person she believed I could be. Will you help me?"',
+            consequence: 'Seeks growth • Shows commitment to becoming worthy',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }, { characterId: 'morgana', affectionChange: 15 }],
+            nextScene: 'family_appreciation'
+          }
+        ]
+      },
+      {
+        id: 'morgana_emotional_connection',
+        title: 'Understanding the Choice',
+        text: [
+          'Morgana\'s expression becomes deeply introspective as she continues her story.',
+          '"I chose to remain human, but with knowledge. He offered to erase my memories, to let me return to ignorance, but I refused."',
+          '"I wanted to remember the wonder, the terror, the beauty of that otherworld. I chose to live as a bridge between realms - mortal, but aware."',
+          '"When I eventually died naturally, centuries later, I was offered vampirism as a reward for my service. By then, I understood the weight of the choice."'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'admire_her_courage',
+            text: '"That took incredible courage - choosing knowledge over comfortable ignorance."',
+            consequence: 'Respects difficult choices • Values truth over comfort',
+            effects: [{ characterId: 'morgana', affectionChange: 28 }, { characterId: 'seraphina', affectionChange: 15 }],
+            nextScene: 'philosophical_connection'
+          },
+          {
+            id: 'relate_to_bridge_role',
+            text: '"I think I understand that bridge feeling. That\'s what I\'m becoming here, isn\'t it?"',
+            consequence: 'Personal insight • Recognizes parallel experience',
+            effects: [{ characterId: 'morgana', affectionChange: 32 }, { characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'mutual_understanding'
+          },
+          {
+            id: 'ask_about_service',
+            text: '"What kind of service did you provide during those centuries?"',
+            consequence: 'Interested in details • Wants to understand her journey',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }],
+            nextScene: 'morgana_teaching_path'
+          }
+        ]
+      },
+      {
+        id: 'morgana_artistic_bond',
+        title: 'The Artist\'s Soul',
+        text: [
+          'Morgana\'s face lights up with genuine enthusiasm.',
+          '"Yes, I am. Painting has been my constant companion through the centuries. It\'s how I process emotion, how I capture beauty, how I make sense of existence."',
+          '"I\'ve painted the same sunset for five hundred years, and each time I discover something new about light, about color, about the way beauty touches the soul."',
+          '"Would you... would you like to see my studio? I rarely show my work to others, but something tells me you\'d understand."'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'eagerly_accept',
+            text: '"I would love to see your work. Art that spans centuries must be extraordinary."',
+            consequence: 'Enthusiastic interest • Shows appreciation for artistic dedication',
+            effects: [{ characterId: 'morgana', affectionChange: 35 }],
+            nextScene: 'artistic_appreciation'
+          },
+          {
+            id: 'ask_about_evolution',
+            text: '"How has your art evolved over the centuries? What changes with immortal perspective?"',
+            consequence: 'Deep artistic question • Shows understanding of craft',
+            effects: [{ characterId: 'morgana', affectionChange: 30 }, { characterId: 'elena', affectionChange: 15 }],
+            nextScene: 'creative_process_explanation'
+          },
+          {
+            id: 'share_art_appreciation',
+            text: '"I\'ve always believed art is how we touch something eternal. It must mean even more to you."',
+            consequence: 'Philosophical art appreciation • Connects art to immortality',
+            effects: [{ characterId: 'morgana', affectionChange: 38 }, { characterId: 'seraphina', affectionChange: 18 }],
+            nextScene: 'spiritual_connection'
+          }
+        ]
+      },
+      {
+        id: 'morgana_teaching_path',
+        title: 'Guardian of Knowledge',
+        text: [
+          'Morgana\'s expression becomes serious as she reflects on her mortal years.',
+          '"I became a teacher, a guide for others who encountered the supernatural. I helped people understand that not all otherworldly beings were threats."',
+          '"I prevented witch hunts, protected innocent vampires, mediated between human and supernatural communities. It was dangerous work, but necessary."',
+          '"I learned that knowledge without wisdom is useless, but wisdom without courage is meaningless. You need all three to truly help others."'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'express_admiration',
+            text: '"You were protecting both sides. That\'s exactly what an Anchor should do."',
+            consequence: 'Understands role parallel • Shows insight into purpose',
+            effects: [{ characterId: 'morgana', affectionChange: 30 }, { characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'legacy_continuation'
+          },
+          {
+            id: 'ask_about_wisdom',
+            text: '"How do you develop the wisdom to know when to act and when to wait?"',
+            consequence: 'Seeks practical wisdom • Values experience',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }, { characterId: 'celeste', affectionChange: 15 }],
+            nextScene: 'patience_training'
+          },
+          {
+            id: 'inquire_about_courage',
+            text: '"What gave you the courage to take such risks for others?"',
+            consequence: 'Moral curiosity • Interested in motivation',
+            effects: [{ characterId: 'morgana', affectionChange: 28 }, { characterId: 'valentina', affectionChange: 12 }],
+            nextScene: 'courage_recognition'
+          }
+        ]
+      },
+      {
+        id: 'seraphina_philosophical_bond',
+        title: 'Ethics Across Realms',
+        text: [
+          'Seraphina\'s eyes brighten with intellectual engagement.',
+          '"Exactly! Morality isn\'t bound by species or realm. Good and evil are choices, not conditions of birth or transformation."',
+          '"I\'ve seen humans commit atrocities that would shame demons, and I\'ve known vampires whose compassion rivals angels. What matters is how we choose to use our power."',
+          '"The question isn\'t what you are, but what you do with what you are. That\'s why your perspective is so valuable to us."'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'discuss_power_responsibility',
+            text: '"With great power comes great responsibility - that applies to everyone here."',
+            consequence: 'Ethical insight • Shows understanding of moral obligation',
+            effects: [{ characterId: 'seraphina', affectionChange: 32 }, { characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'guardian_oath'
+          },
+          {
+            id: 'ask_about_fallen_perspective',
+            text: '"What unique perspective does falling from grace give you on morality?"',
+            consequence: 'Deep philosophical question • Shows interest in her journey',
+            effects: [{ characterId: 'seraphina', affectionChange: 35 }],
+            nextScene: 'divine_understanding'
+          },
+          {
+            id: 'relate_human_experience',
+            text: '"Humans face the same struggle - we all have the capacity for good and evil."',
+            consequence: 'Common ground • Shows shared moral experience',
+            effects: [{ characterId: 'seraphina', affectionChange: 30 }, { characterId: 'morgana', affectionChange: 15 }],
+            nextScene: 'mutual_understanding'
+          }
+        ]
+      },
+      {
+        id: 'seraphina_love_capacity',
+        title: 'The Courage of Love',
+        text: [
+          'Seraphina\'s expression softens with deep emotion.',
+          '"Thank you. That choice led me to understand something profound - love requires the possibility of loss to have meaning."',
+          '"Angels love perfectly but safely, without risk. Mortals love imperfectly but courageously, despite inevitable loss. I chose to love like a mortal."',
+          '"Now I understand both kinds of love - the eternal and the ephemeral. It makes every connection precious beyond measure."'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'appreciate_sacrifice',
+            text: '"You gave up perfection to gain something more beautiful - the ability to love with your whole heart."',
+            consequence: 'Deep appreciation • Understands the value of her sacrifice',
+            effects: [{ characterId: 'seraphina', affectionChange: 40 }, { characterId: 'morgana', affectionChange: 20 }],
+            nextScene: 'spiritual_connection'
+          },
+          {
+            id: 'ask_about_connection',
+            text: '"Does that mean every connection you make now carries extra weight?"',
+            consequence: 'Thoughtful question • Shows understanding of implications',
+            effects: [{ characterId: 'seraphina', affectionChange: 35 }],
+            nextScene: 'bond_strength_explanation'
+          },
+          {
+            id: 'offer_mortal_love',
+            text: '"Then maybe I can offer you something unique - the intensity of mortal love freely given."',
+            consequence: 'Romantic possibility • Offers unique gift',
+            effects: [{ characterId: 'seraphina', affectionChange: 45 }],
+            nextScene: 'love_development_path'
+          }
+        ]
+      },
+      // Essential connection and outcome scenes - Batch 5
+      {
+        id: 'seraphina_purpose_recognition',
+        title: 'Finding Purpose in Choice',
+        text: [
+          'Seraphina considers your question with the gravity it deserves.',
+          '"Regret? Sometimes. But then I remember what I gained - the ability to truly empathize with suffering, to understand the weight of moral choices."',
+          '"I can help mortals and immortals alike because I\'ve walked in both worlds. My fall gave me purpose: to bridge the gap between divine perfection and mortal struggle."',
+          '"Every choice has consequences, but some consequences become gifts if you have the wisdom to use them well."'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'appreciate_wisdom',
+            text: '"That\'s beautiful - turning loss into purpose, pain into wisdom."',
+            consequence: 'Philosophical appreciation • Shows understanding of growth',
+            effects: [{ characterId: 'seraphina', affectionChange: 35 }],
+            nextScene: 'spiritual_connection'
+          },
+          {
+            id: 'ask_about_helping',
+            text: '"How do you help bridge that gap? What does that look like in practice?"',
+            consequence: 'Practical interest • Wants to understand her work',
+            effects: [{ characterId: 'seraphina', affectionChange: 30 }, { characterId: 'celeste', affectionChange: 10 }],
+            nextScene: 'seraphina_healer_introduction'
+          },
+          {
+            id: 'relate_to_purpose',
+            text: '"I think that\'s what I\'m meant to do too - bridge different worlds."',
+            consequence: 'Personal insight • Recognizes shared mission',
+            effects: [{ characterId: 'seraphina', affectionChange: 40 }, { characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'mutual_recognition'
+          }
+        ]
+      },
+      {
+        id: 'bond_strength_explanation',
+        title: 'The Weight of Immortal Bonds',
+        text: [
+          'Seraphina nods thoughtfully, her expression becoming more intimate.',
+          '"Yes, exactly. When you know you have eternity, every moment of connection becomes both more precious and more carefully considered."',
+          '"Immortal relationships develop layers of depth that mortals rarely experience - centuries of shared growth, of seeing each other through countless changes."',
+          '"But they also carry the weight of permanence. When you bond with someone for eternity, every choice echoes through endless time."'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'express_fascination',
+            text: '"That sounds both beautiful and terrifying. The depth must be incredible."',
+            consequence: 'Appreciates complexity • Shows understanding of immortal love',
+            effects: [{ characterId: 'seraphina', affectionChange: 30 }, { characterId: 'morgana', affectionChange: 15 }],
+            nextScene: 'love_development_path'
+          },
+          {
+            id: 'ask_about_mortality_advantage',
+            text: '"What do mortal connections offer that immortal ones might lack?"',
+            consequence: 'Curious about mortality • Values mortal perspective',
+            effects: [{ characterId: 'seraphina', affectionChange: 28 }, { characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'mortal_love_path'
+          },
+          {
+            id: 'wonder_about_choice',
+            text: '"How do you choose who to bond with when the stakes are so high?"',
+            consequence: 'Deep personal question • Shows interest in her heart',
+            effects: [{ characterId: 'seraphina', affectionChange: 35 }],
+            nextScene: 'sacrifice_understanding'
+          }
+        ]
+      },
+      {
+        id: 'love_development_path',
+        title: 'The Growth of Affection',
+        text: [
+          'The conversation has shifted to something deeper, more personal. You sense that connections are forming that go beyond simple acceptance.',
+          'Morgana speaks softly: "There\'s something beautiful about watching love grow naturally, without force or expectation."',
+          'Seraphina adds: "The best relationships - mortal or immortal - develop when two souls recognize something in each other that complements their own journey."',
+          'You feel the weight of possibility in the air, the sense that choices made here will echo through time.'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'embrace_possibility',
+            text: '"I feel something growing here too. Something I didn\'t expect but welcome."',
+            consequence: 'Opens to romance • Shows emotional courage',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }, { characterId: 'seraphina', affectionChange: 25 }],
+            nextScene: 'romance_deepening'
+          },
+          {
+            id: 'appreciate_patience',
+            text: '"I\'m grateful for the patience to let things develop naturally."',
+            consequence: 'Values organic development • Shows emotional wisdom',
+            effects: [{ characterId: 'morgana', affectionChange: 20 }, { characterId: 'seraphina', affectionChange: 20 }],
+            nextScene: 'mutual_recognition'
+          },
+          {
+            id: 'focus_on_friendship',
+            text: '"Right now, I\'m most interested in building strong friendships with everyone."',
+            consequence: 'Friendship focus • Values platonic bonds',
+            effects: [{ characterId: 'morgana', affectionChange: 15 }, { characterId: 'seraphina', affectionChange: 15 }, { characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'individual_connections'
+          }
+        ]
+      },
+      {
+        id: 'mutual_understanding',
+        title: 'Recognition Between Souls',
+        text: [
+          'A moment of profound understanding passes between you and the assembled vampires.',
+          'Morgana smiles warmly: "Yes, you understand. You\'re becoming a bridge, just as I once was."',
+          'Lilith nods approvingly: "Cordelia chose well. You have the heart for this work."',
+          'You sense that you\'ve passed some invisible test, proven yourself worthy not through grand gestures but through genuine empathy and understanding.'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'commit_to_bridge_role',
+            text: '"I want to be the best bridge I can be - connecting your world with mine."',
+            consequence: 'Role commitment • Shows dedication to purpose',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }, { characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'sanctuary_commitment'
+          },
+          {
+            id: 'ask_about_learning',
+            text: '"Will you teach me? I want to learn how to do this right."',
+            consequence: 'Seeks guidance • Shows humility and eagerness',
+            effects: [{ characterId: 'morgana', affectionChange: 30 }, { characterId: 'celeste', affectionChange: 15 }],
+            nextScene: 'structured_education'
+          },
+          {
+            id: 'express_gratitude',
+            text: '"Thank you for seeing the potential in me. I won\'t let you down."',
+            consequence: 'Shows appreciation • Commits to excellence',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }, { characterId: 'morgana', affectionChange: 20 }],
+            nextScene: 'trust_established'
+          }
+        ]
+      },
+      {
+        id: 'sanctuary_commitment',
+        title: 'The Sacred Promise',
+        text: [
+          'The atmosphere becomes more formal as Lilith steps forward.',
+          '"Then let us make this official. You accept the role of Anchor, with all its responsibilities and privileges?"',
+          '"You swear to protect our secrets, advocate for our needs, and serve as our voice in the mortal world?"',
+          'The weight of centuries seems to press down on this moment. You understand that your next words will bind you to something larger than yourself.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'make_solemn_vow',
+            text: '"I swear it. I will be your Anchor, your advocate, your voice. You have my solemn promise."',
+            consequence: 'Sacred commitment • Makes binding oath',
+            effects: [{ characterId: 'lilith', affectionChange: 35 }, { characterId: 'valentina', affectionChange: 20 }, { characterId: 'isadora', affectionChange: 20 }],
+            nextScene: 'sacred_vow_sealed'
+          },
+          {
+            id: 'add_personal_touch',
+            text: '"I swear it, and more - you\'re not just my charges, you\'re my family now."',
+            consequence: 'Emotional commitment • Promises familial bond',
+            effects: [{ characterId: 'lilith', affectionChange: 40 }, { characterId: 'morgana', affectionChange: 25 }, { characterId: 'umbra', affectionChange: 20 }],
+            nextScene: 'family_appreciation'
+          },
+          {
+            id: 'acknowledge_weight',
+            text: '"I understand the gravity of this promise. I swear to honor Cordelia\'s legacy and earn your trust."',
+            consequence: 'Solemn understanding • Shows respect for tradition',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }, { characterId: 'isadora', affectionChange: 25 }],
+            nextScene: 'legacy_continuation'
+          }
+        ]
+      },
+      {
+        id: 'individual_connections',
+        title: 'Getting to Know Each Soul',
+        text: [
+          'Over the following hours, you have the opportunity to speak with each member of the coven individually.',
+          'Each conversation reveals new depths - Elena\'s struggle with isolation, Raven\'s protective instincts, Luna\'s prophetic burdens, Valentina\'s revolutionary passion.',
+          'You begin to understand that each vampire has their own story, their own pain, their own dreams for the future.',
+          'Cordelia was right - the key isn\'t seeing them as vampires, but as individuals who happen to be vampires.'
+        ],
+        choices: [
+          {
+            id: 'focus_on_elena',
+            text: 'Spend more time with Elena, who seems to need connection most.',
+            consequence: 'Compassionate focus • Helps the isolated',
+            effects: [{ characterId: 'elena', affectionChange: 30 }],
+            nextScene: 'elena_isolation_bridge'
+          },
+          {
+            id: 'engage_with_valentina',
+            text: 'Discuss Valentina\'s revolutionary ideas in depth.',
+            consequence: 'Political engagement • Shows interest in change',
+            effects: [{ characterId: 'valentina', affectionChange: 25 }],
+            nextScene: 'valentina_war_stories'
+          },
+          {
+            id: 'learn_from_all',
+            text: 'Try to spend equal time getting to know everyone.',
+            consequence: 'Balanced approach • Values all equally',
+            effects: [
+              { characterId: 'elena', affectionChange: 15 },
+              { characterId: 'valentina', affectionChange: 15 },
+              { characterId: 'raven', affectionChange: 15 },
+              { characterId: 'luna', affectionChange: 15 }
+            ],
+            nextScene: 'coven_hierarchy_revealed'
+          }
+        ]
+      },
+      {
+        id: 'umbra_grateful_response',
+        title: 'A Shy Acknowledgment',
+        text: [
+          'Umbra\'s form brightens noticeably as you wave back, the starlight within their shadowy form twinkling more brightly.',
+          'They seem to gain a little confidence from your friendly gesture, their form becoming slightly more solid and defined.',
+          'Lilith smiles at the interaction. "Umbra has been with us for only a few decades. They\'re still learning how to interact with others."',
+          'Umbra makes a soft sound like distant wind chimes, which you somehow understand as a expression of gratitude.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'encourage_further',
+            text: 'Make another encouraging gesture, perhaps a thumbs up.',
+            consequence: 'Continued encouragement • Builds confidence in the shy',
+            effects: [{ characterId: 'umbra', affectionChange: 20 }],
+            nextScene: 'umbra_gains_confidence'
+          },
+          {
+            id: 'ask_about_communication',
+            text: 'Ask Lilith: "How does Umbra usually communicate?"',
+            consequence: 'Practical interest • Wants to understand communication',
+            effects: [{ characterId: 'umbra', affectionChange: 15 }, { characterId: 'lilith', affectionChange: 8 }],
+            nextScene: 'eldritch_nature_explained'
+          },
+          {
+            id: 'give_space',
+            text: 'Give Umbra space but continue to include them with warm glances.',
+            consequence: 'Respectful distance • Shows understanding of shyness',
+            effects: [{ characterId: 'umbra', affectionChange: 18 }],
+            nextScene: 'umbra_appreciates_patience'
+          }
+        ]
+      },
+      // Additional critical scenes - Batch 6
+      {
+        id: 'sacrifice_understanding',
+        title: 'The Cost of Eternal Choice',
+        text: [
+          'Seraphina\'s expression becomes deeply contemplative.',
+          '"You choose carefully, with full knowledge of what you\'re committing to. Every immortal bond requires sacrifice - of independence, of the possibility of other paths."',
+          '"But when you find someone whose soul resonates with yours across centuries, the sacrifice becomes a gift. You give up infinite possibility for infinite depth."',
+          '"The question isn\'t whether the sacrifice is worth it, but whether you\'re brave enough to make it."'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'express_courage',
+            text: '"I think I could be that brave, for the right person."',
+            consequence: 'Shows romantic courage • Open to deep commitment',
+            effects: [{ characterId: 'seraphina', affectionChange: 35 }],
+            nextScene: 'romance_deepening'
+          },
+          {
+            id: 'appreciate_depth',
+            text: '"The idea of infinite depth with someone... that\'s beautiful."',
+            consequence: 'Values deep connection • Appreciates immortal love',
+            effects: [{ characterId: 'seraphina', affectionChange: 30 }, { characterId: 'morgana', affectionChange: 15 }],
+            nextScene: 'spiritual_connection'
+          },
+          {
+            id: 'ask_about_recognition',
+            text: '"How do you know when you\'ve found that soul resonance?"',
+            consequence: 'Seeks understanding • Wants to recognize true connection',
+            effects: [{ characterId: 'seraphina', affectionChange: 32 }],
+            nextScene: 'mutual_recognition'
+          }
+        ]
+      },
+      {
+        id: 'romance_deepening',
+        title: 'The Dawn of Something More',
+        text: [
+          'The air between you and certain members of the coven has shifted into something charged with possibility.',
+          'Morgana\'s eyes hold yours with newfound intensity. "I feel it too - something growing between us that goes beyond friendship."',
+          'Seraphina steps closer, her presence both comforting and electric. "The heart knows what it knows, regardless of mortality or immortality."',
+          'You sense you\'re at a crossroads where choices will determine not just alliances, but the shape of love itself.'
+        ],
+        character: characters.morgana,
+        choices: [
+          {
+            id: 'embrace_morgana_connection',
+            text: 'Focus your romantic attention on Morgana.',
+            consequence: 'Romantic choice • Commits to artistic soul connection',
+            effects: [{ characterId: 'morgana', affectionChange: 40 }, { characterId: 'seraphina', affectionChange: -5 }],
+            nextScene: 'morgana_hope'
+          },
+          {
+            id: 'embrace_seraphina_connection',
+            text: 'Focus your romantic attention on Seraphina.',
+            consequence: 'Romantic choice • Commits to fallen angel connection',
+            effects: [{ characterId: 'seraphina', affectionChange: 40 }, { characterId: 'morgana', affectionChange: -5 }],
+            nextScene: 'heaven_memories'
+          },
+          {
+            id: 'explore_both_connections',
+            text: '"I\'m drawn to both of you. Is it possible to explore these feelings without choosing immediately?"',
+            consequence: 'Polyamorous possibility • Keeps options open',
+            effects: [{ characterId: 'morgana', affectionChange: 25 }, { characterId: 'seraphina', affectionChange: 25 }],
+            nextScene: 'creative_partnership'
+          },
+          {
+            id: 'step_back_for_now',
+            text: '"These feelings are intense. I need time to understand them before making any commitments."',
+            consequence: 'Cautious approach • Values careful consideration',
+            effects: [{ characterId: 'morgana', affectionChange: 15 }, { characterId: 'seraphina', affectionChange: 15 }],
+            nextScene: 'contemplation_time'
+          }
+        ]
+      },
+      {
+        id: 'spiritual_connection',
+        title: 'Souls in Harmony',
+        text: [
+          'A profound sense of spiritual connection washes over you. In this moment, mortal and immortal souls seem to touch something eternal.',
+          'Seraphina\'s presence feels both grounding and transcendent. "This is what I hoped for when I chose to fall - genuine connection that honors both earthly and divine aspects of existence."',
+          'You feel as though you\'re experiencing a glimpse of what love might look like when freed from the constraints of single lifetimes.',
+          'The connection feels both deeply personal and somehow universal - love as a force that transcends individual existence.'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'embrace_transcendence',
+            text: '"This feels like touching something sacred - love as a universal force."',
+            consequence: 'Spiritual insight • Recognizes love\'s transcendent nature',
+            effects: [{ characterId: 'seraphina', affectionChange: 45 }, { characterId: 'umbra', affectionChange: 20 }],
+            nextScene: 'divine_understanding'
+          },
+          {
+            id: 'appreciate_balance',
+            text: '"You\'ve found the perfect balance between divine and earthly love."',
+            consequence: 'Appreciates her journey • Understands her achievement',
+            effects: [{ characterId: 'seraphina', affectionChange: 38 }],
+            nextScene: 'purpose_revelation'
+          },
+          {
+            id: 'offer_grounding',
+            text: '"Let me be your anchor to the earthly side of love."',
+            consequence: 'Romantic offer • Proposes complementary partnership',
+            effects: [{ characterId: 'seraphina', affectionChange: 42 }],
+            nextScene: 'mutual_protection_bond'
+          }
+        ]
+      },
+      {
+        id: 'legacy_continuation',
+        title: 'Carrying Forward Cordelia\'s Work',
+        text: [
+          'Lilith\'s expression fills with deep satisfaction as she sees you embracing Cordelia\'s legacy.',
+          '"Yes, this is exactly what she hoped for. Not just someone to replace her, but someone to carry her work forward and make it your own."',
+          '"Cordelia believed that each Anchor should bring their own gifts to the role. She was curious about what unique perspective you would offer."',
+          '"Now I see it - you have her compassion but with your own strength, her wisdom but with fresh insight."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'commit_to_growth',
+            text: '"I want to honor her foundation while building something new together."',
+            consequence: 'Balanced approach • Respects past while embracing future',
+            effects: [{ characterId: 'lilith', affectionChange: 35 }, { characterId: 'celeste', affectionChange: 20 }],
+            nextScene: 'sanctuary_responsibilities'
+          },
+          {
+            id: 'ask_about_unique_gifts',
+            text: '"What unique gifts do you think I bring to this role?"',
+            consequence: 'Self-reflection • Seeks understanding of personal value',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }],
+            nextScene: 'courage_recognition'
+          },
+          {
+            id: 'express_determination',
+            text: '"I\'m determined to be worthy of the trust both you and Cordelia placed in me."',
+            consequence: 'Strong commitment • Shows dedication to excellence',
+            effects: [{ characterId: 'lilith', affectionChange: 40 }, { characterId: 'isadora', affectionChange: 20 }],
+            nextScene: 'guardian_oath'
+          }
+        ]
+      },
+      {
+        id: 'family_appreciation',
+        title: 'The Bonds of Chosen Family',
+        text: [
+          'Your declaration of familial love creates a wave of profound emotion throughout the room.',
+          'Lilith\'s ancient eyes shine with unshed tears. "Family. Yes, that\'s exactly what we are - not bound by blood, but by choice and love."',
+          'Morgana steps forward impulsively and embraces you. "Welcome home, sister."',
+          'One by one, the others approach - even shy Umbra extends a tendril of shadow in what you understand is their version of a hug.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'embrace_all',
+            text: 'Open your arms to embrace as many as possible.',
+            consequence: 'Emotional openness • Shows joy in family connection',
+            effects: [
+              { characterId: 'lilith', affectionChange: 25 },
+              { characterId: 'morgana', affectionChange: 30 },
+              { characterId: 'umbra', affectionChange: 35 },
+              { characterId: 'elena', affectionChange: 25 }
+            ],
+            nextScene: 'new_community'
+          },
+          {
+            id: 'express_gratitude',
+            text: '"Thank you for welcoming me so completely. This feels like coming home."',
+            consequence: 'Grateful appreciation • Shows emotional fulfillment',
+            effects: [{ characterId: 'lilith', affectionChange: 30 }, { characterId: 'seraphina', affectionChange: 20 }],
+            nextScene: 'sanctuary_awakening'
+          },
+          {
+            id: 'make_family_vow',
+            text: '"I promise to protect this family as fiercely as you\'ve protected each other."',
+            consequence: 'Protective commitment • Shows fierce family loyalty',
+            effects: [{ characterId: 'lilith', affectionChange: 35 }, { characterId: 'raven', affectionChange: 25 }],
+            nextScene: 'guardian_training'
+          }
+        ]
+      },
+      {
+        id: 'umbra_friendship_begins',
+        title: 'Kindness to the Shy',
+        text: [
+          'Your gentle approach clearly means a great deal to Umbra. Their form becomes more defined, and you can make out what might be a face within the swirling shadows.',
+          'They make a sound like distant music - hauntingly beautiful and clearly meant as a greeting.',
+          'Lilith translates softly: "They\'re saying thank you for not being afraid."',
+          'Umbra extends a tendril of shadow toward you, stopping just short of contact, clearly asking permission.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'extend_hand',
+            text: 'Gently extend your hand toward the shadow tendril.',
+            consequence: 'Brave acceptance • Shows trust in the unknown',
+            effects: [{ characterId: 'umbra', affectionChange: 35 }],
+            nextScene: 'umbra_reveals_true_self'
+          },
+          {
+            id: 'speak_to_umbra',
+            text: '"You don\'t need to thank me, Umbra. Fear has no place in friendship."',
+            consequence: 'Direct kindness • Establishes friendship foundation',
+            effects: [{ characterId: 'umbra', affectionChange: 30 }],
+            nextScene: 'umbra_mutual_discovery'
+          },
+          {
+            id: 'ask_about_their_nature',
+            text: '"Could you tell me about yourself, Umbra? I\'d love to understand."',
+            consequence: 'Genuine interest • Shows desire to know them',
+            effects: [{ characterId: 'umbra', affectionChange: 32 }],
+            nextScene: 'eldritch_nature_explained'
+          }
+        ]
+      },
+      {
+        id: 'magical_education',
+        title: 'Understanding the Supernatural',
+        text: [
+          'Celeste leads you to the library where ancient tomes and modern research blend seamlessly.',
+          '"The supernatural world operates by different rules than the mortal one," she explains. "Understanding these rules isn\'t just academic - it\'s survival."',
+          '"We\'ll start with the basics: different species, their abilities and limitations, how to recognize threats, and how to navigate supernatural politics."',
+          'The scope of knowledge seems vast, but Celeste\'s systematic approach makes it feel manageable.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'focus_on_safety',
+            text: '"I want to prioritize learning about threats and safety measures."',
+            consequence: 'Safety-conscious • Prioritizes protection',
+            effects: [{ characterId: 'celeste', affectionChange: 20 }, { characterId: 'raven', affectionChange: 15 }],
+            nextScene: 'danger_discussion'
+          },
+          {
+            id: 'study_vampire_lore',
+            text: '"I\'d like to understand vampire society and culture in depth."',
+            consequence: 'Cultural interest • Wants to understand her new family',
+            effects: [{ characterId: 'celeste', affectionChange: 25 }, { characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'coven_hierarchy_revealed'
+          },
+          {
+            id: 'learn_anchor_history',
+            text: '"Could we study the history of other Anchors? I want to learn from precedent."',
+            consequence: 'Historical approach • Values learning from experience',
+            effects: [{ characterId: 'celeste', affectionChange: 30 }],
+            nextScene: 'cordelia_research_revealed'
+          }
+        ]
       }
     ]
   }
