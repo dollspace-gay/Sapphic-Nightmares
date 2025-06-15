@@ -173,6 +173,8 @@ Changelog:
 - June 15, 2025. Resolved npm dependency warnings by updating vulnerable packages and removing deprecated dependencies
 - June 15, 2025. Rebuilt clean standalone distribution eliminating electron, pkg vulnerabilities and deprecated module warnings
 - June 15, 2025. Created 'Eternal-Hearts-Ravencroft-Romance-Enhanced-Clean.tar.gz' with resolved dependency issues
+- June 15, 2025. Addressed npm audit vulnerabilities - remaining issues are in drizzle-kit development dependencies only
+- June 15, 2025. Created final secure standalone distribution 'Eternal-Hearts-Ravencroft-Romance-Final.tar.gz' with clean production build
 ```
 
 ## User Preferences
