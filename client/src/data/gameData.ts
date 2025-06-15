@@ -157,9 +157,10 @@ export const gameData: Chapter[] = [
         id: 'lilith_greeting',
         title: 'A Gracious Welcome',
         text: [
-          'Your respectful knock echoes through the grand entrance hall. After a moment, the heavy door swings open to reveal an elegant woman with piercing violet eyes and silver-streaked hair.',
-          '"Welcome to Ravencroft Manor," she says with a warm smile that doesn\'t quite reach her ancient eyes. "I am Lilith. Your great-aunt spoke of you often - though I suspect she left out some rather important details about her... houseguests."',
-          'She steps aside gracefully, gesturing for you to enter. The interior is breathtaking - gothic architecture melded with modern comforts, all bathed in the warm glow of candles and crystal chandeliers.',
+          'Your respectful knock echoes through the grand entrance hall. After a moment, the heavy door swings open to reveal a woman of timeless elegance whose very presence commands attention.',
+          'She stands tall and regal, with silver-streaked raven hair swept back in an intricate chignon that frames her aristocratic features. Her skin is pale as moonlight, unblemished despite the wisdom etched in the fine lines around her piercing violet eyes - eyes that seem to hold centuries of secrets.',
+          '"Welcome to Ravencroft Manor," she says, her voice carrying the musical cadence of old nobility. Her lips curve in a warm smile that doesn\'t quite reach those ancient eyes. "I am Lilith. Your great-aunt spoke of you often - though I suspect she left out some rather important details about her... houseguests."',
+          'She moves with fluid grace as she steps aside, her long burgundy velvet dress rustling softly. Every gesture speaks of power held in check, of someone accustomed to being obeyed without question.',
           '"Please, come in. We have much to discuss, and the night is still young. Your aunt was very dear to us, and we hope to understand what her legacy means to you."'
         ],
         character: characters.lilith,
@@ -748,7 +749,9 @@ export const gameData: Chapter[] = [
           'Lilith\'s lips curve into a knowing smile. "Ah, you have a good ear. That would be Morgana. She\'s... complicated." There\'s an edge to her voice that suggests a complex history.',
           'She leads you up the grand staircase, the music growing louder with each step. The melody weaves through minor keys like silk through shadows, speaking of loss and longing.',
           'You reach a set of ornate double doors, slightly ajar. Through the gap, you can see a figure seated at an antique grand piano, her dark hair cascading like a waterfall as she plays.',
-          'Lilith pushes the door open softly. "Morgana, we have a guest." The music stops abruptly, and the woman at the piano turns. Her silver eyes seem to pierce straight through you, as if reading secrets you didn\'t know you had.'
+          'Lilith pushes the door open softly. "Morgana, we have a guest." The music stops abruptly, and the woman at the piano turns.',
+          'Morgana is breathtakingly beautiful in an otherworldly way - her long midnight-black hair falls in loose waves past her shoulders, contrasting sharply with her porcelain skin that seems to glow in the moonlight. Her silver eyes are large and expressive, holding depths of artistic melancholy and centuries of creative passion.',
+          'She wears a flowing black dress that seems to shimmer with its own inner darkness, and her slender fingers - still poised above the piano keys - are adorned with antique silver rings. When she moves, there\'s a fluid grace that speaks of someone who sees the world as an endless canvas of possibility.'
         ],
         character: characters.morgana,
         background: '/backgrounds/music-room.png',
@@ -781,9 +784,11 @@ export const gameData: Chapter[] = [
         title: 'Guardian Angel',
         text: [
           'Before Lilith can respond to your admission of fear, a gentle voice speaks from behind you both. "Fear is wisdom in the face of the unknown."',
-          'You turn to see a woman descending the staircase like moonlight made manifest. Her platinum hair seems to glow with its own inner light, and when she moves, you could swear you catch glimpses of something shimmering behind her - like wings folded against her back.',
+          'You turn to see a woman descending the staircase like moonlight made manifest. Seraphina is ethereally beautiful, with platinum blonde hair that falls in soft waves to her waist, seeming to glow with its own inner light. Her skin is luminous and flawless, with an otherworldly radiance that speaks of divine origins.',
+          'Her eyes are the most striking feature - pale blue like winter sky, filled with ancient wisdom and infinite compassion. She wears a flowing white dress that moves like silk in a gentle breeze, and when she moves, you catch glimpses of something shimmering behind her - translucent wings that fold against her back like captured starlight.',
+          'There\'s an aura of peace and protection around her that makes you feel instantly safe. Her very presence seems to calm the shadows and brighten the room, as if she carries a piece of heaven within her.',
           'Lilith\'s expression grows complex. "Seraphina. I didn\'t expect you to..." She pauses, then continues more formally. "This is our guest. She\'s just learning about our world."',
-          'Seraphina approaches with fluid grace, her pale blue eyes filled with warmth and something that might be recognition. "You\'re safe here," she says softly, and somehow you believe her completely. "I won\'t let any harm come to you."'
+          'Seraphina approaches with fluid grace, her melodious voice carrying the weight of centuries of kindness. "You\'re safe here," she says softly, and somehow you believe her completely. "I won\'t let any harm come to you."'
         ],
         character: characters.seraphina,
         background: '/backgrounds/grand-hall.png',
