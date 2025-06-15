@@ -307,14 +307,33 @@ function StoryTreeDevContent() {
                       background: rgba(0,0,0,0.5); z-index: 999;
                     `;
                     
-                    dialog.innerHTML = `
-                      <h3 style="margin: 0 0 15px 0; color: #333;">Missing Scenes (${missing.length})</h3>
-                      <div style="background: #f5f5f5; padding: 10px; border-radius: 4px; margin-bottom: 15px;">
-                        <pre style="margin: 0; white-space: pre-wrap; user-select: text;">${missing.join('\n')}</pre>
-                      </div>
-                      <button id="copyBtn" style="margin-right: 10px; padding: 8px 16px; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer;">Copy to Clipboard</button>
-                      <button id="closeBtn" style="padding: 8px 16px; background: #666; color: white; border: none; border-radius: 4px; cursor: pointer;">Close</button>
-                    `;
+                    // Create elements safely without innerHTML
+                    const title = document.createElement('h3');
+                    title.style.cssText = 'margin: 0 0 15px 0; color: #333;';
+                    title.textContent = `Missing Scenes (${missing.length})`;
+                    
+                    const contentDiv = document.createElement('div');
+                    contentDiv.style.cssText = 'background: #f5f5f5; padding: 10px; border-radius: 4px; margin-bottom: 15px;';
+                    
+                    const preElement = document.createElement('pre');
+                    preElement.style.cssText = 'margin: 0; white-space: pre-wrap; user-select: text;';
+                    preElement.textContent = missing.join('\n');
+                    contentDiv.appendChild(preElement);
+                    
+                    const copyBtn = document.createElement('button');
+                    copyBtn.id = 'copyBtn';
+                    copyBtn.style.cssText = 'margin-right: 10px; padding: 8px 16px; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer;';
+                    copyBtn.textContent = 'Copy to Clipboard';
+                    
+                    const closeBtn = document.createElement('button');
+                    closeBtn.id = 'closeBtn';
+                    closeBtn.style.cssText = 'padding: 8px 16px; background: #666; color: white; border: none; border-radius: 4px; cursor: pointer;';
+                    closeBtn.textContent = 'Close';
+                    
+                    dialog.appendChild(title);
+                    dialog.appendChild(contentDiv);
+                    dialog.appendChild(copyBtn);
+                    dialog.appendChild(closeBtn);
                     
                     document.body.appendChild(overlay);
                     document.body.appendChild(dialog);
