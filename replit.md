@@ -175,6 +175,8 @@ Changelog:
 - June 15, 2025. Created 'Eternal-Hearts-Ravencroft-Romance-Enhanced-Clean.tar.gz' with resolved dependency issues
 - June 15, 2025. Addressed npm audit vulnerabilities - remaining issues are in drizzle-kit development dependencies only
 - June 15, 2025. Created final secure standalone distribution 'Eternal-Hearts-Ravencroft-Romance-Final.tar.gz' with clean production build
+- June 15, 2025. Updated comprehensive README documentation including all 10 companions, enhanced features, and current game systems
+- June 15, 2025. Added MIT License to project for open-source distribution and legal clarity
 ```
 
 ## User Preferences
