@@ -47,7 +47,7 @@ export function Achievements() {
   const renderAchievementCard = (achievement: any) => {
     const unlocked = isUnlocked(achievement.id);
     const unlockDate = getUnlockDate(achievement.id);
-    const CategoryIcon = categoryIcons[achievement.category];
+    const CategoryIcon = categoryIcons[achievement.category as keyof typeof categoryIcons];
 
     return (
       <Card 
@@ -71,7 +71,7 @@ export function Achievements() {
                 </h3>
                 <Badge 
                   variant="outline" 
-                  className={`text-xs ${categoryColors[achievement.category]}`}
+                  className={`text-xs ${categoryColors[achievement.category as keyof typeof categoryColors] || 'text-purple-300'}`}
                 >
                   <CategoryIcon className="w-3 h-3 mr-1" />
                   {achievement.category}
@@ -129,7 +129,7 @@ export function Achievements() {
                 
                 return (
                   <div key={category} className="space-y-2">
-                    <CategoryIcon className={`w-6 h-6 mx-auto ${color}`} />
+                    <CategoryIcon className={`w-6 h-6 mx-auto ${categoryColors[category as keyof typeof categoryColors]}`} />
                     <div className="text-xs font-medium capitalize">{category}</div>
                     <div className="text-xs text-gray-400">
                       {categoryUnlocked} / {categoryAchievements.length}
