@@ -1,4 +1,4 @@
-import { Heart, Users, MapPin, X } from 'lucide-react';
+import { Heart, Users, MapPin, X, Shield, AlertTriangle } from 'lucide-react';
 import { useGame } from '@/contexts/GameContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
@@ -14,13 +14,27 @@ interface SidebarProps {
 export function Sidebar({ onClose }: SidebarProps) {
   const { gameState } = useGame();
 
-  const getRelationshipStatus = (affection: number) => {
-    if (affection >= 80) return { status: 'Devoted', color: 'bg-pink-500' };
-    if (affection >= 60) return { status: 'Smitten', color: 'bg-red-500' };
-    if (affection >= 40) return { status: 'Interested', color: 'bg-orange-500' };
-    if (affection >= 20) return { status: 'Curious', color: 'bg-yellow-500' };
-    if (affection >= 0) return { status: 'Neutral', color: 'bg-gray-500' };
-    return { status: 'Distant', color: 'bg-blue-500' };
+  const getRelationshipStatus = (affection: number, trust: number) => {
+    // Trust-based danger states override normal affection states
+    if (trust <= 10) return { status: 'Hostile', color: 'bg-red-700', icon: AlertTriangle };
+    if (trust <= 20) return { status: 'Deeply Suspicious', color: 'bg-red-600', icon: AlertTriangle };
+    if (trust <= 30) return { status: 'Distrustful', color: 'bg-orange-600', icon: AlertTriangle };
+    if (trust <= 40) return { status: 'Wary', color: 'bg-yellow-600', icon: Shield };
+    
+    // Normal affection-based states when trust is adequate
+    if (affection >= 80) return { status: 'Deeply in Love', color: 'bg-pink-500', icon: Heart };
+    if (affection >= 60) return { status: 'Smitten', color: 'bg-red-500', icon: Heart };
+    if (affection >= 40) return { status: 'Interested', color: 'bg-orange-500', icon: Heart };
+    if (affection >= 20) return { status: 'Curious', color: 'bg-yellow-500', icon: Heart };
+    return { status: 'Neutral', color: 'bg-gray-500', icon: Users };
+  };
+
+  const getTrustColor = (trust: number) => {
+    if (trust <= 10) return 'text-red-500';
+    if (trust <= 20) return 'text-orange-500';
+    if (trust <= 40) return 'text-yellow-500';
+    if (trust <= 60) return 'text-blue-500';
+    return 'text-green-500';
   };
 
   return (
@@ -57,7 +71,7 @@ export function Sidebar({ onClose }: SidebarProps) {
           </CardHeader>
           <CardContent className="space-y-3">
             {Object.values(gameState.characters).map((character) => {
-              const { status, color } = getRelationshipStatus(character.affection);
+              const { status, color, icon: StatusIcon } = getRelationshipStatus(character.affection, character.trust);
               return (
                 <div key={character.id} className="space-y-2">
                   <div className="flex items-center justify-between">
@@ -65,11 +79,16 @@ export function Sidebar({ onClose }: SidebarProps) {
                       <div className={`w-3 h-3 rounded-full ${character.color}`} />
                       <span className="text-white text-sm font-medium">{character.name}</span>
                     </div>
-                    <Badge variant="outline" className={`text-xs px-2 py-0.5 ${color} border-current`}>
+                    <Badge variant="outline" className={`text-xs px-2 py-0.5 ${color} border-current flex items-center gap-1`}>
+                      <StatusIcon className="w-3 h-3" />
                       {status}
                     </Badge>
                   </div>
                   <div className="space-y-1">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-gray-400">Affection</span>
+                      <span className="text-pink-400">{character.affection}/100</span>
+                    </div>
                     <Progress 
                       value={character.affection} 
                       max={100}
@@ -78,7 +97,16 @@ export function Sidebar({ onClose }: SidebarProps) {
                         background: `linear-gradient(to right, ${character.color.replace('bg-', 'rgb(var(--')})))`
                       }}
                     />
-                    <p className="text-xs text-gray-400">{character.status}</p>
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-gray-400">Trust</span>
+                      <span className={getTrustColor(character.trust)}>{character.trust}/100</span>
+                    </div>
+                    <Progress 
+                      value={character.trust} 
+                      max={100}
+                      className="h-1.5"
+                    />
+                    <p className="text-xs text-gray-400">{character.title}</p>
                   </div>
                 </div>
               );

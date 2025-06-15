@@ -79,28 +79,37 @@ export function ChoicePanel() {
               <Button
                 key={choice.id}
                 onClick={() => makeChoice(choice)}
-                className={`w-full text-left ${
-                  isTraitChoice 
-                    ? 'bg-purple-800/70 hover:bg-purple-600/50 border-purple-500/30' 
-                    : 'bg-gray-800/70 hover:bg-red-600/50 border-red-500/30'
-                } rounded-lg p-4 transition-all duration-300 choice-hover group h-auto`}
+                className={getChoiceStyles(choice)}
                 variant="outline"
               >
                 <div className="flex items-start space-x-3">
-                  <div className={`w-6 h-6 ${
-                    isTraitChoice ? 'bg-purple-600' : 'bg-red-600'
-                  } rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:pulse-glow`}>
-                    <span className="text-xs font-bold text-white">{index + 1}</span>
+                  <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:pulse-glow ${
+                    choice.dangerLevel === 'lethal' ? 'bg-red-700' :
+                    choice.dangerLevel === 'high' ? 'bg-orange-700' :
+                    choice.dangerLevel === 'medium' ? 'bg-yellow-700' :
+                    isTraitChoice ? 'bg-purple-600' : 'bg-gray-600'
+                  }`}>
+                    {choice.dangerLevel ? (
+                      <IconComponent className="h-4 w-4 text-white" />
+                    ) : (
+                      <span className="text-xs font-bold text-white">{index + 1}</span>
+                    )}
                   </div>
                   <div className="flex-1 text-left">
                     <p className="font-story text-white leading-relaxed">
                       {choice.text}
                     </p>
                     <p className={`text-xs mt-2 font-ui ${
+                      choice.dangerLevel === 'lethal' ? 'text-red-300' :
+                      choice.dangerLevel === 'high' ? 'text-orange-300' :
+                      choice.dangerLevel === 'medium' ? 'text-yellow-300' :
                       isTraitChoice ? 'text-purple-300' : 'text-gray-300'
                     }`}>
                       <IconComponent className={`inline-block mr-1 h-3 w-3 ${
-                        isTraitChoice ? 'text-purple-400' : 'text-red-400'
+                        choice.dangerLevel === 'lethal' ? 'text-red-400' :
+                        choice.dangerLevel === 'high' ? 'text-orange-400' :
+                        choice.dangerLevel === 'medium' ? 'text-yellow-400' :
+                        isTraitChoice ? 'text-purple-400' : 'text-gray-400'
                       }`} />
                       {choice.consequence}
                     </p>
