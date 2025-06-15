@@ -608,6 +608,7 @@ export const gameData: Chapter[] = [
           'The weight of her words settles between you. This is no casual flirtation, but something far deeper and more significant than you had imagined possible.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'reciprocate_feeling',
@@ -682,6 +683,7 @@ export const gameData: Chapter[] = [
           'Seraphina watches the exchange with interest, while Lilith\'s expression is unreadable. You sense that Morgana rarely opens up to strangers, making this moment significant.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'ask_about_past',
@@ -716,6 +718,7 @@ export const gameData: Chapter[] = [
           'The revelation hangs in the air. Morgana\'s playing has stopped entirely, and even Lilith seems to pay closer attention to this conversation.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_fall',
@@ -750,6 +753,7 @@ export const gameData: Chapter[] = [
           'You feel the weight of this moment. This is more than romance - it\'s a declaration that could reshape your entire existence.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/library.png',
         choices: [
           {
             id: 'accept_love_mortal',
@@ -784,6 +788,7 @@ export const gameData: Chapter[] = [
           'Her grip tightens slightly. "And it can only be given by one who loves you completely, at the moment when your love is absolute and your choice is made with full knowledge of what you sacrifice and what you gain."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'want_to_learn_more',
@@ -818,6 +823,7 @@ export const gameData: Chapter[] = [
           'The music fills the room with an otherworldly presence. Lilith and Seraphina listen with rapt attention, but their eyes are on you, watching your reaction to Morgana\'s most personal expression.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'moved_to_tears',
@@ -852,6 +858,7 @@ export const gameData: Chapter[] = [
           'Her wings become visible for a moment - magnificent, white-gold feathers that seem to hold their own light. "I chose love over duty, and I\'ve never regretted it, even when it cost me everything I thought I knew about myself."'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'admire_her_choice',
@@ -886,6 +893,7 @@ export const gameData: Chapter[] = [
           'Her finger traces ancient symbols. "It is not immortality given lightly. Many who attempt it fail because they lack the depth of connection required. The bond must be strong enough to anchor the soul through death and rebirth."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/library.png',
         choices: [
           {
             id: 'understand_sacrifice',
@@ -920,6 +928,7 @@ export const gameData: Chapter[] = [
           'The moon illuminates her profile, and you realize this is what happiness looks like on someone who has lived for centuries - rare, precious, and transformative in its purity.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/garden-courtyard.png',
         choices: [
           {
             id: 'romantic_declaration',
@@ -987,6 +996,7 @@ export const gameData: Chapter[] = [
           'Lilith watches this exchange with interest, while the air between you and Morgana seems charged with artistic understanding. "Few have ever truly comprehended my music on first hearing," Morgana continues. "Perhaps you are more than you appear."'
         ],
         character: characters.morgana,
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'share_artistic_soul',
@@ -1056,6 +1066,7 @@ export const gameData: Chapter[] = [
           'Lilith smiles knowingly. "I thought you might appreciate that about her. She sees beyond the surface of things."'
         ],
         character: characters.morgana,
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'acknowledge_compliment',
@@ -1090,6 +1101,7 @@ export const gameData: Chapter[] = [
           'Her wings fold closer to her body, but remain visible. "I chose to fall rather than abandon those I had grown to love. And in falling, I found my true purpose."'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'admire_sacrifice',
@@ -1124,6 +1136,7 @@ export const gameData: Chapter[] = [
           'Around you, the very air seems to shimmer with protective energy, and you feel safer than you have in your entire life.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'reciprocate_protection',
@@ -1192,6 +1205,7 @@ export const gameData: Chapter[] = [
           'Her voice grows warmer. "Your great-aunt understood this. She helped us create something unprecedented - a sanctuary where supernatural beings could exist peacefully, contributing rather than consuming."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'ask_about_cordelia_role',
@@ -1292,6 +1306,7 @@ export const gameData: Chapter[] = [
           'Her voice drops to a whisper. "Most importantly, you will gain the ability to love with the intensity of centuries, to protect what matters with supernatural power, and to create beauty that outlasts civilizations."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'reaffirm_choice',
@@ -1327,6 +1342,7 @@ export const gameData: Chapter[] = [
           'The offer carries weight beyond mere collaboration - this is an invitation into the most sacred part of her immortal existence.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_creative_bond',
@@ -1361,6 +1377,7 @@ export const gameData: Chapter[] = [
           'Her wings spread wide, magnificent and glowing, as if your words have restored something fundamental to her nature.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_her_truth',
@@ -1496,6 +1513,7 @@ export const gameData: Chapter[] = [
           'She looks at you directly. "You inspire me because you represent both the beauty and the brevity that gives meaning to art."'
         ],
         character: characters.morgana,
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'philosophical_depth',
@@ -1530,6 +1548,7 @@ export const gameData: Chapter[] = [
           '"You feel it, don\'t you?" she whispers. "The weight of divine purpose transformed into something more personal, more real." Her wing curves slightly, as if embracing your touch. "This is what love truly is - choosing connection over perfection."'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'understand_sacrifice',
@@ -1564,6 +1583,7 @@ export const gameData: Chapter[] = [
           'Her silver eyes find yours. "Until tonight, I had resigned myself to being the sole guardian of all that beautiful loss. But perhaps... perhaps some memories are meant to be shared."'
         ],
         character: characters.morgana,
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'offer_to_share_burden',
@@ -1598,6 +1618,7 @@ export const gameData: Chapter[] = [
           'Her pale blue eyes meet yours. "And yet... I have never regretted it. Every loss pales beside what I gained - the ability to truly love, to choose compassion over duty, to be more than what I was created to be."'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'admire_growth',
@@ -1632,6 +1653,7 @@ export const gameData: Chapter[] = [
           'Her voice grows warm with affection. "But more than that, she loved us - not as exotic curiosities or dangerous creatures to be managed, but as individuals deserving of friendship and respect. She was the first mortal to see us as more than our supernatural natures."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'honor_legacy',
@@ -1667,6 +1689,7 @@ export const gameData: Chapter[] = [
           'Her gaze returns to you. "The bond we shared transcended the typical boundaries between mortal and immortal. She saw past our supernatural nature to the individuals beneath, and we loved her fierce, kind heart in return."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'understand_bond',
@@ -1701,6 +1724,7 @@ export const gameData: Chapter[] = [
           '"Cordelia had the same gift. It\'s part of what made her such an effective guardian and mediator between our realm and the mortal world."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_gift',
@@ -1735,6 +1759,7 @@ export const gameData: Chapter[] = [
           '"What we hope is that you might choose to continue that partnership. But unlike legal contracts, this arrangement must be built on genuine care and willing participation from all parties."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/gothic-manor-entrance.png',
         choices: [
           {
             id: 'express_interest',
@@ -1769,6 +1794,7 @@ export const gameData: Chapter[] = [
           'Her dark eyes hold yours steadily. "We hope you might choose a similar path, but we will not pressure or coerce you. The choice must be yours alone, made with full knowledge and genuine willingness."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_with_wonder',
@@ -1803,6 +1829,7 @@ export const gameData: Chapter[] = [
           'Her voice is patient, giving you time to process. "Your great-aunt helped us maintain that peaceful existence by serving as our connection to the human world. She was our anchor, our protector, and our dear friend."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_nature',
@@ -2460,6 +2487,7 @@ export const gameData: Chapter[] = [
           '"Your great-aunt discovered our secret within days but chose understanding over fear. She became our anchor to the mortal world, our protector, and our dear friend."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_with_wonder',
@@ -2494,6 +2522,7 @@ export const gameData: Chapter[] = [
           'There\'s no threat in her voice, but you sense the weight of centuries behind her words.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'honor_arrangement',
@@ -2528,6 +2557,7 @@ export const gameData: Chapter[] = [
           'You sense this could be an opportunity to learn more about both the house and its mysterious inhabitants.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/gothic-manor-entrance.png',
         choices: [
           {
             id: 'accept_tour_eagerly',
@@ -2630,6 +2660,7 @@ export const gameData: Chapter[] = [
           'Lilith notices your distraction. "Ah," she says with gentle amusement, "it seems Umbra has taken an interest in you. They\'re quite harmless, despite appearances."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'approach_umbra_gently',
@@ -2664,6 +2695,7 @@ export const gameData: Chapter[] = [
           'The shadows edge slightly closer, still maintaining a respectful distance. "The others... they accepted me, but you are the first to speak gently from the beginning."'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'reassure_umbra',
@@ -2698,6 +2730,7 @@ export const gameData: Chapter[] = [
           'Lilith shakes her head. "You disturb nothing, dear one. You are as much a part of this family as any of us."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'welcome_umbra',
@@ -2732,6 +2765,7 @@ export const gameData: Chapter[] = [
           'There\'s such genuine warmth in their cosmic voice that you feel your heart ache for their ancient loneliness.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_loneliness',
@@ -2767,6 +2801,7 @@ export const gameData: Chapter[] = [
           'There\'s vulnerability in their cosmic voice, a trembling hope that they barely dare to express.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'affirm_friendship_completely',
@@ -2801,6 +2836,7 @@ export const gameData: Chapter[] = [
           'You sense this is a turning point - Umbra is offering to share their cosmic nature with you completely.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'eager_for_wonders',
@@ -2835,6 +2871,7 @@ export const gameData: Chapter[] = [
           '"If you find beauty in what I am, perhaps... perhaps I need not hide so much of myself."'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'encourage_authenticity',
@@ -2875,6 +2912,7 @@ export const gameData: Chapter[] = [
           'Valentina leans forward, her revolutionary fervor barely contained. Across the table, Isadora\'s calculating gaze suggests she anticipates conflict. The air practically crackles with unspoken disagreement.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'observe_carefully',
@@ -2909,6 +2947,7 @@ export const gameData: Chapter[] = [
           'Her hands shake as she meets each person\'s eyes. "We sit here in luxury while our siblings die in despair. I cannot - I will not - remain comfortable while they suffer."'
         ],
         character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'emotional_connection',
@@ -2950,6 +2989,7 @@ export const gameData: Chapter[] = [
           'Her gaze settles on you with calculated concern. "Our newest member has inherited such tremendous responsibility. Perhaps we shouldn\'t burden her with... additional complexities... quite so soon?"'
         ],
         character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'challenge_with_respect',
@@ -2991,6 +3031,7 @@ export const gameData: Chapter[] = [
           'She settles into a chair across from you. "As Anchor, your opinion carries more weight than you might realize. The coven will follow where you lead, for better or worse."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/bedroom.png',
         choices: [
           {
             id: 'ask_lilith_preference',
@@ -3126,6 +3167,7 @@ export const gameData: Chapter[] = [
           'Lilith continues, "Your voice carries weight precisely because you see us without centuries of baggage. But with that influence comes responsibility."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_responsibility',
@@ -3160,6 +3202,7 @@ export const gameData: Chapter[] = [
           '"The question isn\'t what\'s safe or what\'s right - it\'s what you can live with, and what the coven can survive."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'choose_growth_over_safety',
@@ -3194,6 +3237,7 @@ export const gameData: Chapter[] = [
           '"The data suggests this approach has a 67% success rate with only 12% exposure risk. It\'s the optimal balance between Valentina\'s compassion and Isadora\'s caution."'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_phased_approach',
@@ -3229,6 +3273,7 @@ export const gameData: Chapter[] = [
           'Lilith nods slowly. "The path is chosen. Now we must walk it carefully." You sense that your decision has fundamentally altered the coven\'s dynamics and your place within it.'
         ],
         character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'plan_immediate_action',
@@ -3263,6 +3308,7 @@ export const gameData: Chapter[] = [
           'The coven settles into an uneasy quiet. You\'ve chosen safety, but you can\'t shake the feeling that some opportunities, once missed, may never return.'
         ],
         character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'strengthen_defenses',
@@ -3297,6 +3343,7 @@ export const gameData: Chapter[] = [
           'Isadora remains skeptical but concedes. "If we proceed with extreme caution and maintain strict oversight, perhaps the risks can be managed."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'establish_oversight_committee',
@@ -3331,6 +3378,7 @@ export const gameData: Chapter[] = [
           'The vote is close but ultimately favors maintaining the status quo, leaving Valentina\'s proposal tabled indefinitely.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_diminished_role',
@@ -3398,6 +3446,7 @@ export const gameData: Chapter[] = [
           'The weight of their collective gaze settles upon you. This moment will define how the coven sees you going forward.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'demonstrate_courage',
@@ -3432,6 +3481,7 @@ export const gameData: Chapter[] = [
           '"Tell me - are you prepared to learn truths that most humans spend their entire lives never knowing?"'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ready_for_truth',
@@ -3466,6 +3516,7 @@ export const gameData: Chapter[] = [
           'Lilith\'s expression softens slightly. "Respect and humility. Cordelia chose her successor well, it seems."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_cordelia_role',
@@ -3501,6 +3552,7 @@ export const gameData: Chapter[] = [
           'Your gracious handling of an awkward moment seems to have earned you some respect among the assembled vampires.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'express_curiosity',
@@ -3535,6 +3587,7 @@ export const gameData: Chapter[] = [
           'Your grounded approach seems to resonate with the more practical-minded members of the coven.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_daily_life',
@@ -3569,6 +3622,7 @@ export const gameData: Chapter[] = [
           'The weight of inheritance feels heavier as you realize this connection spans generations.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_bloodline',
@@ -3603,6 +3657,7 @@ export const gameData: Chapter[] = [
           '"As our Anchor, you become the bridge between our world and yours. In return, you receive our protection, our knowledge, and our friendship."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_limitations',
@@ -3637,6 +3692,7 @@ export const gameData: Chapter[] = [
           '"This manor has been... modified over the centuries to serve needs beyond those of ordinary humans."'
         ],
         character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_modifications',
@@ -3672,6 +3728,7 @@ export const gameData: Chapter[] = [
           '"In return, we offered her knowledge of the supernatural world, protection from its dangers, and friendship that spans centuries."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_hunters',
@@ -3706,6 +3763,7 @@ export const gameData: Chapter[] = [
           'You sense this is more than just acceptance - it\'s the beginning of a profound transformation in your life.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_next_steps',
@@ -3740,6 +3798,7 @@ export const gameData: Chapter[] = [
           'The demonstration is brief but undeniable. The supernatural is real, and you\'re standing in a room full of it.'
         ],
         character: characters.raven,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_proof',
@@ -3774,6 +3833,7 @@ export const gameData: Chapter[] = [
           '"You can choose to be part of it as our Anchor, or... we will need to discuss alternatives."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_alternatives',
@@ -3808,6 +3868,7 @@ export const gameData: Chapter[] = [
           'Your practical approach seems to resonate with those who value concrete contributions over romantic notions.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'offer_modern_knowledge',
@@ -3843,6 +3904,7 @@ export const gameData: Chapter[] = [
           '"By the end, she wasn\'t just our Anchor. She was family. That\'s what made her loss so... difficult."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'offer_similar_commitment',
@@ -3877,6 +3939,7 @@ export const gameData: Chapter[] = [
           'Her patience seems to ease some of the pressure you\'ve been feeling.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_patience',
@@ -3911,6 +3974,7 @@ export const gameData: Chapter[] = [
           '"Eventually, he offered me a choice - remain human and forget, or join him in immortality. I chose... differently than most expect."'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_choice',
@@ -3945,6 +4009,7 @@ export const gameData: Chapter[] = [
           'Her questions hang in the air, challenging you to think beyond simple acceptance or rejection.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'engage_philosophically',
@@ -3979,6 +4044,7 @@ export const gameData: Chapter[] = [
           'Umbra waves tentatively, their form shifting like liquid night sky, clearly wanting to be friendly but unsure how.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'wave_back_gently',
@@ -4013,6 +4079,7 @@ export const gameData: Chapter[] = [
           'Her reassurance helps calm the overwhelming nature of everything you\'ve discovered.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_cordelia_temperament',
@@ -4048,6 +4115,7 @@ export const gameData: Chapter[] = [
           '"Now I exist between realms, neither fully divine nor wholly earthbound. It\'s a lonely existence, but one I chose freely."'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'express_admiration',
@@ -4082,6 +4150,7 @@ export const gameData: Chapter[] = [
           'Their words make you consider what you might be offering these ancient beings - not just legitimacy, but the gift of mortal perspective on love and connection.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_mortal_perspective',
@@ -4116,6 +4185,7 @@ export const gameData: Chapter[] = [
           'You sense this patience is itself a gift - showing you the kind of consideration you could expect as part of this unusual family.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'explore_manor_alone',
@@ -4150,6 +4220,7 @@ export const gameData: Chapter[] = [
           '"\'Love them as they are,\' she said, \'not as what they represent.\' That\'s what made her special."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'commit_to_individual_focus',
@@ -4184,6 +4255,7 @@ export const gameData: Chapter[] = [
           'You sense that while there\'s still much to learn and prove, you\'ve successfully taken the first crucial steps toward acceptance.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_next_steps',
@@ -4218,6 +4290,7 @@ export const gameData: Chapter[] = [
           'Her systematic approach makes the overwhelming task of learning about the supernatural world feel manageable and exciting.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'express_enthusiasm',
@@ -4253,6 +4326,7 @@ export const gameData: Chapter[] = [
           '"\'She won\'t try to change us or save us,\' Cordelia said. \'She\'ll simply accept us and help us be better versions of ourselves.\'"'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'feel_honored',
@@ -4287,6 +4361,7 @@ export const gameData: Chapter[] = [
           '"When I eventually died naturally, centuries later, I was offered vampirism as a reward for my service. By then, I understood the weight of the choice."'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'admire_her_courage',
@@ -4321,6 +4396,7 @@ export const gameData: Chapter[] = [
           '"Would you... would you like to see my studio? I rarely show my work to others, but something tells me you\'d understand."'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'eagerly_accept',
@@ -4355,6 +4431,7 @@ export const gameData: Chapter[] = [
           '"I learned that knowledge without wisdom is useless, but wisdom without courage is meaningless. You need all three to truly help others."'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'express_admiration',
@@ -4389,6 +4466,7 @@ export const gameData: Chapter[] = [
           '"The question isn\'t what you are, but what you do with what you are. That\'s why your perspective is so valuable to us."'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'discuss_power_responsibility',
@@ -4423,6 +4501,7 @@ export const gameData: Chapter[] = [
           '"Now I understand both kinds of love - the eternal and the ephemeral. It makes every connection precious beyond measure."'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_sacrifice',
@@ -4458,6 +4537,7 @@ export const gameData: Chapter[] = [
           '"Every choice has consequences, but some consequences become gifts if you have the wisdom to use them well."'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_wisdom',
@@ -4492,6 +4572,7 @@ export const gameData: Chapter[] = [
           '"But they also carry the weight of permanence. When you bond with someone for eternity, every choice echoes through endless time."'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/bedroom.png',
         choices: [
           {
             id: 'express_fascination',
@@ -4526,6 +4607,7 @@ export const gameData: Chapter[] = [
           'You feel the weight of possibility in the air, the sense that choices made here will echo through time.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_possibility',
@@ -4560,6 +4642,7 @@ export const gameData: Chapter[] = [
           'You sense that you\'ve passed some invisible test, proven yourself worthy not through grand gestures but through genuine empathy and understanding.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'commit_to_bridge_role',
@@ -4594,6 +4677,7 @@ export const gameData: Chapter[] = [
           'The weight of centuries seems to press down on this moment. You understand that your next words will bind you to something larger than yourself.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'make_solemn_vow',
@@ -4666,6 +4750,7 @@ export const gameData: Chapter[] = [
           'Umbra makes a soft sound like distant wind chimes, which you somehow understand as a expression of gratitude.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'encourage_further',
@@ -4701,6 +4786,7 @@ export const gameData: Chapter[] = [
           '"The question isn\'t whether the sacrifice is worth it, but whether you\'re brave enough to make it."'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'express_courage',
@@ -4735,6 +4821,7 @@ export const gameData: Chapter[] = [
           'You sense you\'re at a crossroads where choices will determine not just alliances, but the shape of love itself.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_morgana_connection',
@@ -4776,6 +4863,7 @@ export const gameData: Chapter[] = [
           'The connection feels both deeply personal and somehow universal - love as a force that transcends individual existence.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_transcendence',
@@ -4810,6 +4898,7 @@ export const gameData: Chapter[] = [
           '"Now I see it - you have her compassion but with your own strength, her wisdom but with fresh insight."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'commit_to_growth',
@@ -4844,6 +4933,7 @@ export const gameData: Chapter[] = [
           'One by one, the others approach - even shy Umbra extends a tendril of shadow in what you understand is their version of a hug.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_all',
@@ -4883,6 +4973,7 @@ export const gameData: Chapter[] = [
           'Umbra extends a tendril of shadow toward you, stopping just short of contact, clearly asking permission.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'extend_hand',
@@ -4917,6 +5008,7 @@ export const gameData: Chapter[] = [
           'The scope of knowledge seems vast, but Celeste\'s systematic approach makes it feel manageable.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/library.png',
         choices: [
           {
             id: 'focus_on_safety',
@@ -4952,6 +5044,7 @@ export const gameData: Chapter[] = [
           '"Your presence here... it feels like the first step toward making those dreams reality."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'share_vision',
@@ -4986,6 +5079,7 @@ export const gameData: Chapter[] = [
           'You sense that this moment will be remembered as a turning point, not just for you, but for everyone here.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'acknowledge_connection',
@@ -5020,6 +5114,7 @@ export const gameData: Chapter[] = [
           '"The burden is heavy, but you won\'t carry it alone. We\'ll guide you, support you, and share the weight."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_responsibility',
@@ -5089,6 +5184,7 @@ export const gameData: Chapter[] = [
           '"I want to paint you, to capture this moment of rebirth. Not just your image, but the feeling of hope itself."'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'offer_to_model',
@@ -5123,6 +5219,7 @@ export const gameData: Chapter[] = [
           '"This is the first portrait I\'ve painted in decades where I\'m not trying to capture what was, but what could be."'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_change',
@@ -5157,6 +5254,7 @@ export const gameData: Chapter[] = [
           'You realize you\'re being intellectually courted, your mind as much as your heart drawing them to you.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'explore_paradox',
@@ -5192,6 +5290,7 @@ export const gameData: Chapter[] = [
           'You feel a deep sense of belonging in this moment of shared contemplation.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_silence',
@@ -5226,6 +5325,7 @@ export const gameData: Chapter[] = [
           'She turns the easel toward you, revealing a painting that somehow captures not just your appearance but your essence.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'marvel_at_painting',
@@ -5260,6 +5360,7 @@ export const gameData: Chapter[] = [
           'This isn\'t just about physical safety, but about protecting each other\'s hearts, dreams, and very souls.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'vow_protection',
@@ -5294,6 +5395,7 @@ export const gameData: Chapter[] = [
           'You realize that your purpose is to help each of them become the best version of themselves while growing into your own potential.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_catalyst_role',
@@ -5328,6 +5430,7 @@ export const gameData: Chapter[] = [
           'Your willingness to proceed despite uncertainty speaks to your character in ways that impress them deeply.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'acknowledge_growth',
@@ -5362,6 +5465,7 @@ export const gameData: Chapter[] = [
           'The scope of what you\'re stepping into becomes clear: this is about changing the world, one relationship at a time.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_larger_mission',
@@ -5396,6 +5500,7 @@ export const gameData: Chapter[] = [
           'You sense that these contain not just practical advice, but emotional wisdom from someone who walked this path before you.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'read_immediately',
@@ -5468,6 +5573,7 @@ export const gameData: Chapter[] = [
           '"But knowledge is your best protection. Understanding threats helps you avoid them."'
         ],
         character: characters.raven,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_hunters',
@@ -5502,6 +5608,7 @@ export const gameData: Chapter[] = [
           'You feel the weight of history in this moment, knowing that few mortals have ever undergone this sacred process.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_transformation',
@@ -5536,6 +5643,7 @@ export const gameData: Chapter[] = [
           '"When you\'re truly ready, the transformation will be all the more powerful for the preparation."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'focus_on_relationships',
@@ -5570,6 +5678,7 @@ export const gameData: Chapter[] = [
           '"Most importantly, you\'ll develop an unbreakable connection to this sanctuary and everyone in it."'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'express_enthusiasm',
@@ -5604,6 +5713,7 @@ export const gameData: Chapter[] = [
           'The painting emerges as something neither of you could have created alone - uniquely beautiful and profound.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'marvel_at_collaboration',
@@ -5638,6 +5748,7 @@ export const gameData: Chapter[] = [
           'You understand that this moment marks your true acceptance into their inner circle.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'vow_secrecy',
@@ -5672,6 +5783,7 @@ export const gameData: Chapter[] = [
           '"This isn\'t just about painting anymore. It\'s about building something beautiful together."'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_evolution',
@@ -5706,6 +5818,7 @@ export const gameData: Chapter[] = [
           'You feel as though you\'re glimpsing what divine love might look like when filtered through human hearts.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_transcendence',
@@ -5740,6 +5853,7 @@ export const gameData: Chapter[] = [
           '"Falling gave me the gift of imperfection - the ability to love messily, completely, surprisingly."'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'appreciate_imperfection',
@@ -5775,6 +5889,7 @@ export const gameData: Chapter[] = [
           'You feel your defenses softening, allowing deeper connections to form.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'express_gratitude',
@@ -5842,6 +5957,7 @@ export const gameData: Chapter[] = [
           'You sense that the very walls have memories, and you\'re now part of their continuing story.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/gothic-manor-entrance.png',
         choices: [
           {
             id: 'embrace_connection',
@@ -5876,6 +5992,7 @@ export const gameData: Chapter[] = [
           '"Most importantly, you become a living bridge between the mortal and immortal worlds."'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'test_abilities',
@@ -5910,6 +6027,7 @@ export const gameData: Chapter[] = [
           'The connection settles into your bones, your breath, your heartbeat. You are no longer merely visiting - you belong.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_belonging',
@@ -5944,6 +6062,7 @@ export const gameData: Chapter[] = [
           'The training is rigorous but necessary - lives depend on your competence.'
         ],
         character: characters.raven,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_intensity',
@@ -5978,6 +6097,7 @@ export const gameData: Chapter[] = [
           '"Your role requires you to be translator, mediator, and sometimes buffer between conflicting interests."'
         ],
         character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'study_protocols',
@@ -6012,6 +6132,7 @@ export const gameData: Chapter[] = [
           '"It\'s not about power over others, but about channeling emotion and intention into tangible form."'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'explore_healing_art',
@@ -6046,6 +6167,7 @@ export const gameData: Chapter[] = [
           'You realize you\'re experiencing one of these paradoxes yourself - finding home by leaving everything familiar.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'apply_to_self',
@@ -6081,6 +6203,7 @@ export const gameData: Chapter[] = [
           'Morgana\'s face lights up with joy at your understanding.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'explore_truth_in_art',
@@ -6115,6 +6238,7 @@ export const gameData: Chapter[] = [
           'You feel touched by something eternal yet intimate.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/bedroom.png',
         choices: [
           {
             id: 'embrace_sacred_connection',
@@ -6149,6 +6273,7 @@ export const gameData: Chapter[] = [
           'You understand that you\'re witnessing and participating in something genuinely sacred.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'celebrate_imperfection',
@@ -6183,6 +6308,7 @@ export const gameData: Chapter[] = [
           'You feel the echo of that monumental decision, the weight and liberation of choosing love over certainty.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'honor_her_sacrifice',
@@ -6257,6 +6383,7 @@ export const gameData: Chapter[] = [
           'You feel the weight and joy of participating in something that will echo through time.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'commit_to_many_memories',
@@ -6291,6 +6418,7 @@ export const gameData: Chapter[] = [
           'The weight of being a symbol of hope settles on your shoulders, but it feels like purpose rather than burden.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_symbolic_role',
@@ -6325,6 +6453,7 @@ export const gameData: Chapter[] = [
           'The celebration feels both joyous and sacred.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'toast_to_growth',
@@ -6401,6 +6530,7 @@ export const gameData: Chapter[] = [
           'You feel recognized not for what you\'ve accomplished, but for the character you\'ve revealed through your choices.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'humble_acceptance',
@@ -6435,6 +6565,7 @@ export const gameData: Chapter[] = [
           'You understand that you\'re not just replacing her, but evolving her work into something new and more powerful.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'honor_her_vision',
@@ -6469,6 +6600,7 @@ export const gameData: Chapter[] = [
           '"That love - fierce, protective, nurturing - is what made her irreplaceable. And it\'s what I see growing in you."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_love_legacy',
@@ -6503,6 +6635,7 @@ export const gameData: Chapter[] = [
           'You realize that accepting this role means preparing for challenges that will test every aspect of your character.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'prepare_systematically',
@@ -6537,6 +6670,7 @@ export const gameData: Chapter[] = [
           'You feel the weight of their collective sorrow, but also the strength that comes from bearing it together.'
         ],
         character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'offer_comfort',
@@ -6571,6 +6705,7 @@ export const gameData: Chapter[] = [
           'You realize that your role here isn\'t just changing you emotionally and socially, but potentially on a fundamental level.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_development',
@@ -6605,6 +6740,7 @@ export const gameData: Chapter[] = [
           'The transition from visitor to family member feels complete and effortless.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'acknowledge_belonging',
@@ -6640,6 +6776,7 @@ export const gameData: Chapter[] = [
           'The mutual respect and collaboration feels both empowering and humbling.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_equality',
@@ -6674,6 +6811,7 @@ export const gameData: Chapter[] = [
           '"Knowledge of these threats is your first line of defense."'
         ],
         character: characters.raven,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'request_training',
@@ -6708,6 +6846,7 @@ export const gameData: Chapter[] = [
           'The gradual approach feels both careful and caring.'
         ],
         character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_trial_period',
@@ -6742,6 +6881,7 @@ export const gameData: Chapter[] = [
           'You realize that maintaining this sense of awe might be important for staying grounded.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_wonder',
@@ -6776,6 +6916,7 @@ export const gameData: Chapter[] = [
           'The attention to practical details shows their genuine commitment to making this work.'
         ],
         character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_consideration',
@@ -6810,6 +6951,7 @@ export const gameData: Chapter[] = [
           'The weight of mutual trust settles between you like a sacred bond.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'vow_protection',
@@ -6844,6 +6986,7 @@ export const gameData: Chapter[] = [
           '"We\'re people who happen to be vampires, not vampires who used to be people."'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_complexity',
@@ -6878,6 +7021,7 @@ export const gameData: Chapter[] = [
           '"The role shaped itself around her strengths and grew with her understanding."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_mediation',
@@ -6913,6 +7057,7 @@ export const gameData: Chapter[] = [
           'Her approach feels both supportive and empowering, encouraging growth rather than dependence.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_approach',
@@ -6947,6 +7092,7 @@ export const gameData: Chapter[] = [
           '"We\'ll monitor your health carefully and adjust as needed."'
         ],
         character: characters.celeste,
+        background: '/backgrounds/dining-hall.png',
         choices: [
           {
             id: 'embrace_adaptation',
@@ -6981,6 +7127,7 @@ export const gameData: Chapter[] = [
           '"Her body adapted beautifully, but more importantly, she adapted emotionally and spiritually to our world."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'focus_on_intuition',
@@ -7015,6 +7162,7 @@ export const gameData: Chapter[] = [
           'The artistic bond feels both inspiring and intimate.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/bedroom.png',
         choices: [
           {
             id: 'explore_resonance',
@@ -7049,6 +7197,7 @@ export const gameData: Chapter[] = [
           'You realize this internal struggle is a natural part of growth.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'acknowledge_struggle',
@@ -7083,6 +7232,7 @@ export const gameData: Chapter[] = [
           'Understanding their vulnerabilities makes them seem more human, more relatable.'
         ],
         character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'offer_support',
@@ -7117,6 +7267,7 @@ export const gameData: Chapter[] = [
           'Your inquisitive nature is clearly seen as an asset rather than a burden.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'express_fascination',
@@ -7151,6 +7302,7 @@ export const gameData: Chapter[] = [
           'The blend of supernatural existence with ordinary concerns feels both amusing and reassuring.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_normalcy',
@@ -7185,6 +7337,7 @@ export const gameData: Chapter[] = [
           'Your willingness to engage with complex topics clearly impresses them.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'pursue_ethics',
@@ -7220,6 +7373,7 @@ export const gameData: Chapter[] = [
           'The possibility of developing supernatural abilities both excites and concerns you.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_potential',
@@ -7254,6 +7408,7 @@ export const gameData: Chapter[] = [
           'The prospect of using supernatural gifts for the good of others feels deeply meaningful.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'commit_to_service',
@@ -7288,6 +7443,7 @@ export const gameData: Chapter[] = [
           'The structured approach to supernatural development feels both exciting and reassuring.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'begin_immediately',
@@ -7322,6 +7478,7 @@ export const gameData: Chapter[] = [
           'The weight of the choice settles over you, but so does the exciting possibility of a truly extraordinary life.'
         ],
         character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'acknowledge_magnitude',
@@ -7356,6 +7513,7 @@ export const gameData: Chapter[] = [
           'The mutual commitment feels like a sacred contract sealed not with signatures, but with hearts.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'seal_with_ceremony',
@@ -7394,6 +7552,7 @@ export const gameData: Chapter[] = [
           'Her immediate recognition of your creative nature feels both flattering and slightly unnerving.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_art',
@@ -7428,6 +7587,7 @@ export const gameData: Chapter[] = [
           'The prospect of creating meaningful art together feels like a beautiful way to deepen your connection.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'propose_joint_project',
@@ -7462,6 +7622,7 @@ export const gameData: Chapter[] = [
           '"Your own creative spirit could continue that legacy - supporting and inspiring everyone\'s artistic growth."'
         ],
         character: characters.morgana,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_cultural_role',
@@ -7496,6 +7657,7 @@ export const gameData: Chapter[] = [
           'The weight of the oath settles on your shoulders, but it feels like purpose rather than burden.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'swear_complete_oath',
@@ -7535,6 +7697,7 @@ export const gameData: Chapter[] = [
           'The systematic approach to threat awareness feels both sobering and reassuring.'
         ],
         character: characters.raven,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'focus_on_prevention',
@@ -7569,6 +7732,7 @@ export const gameData: Chapter[] = [
           'The measured pace feels considerate and wise.'
         ],
         character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_consideration',
@@ -7603,6 +7767,7 @@ export const gameData: Chapter[] = [
           'The emphasis on reliability and integrity resonates deeply with your values.'
         ],
         character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'commit_to_reliability',
@@ -7637,6 +7802,7 @@ export const gameData: Chapter[] = [
           'The attention to practical details shows their commitment to making this work smoothly.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'request_written_guidelines',
@@ -7671,6 +7837,7 @@ export const gameData: Chapter[] = [
           'The collaborative approach makes you feel valued as an equal participant rather than a supplicant.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_inclusion',
@@ -7705,6 +7872,7 @@ export const gameData: Chapter[] = [
           'The thoughtful design and maintenance show how much this place means to everyone who lives here.'
         ],
         character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_design',
@@ -7739,6 +7907,7 @@ export const gameData: Chapter[] = [
           'The weight of historical significance makes your future role feel both daunting and honored.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/library.png',
         choices: [
           {
             id: 'honor_the_history',
@@ -7860,6 +8029,7 @@ export const gameData: Chapter[] = [
           'Her divine nature feels comforting rather than intimidating, like being wrapped in warm starlight.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_healing_offer',
@@ -7894,6 +8064,7 @@ export const gameData: Chapter[] = [
           'Her approach feels both practical and spiritually nurturing.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'request_immediate_help',
@@ -7928,6 +8099,7 @@ export const gameData: Chapter[] = [
           'Each small step forward builds your confidence for the journey ahead.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'practice_regularly',
@@ -7962,6 +8134,7 @@ export const gameData: Chapter[] = [
           'Her respect feels hard-earned and deeply meaningful.'
         ],
         character: characters.raven,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'honor_her_assessment',
@@ -7996,6 +8169,7 @@ export const gameData: Chapter[] = [
           'You begin to understand the complex social dynamics that keep supernatural communities stable.'
         ],
         character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'request_diplomacy_lessons',
@@ -8030,6 +8204,7 @@ export const gameData: Chapter[] = [
           'Her mysterious insights both intrigue and unnerve you.'
         ],
         character: characters.luna,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_specific_visions',
@@ -8064,6 +8239,7 @@ export const gameData: Chapter[] = [
           'Her vulnerability creates a bridge of understanding between your experiences.'
         ],
         character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'share_your_isolation',
@@ -8099,6 +8275,7 @@ export const gameData: Chapter[] = [
           'The structure feels more like a family with specialized roles than a strict hierarchy.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_your_place',
@@ -8133,6 +8310,7 @@ export const gameData: Chapter[] = [
           'Her revolutionary fervor is both inspiring and slightly overwhelming.'
         ],
         character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'join_the_revolution',
@@ -8167,6 +8345,7 @@ export const gameData: Chapter[] = [
           'Her approach emphasizes patience, listening, and creative problem-solving.'
         ],
         character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'practice_diplomacy',
@@ -8201,6 +8380,7 @@ export const gameData: Chapter[] = [
           'Her experiences add weight and context to her revolutionary fervor.'
         ],
         character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_victories',
@@ -8235,6 +8415,7 @@ export const gameData: Chapter[] = [
           'The offer feels both thrilling and daunting.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_knowledge_fully',
@@ -8269,6 +8450,7 @@ export const gameData: Chapter[] = [
           'The depth of Cordelia\'s preparation for your arrival becomes clear.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/gothic-manor-entrance.png',
         choices: [
           {
             id: 'study_the_research',
@@ -8303,6 +8485,7 @@ export const gameData: Chapter[] = [
           'The mutual comfort creates a deep bond of understanding and support.'
         ],
         character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'promise_continued_support',
@@ -8337,6 +8520,7 @@ export const gameData: Chapter[] = [
           'The recognition of shared artistic passion creates an immediate and profound bond.'
         ],
         character: characters.elena,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_collaboration',
@@ -8372,6 +8556,7 @@ export const gameData: Chapter[] = [
           'The shift from mere existence to purposeful living feels transformative for everyone involved.'
         ],
         character: characters.elena,
+        background: '/backgrounds/gothic-manor-entrance.png',
         choices: [
           {
             id: 'embrace_shared_purpose',
@@ -8449,6 +8634,7 @@ export const gameData: Chapter[] = [
           'The thoughtful approach to power and knowledge reassures you about the community\'s values.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_gradual_approach',
@@ -8483,6 +8669,7 @@ export const gameData: Chapter[] = [
           'The methodical approach feels both exciting and reassuring.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_scientific_method',
@@ -8517,6 +8704,7 @@ export const gameData: Chapter[] = [
           'Their vulnerability and gratitude create a profound emotional connection.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'offer_belonging',
@@ -8551,6 +8739,7 @@ export const gameData: Chapter[] = [
           'Their consideration for others despite their alien nature shows remarkable empathy.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_consideration',
@@ -8585,6 +8774,7 @@ export const gameData: Chapter[] = [
           'The definition of family expands to include choice, acceptance, and unconditional care.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'affirm_chosen_family',
@@ -8619,6 +8809,7 @@ export const gameData: Chapter[] = [
           'Their cosmic nature makes their emotions feel vast and profound.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'share_mutual_gratitude',
@@ -8654,6 +8845,7 @@ export const gameData: Chapter[] = [
           'Their tales expand your understanding of what\'s possible beyond conventional reality.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'request_more_stories',
@@ -8688,6 +8880,7 @@ export const gameData: Chapter[] = [
           'Their gratitude feels both humble and profound.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'offer_continued_patience',
@@ -8722,6 +8915,7 @@ export const gameData: Chapter[] = [
           'Their descriptions paint pictures of impossible, wonderful realities.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_to_experience_some',
@@ -8756,6 +8950,7 @@ export const gameData: Chapter[] = [
           'The revelation is overwhelming but somehow beautiful rather than terrifying.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_true_form',
@@ -8790,6 +8985,7 @@ export const gameData: Chapter[] = [
           'The exchange of perspectives enriches both of your understandings of existence.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'establish_regular_exchanges',
@@ -8824,6 +9020,7 @@ export const gameData: Chapter[] = [
           'Their growing confidence creates positive changes throughout the community.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'encourage_leadership',
@@ -8858,6 +9055,7 @@ export const gameData: Chapter[] = [
           'The display is breathtakingly beautiful and utterly alien.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_to_learn_communication',
@@ -8892,6 +9090,7 @@ export const gameData: Chapter[] = [
           'The moment feels sacred - a bridge built between radically different forms of existence.'
         ],
         character: characters.umbra,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'offer_eternal_friendship',
@@ -8969,6 +9168,7 @@ export const gameData: Chapter[] = [
           'Addressing these concerns shows respect for the complexity of supernatural community management.'
         ],
         character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'volunteer_for_practical_work',
@@ -9004,6 +9204,7 @@ export const gameData: Chapter[] = [
           'Her support feels like a significant political victory for collaborative governance.'
         ],
         character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_her_support',
@@ -9079,6 +9280,7 @@ export const gameData: Chapter[] = [
           'Your balanced approach helps bridge the gap between innovation and preservation.'
         ],
         character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'learn_from_tradition',
@@ -9156,6 +9358,7 @@ export const gameData: Chapter[] = [
           'Her perspective on leadership emphasizes humility, service, and empowerment of others.'
         ],
         character: characters.luna,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_servant_leadership',
@@ -9190,6 +9393,7 @@ export const gameData: Chapter[] = [
           'The historical perspective provides valuable context for current challenges.'
         ],
         character: characters.celeste,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'apply_historical_lessons',
@@ -9352,6 +9556,7 @@ export const gameData: Chapter[] = [
           'The systematic approach builds confidence in the possibility of positive change.'
         ],
         character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'prioritize_achievable_goals',
@@ -9429,6 +9634,7 @@ export const gameData: Chapter[] = [
           'Revolution becomes evolution, powered by wisdom rather than anger.'
         ],
         character: characters.valentina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'document_lessons_learned',
@@ -9463,6 +9669,7 @@ export const gameData: Chapter[] = [
           'Everyone feels more secure knowing that their home is well-defended against external threats.'
         ],
         character: characters.raven,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'appreciate_security_measures',
@@ -9497,6 +9704,7 @@ export const gameData: Chapter[] = [
           'The approach satisfies both traditionalists and progressives by showing that growth and preservation can coexist.'
         ],
         character: characters.isadora,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'develop_new_traditions',
@@ -9616,6 +9824,7 @@ export const gameData: Chapter[] = [
           'The responsibility feels weighty but important for maintaining community trust.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_oversight_role',
@@ -9860,6 +10069,7 @@ export const gameData: Chapter[] = [
           'Patience becomes a source of strength rather than a sign of passivity.'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'deepen_meditation_practice',
