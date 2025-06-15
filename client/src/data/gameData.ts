@@ -131,6 +131,109 @@ export const gameData: Chapter[] = [
           }
         ]
       },
+      // Missing core scenes that fix "loading story" errors
+      {
+        id: 'lilith_greeting',
+        title: 'A Gracious Welcome',
+        text: [
+          'Your respectful knock echoes through the grand entrance hall. After a moment, the heavy door swings open to reveal an elegant woman with piercing violet eyes and silver-streaked hair.',
+          '"Welcome to Ravencroft Manor," she says with a warm smile that doesn\'t quite reach her ancient eyes. "I am Lilith. Your great-aunt spoke of you often - though I suspect she left out some rather important details about her... houseguests."',
+          'She steps aside gracefully, gesturing for you to enter. The interior is breathtaking - gothic architecture melded with modern comforts, all bathed in the warm glow of candles and crystal chandeliers.',
+          '"Please, come in. We have much to discuss, and the night is still young. Your aunt was very dear to us, and we hope to understand what her legacy means to you."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'thank_for_welcome',
+            text: '"Thank you for the warm welcome. I have to admit, I\'m quite curious about those details Cordelia left out."',
+            consequence: 'Polite curiosity • Shows good manners and healthy interest',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'truth_revelation'
+          },
+          {
+            id: 'ask_about_houseguests',
+            text: '"Houseguests? The lawyer mentioned long-term tenants, but was very vague about the specifics."',
+            consequence: 'Direct inquiry • Shows practical mindset',
+            effects: [{ characterId: 'lilith', affectionChange: 8 }],
+            nextScene: 'tenant_explanation'
+          },
+          {
+            id: 'compliment_manor',
+            text: '"This place is absolutely stunning. Cordelia had exquisite taste."',
+            consequence: 'Appreciative response • Shows aesthetic appreciation',
+            effects: [{ characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'manor_appreciation'
+          }
+        ]
+      },
+      {
+        id: 'assertive_entrance',
+        title: 'Bold Authority',
+        text: [
+          'Your confident knock reverberates through the manor. The door opens almost immediately, revealing the same elegant woman, but her expression is more appraising than welcoming.',
+          '"Confidence," she observes with a slight smile. "I am Lilith Ravencroft, and you must be Cordelia\'s great-niece. Your aunt warned me you had a strong spirit."',
+          'She doesn\'t immediately invite you in, instead studying you with those ancient violet eyes. "Before you enter, you should know that this house operates by certain... traditional courtesies. Respect is earned here, not inherited."',
+          'Despite the warning, there\'s approval in her gaze. "But I appreciate directness. It suggests you won\'t faint at the first revelation of what your inheritance truly entails."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'acknowledge_test',
+            text: '"I understand this is a test. I\'m ready to prove myself worthy of Cordelia\'s trust."',
+            consequence: 'Accepts challenge • Shows understanding of dynamics',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'worthiness_test'
+          },
+          {
+            id: 'ask_about_revelations',
+            text: '"What kind of revelations should I be prepared for?"',
+            consequence: 'Direct questioning • Shows fearless curiosity',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }],
+            nextScene: 'revelation_preparation'
+          },
+          {
+            id: 'show_respect',
+            text: '"I apologize if I seemed presumptuous. May I please come in and learn about my aunt\'s legacy properly?"',
+            consequence: 'Diplomatic adjustment • Shows adaptability',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'respectful_entry'
+          }
+        ]
+      },
+      {
+        id: 'unlocked_discovery',
+        title: 'The Open Door',
+        text: [
+          'The ornate handle turns easily under your hand - the door wasn\'t locked. As you push it open, you\'re greeted by the sight of a grand entrance hall lit by candles and the soft glow of a fireplace.',
+          'A woman\'s voice, cultured and amused, drifts from the shadows: "How practical. Though most would consider it polite to wait for an invitation."',
+          'She emerges from the sitting room - elegant, with violet eyes that seem far older than her apparent age. "I am Lilith. And you, I presume, are our new... lady of the manor."',
+          'There\'s no hostility in her tone, only mild amusement at your pragmatic approach. "Your great-aunt had a similar directness. She also tested boundaries when she first arrived."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'apologize_for_presumption',
+            text: '"I\'m sorry, I should have waited. I was just... eager to understand what I\'ve inherited."',
+            consequence: 'Polite apology • Shows good manners despite boldness',
+            effects: [{ characterId: 'lilith', affectionChange: 14 }],
+            nextScene: 'gracious_apology_accepted'
+          },
+          {
+            id: 'defend_practicality',
+            text: '"If someone wants to keep people out, they should lock their doors. An unlocked door is an invitation."',
+            consequence: 'Logical justification • Shows practical mindset',
+            effects: [{ characterId: 'lilith', affectionChange: 8 }],
+            nextScene: 'practical_philosophy'
+          },
+          {
+            id: 'ask_about_cordelia',
+            text: '"You knew Cordelia well? I\'d love to hear about her time here."',
+            consequence: 'Personal interest • Shows family connection values',
+            effects: [{ characterId: 'lilith', affectionChange: 16 }],
+            nextScene: 'cordelia_memories'
+          }
+        ]
+      },
       {
         id: 'first_meeting_confident',
         title: 'An Unexpected Welcome',
@@ -2317,6 +2420,109 @@ export const gameData: Chapter[] = [
               { characterId: 'celeste', affectionChange: 18 }
             ],
             nextScene: 'pragmatic_testing_approach'
+          }
+        ]
+      },
+      // Additional missing scenes referenced in the story
+      {
+        id: 'truth_revelation',
+        title: 'The Nature of Things',
+        text: [
+          'Lilith leads you into an elegant sitting room where a fire crackles in an ornate fireplace. She gestures to a comfortable chair before settling gracefully across from you.',
+          '"The details Cordelia omitted," she begins with a slight smile, "concern the nature of her houseguests. We are not entirely... human, though we were once. We are what your modern world calls vampires."',
+          'She pauses, watching your reaction carefully. "Before you flee or reach for a cross, know that we chose this life of peaceful coexistence. We sustain ourselves without harm to mortals, and we have protected this place for centuries."',
+          '"Your great-aunt discovered our secret within days but chose understanding over fear. She became our anchor to the mortal world, our protector, and our dear friend."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'accept_with_wonder',
+            text: '"Vampires... that explains so much about this place. I\'m amazed rather than afraid."',
+            consequence: 'Wonder over fear • Shows supernatural acceptance',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'amazed_acceptance'
+          },
+          {
+            id: 'ask_practical_questions',
+            text: '"What does this mean for day-to-day life? How does coexistence actually work?"',
+            consequence: 'Practical focus • Shows adaptability',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'practical_coexistence'
+          },
+          {
+            id: 'express_gratitude_for_trust',
+            text: '"Thank you for trusting me with this truth. I want to be worthy of that trust, like Cordelia was."',
+            consequence: 'Grateful response • Shows respect for confidence',
+            effects: [{ characterId: 'lilith', affectionChange: 22 }],
+            nextScene: 'trust_acknowledged'
+          }
+        ]
+      },
+      {
+        id: 'tenant_explanation',
+        title: 'The Long-Term Arrangement',
+        text: [
+          'Lilith\'s expression becomes more serious as she leads you to the sitting room. "The legal documents call us tenants, but the reality is more complex than property law can encompass."',
+          '"We have lived here for centuries, long before your family owned this land. When the Ravencroft name first came to this manor, an arrangement was made - protection and secrecy in exchange for peaceful coexistence."',
+          'She settles into a chair, her ancient eyes reflecting the firelight. "Your great-aunt honored that arrangement admirably. The question now is whether you will choose to do the same, or if new terms must be negotiated."',
+          'There\'s no threat in her voice, but you sense the weight of centuries behind her words.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'honor_arrangement',
+            text: '"If Cordelia found this arrangement acceptable, then I\'m willing to honor it as well."',
+            consequence: 'Accepts legacy • Shows respect for family tradition',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'arrangement_honored'
+          },
+          {
+            id: 'need_more_details',
+            text: '"Before I commit to anything, I need to understand exactly what this arrangement entails."',
+            consequence: 'Cautious inquiry • Shows responsible decision-making',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'arrangement_details'
+          },
+          {
+            id: 'suggest_new_terms',
+            text: '"Perhaps we could discuss what arrangement might work best for all of us going forward."',
+            consequence: 'Diplomatic negotiation • Shows collaborative spirit',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'negotiation_begins'
+          }
+        ]
+      },
+      {
+        id: 'manor_appreciation',
+        title: 'A Tour of Beauty',
+        text: [
+          'Lilith\'s expression warms at your compliment. "Cordelia did indeed have exquisite taste, though she built upon what we had already cultivated over the centuries."',
+          'She gestures around the grand entrance hall. "This manor has been lovingly maintained by those who appreciate beauty in all its forms. Each room tells a story, each piece of art has meaning."',
+          '"Would you like a tour? Understanding the physical space often helps one understand the emotional landscape as well." Her offer seems genuine, a chance to appreciate the manor\'s history.',
+          'You sense this could be an opportunity to learn more about both the house and its mysterious inhabitants.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'accept_tour_eagerly',
+            text: '"I would love a tour. I want to understand everything about this place."',
+            consequence: 'Enthusiastic interest • Shows deep appreciation',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'manor_tour_begins'
+          },
+          {
+            id: 'ask_about_history',
+            text: '"I\'d be fascinated to learn about the history behind the art and architecture."',
+            consequence: 'Historical curiosity • Shows intellectual interest',
+            effects: [{ characterId: 'lilith', affectionChange: 16 }],
+            nextScene: 'historical_tour'
+          },
+          {
+            id: 'focus_on_residents',
+            text: '"Perhaps later. Right now I\'m more curious about the people who live here."',
+            consequence: 'People-focused • Shows interest in relationships',
+            effects: [{ characterId: 'lilith', affectionChange: 14 }],
+            nextScene: 'resident_introductions'
           }
         ]
       },
