@@ -1011,6 +1011,7 @@ export const gameData: Chapter[] = [
           'Her words carry the weight of genuine vulnerability, and you sense she rarely shares such personal insights about her work.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/music-room.svg',
         choices: [
           {
             id: 'understand_loneliness',
@@ -2027,6 +2028,7 @@ export const gameData: Chapter[] = [
           '"That," Lilith says with a warm smile, "would be Morgana. She\'s been waiting to meet you, actually. Your great-aunt spoke often of your artistic nature, and Morgana was quite excited about the possibility of a kindred creative spirit joining us."',
           'The music shifts, becoming more welcoming, as if the pianist has sensed the conversation below and is offering an invitation through melody.'
         ],
+        background: '/backgrounds/grand-hall.svg',
         choices: [
           {
             id: 'follow_the_music',
@@ -3013,6 +3015,7 @@ export const gameData: Chapter[] = [
           '"However," she continues, "our current isolation strategy has a 23% mortality rate among new vampires who never find guidance. We\'re essentially practicing selective survival - helping only those lucky enough to find us."'
         ],
         character: characters.celeste,
+        background: '/backgrounds/library.svg',
         choices: [
           {
             id: 'ask_for_recommendation',
@@ -3046,6 +3049,7 @@ export const gameData: Chapter[] = [
           'The weight of centuries of tradition clashes with the urgency of change. Lives hang in the balance - both those within these walls and those struggling alone in the darkness beyond.',
           'This is your moment. The coven awaits your judgment.'
         ],
+        background: '/backgrounds/grand-hall.svg',
         character: characters.lilith,
         choices: [
           {
@@ -5040,6 +5044,7 @@ export const gameData: Chapter[] = [
           '"Would you... would you like to create something with me? Something that\'s uniquely ours?"'
         ],
         character: characters.morgana,
+        background: '/backgrounds/music-room.svg',
         choices: [
           {
             id: 'eagerly_accept',

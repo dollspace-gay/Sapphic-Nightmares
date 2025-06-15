@@ -43,7 +43,7 @@ export function StoryPanel() {
         {/* Story Text */}
         <div className="bg-gray-900/90 backdrop-blur-sm rounded-xl p-8 lg:p-12 border border-red-500/30 mb-8 animate-slide-up shadow-2xl">
           <div className="font-story text-lg lg:text-xl story-text text-white leading-relaxed">
-            {currentScene.text.map((paragraph, index) => (
+            {currentScene.text.map((paragraph: string, index: number) => (
               <p key={index} className="mb-6 last:mb-0">
                 {paragraph}
               </p>
