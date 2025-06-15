@@ -6,8 +6,8 @@ export const characters: Record<string, Character> = {
     name: 'Lilith Ravencroft',
     title: 'Ancient Vampire • Coven Leader',
     description: 'The enigmatic leader of the vampire coven, Lilith is both alluring and dangerous.',
-    affection: 35,
-    status: 'Intrigued',
+    affection: 0,
+    status: 'Neutral',
     avatar: 'vampire-fangs',
     color: 'bg-blood-red'
   },
@@ -16,8 +16,8 @@ export const characters: Record<string, Character> = {
     name: 'Morgana Blackthorne',
     title: 'Shadow Mystic • Coven Elder',
     description: 'A mysterious vampire with deep knowledge of dark magic and ancient secrets.',
-    affection: 15,
-    status: 'Suspicious',
+    affection: 0,
+    status: 'Neutral',
     avatar: 'moon',
     color: 'bg-gothic-purple'
   },
@@ -26,8 +26,8 @@ export const characters: Record<string, Character> = {
     name: 'Seraphina Vale',
     title: 'Fallen Angel • Protector',
     description: 'Once an angel, now caught between light and darkness, devoted to protecting you.',
-    affection: 60,
-    status: 'Protective',
+    affection: 0,
+    status: 'Neutral',
     avatar: 'star',
     color: 'bg-moonlight'
   },
@@ -1700,72 +1700,7 @@ export const gameData: Chapter[] = [
         ]
       },
       // Trait-specific special scenes
-      {
-        id: 'psychic_revelation',
-        title: 'Supernatural Sight',
-        text: [
-          'You close your eyes and extend your psychic senses, feeling the supernatural currents that flow through Ravencroft Manor like invisible rivers of power.',
-          'Immediately, you sense multiple presences - ancient, powerful, and decidedly non-human. Lilith\'s aura pulses with dark crimson energy, centuries of accumulated power wrapped around a core of surprising vulnerability.',
-          'But there are others. Upstairs, you sense a silver-bright presence tinged with melancholy - someone who creates beauty from pain. And somewhere else, a golden light that feels like starlight and sacrifice, warm but touched by loss.',
-          'Your psychic sight also reveals the manor itself is alive with protective energy, wards woven into the very stones. This place is a fortress against supernatural threats.'
-        ],
-        choices: [
-          {
-            id: 'share_psychic_insight',
-            text: 'Share what you\'ve sensed with Lilith.',
-            consequence: 'Reveals psychic abilities • Builds trust through honesty',
-            effects: [{ characterId: 'lilith', affectionChange: 15 }],
-            nextScene: 'psychic_acknowledged'
-          },
-          {
-            id: 'keep_insight_private',
-            text: 'Keep your supernatural perception to yourself for now.',
-            consequence: 'Maintains mystery • Allows for strategic advantage',
-            effects: [{ characterId: 'lilith', affectionChange: 5 }],
-            nextScene: 'psychic_hidden'
-          },
-          {
-            id: 'ask_about_others',
-            text: 'Ask about the other presences you sense in the manor.',
-            consequence: 'Shows awareness • Demonstrates psychic accuracy',
-            effects: [{ characterId: 'lilith', affectionChange: 20 }],
-            nextScene: 'psychic_accuracy_confirmed'
-          }
-        ]
-      },
-      {
-        id: 'blood_sight_revelation',
-        title: 'The True Nature Revealed',
-        text: [
-          'You focus your blood sight, a rare gift that allows you to perceive the supernatural nature of beings by observing their life force.',
-          'Lilith\'s form shimmers, and you see her true nature - an ancient vampire of immense power, her blood darkened by centuries but still flowing with unnatural vitality. She is old, perhaps four hundred years or more.',
-          'Through the walls, you glimpse two other supernatural signatures. One burns with silver fire - another vampire, but one who retains more humanity. The other glows with divine light, though it\'s dimmed as if something has fallen from grace.',
-          'Most remarkably, you see threads of connection between all three, bonds forged not by blood but by choice, loyalty, and something deeper than friendship.'
-        ],
-        choices: [
-          {
-            id: 'comment_on_age',
-            text: '"You\'re very old, aren\'t you? Four centuries, perhaps more."',
-            consequence: 'Shows supernatural perception • Impresses with accuracy',
-            effects: [{ characterId: 'lilith', affectionChange: 18 }],
-            nextScene: 'age_accuracy'
-          },
-          {
-            id: 'mention_connections',
-            text: '"I can see the bonds between you three. They\'re beautiful - like family ties made of choice rather than blood."',
-            consequence: 'Perceives relationships • Shows emotional insight',
-            effects: [{ characterId: 'lilith', affectionChange: 25 }],
-            nextScene: 'bond_recognition'
-          },
-          {
-            id: 'offer_discretion',
-            text: '"Your secrets are safe with me. I understand why you value privacy."',
-            consequence: 'Promises discretion • Builds trust',
-            effects: [{ characterId: 'lilith', affectionChange: 20 }],
-            nextScene: 'discretion_valued'
-          }
-        ]
-      },
+
       {
         id: 'athletic_demonstration',
         title: 'Physical Confidence',
@@ -2382,6 +2317,73 @@ export const gameData: Chapter[] = [
               { characterId: 'celeste', affectionChange: 18 }
             ],
             nextScene: 'pragmatic_testing_approach'
+          }
+        ]
+      },
+      // Corrected special ability scenes that return to door choices
+      {
+        id: 'psychic_door_insight',
+        title: 'Supernatural Perception',
+        text: [
+          'You close your eyes and extend your psychic senses, feeling the supernatural currents that flow around the manor like invisible rivers of power.',
+          'Immediately, you sense multiple presences within - ancient, powerful, and decidedly non-human. At least three distinct auras pulse with different energies: one dark and commanding, another touched by melancholy and creativity, and a third that feels like starlight dimmed by earthly experience.',
+          'The manor itself radiates protective energy, wards woven into the very stones. This place is a fortress against supernatural threats, but also a sanctuary for those within.',
+          'Armed with this knowledge, you approach the massive oak doors with greater understanding of what awaits you.'
+        ],
+        choices: [
+          {
+            id: 'knock_respectfully',
+            text: 'Knock respectfully on the door.',
+            consequence: 'Polite approach • Shows respect for the inhabitants',
+            effects: [{ characterId: 'lilith', affectionChange: 8 }],
+            nextScene: 'lilith_greeting'
+          },
+          {
+            id: 'knock_boldly',
+            text: 'Knock with confident authority.',
+            consequence: 'Bold entrance • Demonstrates self-assurance',
+            effects: [{ characterId: 'lilith', affectionChange: 5 }],
+            nextScene: 'assertive_entrance'
+          },
+          {
+            id: 'try_door_handle',
+            text: 'Try the door handle to see if it\'s unlocked.',
+            consequence: 'Practical approach • Tests boundaries',
+            effects: [{ characterId: 'lilith', affectionChange: 3 }],
+            nextScene: 'unlocked_discovery'
+          }
+        ]
+      },
+      {
+        id: 'blood_sight_door_analysis',
+        title: 'The True Nature Revealed',
+        text: [
+          'You focus your blood sight, a rare gift that allows you to perceive the supernatural nature of beings by observing their life force.',
+          'Through the walls, you glimpse multiple supernatural signatures. The strongest burns with ancient crimson power - a vampire of immense age and authority. Another flickers with silver fire touched by artistic melancholy. A third glows with divine light, though dimmed as if something has fallen from grace.',
+          'Most remarkably, you see threads of connection between them all - bonds forged not by blood but by choice, loyalty, and something deeper than simple alliance.',
+          'With this supernatural intelligence gathered, you now understand the nature of those you\'re about to meet.'
+        ],
+        choices: [
+          {
+            id: 'knock_respectfully',
+            text: 'Knock respectfully on the door.',
+            consequence: 'Polite approach • Shows respect for the inhabitants',
+            effects: [{ characterId: 'lilith', affectionChange: 8 }],
+            nextScene: 'lilith_greeting'
+          },
+          {
+            id: 'knock_boldly',
+            text: 'Knock with confident authority.',
+            consequence: 'Bold entrance • Demonstrates self-assurance',
+            effects: [{ characterId: 'lilith', affectionChange: 5 }],
+            nextScene: 'assertive_entrance'
+          },
+          {
+            id: 'try_door_handle',
+            text: 'Try the door handle to see if it\'s unlocked.',
+            consequence: 'Practical approach • Tests boundaries',
+            effects: [{ characterId: 'lilith', affectionChange: 3 }],
+            nextScene: 'unlocked_discovery'
           }
         ]
       }
