@@ -29,4 +29,4 @@ echo.
 echo     Press Ctrl+C to stop the game.
 echo.
 
-node game-launcher.cjs
+node game-launcher.js

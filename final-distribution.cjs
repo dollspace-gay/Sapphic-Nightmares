@@ -51,13 +51,13 @@ const server = http.createServer((req, res) => {
   }
   
   // Remove leading slash and construct file path
-  const filePath = path.join(__dirname, 'dist', pathname.slice(1));
+  const filePath = path.join(__dirname, 'dist', 'public', pathname.slice(1));
   
   // Check if file exists
   fs.readFile(filePath, (err, data) => {
     if (err) {
       // If file not found, serve index.html (SPA routing)
-      const indexPath = path.join(__dirname, 'dist', 'index.html');
+      const indexPath = path.join(__dirname, 'dist', 'public', 'index.html');
       fs.readFile(indexPath, (err, data) => {
         if (err) {
           res.writeHead(404, { 'Content-Type': 'text/plain' });
