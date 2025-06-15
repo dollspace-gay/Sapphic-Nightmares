@@ -133,6 +133,8 @@ Changelog:
 - June 15, 2025. Created self-contained game packages for Windows, macOS, and Linux with double-click launchers
 - June 15, 2025. Built embedded Node.js launcher with native HTTP server eliminating external dependencies
 - June 15, 2025. Added authentic calligraphic typography (Great Vibes, Dancing Script, Alex Brush) for quill pen aesthetic
+- June 15, 2025. Fixed file serving path issues in standalone launcher for proper game loading
+- June 15, 2025. Created comprehensive GitHub README with installation instructions, feature overview, and development guide
 ```
 
 ## User Preferences
