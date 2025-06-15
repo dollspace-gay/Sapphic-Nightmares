@@ -245,17 +245,31 @@ function StoryTreeDevContent() {
                 variant="outline"
                 size="sm"
                 onClick={() => {
-                  const allNodes = new Set<string>();
-                  const collectNodes = (node: TreeNode) => {
-                    if (node.children.length > 0) {
-                      allNodes.add(node.id);
+                  try {
+                    const allNodes = new Set<string>();
+                    const visited = new Set<string>();
+                    
+                    const collectNodes = (node: TreeNode) => {
+                      // Prevent infinite recursion
+                      if (visited.has(node.id)) return;
+                      visited.add(node.id);
+                      
+                      // Only add nodes that have children to the expanded set
+                      if (node.children && node.children.length > 0) {
+                        allNodes.add(node.id);
+                        node.children.forEach(collectNodes);
+                      }
+                    };
+                    
+                    if (storyTree) {
+                      collectNodes(storyTree);
                     }
-                    node.children.forEach(collectNodes);
-                  };
-                  if (storyTree) {
-                    collectNodes(storyTree);
+                    setExpandedNodes(allNodes);
+                  } catch (error) {
+                    console.error('Error expanding all nodes:', error);
+                    // Fallback to safe expansion
+                    setExpandedNodes(new Set(['root', 'chapter_0', 'chapter_1', 'chapter_2']));
                   }
-                  setExpandedNodes(allNodes);
                 }}
                 className="text-xs"
               >
