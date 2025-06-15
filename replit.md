@@ -129,3 +129,34 @@ Changelog:
 ```
 Preferred communication style: Simple, everyday language.
 ```
+
+## Story Development Guidelines
+
+When implementing new story content, follow these key principles:
+
+### Character Voice and Consistency
+- Maintain each character's established personality and speaking patterns
+- Show character traits through actions and dialogue rather than exposition
+- Ensure character behaviors align with their established motivations and backgrounds
+
+### Player Agency and Choice Design
+- Provide multiple valid approaches to challenges (diplomatic, assertive, analytical, etc.)
+- Create meaningful consequences that reflect different player approaches
+- Allow different solutions to lead to different but equally valid outcomes
+
+### Affection System Integration
+- High affection should unlock easier paths or more favorable outcomes with specific characters
+- Low affection creates obstacles or complications in character interactions
+- Affection changes should feel natural and tied to player choices and character responses
+
+### Narrative Continuity
+- Reference and build upon player's earlier decisions from previous chapters
+- Acknowledge the player's established character traits, abilities, and flaws
+- Create callbacks to significant moments and choices from the player's journey
+- Maintain consistency with the player's developing relationships and reputation
+
+### Character Development Focus
+- Each scene should advance character relationships or reveal new aspects of personalities
+- Political dynamics between characters should feel authentic to their established positions
+- Character conflicts should stem from genuine ideological or personal differences
+- Resolution paths should respect character agency while allowing for growth and change
