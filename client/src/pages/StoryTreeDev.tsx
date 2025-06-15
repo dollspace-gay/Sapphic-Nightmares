@@ -86,41 +86,54 @@ function StoryTreeDevContent() {
     const hasChildren = node.children.length > 0;
     
     return (
-      <div key={node.id} className="ml-4" style={{ marginLeft: `${node.level * 20}px` }}>
-        <div className="flex items-center gap-2 mb-2">
-          {hasChildren && (
+      <div key={node.id} className="mb-1">
+        <div 
+          className="flex items-center gap-2 p-2 rounded hover:bg-muted/50 min-w-max"
+          style={{ marginLeft: `${node.level * 24}px` }}
+        >
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {hasChildren ? (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => toggleExpanded(node.id)}
+                className="w-6 h-6 p-0 flex-shrink-0"
+              >
+                {isExpanded ? '−' : '+'}
+              </Button>
+            ) : (
+              <div className="w-6 h-6 flex items-center justify-center text-muted-foreground">
+                •
+              </div>
+            )}
+            
             <Button
-              variant="ghost"
+              variant={selectedScene?.id === node.id ? "default" : "outline"}
               size="sm"
-              onClick={() => toggleExpanded(node.id)}
-              className="w-6 h-6 p-0"
+              onClick={() => setSelectedScene(node)}
+              className="text-left flex-shrink-0 max-w-[200px] truncate"
+              title={node.title}
             >
-              {isExpanded ? '−' : '+'}
+              {node.title}
             </Button>
-          )}
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setSelectedScene(node)}
-            className="text-left"
-          >
-            {node.title}
-          </Button>
-          <Button
-            variant="secondary"
-            size="sm"
-            onClick={() => jumpToScene(node.id)}
-            className="text-xs"
-          >
-            Jump Here
-          </Button>
-          <Badge variant="secondary" className="text-xs">
-            {node.choices.length} choices
-          </Badge>
+            
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => jumpToScene(node.id)}
+              className="text-xs flex-shrink-0"
+            >
+              Jump
+            </Button>
+            
+            <Badge variant="secondary" className="text-xs flex-shrink-0">
+              {node.choices.length}
+            </Badge>
+          </div>
         </div>
         
         {isExpanded && hasChildren && (
-          <div className="border-l-2 border-muted ml-3 pl-2">
+          <div className="border-l border-muted/30" style={{ marginLeft: `${(node.level + 1) * 24 - 12}px` }}>
             {node.children.map(child => renderNode(child))}
           </div>
         )}
@@ -129,46 +142,119 @@ function StoryTreeDevContent() {
   };
 
   return (
-    <div className="container mx-auto p-6 h-screen flex gap-6">
+    <div className="h-screen flex gap-4 p-4">
       {/* Story Tree Panel */}
-      <div className="w-1/2 h-full">
-        <Card className="h-full">
-          <CardHeader>
+      <div className="w-1/2 h-full flex flex-col">
+        <Card className="h-full flex flex-col">
+          <CardHeader className="flex-shrink-0">
             <CardTitle className="text-xl">Story Tree</CardTitle>
             <p className="text-sm text-muted-foreground">
-              Click + to expand branches, scene names to view details, or "Jump Here" to test that path
+              Click + to expand branches, scene names to view details, or "Jump" to test that path
             </p>
+            <div className="flex gap-2 mt-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setExpandedNodes(new Set())}
+                className="text-xs"
+              >
+                Collapse All
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  const allNodes = new Set<string>();
+                  const collectNodes = (node: TreeNode) => {
+                    allNodes.add(node.id);
+                    node.children.forEach(collectNodes);
+                  };
+                  if (storyTree) collectNodes(storyTree);
+                  setExpandedNodes(allNodes);
+                }}
+                className="text-xs"
+              >
+                Expand All
+              </Button>
+            </div>
           </CardHeader>
-          <CardContent className="h-full">
-            <ScrollArea className="h-full">
-              {storyTree && renderNode(storyTree)}
-            </ScrollArea>
+          <CardContent className="flex-1 overflow-hidden p-0">
+            <div className="h-full overflow-auto">
+              <div className="p-4 min-w-max">
+                {storyTree && renderNode(storyTree)}
+              </div>
+            </div>
           </CardContent>
         </Card>
       </div>
 
       {/* Scene Details Panel */}
-      <div className="w-1/2 h-full">
-        <Card className="h-full">
-          <CardHeader>
+      <div className="w-1/2 h-full flex flex-col">
+        <Card className="h-full flex flex-col">
+          <CardHeader className="flex-shrink-0">
             <CardTitle className="text-xl">Scene Details</CardTitle>
+            {selectedScene && (
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => jumpToScene(selectedScene.id)}
+                  className="text-xs"
+                >
+                  Jump to This Scene
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    const allScenes = gameData.flatMap(chapter => chapter.scenes);
+                    const currentIndex = allScenes.findIndex(s => s.id === selectedScene.id);
+                    if (currentIndex > 0) {
+                      setSelectedScene(allScenes[currentIndex - 1]);
+                    }
+                  }}
+                  className="text-xs"
+                  disabled={!selectedScene}
+                >
+                  Previous
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    const allScenes = gameData.flatMap(chapter => chapter.scenes);
+                    const currentIndex = allScenes.findIndex(s => s.id === selectedScene.id);
+                    if (currentIndex < allScenes.length - 1) {
+                      setSelectedScene(allScenes[currentIndex + 1]);
+                    }
+                  }}
+                  className="text-xs"
+                  disabled={!selectedScene}
+                >
+                  Next
+                </Button>
+              </div>
+            )}
           </CardHeader>
-          <CardContent className="h-full">
-            <ScrollArea className="h-full">
+          <CardContent className="flex-1 overflow-hidden p-0">
+            <div className="h-full overflow-auto p-4">
               {selectedScene ? (
                 <div className="space-y-4">
                   <div>
                     <h3 className="text-lg font-semibold mb-2">{selectedScene.title}</h3>
-                    <Badge variant="outline">ID: {selectedScene.id}</Badge>
+                    <div className="flex gap-2 mb-2">
+                      <Badge variant="outline">ID: {selectedScene.id}</Badge>
+                      <Badge variant="outline">Level: {selectedScene.level || 0}</Badge>
+                    </div>
                   </div>
                   
                   <Separator />
                   
                   <div>
                     <h4 className="font-medium mb-2">Story Text:</h4>
-                    <div className="space-y-2">
+                    <div className="space-y-2 max-h-48 overflow-y-auto bg-muted/10 p-3 rounded">
                       {selectedScene.text.map((paragraph: string, index: number) => (
-                        <p key={index} className="text-sm text-muted-foreground">
+                        <p key={index} className="text-sm text-muted-foreground leading-relaxed">
                           {paragraph}
                         </p>
                       ))}
@@ -179,30 +265,38 @@ function StoryTreeDevContent() {
                   
                   <div>
                     <h4 className="font-medium mb-2">Choices ({selectedScene.choices.length}):</h4>
-                    <div className="space-y-3">
+                    <div className="space-y-3 max-h-64 overflow-y-auto">
                       {selectedScene.choices.map((choice: any, index: number) => (
-                        <Card key={choice.id} className="p-3">
+                        <Card key={choice.id} className="p-3 hover:bg-muted/50">
                           <div className="space-y-2">
                             <p className="text-sm font-medium">{choice.text}</p>
                             <p className="text-xs text-blue-400">{choice.consequence}</p>
-                            {choice.nextScene && (
-                              <Badge variant="secondary" className="text-xs">
-                                → {choice.nextScene}
-                              </Badge>
-                            )}
-                            {choice.effects.length > 0 && (
-                              <div className="flex flex-wrap gap-1">
-                                {choice.effects.map((effect: any, i: number) => (
-                                  <Badge 
-                                    key={i} 
-                                    variant={effect.affectionChange > 0 ? "default" : "destructive"}
-                                    className="text-xs"
-                                  >
-                                    {effect.characterId}: {effect.affectionChange > 0 ? '+' : ''}{effect.affectionChange}
-                                  </Badge>
-                                ))}
-                              </div>
-                            )}
+                            
+                            <div className="flex flex-wrap gap-1">
+                              {choice.nextScene && (
+                                <Badge 
+                                  variant="secondary" 
+                                  className="text-xs cursor-pointer hover:bg-primary/20"
+                                  onClick={() => {
+                                    const allScenes = gameData.flatMap(chapter => chapter.scenes);
+                                    const nextScene = allScenes.find(s => s.id === choice.nextScene);
+                                    if (nextScene) setSelectedScene(nextScene);
+                                  }}
+                                >
+                                  → {choice.nextScene}
+                                </Badge>
+                              )}
+                              
+                              {choice.effects.length > 0 && choice.effects.map((effect: any, i: number) => (
+                                <Badge 
+                                  key={i} 
+                                  variant={effect.affectionChange > 0 ? "default" : "destructive"}
+                                  className="text-xs"
+                                >
+                                  {effect.characterId}: {effect.affectionChange > 0 ? '+' : ''}{effect.affectionChange}
+                                </Badge>
+                              ))}
+                            </div>
                           </div>
                         </Card>
                       ))}
@@ -214,7 +308,7 @@ function StoryTreeDevContent() {
                   Select a scene from the tree to view its details
                 </div>
               )}
-            </ScrollArea>
+            </div>
           </CardContent>
         </Card>
       </div>
