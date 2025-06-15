@@ -30,6 +30,66 @@ export const characters: Record<string, Character> = {
     status: 'Protective',
     avatar: 'star',
     color: 'bg-moonlight'
+  },
+  valentina: {
+    id: 'valentina',
+    name: 'Valentina Reyes',
+    title: 'Passionate Revolutionary • Former Soldier',
+    description: 'A fiery Spanish vampire with crimson curls and fierce amber eyes. Once fought in mortal wars, now battles for vampire rights and equality within the coven.',
+    affection: 0,
+    status: 'Challenging',
+    avatar: 'sword',
+    color: 'bg-sunset-orange'
+  },
+  celeste: {
+    id: 'celeste',
+    name: 'Celeste Dubois',
+    title: 'Scholar Keeper • Ancient Librarian',
+    description: 'A brilliant French vampire with steel-gray eyes behind wire-rimmed glasses. Keeper of the manor\'s vast supernatural library and forbidden knowledge.',
+    affection: 0,
+    status: 'Analytical',
+    avatar: 'book',
+    color: 'bg-deep-indigo'
+  },
+  raven: {
+    id: 'raven',
+    name: 'Raven Bjornsdottir',
+    title: 'Wild Huntress • Guardian of Borders',
+    description: 'A fierce Nordic vampire with braided platinum hair and ice-blue eyes. Prefers wilderness to civilization, hunts supernatural threats to the coven.',
+    affection: 0,
+    status: 'Wary',
+    avatar: 'wolf',
+    color: 'bg-frost-blue'
+  },
+  isadora: {
+    id: 'isadora',
+    name: 'Isadora Medici',
+    title: 'Enchanting Socialite • Political Strategist',
+    description: 'An Italian vampire with dark olive skin and emerald eyes. Master of social manipulation and political intrigue from her Renaissance court days.',
+    affection: 0,
+    status: 'Calculating',
+    avatar: 'crown',
+    color: 'bg-emerald-green'
+  },
+  luna: {
+    id: 'luna',
+    name: 'Luna Nightwhisper',
+    title: 'Mystical Seer • Oracle of Futures',
+    description: 'A mysterious vampire with silver-white hair and violet eyes that see beyond the veil. Practices ancient divination and prophetic magic.',
+    affection: 0,
+    status: 'Enigmatic',
+    avatar: 'crystal-ball',
+    color: 'bg-mystic-purple'
+  },
+  elena: {
+    id: 'elena',
+    name: 'Elena Volkov',
+    title: 'Tormented Artist • Eternal Muse',
+    description: 'A haunted Russian vampire with raven-black hair and pale gray eyes. Creates dark masterpieces while struggling with the weight of immortal memories.',
+    affection: 0,
+    status: 'Melancholic',
+    avatar: 'paintbrush',
+    color: 'bg-shadow-gray'
   }
 };
 
@@ -2002,6 +2062,326 @@ export const gameData: Chapter[] = [
             consequence: 'Determined growth • Shows commitment to overcoming challenges',
             effects: [{ characterId: 'seraphina', affectionChange: 18 }, { characterId: 'lilith', affectionChange: 15 }],
             nextScene: 'fear_overcoming_support'
+          }
+        ]
+      },
+      // Chapter 2: The Community Revealed
+      {
+        id: 'coven_gathering',
+        title: 'Meeting the Coven',
+        text: [
+          'The next evening, Lilith leads you to the manor\'s grand ballroom where elegant figures move like shadows through candlelight. "Tonight, you meet the others," she says with both warmth and warning in her voice.',
+          'The room falls silent as you enter. Seven pairs of eyes turn toward you - each gaze carrying centuries of experience, secrets, and distinct personalities that immediately set them apart.',
+          '"Sisters," Lilith announces, "meet our new anchor. She has proven herself worthy of consideration, but the choice of full acceptance lies with all of us."',
+          'You sense the complex web of relationships here - alliances forged through shared struggles, rivalries born of conflicting philosophies, and deeper bonds that transcend simple friendship.'
+        ],
+        choices: [
+          {
+            id: 'confident_introduction',
+            text: 'Introduce yourself with confidence, meeting each vampire\'s gaze directly.',
+            consequence: 'Bold approach • Impresses some, challenges others',
+            effects: [
+              { characterId: 'valentina', affectionChange: 15 },
+              { characterId: 'raven', affectionChange: 12 },
+              { characterId: 'isadora', affectionChange: -5 }
+            ],
+            nextScene: 'confident_first_impressions'
+          },
+          {
+            id: 'respectful_approach',
+            text: 'Approach respectfully, acknowledging their age and experience.',
+            consequence: 'Diplomatic respect • Shows wisdom and humility',
+            effects: [
+              { characterId: 'celeste', affectionChange: 18 },
+              { characterId: 'luna', affectionChange: 15 },
+              { characterId: 'elena', affectionChange: 10 }
+            ],
+            nextScene: 'respectful_introduction'
+          },
+          {
+            id: 'observe_dynamics',
+            text: 'Stay quiet and observe the relationships between the vampires first.',
+            consequence: 'Strategic observation • Learns valuable information',
+            effects: [
+              { characterId: 'celeste', affectionChange: 20 },
+              { characterId: 'isadora', affectionChange: 12 }
+            ],
+            nextScene: 'coven_dynamics_revealed'
+          }
+        ]
+      },
+      {
+        id: 'confident_first_impressions',
+        title: 'Bold Introductions',
+        text: [
+          'You step forward with confident grace, meeting each vampire\'s gaze directly. "I\'m honored to meet you all. I may be new to your world, but I\'m not afraid of it."',
+          'A vampire with fierce amber eyes and crimson curls steps forward first, a slight smile playing at her lips. "Valentina Reyes," she says with a Spanish accent thick as honey. "I appreciate directness. Too many mortals cower or grovel."',
+          'From near the window, a tall woman with platinum braids nods approvingly. "Raven Bjornsdottir. Your aunt spoke of your spirit. I see she was not mistaken." Her ice-blue eyes seem to measure your worth.',
+          'However, an elegant woman in emerald silk raises an eyebrow with calculated interest. "Isadora Medici. Confidence is... interesting in one so young. We shall see if it is wisdom or foolishness." Her tone carries subtle challenge.'
+        ],
+        choices: [
+          {
+            id: 'engage_valentina',
+            text: 'Focus on Valentina, drawn to her passionate energy.',
+            consequence: 'Revolutionary alliance • May conflict with traditionalists',
+            effects: [{ characterId: 'valentina', affectionChange: 25 }],
+            nextScene: 'valentina_connection'
+          },
+          {
+            id: 'respect_raven',
+            text: 'Turn to Raven, showing interest in her warrior nature.',
+            consequence: 'Warrior respect • Appeals to strength-based values',
+            effects: [{ characterId: 'raven', affectionChange: 20 }],
+            nextScene: 'raven_acknowledgment'
+          },
+          {
+            id: 'challenge_isadora',
+            text: 'Meet Isadora\'s challenge with diplomatic steel.',
+            consequence: 'Political gameplay • Dangerous but potentially rewarding',
+            effects: [{ characterId: 'isadora', affectionChange: 15 }],
+            nextScene: 'isadora_political_dance'
+          }
+        ]
+      },
+      {
+        id: 'respectful_introduction',
+        title: 'Wisdom in Humility',
+        text: [
+          '"I\'m deeply honored to be here," you say with genuine respect. "I know I have much to learn about your world, and I\'m grateful for the opportunity to do so among such experienced and wise individuals."',
+          'A vampire with steel-gray eyes behind wire-rimmed glasses nods with approval. "Celeste Dubois," she introduces herself in a cultured French accent. "Wisdom begins with acknowledging what one does not know. Your great-aunt possessed this quality."',
+          'Near a crystal ball that seems to swirl with its own inner mist, a figure with silver-white hair speaks softly: "Luna Nightwhisper. The future paths around you shimmer with possibility. Humility will serve you well in navigating them."',
+          'From a corner where shadows seem deeper, a pale woman with haunted gray eyes offers a melancholic smile. "Elena Volkov. Your respect for our experience... it reminds me of better times." Her Russian accent carries old pain.'
+        ],
+        choices: [
+          {
+            id: 'seek_celeste_wisdom',
+            text: 'Ask Celeste about the knowledge contained in the manor.',
+            consequence: 'Scholarly pursuit • Opens paths to forbidden knowledge',
+            effects: [{ characterId: 'celeste', affectionChange: 25 }],
+            nextScene: 'celeste_library_offer'
+          },
+          {
+            id: 'luna_future_inquiry',
+            text: 'Inquire about Luna\'s prophetic abilities.',
+            consequence: 'Mystical interest • May reveal dangerous futures',
+            effects: [{ characterId: 'luna', affectionChange: 20 }],
+            nextScene: 'luna_prophecy_glimpse'
+          },
+          {
+            id: 'elena_empathy',
+            text: 'Show empathy for Elena\'s obvious pain.',
+            consequence: 'Emotional connection • May unlock tragic secrets',
+            effects: [{ characterId: 'elena', affectionChange: 30 }],
+            nextScene: 'elena_tragic_bond'
+          }
+        ]
+      },
+      {
+        id: 'coven_dynamics_revealed',
+        title: 'The Web of Relationships',
+        text: [
+          'You observe carefully, noting the subtle interactions between the vampires. The social dynamics are complex, layered with centuries of shared history.',
+          'Valentina and Raven stand slightly apart from the others, their body language suggesting a friendship built on mutual respect for strength. They exchange a meaningful glance when Isadora speaks.',
+          'Celeste and Luna seem to orbit each other with scholarly connection, occasionally whispering about mystical matters. Elena hovers on the periphery, beautiful but isolated.',
+          'Isadora commands attention from the center, but you notice the slight tension when she looks toward Valentina - old philosophical differences, perhaps political rivalries about the coven\'s direction.'
+        ],
+        choices: [
+          {
+            id: 'ask_about_alliances',
+            text: 'Diplomatically inquire about the different perspectives within the coven.',
+            consequence: 'Political awareness • Shows understanding of complexity',
+            effects: [
+              { characterId: 'isadora', affectionChange: 20 },
+              { characterId: 'celeste', affectionChange: 15 }
+            ],
+            nextScene: 'political_factions_explained'
+          },
+          {
+            id: 'reach_out_to_elena',
+            text: 'Approach Elena, sensing her isolation.',
+            consequence: 'Compassionate outreach • May bridge social gaps',
+            effects: [
+              { characterId: 'elena', affectionChange: 25 },
+              { characterId: 'seraphina', affectionChange: 10 }
+            ],
+            nextScene: 'elena_isolation_bridge'
+          },
+          {
+            id: 'study_power_structure',
+            text: 'Focus on understanding the power hierarchy.',
+            consequence: 'Strategic analysis • Useful for future navigation',
+            effects: [{ characterId: 'celeste', affectionChange: 18 }],
+            nextScene: 'coven_hierarchy_revealed'
+          }
+        ]
+      },
+      {
+        id: 'valentina_connection',
+        title: 'The Revolutionary\'s Fire',
+        text: [
+          '"Your directness is refreshing," Valentina says, stepping closer with predatory grace. "Most newcomers either fear us or try to manipulate us. You do neither."',
+          'Her amber eyes burn with passionate intensity. "I fought in three mortal wars before my turning, and I\'ve been fighting for vampire equality ever since. This coven... sometimes I think we\'ve grown too comfortable in our isolation."',
+          'She glances meaningfully at Isadora. "Some believe in maintaining old hierarchies, working within existing power structures. I believe in tearing down systems that oppress us and building something better."',
+          'You sense this is more than casual conversation - Valentina is gauging whether you might be an ally in whatever changes she\'s planning for the coven.'
+        ],
+        choices: [
+          {
+            id: 'support_revolution',
+            text: '"Change often requires people willing to challenge the status quo. What needs to change here?"',
+            consequence: 'Revolutionary alliance • May create enemies among traditionalists',
+            effects: [
+              { characterId: 'valentina', affectionChange: 35 },
+              { characterId: 'isadora', affectionChange: -15 },
+              { characterId: 'lilith', affectionChange: -5 }
+            ],
+            nextScene: 'revolutionary_recruitment'
+          },
+          {
+            id: 'diplomatic_balance',
+            text: '"Both tradition and change have their place. Perhaps there\'s a way to honor the past while building a better future?"',
+            consequence: 'Diplomatic wisdom • Respects all perspectives',
+            effects: [
+              { characterId: 'valentina', affectionChange: 15 },
+              { characterId: 'isadora', affectionChange: 10 },
+              { characterId: 'lilith', affectionChange: 20 }
+            ],
+            nextScene: 'diplomatic_bridge_building'
+          },
+          {
+            id: 'ask_about_wars',
+            text: '"You fought in mortal wars? What was that like for a vampire?"',
+            consequence: 'Personal interest • Learns Valentina\'s tragic history',
+            effects: [{ characterId: 'valentina', affectionChange: 25 }],
+            nextScene: 'valentina_war_stories'
+          }
+        ]
+      },
+      {
+        id: 'celeste_library_offer',
+        title: 'The Keeper of Knowledge',
+        text: [
+          'Celeste\'s eyes light up behind her wire-rimmed glasses. "Ah, a seeker of knowledge. How delightful. The Ravencroft library contains texts that most supernatural scholars would kill to access."',
+          'She leads you toward massive oak doors carved with protective symbols. "Ancient grimoires, historical accounts of vampire society, prophecies that predate written language. Your great-aunt was particularly interested in the intersection of supernatural politics and mortal world events."',
+          'Her voice drops to a conspiratorial whisper. "There are also... forbidden texts. Knowledge that some believe should remain buried. But I believe information should be available to those wise enough to handle it responsibly."',
+          'You sense Celeste is offering more than just library access - she\'s potentially offering you entrance into dangerous secrets that could reshape your understanding of everything.'
+        ],
+        choices: [
+          {
+            id: 'request_forbidden_knowledge',
+            text: '"I\'m interested in the forbidden texts. I believe knowledge itself isn\'t dangerous - only ignorance is."',
+            consequence: 'Dangerous knowledge sought • May have severe consequences',
+            effects: [
+              { characterId: 'celeste', affectionChange: 30 },
+              { characterId: 'luna', affectionChange: -10 },
+              { characterId: 'seraphina', affectionChange: -15 }
+            ],
+            nextScene: 'forbidden_knowledge_access'
+          },
+          {
+            id: 'cordelia_research_focus',
+            text: '"I\'d like to understand what Cordelia was researching. It might help me understand my role here."',
+            consequence: 'Legacy investigation • Safe but potentially revealing',
+            effects: [
+              { characterId: 'celeste', affectionChange: 20 },
+              { characterId: 'lilith', affectionChange: 15 }
+            ],
+            nextScene: 'cordelia_research_revealed'
+          },
+          {
+            id: 'gradual_learning',
+            text: '"I\'d appreciate starting with the basics and working my way up to more advanced knowledge."',
+            consequence: 'Careful progression • Shows wisdom and patience',
+            effects: [
+              { characterId: 'celeste', affectionChange: 18 },
+              { characterId: 'seraphina', affectionChange: 12 }
+            ],
+            nextScene: 'structured_education'
+          }
+        ]
+      },
+      {
+        id: 'elena_tragic_bond',
+        title: 'The Artist\'s Sorrow',
+        text: [
+          'Elena\'s pale gray eyes widen slightly at your empathy, as if she\'s forgotten what genuine compassion feels like. "You... see the pain. Most prefer to look away."',
+          'She moves like a wraith toward a painting covered by a dark cloth. "I create to remember, and I create to forget. Both are equally futile when you have eternity stretching before you."',
+          'With trembling hands, she reveals the painting - a masterpiece depicting a snowy Russian landscape with a burning manor in the distance. "My mortal family. Lost to revolutionaries while I was away, studying art in Paris. I returned to find... nothing."',
+          'Her voice breaks slightly. "The others try to help, but how do you heal a wound that has had two centuries to fester? How do you find purpose when everyone you loved is dust?"'
+        ],
+        choices: [
+          {
+            id: 'offer_comfort',
+            text: 'Gently place a comforting hand on her shoulder.',
+            consequence: 'Physical comfort • Shows brave compassion despite supernatural nature',
+            effects: [
+              { characterId: 'elena', affectionChange: 40 },
+              { characterId: 'seraphina', affectionChange: 15 }
+            ],
+            nextScene: 'elena_comfort_accepted'
+          },
+          {
+            id: 'artistic_understanding',
+            text: '"Art can be a bridge between past and future. Your pain creates beauty that helps others feel less alone."',
+            consequence: 'Artistic empathy • Connects through creative understanding',
+            effects: [
+              { characterId: 'elena', affectionChange: 35 },
+              { characterId: 'morgana', affectionChange: 20 }
+            ],
+            nextScene: 'artistic_soul_connection'
+          },
+          {
+            id: 'purpose_perspective',
+            text: '"Perhaps purpose isn\'t about replacing what\'s lost, but about honoring it by helping others avoid similar pain."',
+            consequence: 'Philosophical insight • Offers new perspective on immortal existence',
+            effects: [
+              { characterId: 'elena', affectionChange: 30 },
+              { characterId: 'valentina', affectionChange: 15 }
+            ],
+            nextScene: 'elena_purpose_reframing'
+          }
+        ]
+      },
+      // Rivalry and Alliance scenes
+      {
+        id: 'political_factions_explained',
+        title: 'The Coven\'s Divisions',
+        text: [
+          'Isadora steps forward with practiced grace, clearly comfortable being the center of attention. "You\'ve observed well. Yes, we have... philosophical differences about the coven\'s future direction."',
+          'She gestures elegantly toward Valentina. "Some believe in dramatic change, revolution, tearing down established order. They see oppression where I see opportunity for careful advancement."',
+          'Valentina\'s eyes flash with contained fire. "And some mistake complacency for strategy. How long do we wait for gradual change while younger vampires suffer under old restrictions?"',
+          'Celeste adjusts her glasses thoughtfully. "There\'s wisdom in both approaches. Perhaps our new anchor can offer a fresh perspective on this ancient debate."'
+        ],
+        choices: [
+          {
+            id: 'side_with_progression',
+            text: '"Both of you want progress, just at different speeds. What if we found ways to implement careful changes that build toward larger transformation?"',
+            consequence: 'Moderate position • May unite factions or satisfy none',
+            effects: [
+              { characterId: 'isadora', affectionChange: 15 },
+              { characterId: 'valentina', affectionChange: 10 },
+              { characterId: 'celeste', affectionChange: 25 }
+            ],
+            nextScene: 'moderate_coalition_building'
+          },
+          {
+            id: 'question_restrictions',
+            text: '"What specific restrictions are causing problems? Understanding the root issues might help find solutions."',
+            consequence: 'Analytical approach • Focuses on problems rather than personalities',
+            effects: [
+              { characterId: 'celeste', affectionChange: 20 },
+              { characterId: 'luna', affectionChange: 15 }
+            ],
+            nextScene: 'restriction_analysis'
+          },
+          {
+            id: 'suggest_trial_period',
+            text: '"What if we tested small changes first? Trial periods could prove concepts without major risk."',
+            consequence: 'Practical compromise • Shows business-minded thinking',
+            effects: [
+              { characterId: 'isadora', affectionChange: 20 },
+              { characterId: 'celeste', affectionChange: 18 }
+            ],
+            nextScene: 'pragmatic_testing_approach'
           }
         ]
       }
