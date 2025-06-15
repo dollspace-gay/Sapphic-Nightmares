@@ -1,9 +1,14 @@
 #!/usr/bin/env node
 
-const http = require('http');
-const url = require('url');
-const path = require('path');
-const fs = require('fs');
+import http from 'http';
+import url from 'url';
+import path from 'path';
+import fs from 'fs';
+import { exec } from 'child_process';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // MIME type mapping
 const mimeTypes = {
@@ -107,7 +112,6 @@ function startGame() {
   
   const command = opener[process.platform];
   if (command) {
-    const { exec } = require('child_process');
     setTimeout(() => {
       exec(`${command} http://localhost:${PORT}`, (error) => {
         if (error) {
