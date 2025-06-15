@@ -1,32 +1,43 @@
 # 🧛‍♀️ Eternal Hearts: A Ravencroft Romance
 
-A sophisticated sapphic vampire romance visual novel where you inherit the mysterious Ravencroft Manor and discover a world of immortal passion, ancient secrets, and choices that determine your eternal fate.
+A sophisticated sapphic vampire romance visual novel where you inherit the mysterious Ravencroft Manor and discover a world of immortal passion, ancient secrets, and choices that determine your eternal fate. Navigate complex political tensions, unlock character backstories, and manage your sanity while building relationships with a diverse coven of supernatural beings.
 
 ![Game Screenshot](attached_assets/splash_1749977043861.png)
 
 ## ✨ Features
 
-- **Interactive Romance Storyline**: Navigate complex relationships with 8 unique vampire characters
-- **Character Creation System**: Customize your protagonist with traits, flaws, and boons that affect gameplay
-- **Branching Narrative**: Meaningful choices that impact character relationships and story outcomes
-- **Professional Artwork**: Gothic atmosphere with 8 custom background locations
-- **Save/Load System**: Progress tracking with multiple save slots
-- **Adaptive Storytelling**: Dynamic hints based on your choice patterns and relationships
+- **Multi-Chapter Storyline**: Two complete chapters with political faction conflicts and intimate character development
+- **9 Unique Companions**: Diverse vampire characters plus cosmic entity with deep backstories and relationship paths
+- **Character Creation System**: Traits, flaws, and boons that actively modify gameplay choices and outcomes
+- **Health & Sanity Management**: Strategic resource management with recovery actions and consequences for forbidden knowledge
+- **Journal & Achievement System**: Track your choices, relationships, and unlock 21 achievements across 4 categories
+- **Character Backstory Unlocks**: Intimate scenes revealed based on affection and trust levels
+- **Political Faction Dynamics**: Navigate tensions between progressive revolutionaries and traditional aristocrats
+- **Recovery Actions System**: Restore health and sanity through rest, meditation, and character interactions
+- **Professional Gothic Artwork**: 8 atmospheric background locations with immersive visual storytelling
+- **Trust & Reputation System**: Hidden trust mechanics that can lead to exile or death without visual warnings
+- **Adaptive Storytelling**: Dynamic hints based on choice patterns, relationship focus, and story momentum
 - **Cross-Platform Distribution**: Standalone launchers for Windows, macOS, and Linux
 
 ## 🎭 Characters
 
-Meet the diverse coven of vampire women at Ravencroft Manor:
+Meet the diverse supernatural beings at Ravencroft Manor:
 
-- **Lilith** - Ancient coven leader with millennia of wisdom
-- **Morgana** - Shadow mystic with mastery over darkness
-- **Seraphina** - Fallen angel seeking redemption
-- **Valentina** - Revolutionary fighting for vampire rights
-- **Celeste** - Scholar and keeper of ancient knowledge
-- **Raven** - Huntress and protector of the coven
-- **Isadora** - Sophisticated socialite with hidden depths
-- **Luna** - Mysterious seer with prophetic abilities
-- **Elena** - Artistic soul and creative spirit
+### Core Vampire Coven
+- **Lilith** - Ancient Mesopotamian queen and coven leader with millennia of wisdom and unmatched authority
+- **Morgana** - Salem-era shadow witch with mastery over darkness and forbidden magic
+- **Seraphina** - Fallen angel cast out for excessive compassion, retaining divine grace and healing powers
+
+### The New Generation
+- **Valentina** - French Revolution-era progressive fighting for vampire modernization and social reform
+- **Celeste** - Renaissance scholar and keeper of ancient knowledge, advisor to the coven's decisions
+- **Raven** - Former vampire hunter turned protector, conflicted by her violent past and current loyalty
+- **Isadora** - Victorian-era aristocrat and traditionalist socialite with hidden political machinations
+- **Elena** - Austrian composer whose musical genius was stolen by history, seeking artistic vindication
+- **Luna** - Enigmatic moon seer with prophetic abilities and connections to celestial forces
+
+### Cosmic Entity
+- **Umbra** - Shy eldritch horror in starlight constellation form, requiring Mental Fortitude and Iron Will to romance safely
 
 ## 🚀 Quick Start
 
@@ -59,12 +70,13 @@ Meet the diverse coven of vampire women at Ravencroft Manor:
 
 For end users who want to play without setting up a development environment:
 
-1. Download the latest release package
+1. Download `Eternal-Hearts-Ravencroft-Romance-Final.tar.gz`
 2. Extract all files to a folder
-3. Double-click the launcher for your platform:
-   - **Windows**: `Start Game - Windows.bat`
-   - **macOS**: `Start Game - macOS.command`
-   - **Linux**: `Start Game - Linux.sh`
+3. Navigate to your platform folder and double-click the launcher:
+   - **Windows**: `windows/Start Game.bat`
+   - **macOS**: `macos/Start Game.command`
+   - **Linux**: `linux/Start Game.sh`
+   - **Universal**: `universal/Start Game.sh` (works on any platform)
 
 **Requirements**: Node.js (download from [nodejs.org](https://nodejs.org))
 
@@ -106,26 +118,36 @@ For end users who want to play without setting up a development environment:
 ├── shared/                 # Shared code between client and server
 │   └── schema.ts          # Database schema and types
 ├── attached_assets/        # Game artwork and backgrounds
-└── EternalHearts-Standalone/ # Distribution package
+└── game-distribution/     # Cross-platform distribution packages
 ```
 
 ## 🎮 Gameplay Features
 
-### Character Creation
-- **Traits**: Physical, social, and mental characteristics that unlock special dialogue options
-- **Flaws**: Character weaknesses that add challenge and story depth
-- **Boons**: Special abilities that provide advantages in certain situations
+### Character Creation & Development
+- **Traits**: Physical, social, and mental characteristics that unlock special purple-styled dialogue options
+- **Flaws**: Character weaknesses that trigger random penalties and vulnerability mechanics
+- **Boons**: Special abilities including Mental Fortitude (50% sanity reduction) and Iron Will (25% health/sanity reduction)
+- **Trait Combinations**: Certain boon combinations unlock hidden content like Umbra romance path
 
-### Story Mechanics
-- **Affection System**: Track relationships with each character
-- **Choice Consequences**: Decisions affect character relationships and story progression
-- **Adaptive Hints**: Personalized guidance based on your play style
-- **Multiple Endings**: Different story outcomes based on your choices and relationships
+### Advanced Systems
+- **Dual Relationship Tracking**: Monitor both affection and trust levels with visual color-coded indicators
+- **Health & Sanity Management**: Strategic resource management with consequences for forbidden knowledge and cosmic exposure
+- **Journal System**: Comprehensive tracking of choices, relationship changes, and story events with timestamps
+- **Achievement System**: 21 unlockable achievements across Story, Relationship, Exploration, and Survival categories
+- **Recovery Actions**: Restore health/sanity through basic rest, meditation, and character-specific social recovery options
+
+### Political & Story Mechanics
+- **Chapter 2 Faction Conflicts**: Navigate tensions between Valentina's progressives and Isadora's traditionalists
+- **Advisory Consultations**: Seek guidance from Lilith and Celeste for informed decision-making
+- **Character Backstory Unlocks**: Intimate scenes revealed when affection and trust thresholds are met
+- **Trust-Based Consequences**: Hidden mechanics where investigating forbidden topics can lead to exile or death
+- **Adaptive Storytelling**: Dynamic hints analyzing choice patterns, character focus, and relationship momentum
 
 ### Visual Novel Elements
-- **Professional Artwork**: Custom gothic backgrounds for each location
-- **Atmospheric Design**: Dark romantic aesthetic with calligraphic typography
-- **Immersive Experience**: Rich storytelling with detailed character development
+- **Professional Gothic Artwork**: 8 atmospheric backgrounds (manor entrance, grand hall, library, music room, garden, dining hall, bedroom, ballroom)
+- **Immersive Atmosphere**: Background images displayed behind story text with location-appropriate imagery
+- **Calligraphic Typography**: Authentic quill pen aesthetic with Great Vibes, Dancing Script, and Alex Brush fonts
+- **1,565+ Story Scenes**: Complete narrative coverage with perfect branching structure and zero orphaned pathways
 
 ## 🔧 Development
 
@@ -140,10 +162,11 @@ For end users who want to play without setting up a development environment:
 ### Building Distribution Packages
 
 ```bash
-node final-distribution.cjs
+npm run build
+cd game-distribution && tar -czf ../Eternal-Hearts-Ravencroft-Romance-Final.tar.gz windows/ macos/ linux/ universal/
 ```
 
-This creates a complete standalone package in `EternalHearts-Standalone/` with cross-platform launchers.
+This creates a complete standalone package with cross-platform launchers in `game-distribution/`.
 
 ## 🎨 Customization
 
