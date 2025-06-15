@@ -9571,6 +9571,285 @@ export const gameData: Chapter[] = [
             nextScene: 'living_testament'
           }
         ]
+      },
+      // Final missing scenes completion
+      {
+        id: 'anchor_oversight',
+        title: 'Guardian Responsibilities',
+        text: [
+          'You learn about the oversight responsibilities that come with being an anchor to the supernatural community.',
+          'Lilith explains: "Anchors don\'t just provide stability - they also help ensure that power is used responsibly."',
+          '"Your role includes watching for signs of corruption or abuse, and intervening when necessary."',
+          'The responsibility feels weighty but important for maintaining community trust.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'accept_oversight_role',
+            text: '"I understand the responsibility. I\'m prepared to fulfill this role."',
+            consequence: 'Oversight acceptance • Embraces guardian responsibilities',
+            effects: [{ characterId: 'lilith', affectionChange: 50 }],
+            nextScene: 'guardian_oath'
+          },
+          {
+            id: 'ask_about_safeguards',
+            text: '"What safeguards exist to ensure oversight itself doesn\'t become corrupt?"',
+            consequence: 'Safeguard inquiry • Seeks checks and balances',
+            effects: [{ characterId: 'lilith', affectionChange: 45 }],
+            nextScene: 'democratic_coven'
+          },
+          {
+            id: 'request_training',
+            text: '"I need training to fulfill this role properly. Who can teach me?"',
+            consequence: 'Training request • Seeks preparation for responsibilities',
+            effects: [{ characterId: 'lilith', affectionChange: 55 }],
+            nextScene: 'leadership_lesson'
+          }
+        ]
+      },
+      {
+        id: 'measured_progress',
+        title: 'Steady Advancement',
+        text: [
+          'The community makes steady, measured progress on its goals through careful planning and incremental steps.',
+          'Each small advancement builds on previous successes, creating sustainable momentum.',
+          'The approach proves more effective than dramatic changes, with broader support and fewer unintended consequences.',
+          'Progress feels solid and lasting rather than fragile or temporary.'
+        ],
+        choices: [
+          {
+            id: 'celebrate_incremental_wins',
+            text: 'Acknowledge and celebrate each incremental achievement.',
+            consequence: 'Progress celebration • Recognizes steady advancement',
+            effects: [
+              { characterId: 'isadora', affectionChange: 40 },
+              { characterId: 'celeste', affectionChange: 30 }
+            ],
+            nextScene: 'transformation_celebration'
+          },
+          {
+            id: 'document_successful_methods',
+            text: 'Record what approaches work best for future reference.',
+            consequence: 'Method documentation • Preserves successful strategies',
+            effects: [
+              { characterId: 'celeste', affectionChange: 45 },
+              { characterId: 'lilith', affectionChange: 25 }
+            ],
+            nextScene: 'leadership_lesson'
+          },
+          {
+            id: 'expand_successful_initiatives',
+            text: 'Use proven approaches as foundation for additional improvements.',
+            consequence: 'Initiative expansion • Builds on demonstrated success',
+            effects: [
+              { characterId: 'valentina', affectionChange: 35 },
+              { characterId: 'isadora', affectionChange: 30 }
+            ],
+            nextScene: 'new_community'
+          }
+        ]
+      },
+      {
+        id: 'democratic_coven',
+        title: 'Inclusive Governance',
+        text: [
+          'The community establishes democratic governance structures that ensure everyone has a voice in important decisions.',
+          'Formal processes balance efficiency with inclusivity, allowing thorough discussion while avoiding endless debate.',
+          'The system respects both individual expertise and collective wisdom.',
+          'Democratic participation strengthens community bonds and increases commitment to shared decisions.'
+        ],
+        choices: [
+          {
+            id: 'refine_decision_processes',
+            text: 'Continuously improve decision-making processes based on experience.',
+            consequence: 'Process refinement • Evolves governance through practice',
+            effects: [
+              { characterId: 'isadora', affectionChange: 45 },
+              { characterId: 'celeste', affectionChange: 40 }
+            ],
+            nextScene: 'living_testament'
+          },
+          {
+            id: 'train_democratic_participation',
+            text: 'Develop training programs to help everyone participate effectively.',
+            consequence: 'Participation training • Builds democratic skills',
+            effects: [
+              { characterId: 'celeste', affectionChange: 50 },
+              { characterId: 'elena', affectionChange: 30 }
+            ],
+            nextScene: 'leadership_lesson'
+          },
+          {
+            id: 'balance_expertise_and_input',
+            text: 'Create systems that respect expertise while ensuring broad input.',
+            consequence: 'Balance achievement • Harmonizes knowledge and democracy',
+            effects: [
+              { characterId: 'lilith', affectionChange: 40 },
+              { characterId: 'isadora', affectionChange: 35 }
+            ],
+            nextScene: 'new_community'
+          }
+        ]
+      },
+      {
+        id: 'leadership_lesson',
+        title: 'Wisdom Shared',
+        text: [
+          'Through formal and informal teaching, you learn essential lessons about leadership and community building.',
+          'The lessons emphasize service over power, collaboration over control, and wisdom over authority.',
+          'Multiple mentors contribute their perspectives, creating a comprehensive understanding of leadership.',
+          'The knowledge feels practical and immediately applicable to current challenges.'
+        ],
+        choices: [
+          {
+            id: 'apply_lessons_immediately',
+            text: 'Put the lessons into practice right away.',
+            consequence: 'Immediate application • Uses knowledge actively',
+            effects: [
+              { characterId: 'lilith', affectionChange: 45 },
+              { characterId: 'luna', affectionChange: 40 }
+            ],
+            nextScene: 'living_testament'
+          },
+          {
+            id: 'develop_teaching_materials',
+            text: 'Create materials to help teach these lessons to others.',
+            consequence: 'Knowledge sharing • Develops educational resources',
+            effects: [
+              { characterId: 'celeste', affectionChange: 50 },
+              { characterId: 'elena', affectionChange: 30 }
+            ],
+            nextScene: 'memory_sharing'
+          },
+          {
+            id: 'seek_additional_mentorship',
+            text: 'Request ongoing mentorship to continue developing leadership skills.',
+            consequence: 'Continued learning • Pursues ongoing development',
+            effects: [
+              { characterId: 'lilith', affectionChange: 55 },
+              { characterId: 'seraphina', affectionChange: 25 }
+            ],
+            nextScene: 'patient_guidance'
+          }
+        ]
+      },
+      {
+        id: 'principled_neutrality',
+        title: 'Balanced Mediation',
+        text: [
+          'You maintain principled neutrality while mediating conflicts, ensuring all sides feel heard and respected.',
+          'Rather than false equivalency, your approach recognizes valid concerns across different perspectives.',
+          'The neutral stance allows you to facilitate dialogue without becoming part of the conflict.',
+          'Trust in your fairness enables more honest communication between opposing sides.'
+        ],
+        choices: [
+          {
+            id: 'formalize_mediation_role',
+            text: 'Establish formal mediation processes for future conflicts.',
+            consequence: 'Mediation formalization • Creates systematic conflict resolution',
+            effects: [
+              { characterId: 'lilith', affectionChange: 45 },
+              { characterId: 'seraphina', affectionChange: 40 }
+            ],
+            nextScene: 'democratic_coven'
+          },
+          {
+            id: 'train_other_mediators',
+            text: 'Teach mediation skills to others so multiple people can fill this role.',
+            consequence: 'Mediation training • Builds community conflict resolution capacity',
+            effects: [
+              { characterId: 'celeste', affectionChange: 50 },
+              { characterId: 'elena', affectionChange: 35 }
+            ],
+            nextScene: 'leadership_lesson'
+          },
+          {
+            id: 'focus_on_prevention',
+            text: 'Work on preventing conflicts before they require mediation.',
+            consequence: 'Conflict prevention • Addresses root causes proactively',
+            effects: [
+              { characterId: 'luna', affectionChange: 45 },
+              { characterId: 'seraphina', affectionChange: 30 }
+            ],
+            nextScene: 'new_community'
+          }
+        ]
+      },
+      {
+        id: 'guided_tour',
+        title: 'Exploring the Sanctuary',
+        text: [
+          'You receive a comprehensive guided tour of the sanctuary, learning about its history, hidden areas, and special features.',
+          'Each room tells part of the story of the community that has grown here over the centuries.',
+          'Secret passages, protected chambers, and mystical gardens reveal the depth of magical protections.',
+          'The tour helps you understand your place within this ancient and sacred space.'
+        ],
+        choices: [
+          {
+            id: 'ask_about_hidden_histories',
+            text: 'Learn about the hidden histories and stories embedded in different areas.',
+            consequence: 'History exploration • Seeks deeper understanding of sanctuary legacy',
+            effects: [
+              { characterId: 'celeste', affectionChange: 45 },
+              { characterId: 'morgana', affectionChange: 30 }
+            ],
+            nextScene: 'memory_sharing'
+          },
+          {
+            id: 'understand_magical_protections',
+            text: 'Focus on understanding the magical protections and how to maintain them.',
+            consequence: 'Protection understanding • Learns sanctuary defense systems',
+            effects: [
+              { characterId: 'raven', affectionChange: 50 },
+              { characterId: 'seraphina', affectionChange: 25 }
+            ],
+            nextScene: 'anchor_oversight'
+          },
+          {
+            id: 'appreciate_architectural_beauty',
+            text: 'Take time to appreciate the architectural and artistic beauty of the space.',
+            consequence: 'Beauty appreciation • Values aesthetic and artistic elements',
+            effects: [
+              { characterId: 'morgana', affectionChange: 45 },
+              { characterId: 'elena', affectionChange: 40 }
+            ],
+            nextScene: 'artistic_collaboration_planned'
+          }
+        ]
+      },
+      {
+        id: 'patience_training',
+        title: 'Cultivating Inner Stillness',
+        text: [
+          'You learn patience as both a practical skill and a spiritual practice.',
+          'Seraphina teaches breathing techniques, meditation practices, and mindfulness exercises.',
+          'The training helps you remain centered during conflicts and clear-headed during complex decisions.',
+          'Patience becomes a source of strength rather than a sign of passivity.'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'deepen_meditation_practice',
+            text: 'Commit to regular meditation practice to deepen your patience and clarity.',
+            consequence: 'Meditation commitment • Develops regular spiritual practice',
+            effects: [{ characterId: 'seraphina', affectionChange: 55 }],
+            nextScene: 'spiritual_awakening'
+          },
+          {
+            id: 'apply_patience_to_leadership',
+            text: 'Use patience training to improve your leadership and decision-making.',
+            consequence: 'Leadership patience • Applies mindfulness to governance',
+            effects: [{ characterId: 'seraphina', affectionChange: 50 }, { characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'leadership_lesson'
+          },
+          {
+            id: 'teach_patience_to_others',
+            text: 'Share patience techniques with other community members.',
+            consequence: 'Patience sharing • Teaches mindfulness to others',
+            effects: [{ characterId: 'seraphina', affectionChange: 60 }, { characterId: 'elena', affectionChange: 20 }],
+            nextScene: 'memory_sharing'
+          }
+        ]
       }
     ]
   }
