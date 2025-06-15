@@ -2166,6 +2166,7 @@ export const gameData: Chapter[] = [
           '"Sisters," Lilith announces, "meet our new anchor. She has proven herself worthy of consideration, but the choice of full acceptance lies with all of us."',
           'You sense the complex web of relationships here - alliances forged through shared struggles, rivalries born of conflicting philosophies, and deeper bonds that transcend simple friendship.'
         ],
+        background: '/backgrounds/ballroom.png',
         choices: [
           {
             id: 'confident_introduction',
