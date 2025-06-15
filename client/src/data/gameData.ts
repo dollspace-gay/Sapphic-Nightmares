@@ -188,6 +188,7 @@ export const gameData: Chapter[] = [
           'Despite the warning, there\'s approval in her gaze. "But I appreciate directness. It suggests you won\'t faint at the first revelation of what your inheritance truly entails."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/gothic-manor-entrance.png',
         choices: [
           {
             id: 'acknowledge_test',
@@ -257,6 +258,7 @@ export const gameData: Chapter[] = [
           'As you cross the threshold, you feel a strange tingling sensation, as if you\'ve passed through some invisible barrier. The air inside carries scents of old roses, aged wine, and something indefinably ancient.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_cordelia',
@@ -291,6 +293,7 @@ export const gameData: Chapter[] = [
           'As you cross the threshold, you feel a subtle shift in the air, as if you\'ve entered a space where different rules apply. The interior is lit by candles and firelight, casting dancing shadows that seem almost alive.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'thank_for_welcome',
