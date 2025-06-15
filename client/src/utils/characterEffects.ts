@@ -207,6 +207,22 @@ function isPastRelatedChoice(choice: Choice): boolean {
   );
 }
 
+function isLuckyChoice(choice: Choice): boolean {
+  const luckyKeywords = ['luck', 'fortune', 'chance', 'gamble', 'risk', 'random', 'serendipity', 'fate'];
+  return luckyKeywords.some(keyword => 
+    choice.text.toLowerCase().includes(keyword) || 
+    choice.consequence.toLowerCase().includes(keyword)
+  );
+}
+
+function isDiscoveryChoice(choice: Choice): boolean {
+  const discoveryKeywords = ['discover', 'find', 'uncover', 'reveal', 'stumble', 'happen upon', 'come across'];
+  return discoveryKeywords.some(keyword => 
+    choice.text.toLowerCase().includes(keyword) || 
+    choice.consequence.toLowerCase().includes(keyword)
+  );
+}
+
 // Apply character effects to choices
 export function applyCharacterEffects(choices: Choice[], character: PlayerCharacter | undefined): Choice[] {
   if (!character) return choices;
@@ -517,6 +533,92 @@ function applyBoonEffects(choice: Choice, character: PlayerCharacter): Choice {
     modifiedChoice.consequence += ' • Iron will prevails';
   }
   
+  // Unnaturally Lucky - miraculous saves and fortuitous discoveries
+  if (hasPlayerBoon(character, 'lucky')) {
+    // 15% chance to avoid negative consequences entirely
+    if (modifiedChoice.playerStatEffects?.sanityChange && modifiedChoice.playerStatEffects.sanityChange < 0 && Math.random() < 0.15) {
+      modifiedChoice.playerStatEffects.sanityChange = 0;
+      modifiedChoice.consequence += ' • Lucky escape from psychological harm';
+    }
+    
+    if (modifiedChoice.playerStatEffects?.healthChange && modifiedChoice.playerStatEffects.healthChange < 0 && Math.random() < 0.15) {
+      modifiedChoice.playerStatEffects.healthChange = 0;
+      modifiedChoice.consequence += ' • Miraculous avoidance of injury';
+    }
+    
+    // 20% chance to discover hidden information or opportunities
+    if (isInvestigativeChoice(choice) && Math.random() < 0.2) {
+      modifiedChoice.effects = modifiedChoice.effects.map(effect => ({
+        ...effect,
+        affectionChange: effect.affectionChange + 5
+      }));
+      modifiedChoice.consequence += ' • Lucky discovery reveals hidden secrets';
+    }
+    
+    // 10% chance to turn dangerous situations into opportunities
+    if (isDangerousChoice(choice) && Math.random() < 0.1) {
+      modifiedChoice.effects = modifiedChoice.effects.map(effect => ({
+        ...effect,
+        affectionChange: effect.affectionChange + 8
+      }));
+      modifiedChoice.playerStatEffects = {
+        ...modifiedChoice.playerStatEffects,
+        healthChange: (modifiedChoice.playerStatEffects?.healthChange || 0) + 5,
+        sanityChange: (modifiedChoice.playerStatEffects?.sanityChange || 0) + 3
+      };
+      modifiedChoice.consequence += ' • Incredible luck turns danger into triumph';
+    }
+    
+    // 25% chance for serendipitous social encounters
+    if (isSocialChoice(choice) && Math.random() < 0.25) {
+      modifiedChoice.effects = modifiedChoice.effects.map(effect => ({
+        ...effect,
+        affectionChange: effect.affectionChange + 3
+      }));
+      modifiedChoice.consequence += ' • Fortuitous timing improves social outcome';
+    }
+    
+    // 12% chance to avoid negative affection changes
+    const hasNegativeAffection = modifiedChoice.effects.some(effect => effect.affectionChange < 0);
+    if (hasNegativeAffection && Math.random() < 0.12) {
+      modifiedChoice.effects = modifiedChoice.effects.map(effect => ({
+        ...effect,
+        affectionChange: Math.max(0, effect.affectionChange)
+      }));
+      modifiedChoice.consequence += ' • Lucky circumstances prevent relationship damage';
+    }
+    
+    // Enhanced effects for specific choice types
+    if (isLuckyChoice(choice)) {
+      // Extra bonus when explicitly choosing luck-based options
+      modifiedChoice.effects = modifiedChoice.effects.map(effect => ({
+        ...effect,
+        affectionChange: effect.affectionChange + 4
+      }));
+      modifiedChoice.consequence += ' • Supernatural luck amplifies fortune';
+    }
+    
+    if (isDiscoveryChoice(choice) && Math.random() < 0.3) {
+      // Higher chance for discovery bonuses
+      modifiedChoice.consequence += ' • Luck leads to unexpected findings';
+      modifiedChoice.playerStatEffects = {
+        ...modifiedChoice.playerStatEffects,
+        sanityChange: (modifiedChoice.playerStatEffects?.sanityChange || 0) + 2
+      };
+    }
+    
+    // 8% chance for miraculous reversals in any negative situation
+    const hasNegativeStats = (modifiedChoice.playerStatEffects?.healthChange && modifiedChoice.playerStatEffects.healthChange < -3) ||
+                            (modifiedChoice.playerStatEffects?.sanityChange && modifiedChoice.playerStatEffects.sanityChange < -5);
+    if (hasNegativeStats && Math.random() < 0.08) {
+      modifiedChoice.playerStatEffects = {
+        healthChange: Math.abs(modifiedChoice.playerStatEffects?.healthChange || 0),
+        sanityChange: Math.abs(modifiedChoice.playerStatEffects?.sanityChange || 0)
+      };
+      modifiedChoice.consequence += ' • Miraculous luck reverses misfortune into blessing';
+    }
+  }
+  
   return modifiedChoice;
 }
 
@@ -611,6 +713,26 @@ export function generateTraitSpecificChoices(character: PlayerCharacter | undefi
       consequence: 'Dominant display • Forces acknowledgment of strength',
       effects: [{ characterId: 'raven', affectionChange: 25 }, { characterId: 'valentina', affectionChange: 20 }],
       nextScene: 'dominance_established'
+    });
+  }
+
+  // Unnaturally Lucky - add serendipitous discovery options
+  if (hasPlayerBoon(character, 'lucky')) {
+    specialChoices.push({
+      id: 'lucky_discovery',
+      text: '[Lucky] Trust in your supernatural fortune to guide you to something important.',
+      consequence: 'Serendipitous discovery • Fortune reveals hidden opportunities',
+      effects: [{ characterId: 'luna', affectionChange: 20 }, { characterId: 'celeste', affectionChange: 15 }],
+      nextScene: 'fortuitous_revelation'
+    });
+
+    specialChoices.push({
+      id: 'lucky_escape',
+      text: '[Lucky] Take a seemingly risky path, trusting luck to see you through safely.',
+      consequence: 'Miraculous escape • Danger becomes opportunity through fortune',
+      effects: [{ characterId: 'raven', affectionChange: 18 }, { characterId: 'morgana', affectionChange: 12 }],
+      playerStatEffects: { healthChange: 5, sanityChange: 3 },
+      nextScene: 'lucky_breakthrough'
     });
   }
   
