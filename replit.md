@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a vampire-themed visual novel game called "Crimson Embrace" built as a full-stack web application. The project implements an interactive story experience where players make choices that affect character relationships and story progression. The application features a React frontend with a gothic vampire aesthetic and an Express.js backend with PostgreSQL database integration for saving/loading game states.
+This is a vampire-themed visual novel game called "Eternal Hearts: A Ravencroft Romance" built as a full-stack web application. The project implements an interactive story experience where players make choices that affect character relationships and story progression. The application features a React frontend with a gothic vampire aesthetic and an Express.js backend with PostgreSQL database integration for saving/loading game states.
 
 ## System Architecture
 
@@ -127,6 +127,8 @@ Changelog:
 - June 15, 2025. Enhanced StoryPanel component to display blurred background images behind story text for immersive atmosphere
 - June 15, 2025. Completed comprehensive background integration across all 230+ story scenes with location-appropriate imagery
 - June 15, 2025. Automated background assignment system based on scene content and location context for consistent visual storytelling
+- June 15, 2025. Renamed game to "Eternal Hearts: A Ravencroft Romance" and implemented professional title screen with menu navigation
+- June 15, 2025. Added title screen with Start Game, Load Game, and Developer Mode options in gothic red/purple aesthetic
 ```
 
 ## User Preferences
