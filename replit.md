@@ -170,6 +170,9 @@ Changelog:
 - June 15, 2025. Created comprehensive standalone package 'Eternal-Hearts-Ravencroft-Romance-Enhanced.tar.gz' with cross-platform support
 - June 15, 2025. Cleaned up project structure - removed orphaned 'EternalHearts-Standalone' folder and redundant tar.gz archives
 - June 15, 2025. Streamlined to single enhanced distribution package containing all new features and improvements
+- June 15, 2025. Resolved npm dependency warnings by updating vulnerable packages and removing deprecated dependencies
+- June 15, 2025. Rebuilt clean standalone distribution eliminating electron, pkg vulnerabilities and deprecated module warnings
+- June 15, 2025. Created 'Eternal-Hearts-Ravencroft-Romance-Enhanced-Clean.tar.gz' with resolved dependency issues
 ```
 
 ## User Preferences
