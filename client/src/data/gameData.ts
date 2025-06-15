@@ -2887,33 +2887,40 @@ export const gameData: Chapter[] = [
         id: 'valentina_proposal',
         title: 'The Revolutionary Vision',
         text: [
-          'Valentina rises from her seat, her eyes blazing with passionate conviction. "We cannot continue to hide in the shadows while our kind suffers in isolation across the world."',
-          '"I propose we actively seek out newly turned vampires - those abandoned by their makers, those struggling alone. We bring them here, teach them control, give them purpose."',
-          'Her voice grows stronger. "More than that - we establish safe houses in major cities. A network of sanctuaries. We stop being passive observers and become active protectors of our species."',
-          'The room erupts in murmurs. Isadora\'s face darkens with disapproval, while Celeste looks intrigued but concerned. Raven nods approvingly, but Lilith remains carefully neutral.'
+          'Valentina stands abruptly, her chair scraping against ancient stone. She pulls out a worn leather journal, pages filled with detailed notes and desperate sketches.',
+          '"Last month, I found Maria in an alley in Barcelona. Seventeen years old, turned and abandoned. She was feeding on rats, fighting for scraps of humanity." Valentina\'s voice cracks slightly.',
+          'She spreads photographs across the table - surveillance shots of isolated figures in cities worldwide. "Dimitri in Prague, surviving in the sewers. Akira in Tokyo, going mad from loneliness."',
+          'Her hands shake as she meets each person\'s eyes. "We sit here in luxury while our siblings die in despair. I cannot - I will not - remain comfortable while they suffer."'
         ],
         character: characters.valentina,
         choices: [
           {
-            id: 'support_valentina_immediately',
-            text: '"This is exactly the kind of progressive thinking we need. I support this proposal."',
-            consequence: 'Immediate alliance • Strong support for revolutionary change',
-            effects: [{ characterId: 'valentina', affectionChange: 25 }, { characterId: 'isadora', affectionChange: -15 }, { characterId: 'raven', affectionChange: 15 }],
+            id: 'emotional_connection',
+            text: '"These faces... these stories... How can we sleep soundly knowing they suffer alone?"',
+            consequence: 'Emotional resonance • Connects deeply with humanitarian crisis',
+            effects: [{ characterId: 'valentina', affectionChange: 30 }, { characterId: 'seraphina', affectionChange: 20 }, { characterId: 'elena', affectionChange: 15 }, { characterId: 'isadora', affectionChange: -10 }],
             nextScene: 'isadora_opposition'
           },
           {
-            id: 'ask_practical_questions',
-            text: '"This sounds ambitious. What would be the practical steps and potential risks?"',
-            consequence: 'Pragmatic inquiry • Shows thoughtful consideration',
-            effects: [{ characterId: 'celeste', affectionChange: 15 }, { characterId: 'lilith', affectionChange: 10 }, { characterId: 'valentina', affectionChange: 8 }],
+            id: 'analytical_approach',
+            text: '"You\'ve documented this thoroughly. What protocols would ensure both their safety and ours?"',
+            consequence: 'Strategic thinking • Engages with evidence while seeking safeguards',
+            effects: [{ characterId: 'valentina', affectionChange: 20 }, { characterId: 'celeste', affectionChange: 18 }, { characterId: 'raven', affectionChange: 12 }],
             nextScene: 'practical_concerns'
           },
           {
-            id: 'express_concerns',
-            text: '"While I admire the compassion, this could expose all of us to significant danger."',
-            consequence: 'Cautious response • Prioritizes existing safety',
-            effects: [{ characterId: 'isadora', affectionChange: 18 }, { characterId: 'luna', affectionChange: 12 }, { characterId: 'valentina', affectionChange: -8 }],
-            nextScene: 'isadora_agreement'
+            id: 'personal_focus',
+            text: '"Valentina, this clearly means everything to you. Tell me about your first rescue - Maria."',
+            consequence: 'Personal interest • Shows care for Valentina\'s individual experience',
+            effects: [{ characterId: 'valentina', affectionChange: 25 }, { characterId: 'elena', affectionChange: 12 }],
+            nextScene: 'valentina_personal_story'
+          },
+          {
+            id: 'diplomatic_process',
+            text: '"This deserves careful consideration from all perspectives. Perhaps we should hear everyone\'s thoughts?"',
+            consequence: 'Diplomatic leadership • Facilitates inclusive discussion',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'isadora', affectionChange: 15 }, { characterId: 'celeste', affectionChange: 10 }],
+            nextScene: 'isadora_opposition'
           }
         ]
       },
@@ -2921,33 +2928,40 @@ export const gameData: Chapter[] = [
         id: 'isadora_opposition',
         title: 'The Voice of Caution',
         text: [
-          'Isadora stands slowly, her movements deliberate and commanding. Every eye in the room turns to her as she prepares to speak.',
-          '"Valentina\'s heart may be in the right place, but her proposal is catastrophically naive," she begins, her voice cutting through the tension like a blade.',
-          '"We have survived for centuries because we are careful, selective, hidden. One reckless fledgling, one compromised safe house, one government investigation - and everything we\'ve built crumbles."',
-          'She gestures toward you. "We\'ve just welcomed a new Anchor. Should our first act be to throw her into a war zone? To make her complicit in exposing our entire species to persecution?"'
+          'Isadora rises with the practiced grace of someone who has commanded boardrooms and salons for centuries. Her diamond earrings catch the light as she tilts her head, considering her words with surgical precision.',
+          '"How beautifully passionate you are, Valentina," she begins, her tone warm honey over steel. "Such fire, such... conviction." The pause suggests these aren\'t entirely compliments.',
+          'She smooths an invisible wrinkle from her silk blouse. "But I wonder if we might consider the more... delicate... aspects of such an endeavor?" Her smile never wavers as she delivers what amounts to a political dissection.',
+          'Her gaze settles on you with calculated concern. "Our newest member has inherited such tremendous responsibility. Perhaps we shouldn\'t burden her with... additional complexities... quite so soon?"'
         ],
         character: characters.isadora,
         choices: [
           {
-            id: 'defend_valentina',
-            text: '"With respect, Isadora, hiding forever isn\'t survival - it\'s slow extinction. We need to evolve."',
-            consequence: 'Challenges traditionalist view • Supports progressive change',
-            effects: [{ characterId: 'valentina', affectionChange: 20 }, { characterId: 'isadora', affectionChange: -20 }, { characterId: 'raven', affectionChange: 12 }],
+            id: 'challenge_with_respect',
+            text: '"I appreciate your concern for my wellbeing, but shouldn\'t I have a voice in decisions that affect my role here?"',
+            consequence: 'Assertive autonomy • Claims agency while remaining respectful',
+            effects: [{ characterId: 'valentina', affectionChange: 25 }, { characterId: 'lilith', affectionChange: 20 }, { characterId: 'isadora', affectionChange: -5 }],
             nextScene: 'political_divide_deepens'
           },
           {
-            id: 'agree_with_caution',
-            text: '"Isadora raises valid points. Perhaps we should consider a more gradual approach."',
-            consequence: 'Supports cautious strategy • Values established security',
-            effects: [{ characterId: 'isadora', affectionChange: 22 }, { characterId: 'valentina', affectionChange: -12 }, { characterId: 'luna', affectionChange: 15 }],
+            id: 'acknowledge_wisdom',
+            text: '"Your experience has clearly served this community well. I\'d value learning more about what has kept everyone safe."',
+            consequence: 'Strategic deference • Appeals to Isadora\'s expertise and pride',
+            effects: [{ characterId: 'isadora', affectionChange: 25 }, { characterId: 'valentina', affectionChange: -8 }, { characterId: 'celeste', affectionChange: 12 }],
             nextScene: 'traditionalist_support'
           },
           {
-            id: 'seek_middle_ground',
-            text: '"Both perspectives have merit. Perhaps we could explore limited, carefully controlled outreach?"',
-            consequence: 'Diplomatic mediation • Attempts compromise',
-            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'celeste', affectionChange: 15 }, { characterId: 'valentina', affectionChange: 5 }, { characterId: 'isadora', affectionChange: 5 }],
-            nextScene: 'compromise_discussion'
+            id: 'propose_consultation',
+            text: '"Perhaps we could arrange private consultations with key stakeholders before making any major decisions?"',
+            consequence: 'Political sophistication • Suggests process Isadora would approve',
+            effects: [{ characterId: 'isadora', affectionChange: 18 }, { characterId: 'lilith', affectionChange: 15 }, { characterId: 'celeste', affectionChange: 20 }],
+            nextScene: 'private_consultations'
+          },
+          {
+            id: 'request_time_to_consider',
+            text: '"This is clearly a complex issue with important implications. Could I have time to consider all perspectives?"',
+            consequence: 'Thoughtful deliberation • Shows wisdom in not rushing decisions',
+            effects: [{ characterId: 'luna', affectionChange: 20 }, { characterId: 'seraphina', affectionChange: 15 }, { characterId: 'celeste', affectionChange: 18 }],
+            nextScene: 'strategic_patience'
           }
         ]
       },
