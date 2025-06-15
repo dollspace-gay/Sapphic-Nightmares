@@ -7815,6 +7815,1762 @@ export const gameData: Chapter[] = [
             nextScene: 'shared_grief'
           }
         ]
+      },
+      // Batch 17 - Character introductions and specialized interactions
+      {
+        id: 'seraphina_healer_introduction',
+        title: 'The Fallen Angel\'s Grace',
+        text: [
+          'Seraphina approaches with otherworldly grace, her presence immediately calming your anxieties.',
+          '"I sense your fear," she says gently. "It\'s natural when facing the unknown. I once felt the same terror when I chose to fall from Heaven."',
+          '"My gift is healing - not just physical wounds, but emotional and spiritual ones. Let me help ease your transition."',
+          'Her divine nature feels comforting rather than intimidating, like being wrapped in warm starlight.'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'accept_healing_offer',
+            text: '"I would be grateful for your help. This is all so overwhelming."',
+            consequence: 'Accepts healing • Opens to divine comfort',
+            effects: [{ characterId: 'seraphina', affectionChange: 45 }],
+            nextScene: 'phobia_management_discussion'
+          },
+          {
+            id: 'ask_about_falling',
+            text: '"What was it like to fall from Heaven? How did you cope with such a massive change?"',
+            consequence: 'Personal curiosity • Seeks understanding of her experience',
+            effects: [{ characterId: 'seraphina', affectionChange: 40 }],
+            nextScene: 'flight_memories'
+          },
+          {
+            id: 'appreciate_divine_nature',
+            text: '"Your presence is incredibly peaceful. I can feel something sacred in you."',
+            consequence: 'Divine recognition • Acknowledges her holy nature',
+            effects: [{ characterId: 'seraphina', affectionChange: 50 }],
+            nextScene: 'divine_understanding'
+          }
+        ]
+      },
+      {
+        id: 'phobia_management_discussion',
+        title: 'Overcoming Fear',
+        text: [
+          'Seraphina shares techniques for managing the overwhelming nature of supernatural encounters.',
+          '"Fear is wisdom speaking - it keeps you alive. But when fear becomes paralysis, it needs guidance."',
+          '"Breathing exercises, grounding techniques, gradual exposure - we\'ll help you build confidence step by step."',
+          'Her approach feels both practical and spiritually nurturing.'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'request_immediate_help',
+            text: '"Could we start with some techniques right now? I could use the support."',
+            consequence: 'Immediate support • Seeks current assistance',
+            effects: [{ characterId: 'seraphina', affectionChange: 40 }],
+            nextScene: 'fear_overcoming_support'
+          },
+          {
+            id: 'ask_about_gradual_exposure',
+            text: '"How does gradual exposure work with supernatural experiences?"',
+            consequence: 'Method curiosity • Wants to understand the process',
+            effects: [{ characterId: 'seraphina', affectionChange: 35 }],
+            nextScene: 'patience_training'
+          },
+          {
+            id: 'appreciate_understanding',
+            text: '"Thank you for understanding that fear can be both helpful and limiting."',
+            consequence: 'Appreciation • Values her balanced perspective',
+            effects: [{ characterId: 'seraphina', affectionChange: 45 }],
+            nextScene: 'comfort_accepted'
+          }
+        ]
+      },
+      {
+        id: 'fear_overcoming_support',
+        title: 'Building Courage Together',
+        text: [
+          'Seraphina guides you through practical exercises for managing supernatural anxiety.',
+          'Her calm presence and gentle encouragement help you feel more grounded and capable.',
+          '"Courage isn\'t the absence of fear - it\'s feeling the fear and choosing to act with love anyway."',
+          'Each small step forward builds your confidence for the journey ahead.'
+        ],
+        character: characters.seraphina,
+        choices: [
+          {
+            id: 'practice_regularly',
+            text: '"I want to practice these techniques regularly. Will you help me maintain this progress?"',
+            consequence: 'Commitment to growth • Seeks ongoing support',
+            effects: [{ characterId: 'seraphina', affectionChange: 45 }],
+            nextScene: 'patient_guidance'
+          },
+          {
+            id: 'share_progress',
+            text: '"I already feel more centered. Your guidance is incredibly effective."',
+            consequence: 'Progress recognition • Acknowledges improvement',
+            effects: [{ characterId: 'seraphina', affectionChange: 40 }],
+            nextScene: 'courage_recognition'
+          },
+          {
+            id: 'ask_about_love_approach',
+            text: '"Acting with love instead of fear - that\'s a beautiful philosophy. Tell me more."',
+            consequence: 'Philosophy interest • Wants to understand love-based approach',
+            effects: [{ characterId: 'seraphina', affectionChange: 50 }],
+            nextScene: 'divine_understanding'
+          }
+        ]
+      },
+      {
+        id: 'raven_acknowledgment',
+        title: 'The Warrior\'s Respect',
+        text: [
+          'Raven studies you with the careful assessment of someone who has seen many battles.',
+          '"You have more steel in your spine than most mortals I\'ve encountered," she observes approvingly.',
+          '"Strength isn\'t about fearlessness - it\'s about facing danger for something worth protecting."',
+          'Her respect feels hard-earned and deeply meaningful.'
+        ],
+        character: characters.raven,
+        choices: [
+          {
+            id: 'honor_her_assessment',
+            text: '"Coming from a warrior like you, that means everything. Thank you."',
+            consequence: 'Honor acceptance • Values warrior\'s respect',
+            effects: [{ characterId: 'raven', affectionChange: 40 }],
+            nextScene: 'courage_recognition'
+          },
+          {
+            id: 'ask_about_protection',
+            text: '"What do you see as worth protecting here? What drives your strength?"',
+            consequence: 'Values inquiry • Seeks understanding of her motivations',
+            effects: [{ characterId: 'raven', affectionChange: 45 }],
+            nextScene: 'guardian_oath'
+          },
+          {
+            id: 'request_training',
+            text: '"I want to become stronger, more capable of protecting what matters. Will you teach me?"',
+            consequence: 'Training request • Seeks to develop protective abilities',
+            effects: [{ characterId: 'raven', affectionChange: 50 }],
+            nextScene: 'threat_assessment'
+          }
+        ]
+      },
+      {
+        id: 'isadora_political_dance',
+        title: 'The Art of Diplomacy',
+        text: [
+          'Isadora demonstrates the subtle art of supernatural politics through graceful conversation.',
+          '"Every word carries weight in our world. A misplaced phrase can start wars; the right sentiment can prevent them."',
+          '"Diplomacy is like dancing - it requires grace, timing, and the ability to lead or follow as the situation demands."',
+          'You begin to understand the complex social dynamics that keep supernatural communities stable.'
+        ],
+        character: characters.isadora,
+        choices: [
+          {
+            id: 'request_diplomacy_lessons',
+            text: '"I want to learn this art. Will you teach me the nuances of supernatural diplomacy?"',
+            consequence: 'Diplomacy learning • Seeks political education',
+            effects: [{ characterId: 'isadora', affectionChange: 45 }],
+            nextScene: 'diplomatic_bridge_building'
+          },
+          {
+            id: 'appreciate_complexity',
+            text: '"I had no idea how complex and delicate these relationships are. It\'s fascinating."',
+            consequence: 'Complexity appreciation • Recognizes political sophistication',
+            effects: [{ characterId: 'isadora', affectionChange: 40 }],
+            nextScene: 'coven_hierarchy_revealed'
+          },
+          {
+            id: 'ask_about_mistakes',
+            text: '"What are the most dangerous mistakes a newcomer might make politically?"',
+            consequence: 'Risk awareness • Seeks to avoid diplomatic errors',
+            effects: [{ characterId: 'isadora', affectionChange: 50 }],
+            nextScene: 'practical_concerns'
+          }
+        ]
+      },
+      {
+        id: 'luna_prophecy_glimpse',
+        title: 'Visions of Tomorrow',
+        text: [
+          'Luna\'s eyes grow distant as she shares fragments of prophetic visions about your future.',
+          '"I see threads of possibility - paths where you bring great change, others where you find deep love, some where you face terrible choices."',
+          '"The future is not fixed, but your presence here creates ripples that will be felt for generations."',
+          'Her mysterious insights both intrigue and unnerve you.'
+        ],
+        character: characters.luna,
+        choices: [
+          {
+            id: 'ask_about_specific_visions',
+            text: '"Can you tell me more about these visions? What kinds of changes do you see?"',
+            consequence: 'Vision curiosity • Seeks specific prophetic details',
+            effects: [{ characterId: 'luna', affectionChange: 40 }],
+            nextScene: 'purpose_revelation'
+          },
+          {
+            id: 'focus_on_choices',
+            text: '"You mentioned terrible choices. How can I prepare to make the right decisions?"',
+            consequence: 'Choice preparation • Seeks guidance for future decisions',
+            effects: [{ characterId: 'luna', affectionChange: 45 }],
+            nextScene: 'leadership_wisdom'
+          },
+          {
+            id: 'embrace_uncertainty',
+            text: '"I\'ll focus on making each day meaningful rather than worrying about distant futures."',
+            consequence: 'Present focus • Chooses immediate over prophetic',
+            effects: [{ characterId: 'luna', affectionChange: 35 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      {
+        id: 'elena_isolation_bridge',
+        title: 'Reaching Across Loneliness',
+        text: [
+          'Elena opens up about the profound isolation that comes with immortal existence.',
+          '"Centuries of watching mortal friends age and die, of hiding our true nature, of never quite belonging anywhere..."',
+          '"But your presence here offers something I\'d almost forgotten - the possibility of genuine connection without pretense."',
+          'Her vulnerability creates a bridge of understanding between your experiences.'
+        ],
+        character: characters.elena,
+        choices: [
+          {
+            id: 'share_your_isolation',
+            text: '"I understand loneliness too. Maybe we can help heal each other\'s isolation."',
+            consequence: 'Mutual healing • Offers reciprocal support',
+            effects: [{ characterId: 'elena', affectionChange: 50 }],
+            nextScene: 'elena_comfort_accepted'
+          },
+          {
+            id: 'offer_genuine_connection',
+            text: '"I want to offer you the genuine connection you\'ve been missing."',
+            consequence: 'Connection offer • Promises authentic relationship',
+            effects: [{ characterId: 'elena', affectionChange: 45 }],
+            nextScene: 'artistic_soul_connection'
+          },
+          {
+            id: 'ask_about_belonging',
+            text: '"How do we create a space where everyone truly belongs?"',
+            consequence: 'Belonging focus • Seeks to build inclusive community',
+            effects: [{ characterId: 'elena', affectionChange: 55 }],
+            nextScene: 'new_community'
+          }
+        ]
+      },
+      // Batch 18 - Political and hierarchy scenes
+      {
+        id: 'coven_hierarchy_revealed',
+        title: 'Understanding the Structure',
+        text: [
+          'Celeste explains the complex hierarchy and relationships within the supernatural community.',
+          '"We have elders who provide wisdom, specialists who handle specific needs, and newer members who bring fresh perspectives."',
+          '"It\'s not rigid - roles can evolve, and respect is earned through contribution rather than just age or power."',
+          'The structure feels more like a family with specialized roles than a strict hierarchy.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'ask_about_your_place',
+            text: '"Where would I fit in this structure? What would my role and responsibilities be?"',
+            consequence: 'Role inquiry • Seeks understanding of personal position',
+            effects: [{ characterId: 'celeste', affectionChange: 35 }],
+            nextScene: 'cordelia_role_detailed'
+          },
+          {
+            id: 'appreciate_flexibility',
+            text: '"I love that it\'s flexible and based on contribution rather than rigid hierarchy."',
+            consequence: 'Structure appreciation • Values merit-based system',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'collaborative_governance'
+          },
+          {
+            id: 'ask_about_decision_making',
+            text: '"How are important decisions made? Who has input on major choices?"',
+            consequence: 'Process curiosity • Wants to understand governance',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'democratic_coven'
+          }
+        ]
+      },
+      {
+        id: 'revolutionary_recruitment',
+        title: 'The Call for Change',
+        text: [
+          'Valentina passionately presents her vision for transforming vampire society.',
+          '"We have the power to reshape the supernatural world - to create justice where there has been oppression, equality where there has been hierarchy."',
+          '"Your fresh perspective could be exactly what this revolution needs. Will you stand with us for real change?"',
+          'Her revolutionary fervor is both inspiring and slightly overwhelming.'
+        ],
+        character: characters.valentina,
+        choices: [
+          {
+            id: 'join_the_revolution',
+            text: '"Yes, I want to help create a more just supernatural world."',
+            consequence: 'Revolutionary commitment • Joins the cause for change',
+            effects: [{ characterId: 'valentina', affectionChange: 55 }, { characterId: 'isadora', affectionChange: -15 }],
+            nextScene: 'revolutionary_planning'
+          },
+          {
+            id: 'seek_middle_ground',
+            text: '"I support change, but I\'d prefer gradual reform over revolution."',
+            consequence: 'Moderate approach • Seeks compromise between extremes',
+            effects: [{ characterId: 'valentina', affectionChange: 25 }, { characterId: 'isadora', affectionChange: 20 }],
+            nextScene: 'moderate_coalition_building'
+          },
+          {
+            id: 'request_more_information',
+            text: '"Tell me more about your specific goals and methods before I decide."',
+            consequence: 'Information gathering • Seeks details before commitment',
+            effects: [{ characterId: 'valentina', affectionChange: 30 }],
+            nextScene: 'alternative_strategies'
+          }
+        ]
+      },
+      {
+        id: 'diplomatic_bridge_building',
+        title: 'The Art of Connection',
+        text: [
+          'Isadora teaches you the delicate art of building bridges between opposing factions.',
+          '"True diplomacy isn\'t about compromise for its own sake - it\'s about finding genuine common ground and shared values."',
+          '"Sometimes the best solution is one that no one initially considered, born from real understanding between different perspectives."',
+          'Her approach emphasizes patience, listening, and creative problem-solving.'
+        ],
+        character: characters.isadora,
+        choices: [
+          {
+            id: 'practice_diplomacy',
+            text: '"I want to develop these skills. Can we practice with real scenarios?"',
+            consequence: 'Skill development • Seeks practical diplomatic training',
+            effects: [{ characterId: 'isadora', affectionChange: 45 }],
+            nextScene: 'bridging_divisions'
+          },
+          {
+            id: 'apply_to_current_conflict',
+            text: '"How can we apply these principles to the current tensions in the coven?"',
+            consequence: 'Immediate application • Seeks to help current situation',
+            effects: [{ characterId: 'isadora', affectionChange: 50 }],
+            nextScene: 'compromise_discussion'
+          },
+          {
+            id: 'focus_on_understanding',
+            text: '"Teaching me to truly understand different perspectives seems most important."',
+            consequence: 'Understanding priority • Values empathy development',
+            effects: [{ characterId: 'isadora', affectionChange: 55 }],
+            nextScene: 'principled_neutrality'
+          }
+        ]
+      },
+      {
+        id: 'valentina_war_stories',
+        title: 'Tales from the Battlefield',
+        text: [
+          'Valentina shares stories from supernatural conflicts she\'s witnessed or participated in.',
+          '"I\'ve seen what happens when oppression goes unchecked - communities destroyed, individuals broken, potential lost forever."',
+          '"But I\'ve also seen what\'s possible when people stand up and fight for what\'s right. Real change is possible."',
+          'Her experiences add weight and context to her revolutionary fervor.'
+        ],
+        character: characters.valentina,
+        choices: [
+          {
+            id: 'ask_about_victories',
+            text: '"Tell me about the successful changes you\'ve helped create."',
+            consequence: 'Success focus • Interested in positive outcomes',
+            effects: [{ characterId: 'valentina', affectionChange: 40 }],
+            nextScene: 'historical_conflicts'
+          },
+          {
+            id: 'inquire_about_costs',
+            text: '"What have been the costs of these conflicts? How do we minimize harm?"',
+            consequence: 'Cost awareness • Concerned about collateral damage',
+            effects: [{ characterId: 'valentina', affectionChange: 35 }, { characterId: 'seraphina', affectionChange: 20 }],
+            nextScene: 'careful_revolution'
+          },
+          {
+            id: 'focus_on_prevention',
+            text: '"How do we prevent the conditions that lead to these conflicts in the first place?"',
+            consequence: 'Prevention focus • Seeks root cause solutions',
+            effects: [{ characterId: 'valentina', affectionChange: 45 }],
+            nextScene: 'alternative_strategies'
+          }
+        ]
+      },
+      {
+        id: 'forbidden_knowledge_access',
+        title: 'Secrets of the Supernatural',
+        text: [
+          'Celeste offers access to rare and forbidden knowledge about supernatural history and abilities.',
+          '"This information has been guarded for centuries, shared only with those who prove themselves trustworthy."',
+          '"Knowledge is power, but it\'s also responsibility. Are you prepared for what you might learn?"',
+          'The offer feels both thrilling and daunting.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'accept_knowledge_fully',
+            text: '"Yes, I want to learn everything. I\'m ready for the responsibility."',
+            consequence: 'Full knowledge acceptance • Embraces complete learning',
+            effects: [{ characterId: 'celeste', affectionChange: 50 }],
+            nextScene: 'cordelia_research_revealed'
+          },
+          {
+            id: 'request_gradual_access',
+            text: '"Could we approach this gradually? I want to process each revelation properly."',
+            consequence: 'Gradual learning • Seeks measured knowledge acquisition',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'patient_guidance'
+          },
+          {
+            id: 'ask_about_safeguards',
+            text: '"What safeguards exist to ensure this knowledge isn\'t misused?"',
+            consequence: 'Security concern • Worried about knowledge protection',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'restriction_analysis'
+          }
+        ]
+      },
+      {
+        id: 'cordelia_research_revealed',
+        title: 'Cordelia\'s Hidden Studies',
+        text: [
+          'Celeste reveals Cordelia\'s extensive research into mortal-vampire integration and psychic development.',
+          '"She spent decades studying how mortals could safely develop supernatural abilities while maintaining their humanity."',
+          '"Her research could guide your own development and help us understand the unique role Anchors can play."',
+          'The depth of Cordelia\'s preparation for your arrival becomes clear.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'study_the_research',
+            text: '"I want to study everything she discovered. Her research could be invaluable."',
+            consequence: 'Research dedication • Commits to studying Cordelia\'s work',
+            effects: [{ characterId: 'celeste', affectionChange: 50 }],
+            nextScene: 'pragmatic_testing_approach'
+          },
+          {
+            id: 'focus_on_practical_application',
+            text: '"How can we apply her findings to my situation right now?"',
+            consequence: 'Practical focus • Seeks immediate application',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'psychic_training_offered'
+          },
+          {
+            id: 'honor_her_legacy',
+            text: '"I want to continue her research and build on her discoveries."',
+            consequence: 'Legacy continuation • Seeks to advance her work',
+            effects: [{ characterId: 'celeste', affectionChange: 55 }],
+            nextScene: 'cordelia_psychic_legacy'
+          }
+        ]
+      },
+      {
+        id: 'elena_comfort_accepted',
+        title: 'Finding Solace Together',
+        text: [
+          'Elena gratefully accepts your offer of comfort and companionship.',
+          '"It\'s been so long since I felt truly understood. Your presence here fills a void I\'d forgotten existed."',
+          '"Perhaps together we can heal some of the wounds that centuries of isolation have created."',
+          'The mutual comfort creates a deep bond of understanding and support.'
+        ],
+        character: characters.elena,
+        choices: [
+          {
+            id: 'promise_continued_support',
+            text: '"I promise to be here for you, to help heal those wounds together."',
+            consequence: 'Support commitment • Promises ongoing emotional care',
+            effects: [{ characterId: 'elena', affectionChange: 55 }],
+            nextScene: 'artistic_soul_connection'
+          },
+          {
+            id: 'share_healing_journey',
+            text: '"Let\'s embark on this healing journey together. We both have wounds that need tending."',
+            consequence: 'Mutual healing • Emphasizes shared recovery',
+            effects: [{ characterId: 'elena', affectionChange: 50 }],
+            nextScene: 'shared_grief'
+          },
+          {
+            id: 'create_new_memories',
+            text: '"Let\'s create new memories together that can help overshadow the painful ones."',
+            consequence: 'Memory creation • Focuses on building positive experiences',
+            effects: [{ characterId: 'elena', affectionChange: 60 }],
+            nextScene: 'new_memory_creation'
+          }
+        ]
+      },
+      {
+        id: 'artistic_soul_connection',
+        title: 'Kindred Creative Spirits',
+        text: [
+          'Elena reveals her own artistic nature and the deep connection she feels with your creative spirit.',
+          '"I see in you a fellow artist - someone who understands that creation is healing, that beauty can emerge from pain."',
+          '"Perhaps we could collaborate, create something together that expresses what words cannot."',
+          'The recognition of shared artistic passion creates an immediate and profound bond.'
+        ],
+        character: characters.elena,
+        choices: [
+          {
+            id: 'embrace_collaboration',
+            text: '"Yes, let\'s create something beautiful together. Art as healing sounds perfect."',
+            consequence: 'Artistic collaboration • Embraces creative partnership',
+            effects: [{ characterId: 'elena', affectionChange: 55 }, { characterId: 'morgana', affectionChange: 25 }],
+            nextScene: 'artistic_collaboration_planned'
+          },
+          {
+            id: 'explore_art_as_healing',
+            text: '"Tell me more about how art can be healing. I want to understand this connection."',
+            consequence: 'Healing curiosity • Seeks understanding of therapeutic art',
+            effects: [{ characterId: 'elena', affectionChange: 50 }],
+            nextScene: 'elena_purpose_reframing'
+          },
+          {
+            id: 'share_your_creative_journey',
+            text: '"Let me share my own creative journey with you. Maybe our stories can inspire each other."',
+            consequence: 'Story sharing • Offers reciprocal creative vulnerability',
+            effects: [{ characterId: 'elena', affectionChange: 60 }],
+            nextScene: 'memory_sharing'
+          }
+        ]
+      },
+      // Batch 19 - Umbra scenes and political conflict resolution
+      {
+        id: 'elena_purpose_reframing',
+        title: 'Discovering New Meaning',
+        text: [
+          'Elena helps you understand how your arrival has given new purpose to everyone in the sanctuary.',
+          '"For centuries, we\'ve existed without clear direction. Your presence offers us a chance to become something more meaningful."',
+          '"We\'re not just surviving anymore - we\'re building something beautiful and lasting."',
+          'The shift from mere existence to purposeful living feels transformative for everyone involved.'
+        ],
+        character: characters.elena,
+        choices: [
+          {
+            id: 'embrace_shared_purpose',
+            text: '"I\'m honored to help everyone find new meaning and direction."',
+            consequence: 'Purpose acceptance • Embraces role in providing direction',
+            effects: [{ characterId: 'elena', affectionChange: 50 }],
+            nextScene: 'living_testament'
+          },
+          {
+            id: 'ask_about_individual_purposes',
+            text: '"How has this changed the personal goals and dreams of each person here?"',
+            consequence: 'Individual focus • Interested in personal transformations',
+            effects: [{ characterId: 'elena', affectionChange: 45 }],
+            nextScene: 'transformation_celebration'
+          },
+          {
+            id: 'focus_on_building_together',
+            text: '"Let\'s focus on what we can build together, step by step."',
+            consequence: 'Collaborative building • Emphasizes shared construction',
+            effects: [{ characterId: 'elena', affectionChange: 55 }],
+            nextScene: 'new_community'
+          }
+        ]
+      },
+      {
+        id: 'moderate_coalition_building',
+        title: 'Finding Middle Ground',
+        text: [
+          'You work to build a coalition of moderate voices who support gradual but meaningful change.',
+          'Both traditionalists and revolutionaries contribute ideas for sustainable reform that addresses real problems without causing upheaval.',
+          'The collaborative approach creates solutions that have broader support and better chances of success.',
+          'Compromise proves to be more creative and effective than either extreme position alone.'
+        ],
+        choices: [
+          {
+            id: 'formalize_coalition',
+            text: 'Establish formal structures for ongoing moderate collaboration.',
+            consequence: 'Coalition formalization • Creates lasting moderate alliance',
+            effects: [
+              { characterId: 'isadora', affectionChange: 40 },
+              { characterId: 'valentina', affectionChange: 20 },
+              { characterId: 'celeste', affectionChange: 30 }
+            ],
+            nextScene: 'collaborative_governance'
+          },
+          {
+            id: 'focus_on_implementation',
+            text: 'Concentrate on implementing the moderate reforms you\'ve developed.',
+            consequence: 'Implementation focus • Prioritizes putting ideas into action',
+            effects: [
+              { characterId: 'isadora', affectionChange: 35 },
+              { characterId: 'lilith', affectionChange: 25 }
+            ],
+            nextScene: 'measured_progress'
+          },
+          {
+            id: 'expand_participation',
+            text: 'Invite more community members to join the moderate coalition.',
+            consequence: 'Participation expansion • Seeks broader moderate involvement',
+            effects: [
+              { characterId: 'isadora', affectionChange: 45 },
+              { characterId: 'elena', affectionChange: 25 }
+            ],
+            nextScene: 'democratic_coven'
+          }
+        ]
+      },
+      {
+        id: 'restriction_analysis',
+        title: 'Understanding Limitations',
+        text: [
+          'Celeste carefully explains the restrictions and safeguards around supernatural knowledge and abilities.',
+          '"These limitations exist not to control, but to protect. Some knowledge can be dangerous in the wrong hands or at the wrong time."',
+          '"The goal is responsible development - gaining power and knowledge while maintaining wisdom and ethics."',
+          'The thoughtful approach to power and knowledge reassures you about the community\'s values.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'accept_gradual_approach',
+            text: '"I understand. I\'d rather develop slowly and safely than risk harm."',
+            consequence: 'Safety priority • Chooses gradual safe development',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'gradual_integration'
+          },
+          {
+            id: 'ask_about_oversight',
+            text: '"Who provides oversight? How do we ensure these restrictions are fair?"',
+            consequence: 'Oversight inquiry • Seeks understanding of governance',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'anchor_oversight'
+          },
+          {
+            id: 'propose_transparency',
+            text: '"Could we make these restrictions more transparent so everyone understands them?"',
+            consequence: 'Transparency proposal • Seeks clearer communication',
+            effects: [{ characterId: 'celeste', affectionChange: 50 }],
+            nextScene: 'democratic_coven'
+          }
+        ]
+      },
+      {
+        id: 'pragmatic_testing_approach',
+        title: 'Scientific Method',
+        text: [
+          'Celeste proposes a systematic, scientific approach to testing and developing your abilities.',
+          '"We\'ll document everything, test systematically, and proceed based on evidence rather than assumptions."',
+          '"Cordelia\'s research provides the foundation, but your experience will advance the science."',
+          'The methodical approach feels both exciting and reassuring.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'embrace_scientific_method',
+            text: '"I love this approach. Let\'s build a solid foundation of knowledge."',
+            consequence: 'Scientific enthusiasm • Embraces methodical development',
+            effects: [{ characterId: 'celeste', affectionChange: 50 }],
+            nextScene: 'cordelia_research_revealed'
+          },
+          {
+            id: 'request_participation_in_design',
+            text: '"Can I help design the testing protocols? I want to understand the methodology."',
+            consequence: 'Design participation • Seeks involvement in planning',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'collaborative_governance'
+          },
+          {
+            id: 'focus_on_safety_protocols',
+            text: '"What safety protocols will we have in place during testing?"',
+            consequence: 'Safety concern • Prioritizes protection during development',
+            effects: [{ characterId: 'celeste', affectionChange: 55 }],
+            nextScene: 'patient_guidance'
+          }
+        ]
+      },
+      {
+        id: 'umbra_shares_story',
+        title: 'Tales from Beyond',
+        text: [
+          'Umbra timidly begins to share fragments of their existence before arriving at the sanctuary.',
+          '"I... I drifted between dimensions for eons, watching but never belonging, seeing beauty but never being part of it."',
+          '"The loneliness was... indescribable. But here, for the first time, I feel... noticed. Valued."',
+          'Their vulnerability and gratitude create a profound emotional connection.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'offer_belonging',
+            text: '"You belong here now. You\'re not alone anymore."',
+            consequence: 'Belonging assurance • Offers security and acceptance',
+            effects: [{ characterId: 'umbra', affectionChange: 55 }],
+            nextScene: 'umbra_overwhelming_gratitude'
+          },
+          {
+            id: 'ask_about_dimensions',
+            text: '"What were those other dimensions like? What did you see?"',
+            consequence: 'Dimensional curiosity • Interested in their experiences',
+            effects: [{ characterId: 'umbra', affectionChange: 45 }],
+            nextScene: 'umbra_shares_cosmic_stories'
+          },
+          {
+            id: 'appreciate_their_perspective',
+            text: '"Your unique perspective must give you incredible insights into existence."',
+            consequence: 'Perspective appreciation • Values their otherworldly viewpoint',
+            effects: [{ characterId: 'umbra', affectionChange: 50 }],
+            nextScene: 'umbra_shares_cosmic_wonders'
+          }
+        ]
+      },
+      {
+        id: 'eldritch_nature_explained',
+        title: 'Understanding the Unknowable',
+        text: [
+          'Umbra carefully explains their eldritch nature in terms you can comprehend.',
+          '"I exist partially outside normal reality - time flows differently for me, space bends around my presence."',
+          '"I try to contain my true form to avoid overwhelming others, but sometimes... sometimes I slip."',
+          'Their consideration for others despite their alien nature shows remarkable empathy.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'appreciate_consideration',
+            text: '"Thank you for being so considerate of our limitations."',
+            consequence: 'Consideration appreciation • Values their thoughtfulness',
+            effects: [{ characterId: 'umbra', affectionChange: 50 }],
+            nextScene: 'umbra_appreciates_patience'
+          },
+          {
+            id: 'ask_about_true_form',
+            text: '"I\'d like to understand your true nature better, if you\'re comfortable sharing."',
+            consequence: 'Understanding desire • Seeks deeper knowledge despite alien nature',
+            effects: [{ characterId: 'umbra', affectionChange: 45 }],
+            nextScene: 'umbra_reveals_true_self'
+          },
+          {
+            id: 'offer_acceptance',
+            text: '"I accept all aspects of your nature. You don\'t have to hide yourself."',
+            consequence: 'Complete acceptance • Embraces their eldritch nature fully',
+            effects: [{ characterId: 'umbra', affectionChange: 60 }],
+            nextScene: 'umbra_touched_by_understanding'
+          }
+        ]
+      },
+      {
+        id: 'family_values_discussion',
+        title: 'What Makes a Family',
+        text: [
+          'The conversation turns to what truly makes a family, especially one as unconventional as yours.',
+          'Umbra observes: "Family isn\'t about sharing blood or species... it\'s about choosing to care for each other."',
+          '"You\'ve all chosen me, despite my strangeness. That makes you more family than I ever hoped to have."',
+          'The definition of family expands to include choice, acceptance, and unconditional care.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'affirm_chosen_family',
+            text: '"Chosen family is often stronger than blood family. We chose each other."',
+            consequence: 'Chosen family affirmation • Validates family by choice',
+            effects: [{ characterId: 'umbra', affectionChange: 55 }, { characterId: 'elena', affectionChange: 25 }],
+            nextScene: 'new_community'
+          },
+          {
+            id: 'celebrate_differences',
+            text: '"Our differences make us stronger. Each person brings something unique and valuable."',
+            consequence: 'Diversity celebration • Values individual contributions',
+            effects: [{ characterId: 'umbra', affectionChange: 50 }, { characterId: 'morgana', affectionChange: 20 }],
+            nextScene: 'transformation_celebration'
+          },
+          {
+            id: 'commit_to_care',
+            text: '"I promise to care for everyone here, regardless of how different we might be."',
+            consequence: 'Care commitment • Promises unconditional support',
+            effects: [{ characterId: 'umbra', affectionChange: 60 }],
+            nextScene: 'bond_protection_vow'
+          }
+        ]
+      },
+      {
+        id: 'umbra_overwhelming_gratitude',
+        title: 'Cosmic Appreciation',
+        text: [
+          'Umbra\'s gratitude manifests in ways that transcend normal emotional expression.',
+          'The air around them shimmers with starlight, and you feel a wave of pure, overwhelming appreciation.',
+          '"Never... never has anyone offered me belonging so freely. I am... I am transformed by your kindness."',
+          'Their cosmic nature makes their emotions feel vast and profound.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'share_mutual_gratitude',
+            text: '"Your presence has transformed all of us too. We\'re grateful for you."',
+            consequence: 'Mutual gratitude • Expresses reciprocal appreciation',
+            effects: [{ characterId: 'umbra', affectionChange: 60 }],
+            nextScene: 'umbra_mutual_discovery'
+          },
+          {
+            id: 'embrace_cosmic_emotion',
+            text: '"I can feel the depth of your gratitude. It\'s beautiful and overwhelming."',
+            consequence: 'Emotional connection • Acknowledges their cosmic emotional expression',
+            effects: [{ characterId: 'umbra', affectionChange: 55 }],
+            nextScene: 'umbra_demonstrates_forms'
+          },
+          {
+            id: 'ground_in_present',
+            text: '"Let\'s focus on building our future together, one day at a time."',
+            consequence: 'Present focus • Grounds cosmic emotion in daily reality',
+            effects: [{ characterId: 'umbra', affectionChange: 50 }],
+            nextScene: 'living_testament'
+          }
+        ]
+      },
+      // Batch 20 - Final completion batch with remaining Umbra and governance scenes
+      {
+        id: 'umbra_shares_cosmic_stories',
+        title: 'Visions from the Void',
+        text: [
+          'Umbra shares breathtaking stories of cosmic wonders they witnessed across dimensions.',
+          '"I\'ve seen stars born from the dreams of ancient beings, watched galaxies dance in patterns that spell out forgotten poems."',
+          '"In one dimension, time flows backward and effect precedes cause. In another, music has physical form and can be sculpted."',
+          'Their tales expand your understanding of what\'s possible beyond conventional reality.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'request_more_stories',
+            text: '"Please tell me more. These visions are incredible."',
+            consequence: 'Story fascination • Desires more cosmic tales',
+            effects: [{ characterId: 'umbra', affectionChange: 45 }],
+            nextScene: 'umbra_shares_cosmic_wonders'
+          },
+          {
+            id: 'ask_about_bringing_wonders_here',
+            text: '"Could you bring some of these wonders to our reality?"',
+            consequence: 'Wonder sharing • Interested in cosmic gifts',
+            effects: [{ characterId: 'umbra', affectionChange: 50 }],
+            nextScene: 'umbra_demonstrates_forms'
+          },
+          {
+            id: 'connect_to_artistic_inspiration',
+            text: '"These visions could inspire incredible art. Would you share them with Morgana and Elena?"',
+            consequence: 'Artistic connection • Links cosmic visions to creativity',
+            effects: [{ characterId: 'umbra', affectionChange: 55 }, { characterId: 'morgana', affectionChange: 20 }],
+            nextScene: 'artistic_collaboration_planned'
+          }
+        ]
+      },
+      {
+        id: 'umbra_appreciates_patience',
+        title: 'Grateful for Understanding',
+        text: [
+          'Umbra expresses deep appreciation for your patience with their unusual nature.',
+          '"Most beings flee when they sense what I am. You... you stay. You listen. You try to understand."',
+          '"Your patience gives me hope that perhaps I can learn to exist harmoniously in this reality."',
+          'Their gratitude feels both humble and profound.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'offer_continued_patience',
+            text: '"I\'ll always have patience for you. Take all the time you need."',
+            consequence: 'Patience commitment • Promises ongoing understanding',
+            effects: [{ characterId: 'umbra', affectionChange: 55 }],
+            nextScene: 'umbra_gains_confidence'
+          },
+          {
+            id: 'encourage_self_acceptance',
+            text: '"You don\'t need to change who you are. We accept you as you are."',
+            consequence: 'Acceptance encouragement • Promotes self-acceptance',
+            effects: [{ characterId: 'umbra', affectionChange: 60 }],
+            nextScene: 'umbra_touched_by_understanding'
+          },
+          {
+            id: 'focus_on_harmony',
+            text: '"We\'ll figure out harmony together. You\'re not alone in this."',
+            consequence: 'Collaborative harmony • Offers partnership in adaptation',
+            effects: [{ characterId: 'umbra', affectionChange: 50 }],
+            nextScene: 'family_values_discussion'
+          }
+        ]
+      },
+      {
+        id: 'umbra_shares_cosmic_wonders',
+        title: 'Marvels Beyond Imagination',
+        text: [
+          'Umbra describes cosmic phenomena that challenge your understanding of reality.',
+          '"I\'ve witnessed the birth of concepts - watching \'love\' and \'hope\' come into existence as living entities."',
+          '"In the spaces between dimensions, beauty exists in forms that have no names in any language."',
+          'Their descriptions paint pictures of impossible, wonderful realities.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'ask_to_experience_some',
+            text: '"Is there any way I could experience even a glimpse of these wonders?"',
+            consequence: 'Experience desire • Wants to witness cosmic beauty',
+            effects: [{ characterId: 'umbra', affectionChange: 50 }],
+            nextScene: 'umbra_demonstrates_forms'
+          },
+          {
+            id: 'appreciate_expanded_perspective',
+            text: '"You\'ve expanded my understanding of what\'s possible. Thank you."',
+            consequence: 'Perspective gratitude • Appreciates mind expansion',
+            effects: [{ characterId: 'umbra', affectionChange: 45 }],
+            nextScene: 'spiritual_awakening'
+          },
+          {
+            id: 'connect_to_earth_beauty',
+            text: '"And now you get to experience the unique beauty of our dimension too."',
+            consequence: 'Reciprocal beauty • Highlights local wonders',
+            effects: [{ characterId: 'umbra', affectionChange: 55 }],
+            nextScene: 'umbra_mutual_discovery'
+          }
+        ]
+      },
+      {
+        id: 'umbra_reveals_true_self',
+        title: 'Beyond the Veil',
+        text: [
+          'Umbra carefully reveals glimpses of their true eldritch form - geometric patterns that shift through impossible angles.',
+          'You see starlight made solid, space folding in on itself, and beauty that exists outside normal perception.',
+          '"This is who I really am," they whisper. "Do you... do you still accept me?"',
+          'The revelation is overwhelming but somehow beautiful rather than terrifying.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'embrace_true_form',
+            text: '"You\'re beautiful in ways I never imagined possible. Of course I accept you."',
+            consequence: 'Complete acceptance • Embraces their true eldritch nature',
+            effects: [{ characterId: 'umbra', affectionChange: 70 }],
+            nextScene: 'umbra_touched_by_understanding'
+          },
+          {
+            id: 'ask_to_understand_more',
+            text: '"Help me understand this form better. I want to appreciate all aspects of who you are."',
+            consequence: 'Understanding desire • Seeks deeper comprehension',
+            effects: [{ characterId: 'umbra', affectionChange: 60 }],
+            nextScene: 'eldritch_nature_explained'
+          },
+          {
+            id: 'share_wonder',
+            text: '"This is incredible. I feel honored that you trust me with this truth."',
+            consequence: 'Honor recognition • Appreciates their trust',
+            effects: [{ characterId: 'umbra', affectionChange: 65 }],
+            nextScene: 'umbra_overwhelming_gratitude'
+          }
+        ]
+      },
+      {
+        id: 'umbra_mutual_discovery',
+        title: 'Learning Together',
+        text: [
+          'You and Umbra embark on a journey of mutual discovery, learning about each other\'s realities.',
+          '"You show me the beauty of linear time, of cause and effect, of emotions tied to physical form."',
+          '"I can show you the poetry written in quantum fluctuations, the music of dimensional barriers."',
+          'The exchange of perspectives enriches both of your understandings of existence.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'establish_regular_exchanges',
+            text: '"Let\'s make this a regular thing - sharing our different perspectives on reality."',
+            consequence: 'Regular exchange • Establishes ongoing perspective sharing',
+            effects: [{ characterId: 'umbra', affectionChange: 55 }],
+            nextScene: 'memory_sharing'
+          },
+          {
+            id: 'document_discoveries',
+            text: '"We should document these discoveries. They could help others understand."',
+            consequence: 'Documentation desire • Wants to record insights for others',
+            effects: [{ characterId: 'umbra', affectionChange: 50 }, { characterId: 'celeste', affectionChange: 20 }],
+            nextScene: 'cordelia_research_revealed'
+          },
+          {
+            id: 'celebrate_uniqueness',
+            text: '"Our different natures make this exchange possible. Diversity creates beauty."',
+            consequence: 'Diversity celebration • Appreciates differences as strength',
+            effects: [{ characterId: 'umbra', affectionChange: 60 }],
+            nextScene: 'transformation_celebration'
+          }
+        ]
+      },
+      {
+        id: 'umbra_gains_confidence',
+        title: 'Growing Self-Assurance',
+        text: [
+          'Through acceptance and understanding, Umbra begins to gain confidence in their place within the sanctuary.',
+          '"For the first time in eons, I feel... stable. Grounded. Like I belong somewhere."',
+          '"Your acceptance has given me the courage to be myself without apology or fear."',
+          'Their growing confidence creates positive changes throughout the community.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'encourage_leadership',
+            text: '"Your unique perspective could help guide important decisions here."',
+            consequence: 'Leadership encouragement • Sees potential for guidance role',
+            effects: [{ characterId: 'umbra', affectionChange: 50 }, { characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'collaborative_governance'
+          },
+          {
+            id: 'celebrate_growth',
+            text: '"I\'m so proud of how you\'ve grown. You\'re becoming more yourself every day."',
+            consequence: 'Growth celebration • Celebrates their development',
+            effects: [{ characterId: 'umbra', affectionChange: 55 }],
+            nextScene: 'transformation_celebration'
+          },
+          {
+            id: 'offer_continued_support',
+            text: '"I\'ll always be here to support your journey of self-discovery."',
+            consequence: 'Support commitment • Promises ongoing encouragement',
+            effects: [{ characterId: 'umbra', affectionChange: 60 }],
+            nextScene: 'bond_protection_vow'
+          }
+        ]
+      },
+      {
+        id: 'umbra_demonstrates_forms',
+        title: 'Cosmic Artistry',
+        text: [
+          'Umbra carefully demonstrates some of their abilities, creating beautiful displays of otherworldly phenomena.',
+          'Starlight dances in impossible patterns, creating temporary constellations that tell stories without words.',
+          '"This is how we communicated in the void - through light and pattern and the geometry of meaning."',
+          'The display is breathtakingly beautiful and utterly alien.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'ask_to_learn_communication',
+            text: '"Could you teach me to understand this form of communication?"',
+            consequence: 'Communication learning • Wants to learn eldritch language',
+            effects: [{ characterId: 'umbra', affectionChange: 60 }],
+            nextScene: 'patient_guidance'
+          },
+          {
+            id: 'suggest_artistic_collaboration',
+            text: '"This would be incredible combined with traditional art forms."',
+            consequence: 'Artistic fusion • Sees potential for mixed-medium art',
+            effects: [{ characterId: 'umbra', affectionChange: 50 }, { characterId: 'morgana', affectionChange: 25 }],
+            nextScene: 'artistic_collaboration_planned'
+          },
+          {
+            id: 'appreciate_beauty',
+            text: '"This is the most beautiful thing I\'ve ever seen. Thank you for sharing it."',
+            consequence: 'Beauty appreciation • Expresses awe at their artistry',
+            effects: [{ characterId: 'umbra', affectionChange: 65 }],
+            nextScene: 'umbra_overwhelming_gratitude'
+          }
+        ]
+      },
+      {
+        id: 'umbra_touched_by_understanding',
+        title: 'Profound Connection',
+        text: [
+          'Umbra is deeply moved by your complete acceptance and understanding of their nature.',
+          '"Never... in all my existence across countless dimensions... has anyone accepted me so completely."',
+          'Their gratitude manifests as waves of warm cosmic energy that seem to bless everyone present.',
+          'The moment feels sacred - a bridge built between radically different forms of existence.'
+        ],
+        character: characters.umbra,
+        choices: [
+          {
+            id: 'offer_eternal_friendship',
+            text: '"You have my friendship for as long as existence itself endures."',
+            consequence: 'Eternal bond • Offers timeless friendship',
+            effects: [{ characterId: 'umbra', affectionChange: 75 }],
+            nextScene: 'sacred_vow_sealed'
+          },
+          {
+            id: 'share_mutual_gratitude',
+            text: '"I\'m equally grateful for you. You\'ve expanded my understanding of what love means."',
+            consequence: 'Mutual gratitude • Expresses reciprocal appreciation',
+            effects: [{ characterId: 'umbra', affectionChange: 70 }],
+            nextScene: 'divine_understanding'
+          },
+          {
+            id: 'focus_on_community_impact',
+            text: '"Your presence makes all of us better. We\'re lucky to have you in our family."',
+            consequence: 'Community blessing • Recognizes their positive impact',
+            effects: [{ characterId: 'umbra', affectionChange: 65 }, { characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'new_community'
+          }
+        ]
+      },
+      {
+        id: 'tension_acknowledged',
+        title: 'Recognizing Conflict',
+        text: [
+          'You acknowledge the underlying tensions between different factions within the sanctuary.',
+          'While everyone shares common goals, there are genuine disagreements about methods, pace of change, and priorities.',
+          'Rather than ignoring these tensions, you address them directly with honesty and respect.',
+          'Open acknowledgment creates space for constructive dialogue rather than hidden resentment.'
+        ],
+        choices: [
+          {
+            id: 'facilitate_open_discussion',
+            text: 'Create a safe space for all sides to express their concerns openly.',
+            consequence: 'Conflict mediation • Facilitates honest dialogue',
+            effects: [
+              { characterId: 'isadora', affectionChange: 30 },
+              { characterId: 'valentina', affectionChange: 25 },
+              { characterId: 'lilith', affectionChange: 20 }
+            ],
+            nextScene: 'compromise_discussion'
+          },
+          {
+            id: 'address_root_causes',
+            text: 'Focus on understanding the deeper causes behind these tensions.',
+            consequence: 'Root analysis • Seeks underlying causes',
+            effects: [
+              { characterId: 'celeste', affectionChange: 35 },
+              { characterId: 'seraphina', affectionChange: 25 }
+            ],
+            nextScene: 'historical_conflicts'
+          },
+          {
+            id: 'propose_structured_resolution',
+            text: 'Suggest formal processes for resolving future conflicts constructively.',
+            consequence: 'Structural solution • Creates conflict resolution systems',
+            effects: [
+              { characterId: 'isadora', affectionChange: 40 },
+              { characterId: 'celeste', affectionChange: 30 }
+            ],
+            nextScene: 'democratic_coven'
+          }
+        ]
+      },
+      {
+        id: 'practical_concerns',
+        title: 'Addressing Real Issues',
+        text: [
+          'The conversation turns to practical concerns that affect daily life in the sanctuary.',
+          'Resource allocation, security protocols, communication systems - the mundane but essential aspects of community life.',
+          'Isadora emphasizes: "Grand ideals mean nothing if we can\'t manage the practical realities of our existence."',
+          'Addressing these concerns shows respect for the complexity of supernatural community management.'
+        ],
+        character: characters.isadora,
+        choices: [
+          {
+            id: 'volunteer_for_practical_work',
+            text: '"I want to help with the practical aspects. What needs the most attention?"',
+            consequence: 'Practical contribution • Offers to help with daily operations',
+            effects: [{ characterId: 'isadora', affectionChange: 45 }],
+            nextScene: 'arrangement_details'
+          },
+          {
+            id: 'suggest_systematic_review',
+            text: '"Should we conduct a systematic review of all our practical systems?"',
+            consequence: 'Systematic approach • Proposes comprehensive analysis',
+            effects: [{ characterId: 'isadora', affectionChange: 40 }, { characterId: 'celeste', affectionChange: 25 }],
+            nextScene: 'restriction_analysis'
+          },
+          {
+            id: 'propose_efficiency_improvements',
+            text: '"Maybe fresh eyes could identify efficiency improvements in existing systems."',
+            consequence: 'Efficiency focus • Seeks optimization opportunities',
+            effects: [{ characterId: 'isadora', affectionChange: 50 }],
+            nextScene: 'pragmatic_testing_approach'
+          }
+        ]
+      },
+      // Batch 21 - Final governance and resolution scenes
+      {
+        id: 'isadora_agreement',
+        title: 'Finding Common Ground',
+        text: [
+          'Isadora expresses cautious agreement with your proposed approach to the sanctuary\'s challenges.',
+          '"Your suggestions show wisdom beyond your years. Perhaps fresh perspective combined with respect for tradition is exactly what we need."',
+          '"I\'m willing to support this path, provided we maintain the stability that has kept us safe for so long."',
+          'Her support feels like a significant political victory for collaborative governance.'
+        ],
+        character: characters.isadora,
+        choices: [
+          {
+            id: 'appreciate_her_support',
+            text: '"Your support means everything. Together we can build something lasting."',
+            consequence: 'Gratitude expression • Values her political backing',
+            effects: [{ characterId: 'isadora', affectionChange: 45 }],
+            nextScene: 'collaborative_governance'
+          },
+          {
+            id: 'address_stability_concerns',
+            text: '"Stability will remain our foundation. Change will come through careful evolution, not revolution."',
+            consequence: 'Stability assurance • Commits to careful progress',
+            effects: [{ characterId: 'isadora', affectionChange: 50 }],
+            nextScene: 'measured_progress'
+          },
+          {
+            id: 'formalize_the_agreement',
+            text: '"Should we formalize this agreement to ensure everyone understands our approach?"',
+            consequence: 'Formalization proposal • Seeks clear documentation',
+            effects: [{ characterId: 'isadora', affectionChange: 55 }],
+            nextScene: 'democratic_coven'
+          }
+        ]
+      },
+      {
+        id: 'political_divide_deepens',
+        title: 'Tensions Escalate',
+        text: [
+          'Despite efforts at mediation, the political divide between factions continues to deepen.',
+          'Valentina and Isadora\'s disagreements become more entrenched, with each side gathering supporters.',
+          'The sanctuary faces a crossroads - either find a way to bridge these differences or risk permanent fracture.',
+          'Your role as mediator becomes more crucial and more difficult.'
+        ],
+        choices: [
+          {
+            id: 'call_for_cooling_off_period',
+            text: 'Suggest a temporary pause in political discussions to let emotions settle.',
+            consequence: 'Cooling off • Seeks to reduce immediate tensions',
+            effects: [
+              { characterId: 'lilith', affectionChange: 30 },
+              { characterId: 'seraphina', affectionChange: 25 }
+            ],
+            nextScene: 'strategic_patience'
+          },
+          {
+            id: 'propose_structured_debate',
+            text: 'Organize formal debates with clear rules to ensure all voices are heard.',
+            consequence: 'Structured discourse • Creates formal discussion framework',
+            effects: [
+              { characterId: 'isadora', affectionChange: 35 },
+              { characterId: 'celeste', affectionChange: 30 }
+            ],
+            nextScene: 'compromise_discussion'
+          },
+          {
+            id: 'seek_external_mediation',
+            text: 'Suggest bringing in neutral outside parties to help mediate.',
+            consequence: 'External help • Seeks impartial mediation',
+            effects: [
+              { characterId: 'lilith', affectionChange: 25 }
+            ],
+            nextScene: 'principled_neutrality'
+          }
+        ]
+      },
+      {
+        id: 'traditionalist_support',
+        title: 'Preserving What Works',
+        text: [
+          'You express understanding and support for traditionalist concerns about preserving what has worked well.',
+          'Isadora appreciates your recognition that not all change is improvement, and that stability has real value.',
+          '"Tradition isn\'t just about clinging to the past," she explains. "It\'s about preserving wisdom that has been tested by time."',
+          'Your balanced approach helps bridge the gap between innovation and preservation.'
+        ],
+        character: characters.isadora,
+        choices: [
+          {
+            id: 'learn_from_tradition',
+            text: '"I want to understand the wisdom embedded in our traditions before proposing changes."',
+            consequence: 'Tradition learning • Seeks to understand before changing',
+            effects: [{ characterId: 'isadora', affectionChange: 50 }],
+            nextScene: 'historical_conflicts'
+          },
+          {
+            id: 'propose_gradual_evolution',
+            text: '"Let\'s build on strong traditions while gradually adapting to new realities."',
+            consequence: 'Evolutionary approach • Balances tradition with adaptation',
+            effects: [{ characterId: 'isadora', affectionChange: 45 }],
+            nextScene: 'gentle_traditionalism'
+          },
+          {
+            id: 'emphasize_preservation',
+            text: '"Our first priority should be preserving what has kept everyone safe and stable."',
+            consequence: 'Preservation priority • Emphasizes safety through tradition',
+            effects: [{ characterId: 'isadora', affectionChange: 55 }],
+            nextScene: 'fortress_ravencroft'
+          }
+        ]
+      },
+      {
+        id: 'compromise_discussion',
+        title: 'Seeking Middle Ground',
+        text: [
+          'You facilitate a careful discussion aimed at finding compromises that address everyone\'s core concerns.',
+          'Rather than seeking perfect solutions, the focus is on finding approaches that everyone can live with.',
+          'Small concessions from each side begin to build toward a framework that has broader support.',
+          'The process is slow but shows promise for sustainable resolution.'
+        ],
+        choices: [
+          {
+            id: 'document_agreements',
+            text: 'Carefully document each point of agreement to build momentum.',
+            consequence: 'Agreement documentation • Records progress systematically',
+            effects: [
+              { characterId: 'isadora', affectionChange: 35 },
+              { characterId: 'celeste', affectionChange: 30 }
+            ],
+            nextScene: 'democratic_coven'
+          },
+          {
+            id: 'focus_on_shared_values',
+            text: 'Emphasize the values and goals that everyone already shares.',
+            consequence: 'Shared values • Builds on common ground',
+            effects: [
+              { characterId: 'lilith', affectionChange: 30 },
+              { characterId: 'isadora', affectionChange: 25 },
+              { characterId: 'valentina', affectionChange: 20 }
+            ],
+            nextScene: 'bridging_divisions'
+          },
+          {
+            id: 'test_small_changes_first',
+            text: 'Propose testing small changes before implementing larger reforms.',
+            consequence: 'Incremental testing • Reduces risk through gradual implementation',
+            effects: [
+              { characterId: 'isadora', affectionChange: 40 },
+              { characterId: 'celeste', affectionChange: 25 }
+            ],
+            nextScene: 'measured_progress'
+          }
+        ]
+      },
+      {
+        id: 'leadership_wisdom',
+        title: 'Learning to Guide',
+        text: [
+          'Luna shares insights about leadership drawn from her prophetic visions and centuries of observation.',
+          '"True leadership isn\'t about having all the answers - it\'s about helping others find their own wisdom."',
+          '"The best leaders serve their communities rather than ruling them. They facilitate growth rather than controlling it."',
+          'Her perspective on leadership emphasizes humility, service, and empowerment of others.'
+        ],
+        character: characters.luna,
+        choices: [
+          {
+            id: 'embrace_servant_leadership',
+            text: '"I want to serve this community, not rule it. How do I develop that kind of leadership?"',
+            consequence: 'Servant leadership • Embraces service-oriented approach',
+            effects: [{ characterId: 'luna', affectionChange: 50 }, { characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'collaborative_governance'
+          },
+          {
+            id: 'ask_about_facilitating_growth',
+            text: '"How do I help others discover their own wisdom and potential?"',
+            consequence: 'Growth facilitation • Seeks to empower others',
+            effects: [{ characterId: 'luna', affectionChange: 45 }],
+            nextScene: 'patient_guidance'
+          },
+          {
+            id: 'request_specific_guidance',
+            text: '"What specific leadership challenges do you foresee, and how should I prepare?"',
+            consequence: 'Preparation focus • Seeks specific developmental guidance',
+            effects: [{ characterId: 'luna', affectionChange: 55 }],
+            nextScene: 'leadership_lesson'
+          }
+        ]
+      },
+      {
+        id: 'historical_conflicts',
+        title: 'Learning from the Past',
+        text: [
+          'Celeste shares detailed accounts of past conflicts within supernatural communities and how they were resolved.',
+          '"History teaches us that sustainable solutions require patience, understanding, and genuine respect for all parties involved."',
+          '"The conflicts that were resolved successfully focused on shared interests rather than ideological purity."',
+          'The historical perspective provides valuable context for current challenges.'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'apply_historical_lessons',
+            text: '"How can we apply these historical lessons to our current situation?"',
+            consequence: 'Historical application • Seeks to use past wisdom',
+            effects: [{ characterId: 'celeste', affectionChange: 45 }],
+            nextScene: 'bridging_divisions'
+          },
+          {
+            id: 'focus_on_shared_interests',
+            text: '"Let\'s identify the shared interests that unite everyone here."',
+            consequence: 'Shared interest focus • Emphasizes common ground',
+            effects: [{ characterId: 'celeste', affectionChange: 40 }],
+            nextScene: 'compromise_discussion'
+          },
+          {
+            id: 'study_successful_resolutions',
+            text: '"I want to study the most successful conflict resolutions in detail."',
+            consequence: 'Resolution study • Seeks detailed understanding of success patterns',
+            effects: [{ characterId: 'celeste', affectionChange: 50 }],
+            nextScene: 'alternative_strategies'
+          }
+        ]
+      },
+      {
+        id: 'beyond_statistics',
+        title: 'The Human Element',
+        text: [
+          'The discussion moves beyond data and statistics to focus on the human (and vampire) element in governance.',
+          'Each person has fears, hopes, dreams, and concerns that go deeper than political positions.',
+          'Understanding these deeper motivations proves more valuable than any formal analysis.',
+          'Personal connections become the foundation for political solutions.'
+        ],
+        choices: [
+          {
+            id: 'prioritize_personal_connections',
+            text: 'Focus on building stronger personal relationships as the foundation for political cooperation.',
+            consequence: 'Relationship priority • Makes personal connection the political foundation',
+            effects: [
+              { characterId: 'elena', affectionChange: 35 },
+              { characterId: 'seraphina', affectionChange: 30 }
+            ],
+            nextScene: 'family_values_discussion'
+          },
+          {
+            id: 'address_individual_concerns',
+            text: 'Take time to understand and address each person\'s specific fears and hopes.',
+            consequence: 'Individual focus • Addresses personal motivations',
+            effects: [
+              { characterId: 'elena', affectionChange: 30 },
+              { characterId: 'umbra', affectionChange: 25 }
+            ],
+            nextScene: 'private_consultations'
+          },
+          {
+            id: 'create_safe_spaces',
+            text: 'Establish environments where people feel safe expressing their deeper concerns.',
+            consequence: 'Safety creation • Builds trust through secure expression',
+            effects: [
+              { characterId: 'seraphina', affectionChange: 35 },
+              { characterId: 'elena', affectionChange: 25 }
+            ],
+            nextScene: 'principled_neutrality'
+          }
+        ]
+      },
+      {
+        id: 'alternative_strategies',
+        title: 'Creative Solutions',
+        text: [
+          'When traditional approaches reach their limits, you begin exploring creative alternative strategies.',
+          'Instead of choosing between existing options, you work to develop entirely new approaches that transcend current limitations.',
+          'The creative process energizes everyone and opens possibilities that hadn\'t been considered.',
+          'Innovation proves more powerful than optimization of existing systems.'
+        ],
+        choices: [
+          {
+            id: 'brainstorm_new_approaches',
+            text: 'Organize collaborative brainstorming sessions to generate novel solutions.',
+            consequence: 'Creative brainstorming • Generates innovative approaches',
+            effects: [
+              { characterId: 'morgana', affectionChange: 35 },
+              { characterId: 'celeste', affectionChange: 30 }
+            ],
+            nextScene: 'collaborative_governance'
+          },
+          {
+            id: 'prototype_solutions',
+            text: 'Create small-scale prototypes to test new ideas before full implementation.',
+            consequence: 'Solution prototyping • Tests innovations safely',
+            effects: [
+              { characterId: 'celeste', affectionChange: 40 },
+              { characterId: 'isadora', affectionChange: 25 }
+            ],
+            nextScene: 'pragmatic_testing_approach'
+          },
+          {
+            id: 'combine_best_elements',
+            text: 'Synthesize the best elements from different approaches into hybrid solutions.',
+            consequence: 'Synthesis approach • Combines strengths from multiple sources',
+            effects: [
+              { characterId: 'lilith', affectionChange: 35 },
+              { characterId: 'valentina', affectionChange: 20 },
+              { characterId: 'isadora', affectionChange: 20 }
+            ],
+            nextScene: 'bridging_divisions'
+          }
+        ]
+      },
+      // Batch 22 - Final completion scenes
+      {
+        id: 'private_consultations',
+        title: 'One-on-One Discussions',
+        text: [
+          'You schedule private consultations with each community member to understand their individual concerns and perspectives.',
+          'Away from group dynamics, people feel more comfortable sharing their honest thoughts and deeper motivations.',
+          'These personal conversations reveal the human stories behind political positions and create opportunities for genuine understanding.',
+          'The individual attention helps everyone feel heard and valued.'
+        ],
+        choices: [
+          {
+            id: 'synthesize_insights',
+            text: 'Combine insights from all consultations to identify common themes and solutions.',
+            consequence: 'Insight synthesis • Identifies patterns across individual concerns',
+            effects: [
+              { characterId: 'lilith', affectionChange: 30 },
+              { characterId: 'celeste', affectionChange: 25 }
+            ],
+            nextScene: 'bridging_divisions'
+          },
+          {
+            id: 'address_specific_needs',
+            text: 'Develop targeted approaches to address each person\'s specific concerns.',
+            consequence: 'Individualized solutions • Creates personalized approaches',
+            effects: [
+              { characterId: 'elena', affectionChange: 35 },
+              { characterId: 'umbra', affectionChange: 30 }
+            ],
+            nextScene: 'measured_progress'
+          },
+          {
+            id: 'build_coalition_support',
+            text: 'Use understanding gained to build broader support for collaborative solutions.',
+            consequence: 'Coalition building • Leverages personal connections for political progress',
+            effects: [
+              { characterId: 'isadora', affectionChange: 30 },
+              { characterId: 'valentina', affectionChange: 25 }
+            ],
+            nextScene: 'collaborative_governance'
+          }
+        ]
+      },
+      {
+        id: 'revolutionary_planning',
+        title: 'Mapping Change',
+        text: [
+          'Working with Valentina, you develop concrete plans for implementing progressive changes in supernatural society.',
+          'The focus shifts from abstract ideals to practical steps that can create real improvement in people\'s lives.',
+          'Careful planning helps ensure that revolutionary goals don\'t create unintended chaos or harm.',
+          'The systematic approach builds confidence in the possibility of positive change.'
+        ],
+        character: characters.valentina,
+        choices: [
+          {
+            id: 'prioritize_achievable_goals',
+            text: 'Focus first on changes that are both impactful and achievable.',
+            consequence: 'Strategic prioritization • Focuses on winnable battles',
+            effects: [{ characterId: 'valentina', affectionChange: 45 }],
+            nextScene: 'measured_progress'
+          },
+          {
+            id: 'build_broader_support',
+            text: 'Work to build support for changes beyond just the revolutionary faction.',
+            consequence: 'Coalition expansion • Seeks broader political support',
+            effects: [{ characterId: 'valentina', affectionChange: 40 }, { characterId: 'isadora', affectionChange: 15 }],
+            nextScene: 'bridging_divisions'
+          },
+          {
+            id: 'develop_safeguards',
+            text: 'Create safeguards to ensure changes don\'t cause unintended harm.',
+            consequence: 'Risk mitigation • Builds protections against negative consequences',
+            effects: [{ characterId: 'valentina', affectionChange: 50 }],
+            nextScene: 'careful_revolution'
+          }
+        ]
+      },
+      {
+        id: 'bridging_divisions',
+        title: 'Healing the Rift',
+        text: [
+          'Through patient work and genuine respect for all perspectives, divisions within the community begin to heal.',
+          'Rather than trying to eliminate disagreement, you help create ways for different viewpoints to coexist constructively.',
+          'The process teaches everyone that unity doesn\'t require uniformity, and that diversity of thought can be a strength.',
+          'Gradually, the community becomes more cohesive while remaining intellectually vibrant.'
+        ],
+        choices: [
+          {
+            id: 'celebrate_diversity',
+            text: 'Formally recognize that diverse perspectives make the community stronger.',
+            consequence: 'Diversity celebration • Institutionalizes appreciation for different viewpoints',
+            effects: [
+              { characterId: 'lilith', affectionChange: 35 },
+              { characterId: 'valentina', affectionChange: 25 },
+              { characterId: 'isadora', affectionChange: 25 }
+            ],
+            nextScene: 'democratic_coven'
+          },
+          {
+            id: 'establish_ongoing_dialogue',
+            text: 'Create permanent structures for ongoing dialogue and collaboration.',
+            consequence: 'Dialogue institutionalization • Creates lasting communication frameworks',
+            effects: [
+              { characterId: 'isadora', affectionChange: 40 },
+              { characterId: 'celeste', affectionChange: 30 }
+            ],
+            nextScene: 'collaborative_governance'
+          },
+          {
+            id: 'focus_on_shared_projects',
+            text: 'Unite the community around shared projects that everyone can support.',
+            consequence: 'Unity through action • Builds cohesion through collaborative work',
+            effects: [
+              { characterId: 'elena', affectionChange: 30 },
+              { characterId: 'morgana', affectionChange: 25 }
+            ],
+            nextScene: 'new_community'
+          }
+        ]
+      },
+      {
+        id: 'careful_revolution',
+        title: 'Thoughtful Transformation',
+        text: [
+          'The revolutionary changes proceed carefully, with attention to minimizing disruption and maximizing positive impact.',
+          'Each step is evaluated for its effects on all community members, ensuring that progress doesn\'t come at anyone\'s expense.',
+          'The measured approach proves more effective than dramatic gestures, creating lasting change that everyone can support.',
+          'Revolution becomes evolution, powered by wisdom rather than anger.'
+        ],
+        character: characters.valentina,
+        choices: [
+          {
+            id: 'document_lessons_learned',
+            text: 'Carefully document what works so these methods can be shared with other communities.',
+            consequence: 'Knowledge sharing • Records successful methods for broader use',
+            effects: [{ characterId: 'valentina', affectionChange: 50 }, { characterId: 'celeste', affectionChange: 25 }],
+            nextScene: 'leadership_lesson'
+          },
+          {
+            id: 'expand_gradual_changes',
+            text: 'Use early successes as foundation for additional gradual improvements.',
+            consequence: 'Incremental expansion • Builds on successful changes',
+            effects: [{ characterId: 'valentina', affectionChange: 45 }],
+            nextScene: 'measured_progress'
+          },
+          {
+            id: 'celebrate_collaborative_success',
+            text: 'Recognize that success came through collaboration rather than conflict.',
+            consequence: 'Collaboration recognition • Credits teamwork for positive outcomes',
+            effects: [{ characterId: 'valentina', affectionChange: 55 }, { characterId: 'isadora', affectionChange: 30 }],
+            nextScene: 'transformation_celebration'
+          }
+        ]
+      },
+      {
+        id: 'fortress_ravencroft',
+        title: 'Sanctuary Secured',
+        text: [
+          'The sanctuary\'s security systems are reviewed and strengthened, ensuring that Ravencroft Manor remains a safe haven.',
+          'Raven oversees improvements to both physical and magical protections, while maintaining the welcoming atmosphere.',
+          'The balance between security and openness reflects the community\'s values - protected but not isolated.',
+          'Everyone feels more secure knowing that their home is well-defended against external threats.'
+        ],
+        character: characters.raven,
+        choices: [
+          {
+            id: 'appreciate_security_measures',
+            text: '"Thank you for keeping everyone safe while maintaining our open, welcoming spirit."',
+            consequence: 'Security appreciation • Values protection without isolation',
+            effects: [{ characterId: 'raven', affectionChange: 45 }],
+            nextScene: 'strategic_patience'
+          },
+          {
+            id: 'ask_about_ongoing_vigilance',
+            text: '"What ongoing vigilance is needed to maintain this security?"',
+            consequence: 'Vigilance inquiry • Seeks to understand security maintenance',
+            effects: [{ characterId: 'raven', affectionChange: 40 }],
+            nextScene: 'anchor_oversight'
+          },
+          {
+            id: 'offer_security_assistance',
+            text: '"How can I help with security efforts? What role can I play?"',
+            consequence: 'Security participation • Offers to contribute to protection efforts',
+            effects: [{ characterId: 'raven', affectionChange: 50 }],
+            nextScene: 'guardian_oath'
+          }
+        ]
+      },
+      {
+        id: 'gentle_traditionalism',
+        title: 'Honoring the Past While Growing',
+        text: [
+          'The community finds ways to honor traditions while allowing for gentle evolution and growth.',
+          'Change comes through deepening understanding of traditional wisdom rather than rejecting it.',
+          'New practices emerge that feel consistent with historical values while meeting contemporary needs.',
+          'The approach satisfies both traditionalists and progressives by showing that growth and preservation can coexist.'
+        ],
+        character: characters.isadora,
+        choices: [
+          {
+            id: 'develop_new_traditions',
+            text: 'Create new traditions that build on historical foundations.',
+            consequence: 'Tradition evolution • Creates new practices rooted in history',
+            effects: [{ characterId: 'isadora', affectionChange: 50 }, { characterId: 'morgana', affectionChange: 25 }],
+            nextScene: 'transformation_celebration'
+          },
+          {
+            id: 'teach_traditional_wisdom',
+            text: 'Ensure that traditional wisdom is taught and understood by all community members.',
+            consequence: 'Wisdom preservation • Maintains cultural knowledge',
+            effects: [{ characterId: 'isadora', affectionChange: 45 }],
+            nextScene: 'patient_guidance'
+          },
+          {
+            id: 'balance_old_and_new',
+            text: 'Establish formal processes for balancing traditional and innovative approaches.',
+            consequence: 'Balance institutionalization • Creates systematic approach to tradition and innovation',
+            effects: [{ characterId: 'isadora', affectionChange: 55 }],
+            nextScene: 'collaborative_governance'
+          }
+        ]
+      },
+      {
+        id: 'strategic_patience',
+        title: 'The Wisdom of Waiting',
+        text: [
+          'You learn the value of strategic patience - knowing when to act and when to wait for better timing.',
+          'Some changes require preparation, some conflicts need time to cool, some solutions emerge only through careful observation.',
+          'The ability to wait wisely proves as valuable as the ability to act decisively.',
+          'Patience becomes a form of wisdom rather than mere passivity.'
+        ],
+        choices: [
+          {
+            id: 'develop_timing_wisdom',
+            text: 'Study the patterns that reveal optimal timing for different types of actions.',
+            consequence: 'Timing mastery • Develops wisdom about when to act',
+            effects: [
+              { characterId: 'luna', affectionChange: 40 },
+              { characterId: 'lilith', affectionChange: 25 }
+            ],
+            nextScene: 'leadership_lesson'
+          },
+          {
+            id: 'practice_mindful_waiting',
+            text: 'Use waiting periods for preparation, observation, and deepening understanding.',
+            consequence: 'Mindful patience • Makes waiting periods productive',
+            effects: [
+              { characterId: 'seraphina', affectionChange: 35 },
+              { characterId: 'celeste', affectionChange: 25 }
+            ],
+            nextScene: 'patience_training'
+          },
+          {
+            id: 'balance_patience_and_action',
+            text: 'Learn to balance patience with decisive action when the moment is right.',
+            consequence: 'Balance mastery • Develops judgment about timing',
+            effects: [
+              { characterId: 'lilith', affectionChange: 35 },
+              { characterId: 'raven', affectionChange: 25 }
+            ],
+            nextScene: 'leadership_wisdom'
+          }
+        ]
+      },
+      {
+        id: 'collaborative_governance',
+        title: 'Shared Leadership',
+        text: [
+          'The community develops a collaborative governance model where leadership is shared rather than concentrated.',
+          'Decisions are made through inclusive processes that draw on everyone\'s expertise and perspectives.',
+          'The approach proves more effective than traditional hierarchies, producing better decisions with broader support.',
+          'Leadership becomes a service to the community rather than power over it.'
+        ],
+        choices: [
+          {
+            id: 'formalize_the_system',
+            text: 'Create formal structures and processes to institutionalize collaborative governance.',
+            consequence: 'System formalization • Creates lasting governance structures',
+            effects: [
+              { characterId: 'isadora', affectionChange: 40 },
+              { characterId: 'celeste', affectionChange: 35 }
+            ],
+            nextScene: 'democratic_coven'
+          },
+          {
+            id: 'train_collaborative_skills',
+            text: 'Develop training programs to help everyone participate effectively in collaborative governance.',
+            consequence: 'Skill development • Builds capacity for participation',
+            effects: [
+              { characterId: 'celeste', affectionChange: 40 },
+              { characterId: 'elena', affectionChange: 25 }
+            ],
+            nextScene: 'leadership_lesson'
+          },
+          {
+            id: 'model_servant_leadership',
+            text: 'Demonstrate leadership as service, inspiring others to adopt the same approach.',
+            consequence: 'Leadership modeling • Inspires service-oriented leadership',
+            effects: [
+              { characterId: 'lilith', affectionChange: 45 },
+              { characterId: 'seraphina', affectionChange: 30 }
+            ],
+            nextScene: 'living_testament'
+          }
+        ]
       }
     ]
   }
