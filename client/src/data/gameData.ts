@@ -142,7 +142,7 @@ export const gameData: Chapter[] = [
           }
         ]
       },
-      // Missing core scenes that fix "loading story" errors
+      // Chapter 1: Deep Character Development - Core trinity focus
       {
         id: 'lilith_greeting',
         title: 'A Gracious Welcome',
@@ -10105,8 +10105,8 @@ export const initialGameState = {
   characters: characters,
   playerCharacter: undefined,
   playerStats: {
-    health: 'Healthy',
-    sanity: 'Curious',
+    health: 100,
+    sanity: 100,
     location: 'Ravencroft Manor Gates'
   },
   inventory: [],
