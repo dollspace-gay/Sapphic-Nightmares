@@ -2425,9 +2425,9 @@ export const gameData: Chapter[] = [
         title: 'Bold Introductions',
         text: [
           'You step forward with confident grace, meeting each vampire\'s gaze directly. "I\'m honored to meet you all. I may be new to your world, but I\'m not afraid of it."',
-          'A vampire with fierce amber eyes and crimson curls steps forward first, a slight smile playing at her lips. "Valentina Reyes," she says with a Spanish accent thick as honey. "I appreciate directness. Too many mortals cower or grovel."',
-          'From near the window, a tall woman with platinum braids nods approvingly. "Raven Bjornsdottir. Your aunt spoke of your spirit. I see she was not mistaken." Her ice-blue eyes seem to measure your worth.',
-          'However, an elegant woman in emerald silk raises an eyebrow with calculated interest. "Isadora Medici. Confidence is... interesting in one so young. We shall see if it is wisdom or foolishness." Her tone carries subtle challenge.'
+          'A vampire with fierce amber eyes and wild crimson curls steps forward first, her olive skin bearing faint battle scars and her leather clothing speaking of someone who chooses action over elegance. "Valentina Reyes," she says with a Spanish accent thick as honey. "I appreciate directness. Too many mortals cower or grovel."',
+          'From near the window, a tall, powerfully built woman with platinum braids nods approvingly. Raven is intimidatingly beautiful - Nordic features carved from marble, ice-blue eyes that could freeze fire, and the bearing of someone who has faced death and laughed. Her practical clothing and visible weapons mark her as the coven\'s protector.',
+          'However, an elegant woman in emerald silk raises an eyebrow with calculated interest. Isadora is the picture of refined luxury - auburn hair in a perfect chignon, emerald eyes that miss nothing, and expensive clothing that costs more than most cars. "Confidence is... interesting in one so young. We shall see if it is wisdom or foolishness." Her tone carries subtle challenge.'
         ],
         choices: [
           {
@@ -2616,7 +2616,9 @@ export const gameData: Chapter[] = [
         id: 'elena_tragic_bond',
         title: 'The Artist\'s Sorrow',
         text: [
-          'Elena\'s pale gray eyes widen slightly at your empathy, as if she\'s forgotten what genuine compassion feels like. "You... see the pain. Most prefer to look away."',
+          'Elena stands like a living portrait of melancholy - ash-blonde hair falling in soft waves around a heart-shaped face, pale gray eyes that hold centuries of sorrow, and porcelain skin so translucent you can almost see the pain beneath. She wears a simple black dress that emphasizes her ethereal fragility.',
+          'Her movements are graceful yet hesitant, like someone who has learned to make herself small to avoid further hurt. Paint stains on her delicate fingers speak of endless hours spent trying to capture emotions too complex for words.',
+          'Her pale gray eyes widen slightly at your empathy, as if she\'s forgotten what genuine compassion feels like. "You... see the pain. Most prefer to look away."',
           'She moves like a wraith toward a painting covered by a dark cloth. "I create to remember, and I create to forget. Both are equally futile when you have eternity stretching before you."',
           'With trembling hands, she reveals the painting - a masterpiece depicting a snowy Russian landscape with a burning manor in the distance. "My mortal family. Lost to revolutionaries while I was away, studying art in Paris. I returned to find... nothing."',
           'Her voice breaks slightly. "The others try to help, but how do you heal a wound that has had two centuries to fester? How do you find purpose when everyone you loved is dust?"'
@@ -3166,10 +3168,11 @@ export const gameData: Chapter[] = [
         id: 'valentina_proposal',
         title: 'The Revolutionary Vision',
         text: [
-          'Valentina stands abruptly, her chair scraping against ancient stone. She pulls out a worn leather journal, pages filled with detailed notes and desperate sketches.',
-          '"Last month, I found Maria in an alley in Barcelona. Seventeen years old, turned and abandoned. She was feeding on rats, fighting for scraps of humanity." Valentina\'s voice cracks slightly.',
-          'She spreads photographs across the table - surveillance shots of isolated figures in cities worldwide. "Dimitri in Prague, surviving in the sewers. Akira in Tokyo, going mad from loneliness."',
-          'Her hands shake as she meets each person\'s eyes. "We sit here in luxury while our siblings die in despair. I cannot - I will not - remain comfortable while they suffer."'
+          'Valentina stands abruptly, her chair scraping against ancient stone. She\'s strikingly beautiful with fierce amber eyes that burn with revolutionary passion, and wild crimson curls that seem to move with their own energy. Her olive skin bears faint scars - souvenirs of countless battles fought for the marginalized.',
+          'She wears practical black leather and dark denim, clothes chosen for action rather than elegance. Her hands are calloused from real work, and when she moves, there\'s a coiled intensity that speaks of someone who has seen too much suffering to remain still.',
+          'She pulls out a worn leather journal, pages filled with detailed notes and desperate sketches. "Last month, I found Maria in an alley in Barcelona. Seventeen years old, turned and abandoned. She was feeding on rats, fighting for scraps of humanity." Valentina\'s voice cracks slightly.',
+          'She spreads photographs across the table with trembling hands - surveillance shots of isolated figures in cities worldwide. "Dimitri in Prague, surviving in the sewers. Akira in Tokyo, going mad from loneliness."',
+          'Her fierce amber eyes meet each person\'s gaze with burning conviction. "We sit here in luxury while our siblings die in despair. I cannot - I will not - remain comfortable while they suffer."'
         ],
         character: characters.valentina,
         background: '/backgrounds/grand-hall.png',
@@ -3208,10 +3211,11 @@ export const gameData: Chapter[] = [
         id: 'isadora_opposition',
         title: 'The Voice of Caution',
         text: [
-          'Isadora rises with the practiced grace of someone who has commanded boardrooms and salons for centuries. Her diamond earrings catch the light as she tilts her head, considering her words with surgical precision.',
+          'Isadora rises with the practiced grace of someone who has commanded boardrooms and salons for centuries. She\'s impeccably elegant - auburn hair swept into a perfect chignon, emerald eyes that miss nothing, and porcelain skin that speaks of centuries spent in luxury.',
+          'She wears a tailored ivory silk blouse and charcoal pencil skirt that cost more than most people\'s cars, with diamond earrings that catch the light as she tilts her head, considering her words with surgical precision. Every gesture speaks of power, wealth, and absolute control.',
           '"How beautifully passionate you are, Valentina," she begins, her tone warm honey over steel. "Such fire, such... conviction." The pause suggests these aren\'t entirely compliments.',
-          'She smooths an invisible wrinkle from her silk blouse. "But I wonder if we might consider the more... delicate... aspects of such an endeavor?" Her smile never wavers as she delivers what amounts to a political dissection.',
-          'Her gaze settles on you with calculated concern. "Our newest member has inherited such tremendous responsibility. Perhaps we shouldn\'t burden her with... additional complexities... quite so soon?"'
+          'She smooths an invisible wrinkle from her silk blouse with manicured fingers. "But I wonder if we might consider the more... delicate... aspects of such an endeavor?" Her smile never wavers as she delivers what amounts to a political dissection.',
+          'Her calculating emerald gaze settles on you with practiced concern. "Our newest member has inherited such tremendous responsibility. Perhaps we shouldn\'t burden her with... additional complexities... quite so soon?"'
         ],
         character: characters.isadora,
         background: '/backgrounds/grand-hall.png',
@@ -3286,8 +3290,10 @@ export const gameData: Chapter[] = [
         title: 'The Scholar\'s Perspective',
         text: [
           'You find Celeste in the library, surrounded by open books and historical documents. Maps of vampire populations and government surveillance reports cover her desk.',
+          'Celeste is strikingly intellectual - honey-blonde hair pulled back in a practical ponytail, wire-rimmed glasses perched on her nose, and intelligent hazel eyes that seem to process information faster than most people can speak. She wears a comfortable cashmere sweater and dark jeans, prioritizing function over fashion.',
+          'Her desk is meticulously organized despite the volume of research materials, and her fingers are ink-stained from hours of note-taking. Everything about her speaks of someone who finds patterns in chaos and answers in data.',
           '"I\'ve been researching both sides of this debate," she says without looking up. "The data is... complex. There are 127 documented cases of newly turned vampires who disappeared in the last decade alone."',
-          'She finally meets your eyes. "Valentina\'s compassion is admirable, but Isadora\'s caution is statistically justified. Every exposure event in the past century has resulted in at least a dozen vampire deaths."',
+          'She finally meets your eyes with laser focus. "Valentina\'s compassion is admirable, but Isadora\'s caution is statistically justified. Every exposure event in the past century has resulted in at least a dozen vampire deaths."',
           '"However," she continues, "our current isolation strategy has a 23% mortality rate among new vampires who never find guidance. We\'re essentially practicing selective survival - helping only those lucky enough to find us."'
         ],
         character: characters.celeste,
@@ -3913,7 +3919,8 @@ export const gameData: Chapter[] = [
         text: [
           'The conservatory is breathtaking in the moonlight, but as you explore, you notice subtle details that speak of deeper mysteries.',
           'Certain plants seem to shimmer with an otherworldly glow. Some of the architectural details don\'t match any historical period you recognize.',
-          'Elena appears silently beside you, her artistic eye noting your observation. "Beautiful, isn\'t it? And far older than it appears."',
+          'Elena appears silently beside you like a melancholy spirit. Her ash-blonde hair catches the moonlight, and her pale gray eyes hold centuries of artistic vision. Paint stains on her delicate fingers and the ethereal fragility of her movements mark her as someone who pours her immortal soul into her art.',
+          'Her artistic eye notes your observation. "Beautiful, isn\'t it? And far older than it appears." She wears a simple black dress that emphasizes her translucent porcelain skin.',
           '"This manor has been... modified over the centuries to serve needs beyond those of ordinary humans."'
         ],
         character: characters.elena,
@@ -8423,9 +8430,10 @@ export const gameData: Chapter[] = [
         id: 'luna_prophecy_glimpse',
         title: 'Visions of Tomorrow',
         text: [
-          'Luna\'s eyes grow distant as she shares fragments of prophetic visions about your future.',
-          '"I see threads of possibility - paths where you bring great change, others where you find deep love, some where you face terrible choices."',
-          '"The future is not fixed, but your presence here creates ripples that will be felt for generations."',
+          'Luna steps forward from the shadows like a living constellation. She\'s ethereally beautiful with long silver-white hair that seems to shimmer with its own inner light, and deep violet eyes that hold the depth of eternity. Her pale skin has an otherworldly luminescence, as if starlight flows beneath the surface.',
+          'She wears flowing dark robes adorned with celestial symbols that seem to move and shift when you\'re not looking directly at them. Delicate silver jewelry catches the light, and her movements have a dreamlike quality that suggests she exists partially in this world and partially in realms beyond.',
+          'Her eyes grow distant as she shares fragments of prophetic visions about your future. "I see threads of possibility - paths where you bring great change, others where you find deep love, some where you face terrible choices."',
+          '"The future is not fixed, but your presence here creates ripples that will be felt for generations." Her voice carries the weight of cosmic knowledge.',
           'Her mysterious insights both intrigue and unnerve you.'
         ],
         character: characters.luna,
