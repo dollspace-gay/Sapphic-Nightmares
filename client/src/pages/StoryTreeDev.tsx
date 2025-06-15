@@ -247,10 +247,14 @@ function StoryTreeDevContent() {
                 onClick={() => {
                   const allNodes = new Set<string>();
                   const collectNodes = (node: TreeNode) => {
-                    allNodes.add(node.id);
+                    if (node.children.length > 0) {
+                      allNodes.add(node.id);
+                    }
                     node.children.forEach(collectNodes);
                   };
-                  if (storyTree) collectNodes(storyTree);
+                  if (storyTree) {
+                    collectNodes(storyTree);
+                  }
                   setExpandedNodes(allNodes);
                 }}
                 className="text-xs"
