@@ -194,11 +194,19 @@ export function SettingsMenu({ onShowSaveModal, onShowLoadModal, onToggleSidebar
                     <div className="space-y-2 text-xs">
                       <div className="flex">
                         <span className="text-gray-300">Health: </span>
-                        <span className="text-white">{gameState.playerStats.health}</span>
+                        <span className={`${gameState.playerStats.health > 75 ? 'text-green-400' : 
+                          gameState.playerStats.health > 50 ? 'text-yellow-400' : 
+                          gameState.playerStats.health > 25 ? 'text-orange-400' : 'text-red-400'}`}>
+                          {gameState.playerStats.health}/100
+                        </span>
                       </div>
                       <div className="flex">
                         <span className="text-gray-300">Sanity: </span>
-                        <span className="text-white">{gameState.playerStats.sanity}</span>
+                        <span className={`${gameState.playerStats.sanity > 75 ? 'text-green-400' : 
+                          gameState.playerStats.sanity > 50 ? 'text-yellow-400' : 
+                          gameState.playerStats.sanity > 25 ? 'text-orange-400' : 'text-red-400'}`}>
+                          {gameState.playerStats.sanity}/100
+                        </span>
                       </div>
                       <div className="flex">
                         <span className="text-gray-300">Location: </span>
