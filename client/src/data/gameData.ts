@@ -370,6 +370,7 @@ export const gameData: Chapter[] = [
           'She pauses before a portrait of a woman who bears a striking resemblance to you. "She hoped you might choose to continue her legacy. But the choice, as it was for her, is entirely yours."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'accept_easily',
@@ -404,6 +405,7 @@ export const gameData: Chapter[] = [
           'She turns to face you, her dark eyes holding depths of centuries. "Your great-aunt believed you had the strength to bear such knowledge. The question is... do you want to learn who we truly are?"'
         ],
         character: characters.lilith,
+        background: '/backgrounds/library.png',
         choices: [
           {
             id: 'eager_to_learn',
@@ -473,6 +475,7 @@ export const gameData: Chapter[] = [
           '"Welcome to my world," she breathes against your lips. "There will be no going back now."'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'embrace_darkness',
@@ -500,6 +503,7 @@ export const gameData: Chapter[] = [
           'You pass by a grand staircase when you hear the soft sound of piano music drifting from somewhere above. The melody is hauntingly beautiful, tinged with melancholy that seems to seep into your very soul.'
         ],
         character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_music',
@@ -534,6 +538,7 @@ export const gameData: Chapter[] = [
           'Lilith pushes the door open softly. "Morgana, we have a guest." The music stops abruptly, and the woman at the piano turns. Her silver eyes seem to pierce straight through you, as if reading secrets you didn\'t know you had.'
         ],
         character: characters.morgana,
+        background: '/backgrounds/music-room.png',
         choices: [
           {
             id: 'compliment_music',
@@ -568,6 +573,7 @@ export const gameData: Chapter[] = [
           'Seraphina approaches with fluid grace, her pale blue eyes filled with warmth and something that might be recognition. "You\'re safe here," she says softly, and somehow you believe her completely. "I won\'t let any harm come to you."'
         ],
         character: characters.seraphina,
+        background: '/backgrounds/grand-hall.png',
         choices: [
           {
             id: 'ask_about_wings',
