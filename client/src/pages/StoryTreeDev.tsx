@@ -162,12 +162,13 @@ function StoryTreeDevContent() {
     navigate('/');
   };
 
-  const renderNode = (node: TreeNode): JSX.Element => {
+  const renderNode = (node: TreeNode, path: string = ''): JSX.Element => {
+    const uniqueKey = `${path}-${node.id}`;
     const isExpanded = expandedNodes.has(node.id);
     const hasChildren = node.children.length > 0;
     
     return (
-      <div key={node.id} className="mb-1">
+      <div key={uniqueKey} className="mb-1">
         <div 
           className="flex items-center gap-2 p-2 rounded hover:bg-muted/50 min-w-max"
           style={{ marginLeft: `${node.level * 24}px` }}
@@ -215,7 +216,7 @@ function StoryTreeDevContent() {
         
         {isExpanded && hasChildren && (
           <div className="border-l border-muted/30" style={{ marginLeft: `${(node.level + 1) * 24 - 12}px` }}>
-            {node.children.map(child => renderNode(child))}
+            {node.children.map((child, index) => renderNode(child, `${path}-${index}`))}
           </div>
         )}
       </div>
@@ -245,31 +246,26 @@ function StoryTreeDevContent() {
                 variant="outline"
                 size="sm"
                 onClick={() => {
-                  try {
-                    const allNodes = new Set<string>();
-                    const visited = new Set<string>();
+                  // Safe expand all - only expand chapters and first level scenes
+                  const safeExpansion = new Set<string>();
+                  
+                  if (storyTree) {
+                    safeExpansion.add(storyTree.id); // root
                     
-                    const collectNodes = (node: TreeNode) => {
-                      // Prevent infinite recursion
-                      if (visited.has(node.id)) return;
-                      visited.add(node.id);
+                    // Add all chapter nodes
+                    storyTree.children.forEach(chapter => {
+                      safeExpansion.add(chapter.id);
                       
-                      // Only add nodes that have children to the expanded set
-                      if (node.children && node.children.length > 0) {
-                        allNodes.add(node.id);
-                        node.children.forEach(collectNodes);
-                      }
-                    };
-                    
-                    if (storyTree) {
-                      collectNodes(storyTree);
-                    }
-                    setExpandedNodes(allNodes);
-                  } catch (error) {
-                    console.error('Error expanding all nodes:', error);
-                    // Fallback to safe expansion
-                    setExpandedNodes(new Set(['root', 'chapter_0', 'chapter_1', 'chapter_2']));
+                      // Add first level scenes in each chapter
+                      chapter.children.forEach(scene => {
+                        if (scene.children.length > 0) {
+                          safeExpansion.add(scene.id);
+                        }
+                      });
+                    });
                   }
+                  
+                  setExpandedNodes(safeExpansion);
                 }}
                 className="text-xs"
               >
