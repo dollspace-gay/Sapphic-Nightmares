@@ -14017,6 +14017,449 @@ export const gameData: Chapter[] = [
             nextScene: 'heartfelt_welcome'
           }
         ]
+      },
+      // Completing the final 15 orphaned scenes for perfect story structure
+      {
+        id: 'nature_revelation',
+        title: 'Truth Acknowledged',
+        text: [
+          'Lilith nods with appreciation at your direct acknowledgment of her vampiric nature.',
+          '"Most humans cannot sense what we are so clearly. Your supernatural sensitivity is remarkable."',
+          '"Yes, I am a vampire, as are the others who dwell here. This manor is a sanctuary for our kind."',
+          'Your straightforward acceptance of the supernatural has earned respect and trust.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_about_sanctuary',
+            text: '"What makes this place a sanctuary? Are you hiding from something?"',
+            consequence: 'Sanctuary inquiry • Shows understanding of supernatural dangers',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'express_acceptance',
+            text: '"I\'m not afraid. I want to understand this world you\'ve welcomed me into."',
+            consequence: 'Acceptance expression • Shows openness to supernatural world',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'sanctuary_significance',
+        title: 'Sacred Ground',
+        text: [
+          'Lilith\'s eyes light up with pleasure at your recognition of the manor\'s significance.',
+          '"This place has been a sanctuary for centuries. The very stones hold protective enchantments woven by generations of guardians."',
+          '"It serves as a haven for supernatural beings seeking safety, community, and purpose in a world that often rejects us."',
+          'Your ability to sense the manor\'s significance reveals your connection to the supernatural world.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'offer_to_help_protect',
+            text: '"How can I help protect this sanctuary? I want to contribute."',
+            consequence: 'Protection offer • Shows commitment to sanctuary\'s mission',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'ask_about_guardians',
+            text: '"Tell me about the guardians who created these protections."',
+            consequence: 'Guardian inquiry • Shows interest in sanctuary history',
+            effects: [{ characterId: 'lilith', affectionChange: 16 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'mystery_introduction',
+        title: 'Secrets Unveiled',
+        text: [
+          'Lilith\'s smile becomes mysterious as she considers how to answer your question about secrets.',
+          '"This sanctuary holds many secrets - some protective, some dangerous, all meaningful to those who dwell here."',
+          '"The greatest secret is perhaps the simplest: that love and acceptance can exist between beings of different natures."',
+          'Your curiosity about the manor\'s mysteries shows your readiness to embrace the unknown.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_about_dangerous_secrets',
+            text: '"What makes some secrets dangerous? Should I be concerned?"',
+            consequence: 'Danger inquiry • Shows awareness of potential risks',
+            effects: [{ characterId: 'lilith', affectionChange: 14 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'focus_on_love_acceptance',
+            text: '"Love and acceptance between different beings - that sounds wonderful."',
+            consequence: 'Acceptance focus • Shows appreciation for inclusive community',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'cordelias_words',
+        title: 'Aunt\'s Legacy',
+        text: [
+          'Lilith\'s expression grows tender as she recalls Cordelia\'s letters about you.',
+          '"She wrote of your kindness, your curiosity, your strength in facing life\'s challenges alone."',
+          '"Most of all, she spoke of your open heart - how you never let hardship make you bitter or closed off to others."',
+          'Learning about your great-aunt\'s perception of you creates a deeper understanding of your place here.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'feel_honored_by_description',
+            text: '"I\'m honored she saw those qualities in me. I hope to live up to her faith."',
+            consequence: 'Honor expression • Shows desire to honor aunt\'s memory',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'ask_how_she_knew',
+            text: '"How did she know so much about me? We rarely spoke."',
+            consequence: 'Knowledge inquiry • Shows curiosity about connection',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'finding_belonging',
+        title: 'Home at Last',
+        text: [
+          'Lilith\'s expression fills with maternal warmth at your confession about never belonging anywhere.',
+          '"Oh, dear child. The search for belonging ends here. You are home now, truly and completely."',
+          '"Family isn\'t about blood alone - it\'s about choosing to love and support each other through everything."',
+          'The overwhelming sense of finally finding your place in the world brings tears of relief to your eyes.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'embrace_family_concept',
+            text: '"Chosen family sounds perfect. I choose all of you too."',
+            consequence: 'Family choice • Shows commitment to new relationships',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'ask_about_earning_place',
+            text: '"How do I make sure I\'m worthy of this family?"',
+            consequence: 'Worthiness inquiry • Shows desire to contribute meaningfully',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'magical_inheritance',
+        title: 'Protective Legacy',
+        text: [
+          'Lilith\'s voice takes on a reverent tone as she explains your magical inheritance.',
+          '"Cordelia bound protective enchantments to your bloodline - wards against supernatural harm and the ability to sense danger."',
+          '"The inheritance also includes the manor\'s acceptance of you as its rightful guardian and heir to its secrets."',
+          'Understanding your magical inheritance reveals the depth of responsibility you\'ve inherited.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'accept_guardian_role',
+            text: '"I accept the responsibility of being this place\'s guardian."',
+            consequence: 'Guardian acceptance • Shows commitment to protective role',
+            effects: [{ characterId: 'lilith', affectionChange: 22 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'ask_about_learning_magic',
+            text: '"Can I learn to use these magical abilities properly?"',
+            consequence: 'Magic learning • Shows interest in developing inherited gifts',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'seer_introduction',
+        title: 'Meeting the Oracle',
+        text: [
+          'Lilith nods approvingly at your interest in Luna\'s prophetic abilities.',
+          '"Luna will be delighted to meet you. Her gift of foresight is both blessing and burden - she sees possibilities, not certainties."',
+          '"She spoke of your arrival weeks ago, describing you as \'the one who brings change wrapped in acceptance.\'"',
+          'Your interest in Luna\'s gift demonstrates your openness to the supernatural community\'s diversity.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_about_change_prophecy',
+            text: '"What kind of change am I supposed to bring?"',
+            consequence: 'Change inquiry • Shows curiosity about prophetic role',
+            effects: [{ characterId: 'luna', affectionChange: 15 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'express_eagerness_to_meet_luna',
+            text: '"I\'d love to meet Luna and learn more about her visions."',
+            consequence: 'Seer interest • Shows respect for prophetic abilities',
+            effects: [{ characterId: 'luna', affectionChange: 18 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'ability_development',
+        title: 'Supernatural Potential',
+        text: [
+          'Lilith\'s eyes sparkle with excitement at your interest in developing your supernatural sensitivity.',
+          '"Absolutely. With proper guidance, your natural abilities could become quite remarkable."',
+          '"Morgana specializes in developing latent supernatural talents, and Luna can help you understand what your sensitivity reveals."',
+          'The possibility of developing your supernatural abilities opens exciting new avenues for growth.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'request_training',
+            text: '"I\'d like to begin training as soon as possible."',
+            consequence: 'Training request • Shows eagerness to develop abilities',
+            effects: [{ characterId: 'morgana', affectionChange: 12 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'ask_about_responsibilities',
+            text: '"What responsibilities come with having supernatural abilities?"',
+            consequence: 'Responsibility inquiry • Shows mature consideration of power',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'community_sensing',
+        title: 'Supernatural Awareness',
+        text: [
+          'Lilith nods with pride at your question about sensing other supernatural residents.',
+          '"Indeed, there are others here. Each has their own unique supernatural signature that you may learn to distinguish."',
+          '"Your sensitivity will grow stronger with time and practice. Soon you\'ll sense not just what someone is, but who they are."',
+          'Your growing supernatural awareness promises deeper connections with the manor\'s supernatural community.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_to_meet_others',
+            text: '"I\'d like to meet the other residents and learn to sense their unique natures."',
+            consequence: 'Community interest • Shows desire to connect with all residents',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'focus_on_developing_sensitivity',
+            text: '"How can I practice developing this sensitivity?"',
+            consequence: 'Sensitivity development • Shows commitment to improving abilities',
+            effects: [{ characterId: 'lilith', affectionChange: 16 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'family_bonds',
+        title: 'Immediate Kinship',
+        text: [
+          'Lilith\'s smile radiates pure joy at your acceptance of the family bond.',
+          '"The connection between us is immediate and real. Chosen family often creates stronger bonds than blood alone."',
+          '"You will find that each resident here brings something unique to our family dynamic - and you will too."',
+          'The instant family connection creates a foundation of love and support for your new life.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_about_family_dynamics',
+            text: '"What should I know about the family dynamics here?"',
+            consequence: 'Dynamic inquiry • Shows interest in understanding relationships',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'express_contribution_desire',
+            text: '"I want to contribute something meaningful to this family."',
+            consequence: 'Contribution desire • Shows commitment to family wellbeing',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'proving_worth',
+        title: 'Earning Respect',
+        text: [
+          'Lilith\'s expression shows deep respect for your desire to earn your place.',
+          '"Your humility and determination to prove yourself actually prove that you already belong here."',
+          '"True worthiness isn\'t about grand gestures - it\'s about consistent kindness, reliability, and care for others."',
+          'Your commitment to earning your place demonstrates the very character that makes you worthy.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_how_to_contribute',
+            text: '"How can I contribute to the community in meaningful ways?"',
+            consequence: 'Contribution inquiry • Shows genuine desire to help',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'promise_to_prove_worthy',
+            text: '"I promise to show through my actions that I deserve this place."',
+            consequence: 'Worthiness promise • Shows commitment to earning acceptance',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'accepted_family',
+        title: 'Unconditional Welcome',
+        text: [
+          'Lilith\'s face glows with happiness as you accept your place in the family.',
+          '"Your acceptance brings such joy to my heart. Welcome home, truly and completely."',
+          '"This family has been waiting for you without even knowing it. You complete something that was missing."',
+          'The mutual acceptance creates an unbreakable bond between you and your new supernatural family.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'ask_what_was_missing',
+            text: '"What was missing that I complete?"',
+            consequence: 'Completion inquiry • Shows curiosity about role in family',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'express_overwhelming_gratitude',
+            text: '"Thank you for making me feel so completely welcomed and loved."',
+            consequence: 'Grateful expression • Shows deep appreciation for acceptance',
+            effects: [{ characterId: 'lilith', affectionChange: 22 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'spiritual_legacy',
+        title: 'Heart\'s Inheritance',
+        text: [
+          'Lilith\'s voice becomes deeply emotional as she explains the spiritual connection.',
+          '"Cordelia\'s heart - her capacity for love, acceptance, and bringing out the best in others - lives on in you."',
+          '"It\'s not about blood or genetics. It\'s about carrying forward her spirit of unconditional love and creating sanctuary for others."',
+          'Understanding your spiritual inheritance reveals the profound responsibility and gift you\'ve received.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'vow_to_honor_legacy',
+            text: '"I vow to honor Cordelia\'s legacy and continue her work of creating sanctuary."',
+            consequence: 'Legacy vow • Shows commitment to continuing aunt\'s mission',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'ask_about_creating_sanctuary',
+            text: '"How did Cordelia create sanctuary for others? What did she do?"',
+            consequence: 'Sanctuary inquiry • Shows desire to learn from aunt\'s example',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'destined_arrival',
+        title: 'Predetermined Path',
+        text: [
+          'Lilith\'s eyes take on an otherworldly gleam as she speaks of destiny and predetermined paths.',
+          '"Cordelia had a touch of prophecy herself. She saw that you would find your way here when the time was right."',
+          '"Some paths are written in the stars, but they still require courage to walk. You chose to come here - destiny merely opened the door."',
+          'Learning about your destined arrival adds a sense of cosmic significance to your journey.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'embrace_destiny',
+            text: '"If this is my destiny, then I embrace it completely."',
+            consequence: 'Destiny acceptance • Shows openness to predetermined path',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'focus_on_personal_choice',
+            text: '"I\'m glad I had the courage to choose this path, destiny or not."',
+            consequence: 'Choice focus • Shows appreciation for personal agency',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      {
+        id: 'heartfelt_welcome',
+        title: 'Home Found',
+        text: [
+          'Lilith is visibly moved by your profound gratitude and the depth of your emotional response.',
+          '"Your words touch the very core of what we\'ve tried to build here - a place where everyone can truly belong."',
+          '"This is what Cordelia dreamed of when she first opened these doors to lost souls seeking sanctuary."',
+          'The heartfelt exchange cements your place in the family and creates an unshakeable foundation of mutual love.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'promise_to_help_others_find_home',
+            text: '"I want to help others find the same sense of home and belonging I\'ve found here."',
+            consequence: 'Service promise • Shows commitment to helping other lost souls',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }],
+            nextScene: 'introduction_complete'
+          },
+          {
+            id: 'ask_about_cordelias_dream',
+            text: '"Tell me more about Cordelia\'s dream of sanctuary for lost souls."',
+            consequence: 'Dream inquiry • Shows interest in understanding aunt\'s vision',
+            effects: [{ characterId: 'lilith', affectionChange: 22 }],
+            nextScene: 'introduction_complete'
+          }
+        ]
+      },
+      // Final scene to complete perfect story structure
+      {
+        id: 'introduction_complete',
+        title: 'Welcome to Your New Life',
+        text: [
+          'Your introduction to Ravencroft Manor and its supernatural inhabitants draws to a close.',
+          'Lilith\'s warm smile encompasses all the promise and possibility of your new life here.',
+          '"Now that you understand what this place is and who we are, it\'s time to begin your true journey among us."',
+          'Your arrival has been completed, and your story in the supernatural world is ready to unfold.'
+        ],
+        character: characters.lilith,
+        background: '/backgrounds/grand-hall.png',
+        choices: [
+          {
+            id: 'begin_new_life',
+            text: 'Step forward into your new supernatural life.',
+            consequence: 'Life beginning • Embraces transformation and new possibilities',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'arrival'
+          }
+        ]
       }
     ]
   }
