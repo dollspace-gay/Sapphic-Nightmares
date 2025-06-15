@@ -410,8 +410,52 @@ export function generateTraitSpecificChoices(character: PlayerCharacter | undefi
       id: 'creative_perspective',
       text: '[Creative] Offer a unique artistic perspective on the situation.',
       consequence: 'Creative insight • Shows artistic soul and unique viewpoint',
-      effects: [{ characterId: 'morgana', affectionChange: 10 }],
+      effects: [{ characterId: 'morgana', affectionChange: 10 }, { characterId: 'elena', affectionChange: 15 }],
       nextScene: 'creative_insight'
+    });
+  }
+
+  // Charismatic trait - add social manipulation option
+  if (hasPlayerTrait(character, 'charismatic')) {
+    specialChoices.push({
+      id: 'charismatic_influence',
+      text: '[Charismatic] Use your natural charm to influence the social dynamics.',
+      consequence: 'Social influence • Affects group relationships',
+      effects: [{ characterId: 'isadora', affectionChange: 20 }, { characterId: 'valentina', affectionChange: 10 }],
+      nextScene: 'charismatic_manipulation'
+    });
+  }
+
+  // Intelligent trait - add analytical approach
+  if (hasPlayerTrait(character, 'intelligent')) {
+    specialChoices.push({
+      id: 'analytical_approach',
+      text: '[Intelligent] Analyze the underlying motivations and power structures at play.',
+      consequence: 'Strategic analysis • Reveals hidden agendas',
+      effects: [{ characterId: 'celeste', affectionChange: 25 }, { characterId: 'luna', affectionChange: 15 }],
+      nextScene: 'analytical_revelation'
+    });
+  }
+
+  // Empathetic trait - add emotional connection option
+  if (hasPlayerTrait(character, 'empathetic')) {
+    specialChoices.push({
+      id: 'empathetic_understanding',
+      text: '[Empathetic] Sense the emotional undercurrents and address them directly.',
+      consequence: 'Emotional insight • Connects with hidden pain',
+      effects: [{ characterId: 'elena', affectionChange: 30 }, { characterId: 'seraphina', affectionChange: 20 }],
+      nextScene: 'empathetic_breakthrough'
+    });
+  }
+
+  // Intimidating trait - add dominance assertion
+  if (hasPlayerTrait(character, 'intimidating')) {
+    specialChoices.push({
+      id: 'intimidating_presence',
+      text: '[Intimidating] Assert your presence to command respect and attention.',
+      consequence: 'Dominant display • Forces acknowledgment of strength',
+      effects: [{ characterId: 'raven', affectionChange: 25 }, { characterId: 'valentina', affectionChange: 20 }],
+      nextScene: 'dominance_established'
     });
   }
   

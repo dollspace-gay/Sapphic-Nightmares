@@ -43,8 +43,12 @@ The application uses two main tables:
 - **StoryHints**: Adaptive storytelling hints based on player choice patterns
 
 ### Character System
-- **Character Profiles**: Three main characters (Lilith, Morgana, Seraphina) with affection tracking
-- **Relationship Status**: Dynamic status updates based on affection levels
+- **Character Profiles**: Eight datable vampire characters with unique personalities, backgrounds, and motivations
+  - Core Trio: Lilith (Ancient Leader), Morgana (Shadow Mystic), Seraphina (Fallen Angel)
+  - New Members: Valentina (Revolutionary), Celeste (Scholar), Raven (Huntress), Isadora (Socialite), Luna (Seer), Elena (Artist)
+- **Relationship Dynamics**: Complex web of alliances, rivalries, and political factions within the coven
+- **Character Secrets**: Each vampire has hidden motivations and tragic backstories that impact gameplay
+- **Affection Tracking**: Individual relationship progression with meaningful status changes
 - **Visual Representation**: Color-coded character indicators and progress bars
 
 ### Adaptive Storytelling System
@@ -101,6 +105,11 @@ Changelog:
 - June 14, 2025. Fixed character creation scene transition bug (now starts with "The Inheritance")
 - June 14, 2025. Completed all missing story branches - eliminated "loading story" issues
 - June 14, 2025. Added comprehensive character development scenes and sanctuary covenant system
+- June 14, 2025. Built active character effects system that modifies choices based on traits
+- June 14, 2025. Expanded vampire community to 8 datable characters with unique personalities
+- June 14, 2025. Added complex relationship dynamics, political factions, and character rivalries
+- June 14, 2025. Integrated trait-specific special choices with purple styling distinction
+- June 14, 2025. Created extensive backstories and secrets for all new vampire characters
 ```
 
 ## User Preferences
