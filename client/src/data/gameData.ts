@@ -2844,6 +2844,486 @@ export const gameData: Chapter[] = [
         ]
       }
     ]
+  },
+  {
+    id: 'chapter2',
+    title: 'The Contentious Proposal',
+    scenes: [
+      {
+        id: 'coven_gathering',
+        title: 'The Evening Council',
+        text: [
+          'The great hall of Ravencroft Manor transforms as evening falls. Ancient tapestries catch the flickering candlelight, and the assembled vampires create an atmosphere of power and tension.',
+          'You sit at the ornate table, still adjusting to your role as the new "Anchor" - the mortal link that legitimizes the coven\'s sanctuary. The weight of their expectations settles on your shoulders.',
+          'Lilith calls the meeting to order with quiet authority. "We have matters of significance to discuss tonight. The world beyond our walls continues to change, and we must decide how to respond."',
+          'Valentina leans forward, her revolutionary fervor barely contained. Across the table, Isadora\'s calculating gaze suggests she anticipates conflict. The air practically crackles with unspoken disagreement.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'observe_carefully',
+            text: 'Watch the dynamics carefully before speaking.',
+            consequence: 'Analytical approach • Gathers information about coven politics',
+            effects: [{ characterId: 'celeste', affectionChange: 8 }, { characterId: 'lilith', affectionChange: 5 }],
+            nextScene: 'valentina_proposal'
+          },
+          {
+            id: 'ask_about_anchor_role',
+            text: '"What exactly does being an Anchor mean for tonight\'s discussion?"',
+            consequence: 'Direct inquiry • Shows engagement with responsibilities',
+            effects: [{ characterId: 'lilith', affectionChange: 10 }, { characterId: 'isadora', affectionChange: 8 }],
+            nextScene: 'anchor_role_explained'
+          },
+          {
+            id: 'address_tension',
+            text: '"I can feel the tension in the room. Perhaps we should address what\'s really at stake here."',
+            consequence: 'Confronts underlying conflict • Shows perceptiveness',
+            effects: [{ characterId: 'valentina', affectionChange: 12 }, { characterId: 'raven', affectionChange: 8 }],
+            nextScene: 'tension_acknowledged'
+          }
+        ]
+      },
+      {
+        id: 'valentina_proposal',
+        title: 'The Revolutionary Vision',
+        text: [
+          'Valentina rises from her seat, her eyes blazing with passionate conviction. "We cannot continue to hide in the shadows while our kind suffers in isolation across the world."',
+          '"I propose we actively seek out newly turned vampires - those abandoned by their makers, those struggling alone. We bring them here, teach them control, give them purpose."',
+          'Her voice grows stronger. "More than that - we establish safe houses in major cities. A network of sanctuaries. We stop being passive observers and become active protectors of our species."',
+          'The room erupts in murmurs. Isadora\'s face darkens with disapproval, while Celeste looks intrigued but concerned. Raven nods approvingly, but Lilith remains carefully neutral.'
+        ],
+        character: characters.valentina,
+        choices: [
+          {
+            id: 'support_valentina_immediately',
+            text: '"This is exactly the kind of progressive thinking we need. I support this proposal."',
+            consequence: 'Immediate alliance • Strong support for revolutionary change',
+            effects: [{ characterId: 'valentina', affectionChange: 25 }, { characterId: 'isadora', affectionChange: -15 }, { characterId: 'raven', affectionChange: 15 }],
+            nextScene: 'isadora_opposition'
+          },
+          {
+            id: 'ask_practical_questions',
+            text: '"This sounds ambitious. What would be the practical steps and potential risks?"',
+            consequence: 'Pragmatic inquiry • Shows thoughtful consideration',
+            effects: [{ characterId: 'celeste', affectionChange: 15 }, { characterId: 'lilith', affectionChange: 10 }, { characterId: 'valentina', affectionChange: 8 }],
+            nextScene: 'practical_concerns'
+          },
+          {
+            id: 'express_concerns',
+            text: '"While I admire the compassion, this could expose all of us to significant danger."',
+            consequence: 'Cautious response • Prioritizes existing safety',
+            effects: [{ characterId: 'isadora', affectionChange: 18 }, { characterId: 'luna', affectionChange: 12 }, { characterId: 'valentina', affectionChange: -8 }],
+            nextScene: 'isadora_agreement'
+          }
+        ]
+      },
+      {
+        id: 'isadora_opposition',
+        title: 'The Voice of Caution',
+        text: [
+          'Isadora stands slowly, her movements deliberate and commanding. Every eye in the room turns to her as she prepares to speak.',
+          '"Valentina\'s heart may be in the right place, but her proposal is catastrophically naive," she begins, her voice cutting through the tension like a blade.',
+          '"We have survived for centuries because we are careful, selective, hidden. One reckless fledgling, one compromised safe house, one government investigation - and everything we\'ve built crumbles."',
+          'She gestures toward you. "We\'ve just welcomed a new Anchor. Should our first act be to throw her into a war zone? To make her complicit in exposing our entire species to persecution?"'
+        ],
+        character: characters.isadora,
+        choices: [
+          {
+            id: 'defend_valentina',
+            text: '"With respect, Isadora, hiding forever isn\'t survival - it\'s slow extinction. We need to evolve."',
+            consequence: 'Challenges traditionalist view • Supports progressive change',
+            effects: [{ characterId: 'valentina', affectionChange: 20 }, { characterId: 'isadora', affectionChange: -20 }, { characterId: 'raven', affectionChange: 12 }],
+            nextScene: 'political_divide_deepens'
+          },
+          {
+            id: 'agree_with_caution',
+            text: '"Isadora raises valid points. Perhaps we should consider a more gradual approach."',
+            consequence: 'Supports cautious strategy • Values established security',
+            effects: [{ characterId: 'isadora', affectionChange: 22 }, { characterId: 'valentina', affectionChange: -12 }, { characterId: 'luna', affectionChange: 15 }],
+            nextScene: 'traditionalist_support'
+          },
+          {
+            id: 'seek_middle_ground',
+            text: '"Both perspectives have merit. Perhaps we could explore limited, carefully controlled outreach?"',
+            consequence: 'Diplomatic mediation • Attempts compromise',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'celeste', affectionChange: 15 }, { characterId: 'valentina', affectionChange: 5 }, { characterId: 'isadora', affectionChange: 5 }],
+            nextScene: 'compromise_discussion'
+          }
+        ]
+      },
+      {
+        id: 'seek_lilith_counsel',
+        title: 'Ancient Wisdom',
+        text: [
+          'You find Lilith in her private study after the heated council session. Ancient books line the walls, and moonlight streams through tall windows as she pours two glasses of deep red wine.',
+          '"You handled yourself well in there," she says, offering you a glass. "Though I suspect you\'re feeling the weight of what it means to be caught between opposing forces."',
+          '"I\'ve seen this pattern before - the eternal tension between progress and preservation. Both Valentina and Isadora speak from experience, from pain. The question is: what does your heart tell you is right?"',
+          'She settles into a chair across from you. "As Anchor, your opinion carries more weight than you might realize. The coven will follow where you lead, for better or worse."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'ask_lilith_preference',
+            text: '"What would you do if you were in my position? You\'ve led this coven for centuries."',
+            consequence: 'Seeks experienced guidance • Shows respect for leadership',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }],
+            nextScene: 'lilith_guidance'
+          },
+          {
+            id: 'discuss_anchor_burden',
+            text: '"I didn\'t realize how much responsibility would come with this role. How do I make decisions that affect everyone?"',
+            consequence: 'Vulnerable admission • Shows weight of leadership',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }],
+            nextScene: 'leadership_wisdom'
+          },
+          {
+            id: 'ask_about_past_conflicts',
+            text: '"Have there been similar disputes before? How did the coven resolve them?"',
+            consequence: 'Historical perspective • Learns from precedent',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'historical_conflicts'
+          }
+        ]
+      },
+      {
+        id: 'celeste_analysis',
+        title: 'The Scholar\'s Perspective',
+        text: [
+          'You find Celeste in the library, surrounded by open books and historical documents. Maps of vampire populations and government surveillance reports cover her desk.',
+          '"I\'ve been researching both sides of this debate," she says without looking up. "The data is... complex. There are 127 documented cases of newly turned vampires who disappeared in the last decade alone."',
+          'She finally meets your eyes. "Valentina\'s compassion is admirable, but Isadora\'s caution is statistically justified. Every exposure event in the past century has resulted in at least a dozen vampire deaths."',
+          '"However," she continues, "our current isolation strategy has a 23% mortality rate among new vampires who never find guidance. We\'re essentially practicing selective survival - helping only those lucky enough to find us."'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'ask_for_recommendation',
+            text: '"Based on your research, what would you recommend? What\'s the optimal path forward?"',
+            consequence: 'Values data-driven decisions • Seeks analytical guidance',
+            effects: [{ characterId: 'celeste', affectionChange: 25 }],
+            nextScene: 'celeste_recommendation'
+          },
+          {
+            id: 'question_statistics',
+            text: '"Those numbers are sobering, but can we really base life-and-death decisions purely on statistics?"',
+            consequence: 'Challenges pure logic • Values emotional/moral considerations',
+            effects: [{ characterId: 'celeste', affectionChange: 8 }, { characterId: 'morgana', affectionChange: 12 }],
+            nextScene: 'beyond_statistics'
+          },
+          {
+            id: 'ask_about_alternatives',
+            text: '"Are there other options we haven\'t considered? Something between isolation and active recruitment?"',
+            consequence: 'Seeks creative solutions • Shows innovative thinking',
+            effects: [{ characterId: 'celeste', affectionChange: 20 }, { characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'alternative_strategies'
+          }
+        ]
+      },
+      {
+        id: 'final_decision_moment',
+        title: 'The Anchor\'s Choice',
+        text: [
+          'The coven reassembles for your decision. The great hall feels heavier now, charged with anticipation and competing hopes. Every vampire present understands that this moment will define the future direction of their sanctuary.',
+          'Valentina sits forward, her revolutionary passion barely contained. Isadora maintains her composure, but you can see the steel in her gaze. Lilith watches you with ancient patience, while the others wait to see which direction their new Anchor will guide them.',
+          'The weight of centuries of tradition clashes with the urgency of change. Lives hang in the balance - both those within these walls and those struggling alone in the darkness beyond.',
+          'This is your moment. The coven awaits your judgment.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'support_valentina_fully',
+            text: '"I support Valentina\'s proposal. We have a moral obligation to help our kind, even if it means taking risks."',
+            consequence: 'Revolutionary alliance • Prioritizes helping others over safety',
+            effects: [
+              { characterId: 'valentina', affectionChange: 35 },
+              { characterId: 'raven', affectionChange: 25 },
+              { characterId: 'morgana', affectionChange: 15 },
+              { characterId: 'isadora', affectionChange: -25 },
+              { characterId: 'luna', affectionChange: -10 }
+            ],
+            nextScene: 'valentina_alliance_formed'
+          },
+          {
+            id: 'support_isadora_fully',
+            text: '"Isadora is right. Our first responsibility is to protect what we\'ve built here. We cannot risk exposure."',
+            consequence: 'Traditionalist alliance • Prioritizes security over expansion',
+            effects: [
+              { characterId: 'isadora', affectionChange: 35 },
+              { characterId: 'luna', affectionChange: 25 },
+              { characterId: 'elena', affectionChange: 15 },
+              { characterId: 'valentina', affectionChange: -25 },
+              { characterId: 'raven', affectionChange: -15 }
+            ],
+            nextScene: 'isadora_strategy_upheld'
+          },
+          {
+            id: 'propose_compromise',
+            text: '"I propose we start small - establish one secure safe house as a trial, with strict protocols and careful screening."',
+            consequence: 'Diplomatic compromise • Balances progress with caution',
+            effects: [
+              { characterId: 'lilith', affectionChange: 25 },
+              { characterId: 'celeste', affectionChange: 30 },
+              { characterId: 'valentina', affectionChange: 15 },
+              { characterId: 'isadora', affectionChange: 10 },
+              { characterId: 'umbra', affectionChange: 20 }
+            ],
+            nextScene: 'uneasy_truce'
+          },
+          {
+            id: 'remain_neutral',
+            text: '"This decision is too important for me to make alone. The coven should vote, and I\'ll support whatever the majority decides."',
+            consequence: 'Neutral stance • Defers to collective wisdom',
+            effects: [
+              { characterId: 'lilith', affectionChange: -5 },
+              { characterId: 'valentina', affectionChange: -10 },
+              { characterId: 'isadora', affectionChange: -10 },
+              { characterId: 'celeste', affectionChange: 5 }
+            ],
+            nextScene: 'anchor_marginalized'
+          }
+        ]
+      },
+      // Advisory scenes and missing connections
+      {
+        id: 'anchor_role_explained',
+        title: 'The Weight of the Anchor',
+        text: [
+          'Lilith turns to address you directly, her ancient eyes reflecting both warmth and gravity. "The Anchor is more than a symbolic position. You are our connection to the mortal world, our legitimacy."',
+          '"When Cordelia held this role, her judgment often swayed crucial decisions. Vampires, despite our age, can become trapped in old patterns. The Anchor provides... perspective."',
+          'Valentina nods eagerly. "Exactly why we need fresh thinking on this proposal." Isadora\'s expression suggests she disagrees about what constitutes "fresh thinking."',
+          'Lilith continues, "Your voice carries weight precisely because you see us without centuries of baggage. But with that influence comes responsibility."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'accept_responsibility',
+            text: '"I understand the weight of this role. I\'m ready to help guide the coven forward."',
+            consequence: 'Embraces leadership • Shows confidence in responsibility',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }, { characterId: 'valentina', affectionChange: 10 }, { characterId: 'isadora', affectionChange: 8 }],
+            nextScene: 'valentina_proposal'
+          },
+          {
+            id: 'express_uncertainty',
+            text: '"That\'s a lot of pressure. I want to make the right choice, but I\'m still learning about your world."',
+            consequence: 'Honest vulnerability • Shows desire to learn',
+            effects: [{ characterId: 'lilith', affectionChange: 12 }, { characterId: 'celeste', affectionChange: 10 }],
+            nextScene: 'gentle_guidance'
+          },
+          {
+            id: 'ask_for_time',
+            text: '"Could I speak with some of you individually before the formal decision? I want to understand all perspectives."',
+            consequence: 'Thoughtful approach • Seeks comprehensive understanding',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'celeste', affectionChange: 15 }],
+            nextScene: 'private_consultations'
+          }
+        ]
+      },
+      {
+        id: 'lilith_guidance',
+        title: 'The Leader\'s Dilemma',
+        text: [
+          'Lilith swirls the wine in her glass thoughtfully. "Leadership is rarely about having the right answer. It\'s about understanding the consequences of your choices and owning them completely."',
+          '"If I were making this decision..." she pauses, "I would ask myself: what kind of world do I want to leave behind? One where we survived by hiding, or one where we thrived by taking calculated risks?"',
+          '"Both Valentina and Isadora have lost people to the choices they now advocate for or against. Valentina lost her maker to isolation and despair. Isadora lost her human family to vampire hunters."',
+          '"The question isn\'t what\'s safe or what\'s right - it\'s what you can live with, and what the coven can survive."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'choose_growth_over_safety',
+            text: '"I\'d rather risk everything trying to build something better than slowly die from isolation."',
+            consequence: 'Growth mindset • Prioritizes progress over security',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }, { characterId: 'valentina', affectionChange: 15 }],
+            nextScene: 'final_decision_moment'
+          },
+          {
+            id: 'choose_preservation',
+            text: '"Sometimes survival means knowing when not to act. Preservation has its own value."',
+            consequence: 'Preservation mindset • Values established stability',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }, { characterId: 'isadora', affectionChange: 12 }],
+            nextScene: 'final_decision_moment'
+          },
+          {
+            id: 'seek_synthesis',
+            text: '"Maybe the answer isn\'t choosing between their perspectives, but finding a way to honor both."',
+            consequence: 'Synthesis approach • Seeks to bridge divides',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }, { characterId: 'umbra', affectionChange: 15 }],
+            nextScene: 'final_decision_moment'
+          }
+        ]
+      },
+      {
+        id: 'celeste_recommendation',
+        title: 'The Data-Driven Path',
+        text: [
+          'Celeste pulls up a detailed chart on her tablet. "Based on my analysis, I recommend a phased approach. Start with digital outreach - encrypted networks, secure communication channels."',
+          '"We could establish virtual safe spaces first, provide guidance remotely. Lower risk, high impact. If a newly turned vampire can\'t find physical sanctuary, at least they can find information and support."',
+          '"Phase two would be physical safe houses, but only after we\'ve refined our security protocols and established proper screening procedures."',
+          '"The data suggests this approach has a 67% success rate with only 12% exposure risk. It\'s the optimal balance between Valentina\'s compassion and Isadora\'s caution."'
+        ],
+        character: characters.celeste,
+        choices: [
+          {
+            id: 'embrace_phased_approach',
+            text: '"That\'s brilliant. A measured, intelligent approach that addresses both concerns."',
+            consequence: 'Evidence-based decision • Values systematic progress',
+            effects: [{ characterId: 'celeste', affectionChange: 30 }, { characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'final_decision_moment'
+          },
+          {
+            id: 'worry_about_delay',
+            text: '"But how many vampires will die while we\'re implementing phases? Sometimes urgency matters more than optimization."',
+            consequence: 'Urgency focus • Prioritizes immediate action over planning',
+            effects: [{ characterId: 'valentina', affectionChange: 18 }, { characterId: 'celeste', affectionChange: 5 }],
+            nextScene: 'final_decision_moment'
+          },
+          {
+            id: 'appreciate_methodology',
+            text: '"I appreciate the thorough analysis. This gives me a much clearer framework for making the decision."',
+            consequence: 'Values preparation • Shows respect for research',
+            effects: [{ characterId: 'celeste', affectionChange: 20 }, { characterId: 'lilith', affectionChange: 10 }],
+            nextScene: 'final_decision_moment'
+          }
+        ]
+      },
+      // Outcome scenes based on final decision
+      {
+        id: 'valentina_alliance_formed',
+        title: 'The Revolutionary Path',
+        text: [
+          'The hall erupts in a mixture of cheers and concerned murmurs as you announce your support for Valentina\'s proposal. The revolutionary vampire rises, her eyes shining with vindicated passion.',
+          '"Thank you," Valentina says, her voice thick with emotion. "You\'ve just saved countless lives. Together, we\'ll build a network that ensures no vampire faces the darkness alone."',
+          'Isadora stands stiffly, her face a mask of controlled disappointment. "I hope you understand the magnitude of what you\'ve just committed us to," she says before leaving the hall.',
+          'Lilith nods slowly. "The path is chosen. Now we must walk it carefully." You sense that your decision has fundamentally altered the coven\'s dynamics and your place within it.'
+        ],
+        character: characters.valentina,
+        choices: [
+          {
+            id: 'plan_immediate_action',
+            text: '"Let\'s start planning immediately. What are our first steps?"',
+            consequence: 'Action-oriented leadership • Shows commitment to implementation',
+            effects: [{ characterId: 'valentina', affectionChange: 20 }, { characterId: 'raven', affectionChange: 15 }],
+            nextScene: 'revolutionary_planning'
+          },
+          {
+            id: 'address_opposition',
+            text: '"I need to speak with Isadora. We can\'t move forward with the coven divided."',
+            consequence: 'Diplomatic approach • Seeks to heal division',
+            effects: [{ characterId: 'lilith', affectionChange: 18 }, { characterId: 'isadora', affectionChange: 10 }],
+            nextScene: 'bridging_divisions'
+          },
+          {
+            id: 'establish_safeguards',
+            text: '"Before we begin, I want to establish clear protocols to minimize the risks Isadora mentioned."',
+            consequence: 'Cautious implementation • Balances progress with security',
+            effects: [{ characterId: 'celeste', affectionChange: 20 }, { characterId: 'valentina', affectionChange: 10 }],
+            nextScene: 'careful_revolution'
+          }
+        ]
+      },
+      {
+        id: 'isadora_strategy_upheld',
+        title: 'The Traditionalist Victory',
+        text: [
+          'A wave of relief washes over the traditionalist faction as you announce your support for Isadora\'s cautious approach. The socialite vampire nods approvingly, vindicated in her warnings.',
+          '"Wisdom," Isadora says with satisfaction. "True leadership recognizes that preservation of what we have is worth more than the promise of what might be."',
+          'Valentina\'s face falls, her revolutionary fervor dampened but not extinguished. "I understand your caution, but I hope you can live with the consequences of inaction."',
+          'The coven settles into an uneasy quiet. You\'ve chosen safety, but you can\'t shake the feeling that some opportunities, once missed, may never return.'
+        ],
+        character: characters.isadora,
+        choices: [
+          {
+            id: 'strengthen_defenses',
+            text: '"Let\'s focus on making our sanctuary even more secure and self-sufficient."',
+            consequence: 'Security focus • Commits to fortress mentality',
+            effects: [{ characterId: 'isadora', affectionChange: 25 }, { characterId: 'luna', affectionChange: 15 }],
+            nextScene: 'fortress_ravencroft'
+          },
+          {
+            id: 'console_valentina',
+            text: '"Valentina, I hope you understand this doesn\'t mean we don\'t care about other vampires."',
+            consequence: 'Compassionate explanation • Attempts to soften rejection',
+            effects: [{ characterId: 'valentina', affectionChange: 8 }, { characterId: 'morgana', affectionChange: 12 }],
+            nextScene: 'gentle_traditionalism'
+          },
+          {
+            id: 'future_reconsideration',
+            text: '"This is our decision for now, but we can revisit it as circumstances change."',
+            consequence: 'Flexible stance • Leaves door open for future change',
+            effects: [{ characterId: 'lilith', affectionChange: 15 }, { characterId: 'celeste', affectionChange: 12 }],
+            nextScene: 'strategic_patience'
+          }
+        ]
+      },
+      {
+        id: 'uneasy_truce',
+        title: 'The Middle Path',
+        text: [
+          'Your compromise proposal creates a thoughtful silence in the hall. Both Valentina and Isadora consider your words, weighing the merits of a measured approach.',
+          '"A trial period," Lilith muses. "Limited scope, careful observation. It has precedent in our history." She looks between the two factions. "This could work."',
+          'Valentina nods slowly. "It\'s not everything I hoped for, but it\'s progress. We could save lives while proving our approach can work safely."',
+          'Isadora remains skeptical but concedes. "If we proceed with extreme caution and maintain strict oversight, perhaps the risks can be managed."'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'establish_oversight_committee',
+            text: '"I propose we form an oversight committee with representatives from both perspectives."',
+            consequence: 'Structured compromise • Creates balanced governance',
+            effects: [{ characterId: 'lilith', affectionChange: 20 }, { characterId: 'celeste', affectionChange: 18 }, { characterId: 'valentina', affectionChange: 12 }, { characterId: 'isadora', affectionChange: 12 }],
+            nextScene: 'collaborative_governance'
+          },
+          {
+            id: 'volunteer_personal_oversight',
+            text: '"I\'ll personally oversee the trial program to ensure it meets everyone\'s standards."',
+            consequence: 'Personal responsibility • Shows hands-on leadership',
+            effects: [{ characterId: 'lilith', affectionChange: 25 }, { characterId: 'valentina', affectionChange: 15 }, { characterId: 'isadora', affectionChange: 10 }],
+            nextScene: 'anchor_oversight'
+          },
+          {
+            id: 'set_clear_metrics',
+            text: '"Let\'s establish clear success metrics and timeline for evaluation. Data should guide our next steps."',
+            consequence: 'Analytical approach • Values measurable outcomes',
+            effects: [{ characterId: 'celeste', affectionChange: 25 }, { characterId: 'lilith', affectionChange: 15 }],
+            nextScene: 'measured_progress'
+          }
+        ]
+      },
+      {
+        id: 'anchor_marginalized',
+        title: 'The Neutral Ground',
+        text: [
+          'Your decision to remain neutral creates an uncomfortable silence in the hall. The assembled vampires exchange glances, uncertain how to proceed without clear guidance from their Anchor.',
+          'Lilith clears her throat diplomatically. "Very well. We\'ll proceed to a formal vote among the coven members."',
+          'However, you notice the subtle shift in how others regard you. By refusing to use your influence, you\'ve inadvertently diminished it. Future discussions may proceed without as much deference to your opinion.',
+          'The vote is close but ultimately favors maintaining the status quo, leaving Valentina\'s proposal tabled indefinitely.'
+        ],
+        character: characters.lilith,
+        choices: [
+          {
+            id: 'accept_diminished_role',
+            text: '"I understand. Perhaps it\'s better if the coven makes these decisions collectively."',
+            consequence: 'Accepts reduced influence • Embraces democratic approach',
+            effects: [{ characterId: 'celeste', affectionChange: 8 }],
+            nextScene: 'democratic_coven'
+          },
+          {
+            id: 'regret_neutrality',
+            text: '"I should have taken a stand. Leadership requires making difficult choices."',
+            consequence: 'Learns from mistake • Shows growth potential',
+            effects: [{ characterId: 'lilith', affectionChange: 10 }, { characterId: 'valentina', affectionChange: 5 }],
+            nextScene: 'leadership_lesson'
+          },
+          {
+            id: 'defend_neutrality',
+            text: '"Sometimes the most important thing a leader can do is ensure all voices are heard equally."',
+            consequence: 'Defends democratic values • Maintains neutral stance',
+            effects: [{ characterId: 'celeste', affectionChange: 12 }, { characterId: 'umbra', affectionChange: 10 }],
+            nextScene: 'principled_neutrality'
+          }
+        ]
+      }
+    ]
   }
 ];
 
